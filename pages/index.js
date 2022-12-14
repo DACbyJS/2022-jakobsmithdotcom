@@ -1,6 +1,8 @@
+// Next
 import Head from 'next/head'
-import Image from 'next/image'
-import Navigation from '../components/navigation'
+
+// Custom
+import Hero from '../components/Hero'
 
 import styles from '../styles/Home.module.css'
 
@@ -8,12 +10,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Jakob Smith | Developer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <div className={styles.container}>
-       <h1 className='font-js-math'> Home Page Header</h1>
+        <Hero/>
       </div>
     </>
 

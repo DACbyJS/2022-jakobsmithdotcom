@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -6,15 +5,11 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
+      'js-white': '#E8E9EB',
+      'js-black': '#121416',
+      'js-red': '#FF4747',
+      'js-blue': '#5295CB',
+      'js-yellow': '#FDCD49'
     },
     fontFamily: {
       'js-math': ['var(--font-js-math)'],
