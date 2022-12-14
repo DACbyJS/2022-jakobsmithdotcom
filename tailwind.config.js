@@ -5,6 +5,22 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      'blue': '#1fb6ff',
+      'purple': '#7e5bef',
+      'pink': '#ff49db',
+      'orange': '#ff7849',
+      'green': '#13ce66',
+      'yellow': '#ffc82c',
+      'gray-dark': '#273444',
+      'gray': '#8492a6',
+      'gray-light': '#d3dce6',
+    },
+    fontFamily: {
+      'js-math': ['var(--font-js-math)'],
+      'overpass': ['var(--font-overpass)'],
+      'overpass-mono': ['var(--font-overpass-mono)']
+    },
     extend: {},
   },
   plugins: [],

@@ -1,24 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Navigation from '../components/navigation'
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Jakob Smith | Digital Marketing Developer</title>
-        <meta name="description" content="Jakob Smith | Digital Marketing Developer" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preload" href="/fonts/js-math-cmti.woff2" as="font" type="font/woff2" crossorigin/>
-        <link rel="preload" href="/fonts/js-math-cmti.woff" as="font" type="font/woff" crossorigin/>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <main className={styles.main}>
-        <h1>Hello</h1>
-      </main>
+      <div className={styles.container}>
+       <h1 className='font-js-math'> Home Page Header</h1>
+      </div>
+    </>
 
-      <footer className={styles.footer}>
-      </footer>
-    </div>
   )
 }

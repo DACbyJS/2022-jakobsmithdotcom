@@ -1,8 +1,0 @@
-@font-face {
-  font-family: 'js-math';
-  src: url('/fonts/js-math-cmti.woff2') format('woff2'),
-    url('/fonts/js-math-cmti.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
