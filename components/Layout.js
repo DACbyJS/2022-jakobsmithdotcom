@@ -1,12 +1,18 @@
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Header';
+import Footer from './Footer';
+import Hero from '../components/Hero';
+import SvgRainbow from './SvgRainbow';
 
-export default function Layout({className: fromAppClasses, children }) {
+export default function Layout({ className: fromAppClasses, children }) {
   return (
-    <div className={`${fromAppClasses} site-wrap`}>
+    <div className={`${fromAppClasses} site-wrap overflow-hidden`}>
       <Header />
-      <main>{children}</main>
+      <Hero />
+      <main className="relative">
+        <SvgRainbow />
+        {children}
+      </main>
       <Footer />
     </div>
-  )
+  );
 }

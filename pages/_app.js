@@ -13,26 +13,26 @@ config.autoAddCss = false
 // Styles
 import '../styles/global.css';
 
-const overpassLight = Overpass({
+const overpass = Overpass({
   subsets: ['latin'],
-  weight: ['200'],
+  weight: ['variable'],
   variable: '--font-overpass',
 });
 
-const overpassMonoLight = Overpass_Mono({
+const overpassMono = Overpass_Mono({
   subsets: ['latin'],
-  weight: ['300'],
+  weight: ['variable'],
   variable: '--font-overpass-mono',
 });
 
 const jsMath = localFont({ 
   variable: '--font-js-math',
-  src: '../public/fonts/jsMath-cmti10.woff2'
+  src: '../public/fonts/jsmath-cmti10.woff2'
 });
 
 function App({ Component, pageProps }) {
   return (
-      <Layout className={`${overpassLight.variable} ${overpassMonoLight.variable} ${jsMath.variable}`}>
+      <Layout className={`${overpass.variable} ${overpassMono.variable} ${jsMath.variable}`}>
         <Component {...pageProps} />
       </Layout>
   );

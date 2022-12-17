@@ -5,7 +5,7 @@ import Image from 'next/image';
 // Custom
 import infoIcon from '../public/svg/info.svg';
 import menuDots from '../public/svg/menu-dots.svg';
-import logo from '../public/svg/white-jakob-smith-logo.svg';
+import SvgJakobSmithLogo from './SvgJakobSmithLogo';
 
 export default function Navigation() {
   return (
@@ -16,7 +16,7 @@ export default function Navigation() {
       </div>
 
       <div className="logo max-w-[275px]">
-        <Image src={logo} alt="Jakob Smith Logo" />
+        <SvgJakobSmithLogo/>
       </div>
 
       <div className="menu flex flex-col justify-center items-center max-w-[100px] w-full h-auto">
