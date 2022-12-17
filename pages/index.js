@@ -16,8 +16,8 @@ export default function Home() {
       <div className={styles.container}>
         <div className="white-black-border relative z-10 mt-40 w-full max-w-[900px] mx-auto p-6">
           <div className="font-js-math text-center">
-            <h2 className="text-[7ch] -mb-4">Web Development</h2>
-            <h2 className="text-[5ch] tracking-[0.5ch]">Services For</h2>
+            <h2 className="text-[8ch] -mb-5">Web Development</h2>
+            <h2 className="text-[6ch] tracking-[0.35ch]">Services For</h2>
           </div>
           <div className="flex flex-col items-center mt-10 font-overpass font-light uppercase text-[5.5ch] tracking-wider text-center">
             <Link className="mb-8 red line-link" href="/web-designers">
@@ -34,8 +34,8 @@ export default function Home() {
 
         <div className="white-black-border relative z-10 mt-32 w-full max-w-[900px] mx-auto p-6">
           <div className="font-js-math text-center">
-            <h2 className="text-[7ch] tracking-wide -mb-4">Who Is</h2>
-            <h2 className="text-[7ch] tracking-wide">Jakob Smith?</h2>
+            <h2 className="text-[8ch] tracking-wide -mb-6">Who Is</h2>
+            <h2 className="text-[8ch] tracking-wide">Jakob Smith?</h2>
           </div>
           <div className="flex flex-col items-center mt-8">
             <Link href="/portfolio" className="btn">

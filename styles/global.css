@@ -70,18 +70,28 @@ a.btn {
   line-height: 1.3;
 }
 
-.svg-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%;
-  vertical-align: middle;
-  overflow: hidden;
+.tuka {
+  right: 10px;
+  bottom: 10px;
+  transform: translate(15%, 40%);
 }
 
-.svg-container > svg {
+a.overpass-underline {
+  @apply font-overpass-mono font-light uppercase;
+  position: relative;
   display: inline-block;
+  outline: none;
+  font-size: 2.5ch;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+}
+
+a.overpass-underline:before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0.3ch;
+  width: 100%;
+  max-width: 100%;
+  height: 2px;
+  background-color: theme('colors.js-black');
 }
