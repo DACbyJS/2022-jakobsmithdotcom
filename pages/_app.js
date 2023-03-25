@@ -11,7 +11,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 // Styles
-import '../styles/global.css';
+import '../styles/global.scss';
 
 const overpass = Overpass({
   subsets: ['latin'],

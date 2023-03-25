@@ -1,5 +1,5 @@
 import styles from '../styles/Hero.module.css';
-import MuxPlayer from "@mux/mux-player-react"; 
+import MuxPlayer from "@mux/mux-player-react/lazy";
 
 export default function Hero() {
   return (

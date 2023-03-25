@@ -8,7 +8,7 @@ export default function Layout({ className: fromAppClasses, children }) {
     <div className={`${fromAppClasses} site-wrap overflow-hidden`}>
       <Header />
       <Hero />
-      <main className="relative">
+      <main className="relative z-0">
         <SvgRainbow />
         {children}
       </main>

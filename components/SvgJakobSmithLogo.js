@@ -1,7 +1,7 @@
 const SvgJakobSmithLogo = ({ svgFill = 'none', pathFill = '#E8E9EB' }) => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 346 210"
     fill={svgFill}
     preserveAspectRatio="xMinYMin meet"
