@@ -13,6 +13,7 @@ config.autoAddCss = false
 // Styles
 import '../styles/global.scss';
 
+// Fonts
 const overpass = Overpass({
   subsets: ['latin'],
   weight: ['variable'],
@@ -30,6 +31,7 @@ const jsMath = localFont({
   src: '../public/fonts/jsmath-cmti10.woff2'
 });
 
+// App
 function App({ Component, pageProps }) {
   return (
       <Layout className={`${overpass.variable} ${overpassMono.variable} ${jsMath.variable}`}>
