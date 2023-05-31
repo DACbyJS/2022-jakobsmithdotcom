@@ -1,72 +1,70 @@
 // Next
 import Link from 'next/link';
 
-export default function NavDrawer({ isActive }) {
-  /* Nav Drawer */
-  const navDrawerMainClass = 'overlay-navigation';
-  const navDrawerActiveClass = 'overlay-active';
-  const navDrawerUpClass = 'overlay-slide-up';
-  const navDrawerDownClass = 'overlay-slide-down';
-  let navDrawerClasses = '';
+// Lib
+import { uid } from 'uid';
 
-  /* Nav Links */
-  const navLinkMainClass = 'nav-link';
-  const navLinkSlideIn = 'slide-in-nav-item';
+// Animations
+import {
+  navDrawerTrickleOpen,
+  navDrawerTrickleClose,
+} from '../lib/animations/navDrawerTrickle';
+
+export default function NavDrawer({ isActive }) {
+  let navDrawerClasses = '';
   let navLinksClasses = [];
+  const navigationContent = [
+    {
+      title: 'Home',
+      href: '#',
+      dataContent: 'the page with the rainbow',
+    },
+    {
+      title: 'Website Designers',
+      href: '#',
+      dataContent: 'for those keyboard shortcut lovers',
+    },
+    {
+      title: 'Website Developers',
+      href: '#',
+      dataContent: 'for those b2b/b2c startups',
+    },
+    {
+      title: 'Agencies',
+      href: '#',
+      dataContent: 'for those who want to be a part of the team',
+    },
+    {
+      title: 'Beneficial Business',
+      href: '#',
+      dataContent: 'for those who kindly take turns',
+    },
+    {
+      title: 'Portfolio',
+      href: '#',
+      dataContent: 'examples of my skillsets',
+    },
+  ];
 
   if (isActive) {
-    navDrawerClasses = `${navDrawerMainClass} ${navDrawerActiveClass} ${navDrawerDownClass}`;
-    for (let index = 0; index < 7; index++) {
-      navLinksClasses[
-        index
-      ] = `${navLinkMainClass} ${navLinkSlideIn}-delay-${index}`;
-    }
+    ({ navDrawerClasses, navLinksClasses } = navDrawerTrickleOpen());
   } else {
-    navDrawerClasses = `${navDrawerMainClass} ${navDrawerUpClass}`;
-    for (let index = 0; index < 7; index++) {
-      navLinksClasses[
-        index
-      ] = `${navLinkMainClass} ${navLinkSlideIn}-delay-${index}-reverse`;
-    }
+    ({ navDrawerClasses, navLinksClasses } = navDrawerTrickleClose());
   }
 
   return (
     <div className={navDrawerClasses}>
       <nav role="navigation">
         <ul>
-          <li className={navLinksClasses[0]}>
-            <Link href="#" data-content="the page with the rainbow">
-              Home
-            </Link>
-          </li>
-          <li className={navLinksClasses[1]}>
-            <Link href="#" data-content="for those keyboard shortcut lovers">
-              Website Designers
-            </Link>
-          </li>
-          <li className={navLinksClasses[2]}>
-            <Link href="#" data-content="for those b2b/b2c startups">
-              Agencies
-            </Link>
-          </li>
-          <li className={navLinksClasses[3]}>
-            <Link href="#" data-content="for those who kindly break even">
-              Beneficial Business
-            </Link>
-          </li>
-          <li className={navLinksClasses[4]}>
-            <Link href="#" data-content="the page with all the examples">
-              Portfolio
-            </Link>
-          </li>
-          <li className={navLinksClasses[5]}>
-            <Link
-              href="#"
-              data-content="the page about the creator of this site"
-            >
-              About
-            </Link>
-          </li>
+          {navigationContent.map((navItem, index) => {
+            return (
+              <li key={uid(index)} className={navLinksClasses[index]}>
+                <Link href={navItem?.href} data-content={navItem?.dataContent}>
+                  {navItem?.title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>
