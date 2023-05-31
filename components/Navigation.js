@@ -4,10 +4,10 @@ import Image from 'next/image';
 
 // Custom
 import infoIcon from '../public/svg/info.svg';
-import SvgMenuDotsWithClose from './SvgMenuDotsWithClose';
-import SvgJakobSmithLogo from './SvgJakobSmithLogo';
+import SvgMenuDotsWithClose from './svg/MenuDotsWithClose';
+import SvgJakobSmithLogo from './svg/JakobSmithLogo';
 
-export default function Navigation({ handleMenuDotsClick }) {
+export default function Navigation({ handleMenuDotsClick , handleInfoClick}) {
   return (
     <nav
       id="info-logo-button-menu"

@@ -1,7 +1,7 @@
 import Header from './Header';
 import Footer from './Footer';
 import Hero from '../components/Hero';
-import SvgRainbow from './SvgRainbow';
+import SvgRainbow from './svg/Rainbow';
 
 export default function Layout({ className: fromAppClasses, children }) {
   return (
