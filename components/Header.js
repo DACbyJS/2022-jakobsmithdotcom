@@ -13,18 +13,27 @@ import Navigation from './Navigation';
 
 export default function Header() {
   const [isNavDrawerActive, setIsNavDrawerActive] = useState(false);
+  const [isInfoModalActive, setIsInfoModalActive] = useState(false);
   const menuDotsData = useRef(null);
 
-  const toggleisNavDrawerActive = () => {
+  const toggleIsNavDrawerActive = () => {
     setIsNavDrawerActive(!isNavDrawerActive);
   };
 
+  const toggleIsInfoModalActive = () => {
+    setIsInfoModalActive(!isInfoModalActive);
+  };
+
   useEffect(() => {
+    // Why async/await? Because we need to wait for the Snap library to load
     async function getData() {
       menuDotsData.current = await getMenuDotsData();
     }
     getData();
 
+
+    // Why a ref? Because the Snap library-selected svg data needs to remain 
+    // the same between renders of svg itself
     if (menuDotsData.current === null) {
       return;
     }
@@ -37,7 +46,7 @@ export default function Header() {
 
   return (
     <header className="header bg-js-black relative z-20">
-      <Navigation handleMenuDotsClick={toggleisNavDrawerActive} />
+      <Navigation handleMenuDotsClick={toggleIsNavDrawerActive} handleInfoClick={toggleIsInfoModalActive}/>
       <NavDrawer isActive={isNavDrawerActive} />
     </header>
   );
