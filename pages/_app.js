@@ -1,6 +1,6 @@
 // Next Components
-import { Overpass, Overpass_Mono } from '@next/font/google';
-import localFont from '@next/font/local';
+import { Overpass, Overpass_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 // Custom Components
 import Layout from '../components/Layout';
