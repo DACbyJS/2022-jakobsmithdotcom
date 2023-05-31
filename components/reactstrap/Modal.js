@@ -1,30 +1,20 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React from 'react';
+import { Modal, ModalBody } from 'reactstrap';
 
-function ReactStrapModal(args, children) {
-  const [modal, setModal] = useState(false);
+// Fonts
+import { overpass, overpassMono, jsMath } from '../../lib/constants';
 
-  const toggle = () => setModal(!modal);
-
+function ReactStrapModal({ args, children, isActive, toggle }) {
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>
-        Click Me
-      </Button>
-      <ReactStrapModal isOpen={modal} toggle={toggle} {...args}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>{children}</ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>
-            Do Something
-          </Button>{' '}
-          <Button color="secondary" onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </ReactStrapModal>
-    </div>
+    <Modal
+      className={`${overpass.variable} ${overpassMono.variable} ${jsMath.variable}`}
+      isOpen={isActive}
+      toggle={toggle}
+      {...args}
+    >
+      <ModalBody className="white-black-border">{children}</ModalBody>
+    </Modal>
   );
 }
 
-export default Modal;
+export default ReactStrapModal;

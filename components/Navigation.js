@@ -1,9 +1,8 @@
 // Next
 import Link from 'next/link';
-import Image from 'next/image';
 
 // Custom
-import infoIcon from '../public/svg/info.svg';
+import SvgInfoIcon from './svg/InfoIcon';
 import SvgMenuDotsWithClose from './svg/MenuDotsWithClose';
 import SvgJakobSmithLogo from './svg/JakobSmithLogo';
 
@@ -14,7 +13,7 @@ export default function Navigation({ handleMenuDotsClick , handleInfoClick}) {
       className="nav relative space-x-12 flex flex-row justify-between items-center px-12 py-12 h-auto z-10"
     >
       <div className="i flex flex-col justify-center items-center max-w-[100px] w-full h-auto">
-        <Image src={infoIcon} alt="Click for more Information" />
+        <SvgInfoIcon handleInfoClick={handleInfoClick} />
       </div>
 
       <div className="logo max-w-[275px]">

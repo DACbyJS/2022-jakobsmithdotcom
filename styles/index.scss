@@ -3,20 +3,12 @@
 
 /* Base */
 @tailwind base;
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  @apply bg-js-white text-js-black;
-}
+@import 'scss/global.scss';
 
 /* Components */
 @tailwind components;
-
-@import 'NavDrawer.scss';
+@import 'scss/NavDrawer.scss';
 
 /* Utilities */
 @tailwind utilities;
-
-@import 'utility.scss';
+@import 'scss/utility.scss';

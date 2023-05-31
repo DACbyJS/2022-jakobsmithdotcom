@@ -10,6 +10,7 @@ import {
 // Components
 import NavDrawer from './NavDrawer';
 import Navigation from './Navigation';
+import ReactStrapModal from './reactstrap/Modal';
 
 export default function Header() {
   const [isNavDrawerActive, setIsNavDrawerActive] = useState(false);
@@ -31,8 +32,7 @@ export default function Header() {
     }
     getData();
 
-
-    // Why a ref? Because the Snap library-selected svg data needs to remain 
+    // Why a ref? Because the Snap library-selected svg data needs to remain
     // the same between renders of svg itself
     if (menuDotsData.current === null) {
       return;
@@ -46,7 +46,57 @@ export default function Header() {
 
   return (
     <header className="header bg-js-black relative z-20">
-      <Navigation handleMenuDotsClick={toggleIsNavDrawerActive} handleInfoClick={toggleIsInfoModalActive}/>
+      <ReactStrapModal
+        args={{
+          centered: true,
+          scrollable: false,
+        }}
+        isActive={isInfoModalActive}
+        toggle={toggleIsInfoModalActive}
+      >
+        <div className="text-center">
+          <h2 className="font-js-math text-[5ch] mb-4">Site Specs</h2>
+          <h3 className="font-overpass-mono mb-4 text-[1.5ch]">
+            Review how I made this site and we can learn something new together!
+          </h3>
+          <ul>
+            <li className="font-overpass mb-2">
+              <a
+                className="line-link red"
+                href="https://github.com/DACbyJS/2022-jakobsmithdotcom"
+                target="_blank"
+              >
+                Public Github Repo
+              </a>
+            </li>
+            <li className="font-overpass mb-2">
+              <a
+              className="line-link blue"
+                href="https://www.figma.com/file/zdn5B5s1wSpM0MHxCB0uPG/jakobsmith.com-V1?type=design&node-id=0%3A1&t=r0LYfrCKqIFfzCWN-1"
+                target="_blank"
+              >
+                Public Figma Mockup
+              </a>
+            </li>
+            <li className="font-overpass mb-2">
+              <a
+              className="line-link yellow"
+                href="https://www.youtube.com/@StefWithAnF/videos"
+                target="_blank"
+              >
+                Video Credit to StefWithAnF
+              </a>
+            </li>
+          </ul>
+          <h3 className="font-overpass-mono mt-4 text-[1.2ch]">
+            Made with React, Next.js, Mux, SnapSVG and TailwindCSS.
+          </h3>
+        </div>
+      </ReactStrapModal>
+      <Navigation
+        handleMenuDotsClick={toggleIsNavDrawerActive}
+        handleInfoClick={toggleIsInfoModalActive}
+      />
       <NavDrawer isActive={isNavDrawerActive} />
     </header>
   );
