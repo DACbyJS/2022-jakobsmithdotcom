@@ -1,9 +1,9 @@
-import styles from '../styles/Hero.module.css';
+import styles from "../../styles/HomeHero.module.css";
 import MuxPlayer from "@mux/mux-player-react/lazy";
 
-export default function Hero() {
+export default function HomeHero() {
   return (
-    <section className="hero h-[80vh] flex flex-col justify-center items-center relative z-10">
+    <section className="hero h-[80vh] flex flex-col justify-center items-center relative z-10 bg-js-black">
       <MuxPlayer
         loop
         autoPlay="muted"
@@ -12,7 +12,7 @@ export default function Hero() {
         playbackId="lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4"
         metadata={{
           video_id: 'home-page-hero-video',
-          video_title: 'Multiple Color Hero Liquid Loop',
+          video_title: 'Multiple Color HomeHero Liquid Loop',
         }}
       />
       <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">

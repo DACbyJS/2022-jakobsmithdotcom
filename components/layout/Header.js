@@ -5,12 +5,12 @@ import {
   toClose,
   toDots,
   getMenuDotsData,
-} from '../lib/animations/morphDotsOrClose';
+} from '../../lib/animations/morphDotsOrClose';
 
 // Components
-import NavDrawer from './NavDrawer';
-import Navigation from './Navigation';
-import ReactStrapModal from './reactstrap/Modal';
+import NavDrawer from '../abovethefold/NavDrawer';
+import Navigation from '../abovethefold/Navigation';
+import ReactStrapModal from '../reactstrap/Modal';
 
 export default function Header() {
   const [isNavDrawerActive, setIsNavDrawerActive] = useState(false);
@@ -50,6 +50,7 @@ export default function Header() {
         args={{
           centered: true,
           scrollable: false,
+          unmountOnClose: true,
         }}
         isActive={isInfoModalActive}
         toggle={toggleIsInfoModalActive}

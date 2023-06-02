@@ -7,7 +7,7 @@ import SvgRainbow from '../components/svg/Rainbow';
 import HomeHero from '../components/heros/HomeHero';
 import BelowTheFold from '../components/layout/BelowTheFold';
 
-export default function Home() {
+export default function WebDesigners() {
   return (
     <>
       <Head>

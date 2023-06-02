@@ -2,9 +2,9 @@
 import Link from 'next/link';
 
 // Custom
-import SvgInfoIcon from './svg/InfoIcon';
-import SvgMenuDotsWithClose from './svg/MenuDotsWithClose';
-import SvgJakobSmithLogo from './svg/JakobSmithLogo';
+import SvgInfoIcon from '../svg/InfoIcon';
+import SvgMenuDotsWithClose from '../svg/MenuDotsWithClose';
+import SvgJakobSmithLogo from '../svg/JakobSmithLogo';
 
 export default function Navigation({ handleMenuDotsClick , handleInfoClick}) {
   return (

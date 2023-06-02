@@ -1,5 +1,5 @@
 // Custom Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 
 // External Dependencies
 import { config } from '@fortawesome/fontawesome-svg-core';

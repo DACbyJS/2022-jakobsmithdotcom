@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Image
-import tuka from '../public/png/TUKA.png';
-import SvgJakobSmithLogo from '../components/svg/JakobSmithLogo';
+import tuka from '../../public/png/TUKA.png';
+import SvgJakobSmithLogo from '../../components/svg/JakobSmithLogo';
 
 // Style
-import twConfig from '../tailwind.config';
+import twConfig from '../../tailwind.config';
 
 export default function Footer() {
   const jsBlack = twConfig.theme.colors['js-black'];

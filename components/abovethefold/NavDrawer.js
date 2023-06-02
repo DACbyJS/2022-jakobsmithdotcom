@@ -8,7 +8,7 @@ import { uid } from 'uid';
 import {
   navDrawerTrickleOpen,
   navDrawerTrickleClose,
-} from '../lib/animations/navDrawerTrickle';
+} from '../../lib/animations/navDrawerTrickle';
 
 export default function NavDrawer({ isActive }) {
   let navDrawerClasses = '';
@@ -20,29 +20,34 @@ export default function NavDrawer({ isActive }) {
       dataContent: 'the page with the rainbow',
     },
     {
-      title: 'Website Designers',
+      title: 'Web Designers',
       href: '#',
       dataContent: 'for those keyboard shortcut lovers',
     },
     {
-      title: 'Website Developers',
+      title: 'Creatives & Artists',
       href: '#',
-      dataContent: 'for those b2b/b2c startups',
-    },
-    {
-      title: 'Agencies',
-      href: '#',
-      dataContent: 'for those who want to be a part of the team',
+      dataContent: 'for those who hone their senses to inspire',
     },
     {
       title: 'Beneficial Business',
       href: '#',
-      dataContent: 'for those who kindly take turns',
+      dataContent: 'for those who kindly break even and take turns',
     },
     {
       title: 'Portfolio',
       href: '#',
       dataContent: 'examples of my skillsets',
+    },
+    {
+      title: 'About',
+      href: '#',
+      dataContent: 'a little about me',
+    },
+    {
+      title: 'Contact',
+      href: '#',
+      dataContent: 'get a hold of my attention',
     },
   ];
 
