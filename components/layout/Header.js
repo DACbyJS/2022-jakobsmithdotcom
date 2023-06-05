@@ -98,7 +98,7 @@ export default function Header() {
         handleMenuDotsClick={toggleIsNavDrawerActive}
         handleInfoClick={toggleIsInfoModalActive}
       />
-      <NavDrawer isActive={isNavDrawerActive} />
+      <NavDrawer isActive={isNavDrawerActive} handleLinkItemClick={toggleIsNavDrawerActive}/>
     </header>
   );
 }

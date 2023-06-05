@@ -21,7 +21,7 @@ export default function WebDesigners() {
         <SvgRainbow />
         <div className="white-black-border relative z-10 mt-40 w-full max-w-[900px] mx-auto p-6">
           <div className="font-js-math text-center">
-            <h2 className="text-[8ch] -mb-2">Website Designers</h2>
+            <h2 className="text-[8ch] -mb-2">Beneficial Businesses</h2>
           </div>
         </div>
 

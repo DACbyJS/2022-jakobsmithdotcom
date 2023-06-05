@@ -10,46 +10,12 @@ import {
   navDrawerTrickleClose,
 } from '../../lib/animations/navDrawerTrickle';
 
-export default function NavDrawer({ isActive }) {
+// Constants
+import { pageData } from '../../lib/constants';
+
+export default function NavDrawer({ isActive, handleLinkItemClick }) {
   let navDrawerClasses = '';
   let navLinksClasses = [];
-  const navigationContent = [
-    {
-      title: 'Home',
-      href: '#',
-      dataContent: 'the page with the rainbow',
-    },
-    {
-      title: 'Web Designers',
-      href: '#',
-      dataContent: 'for those keyboard shortcut lovers',
-    },
-    {
-      title: 'Creatives & Artists',
-      href: '#',
-      dataContent: 'for those who hone their senses to inspire',
-    },
-    {
-      title: 'Beneficial Business',
-      href: '#',
-      dataContent: 'for those who kindly break even and take turns',
-    },
-    {
-      title: 'Portfolio',
-      href: '#',
-      dataContent: 'examples of my skillsets',
-    },
-    {
-      title: 'About',
-      href: '#',
-      dataContent: 'a little about me',
-    },
-    {
-      title: 'Contact',
-      href: '#',
-      dataContent: 'get a hold of my attention',
-    },
-  ];
 
   if (isActive) {
     ({ navDrawerClasses, navLinksClasses } = navDrawerTrickleOpen());
@@ -61,10 +27,14 @@ export default function NavDrawer({ isActive }) {
     <div className={navDrawerClasses}>
       <nav role="navigation">
         <ul>
-          {navigationContent.map((navItem, index) => {
+          {pageData.map((navItem, index) => {
             return (
               <li key={uid(index)} className={navLinksClasses[index]}>
-                <Link href={navItem?.href} data-content={navItem?.dataContent}>
+                <Link
+                  onClick={handleLinkItemClick}
+                  href={navItem?.data?.href}
+                  data-content={navItem?.data?.dataContent}
+                >
                   {navItem?.title}
                 </Link>
               </li>

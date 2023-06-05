@@ -10,13 +10,13 @@ config.autoAddCss = false;
 import '../styles/index.scss';
 
 // Fonts
-import { overpass, overpassMono, jsMath } from '../lib/constants';
+import { fonts } from '../lib/constants';
 
 // App
 function App({ Component, pageProps }) {
   return (
     <Layout
-      className={`${overpass.variable} ${overpassMono.variable} ${jsMath.variable}`}
+      className={`${fonts?.overpass?.variable} ${fonts?.overpassMono?.variable} ${fonts?.jsMath?.variable}`}
     >
       <Component {...pageProps} />
     </Layout>

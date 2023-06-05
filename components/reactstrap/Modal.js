@@ -2,12 +2,12 @@ import React from 'react';
 import { Modal, ModalBody } from 'reactstrap';
 
 // Fonts
-import { overpass, overpassMono, jsMath } from '../../lib/constants';
+import { fonts } from '../../lib/constants';
 
 function ReactStrapModal({ args, children, isActive, toggle }) {
   return (
     <Modal
-      className={`${overpass.variable} ${overpassMono.variable} ${jsMath.variable}`}
+      className={`${fonts?.overpass?.variable} ${fonts?.overpassMono?.variable} ${fonts?.jsMath?.variable}`}
       isOpen={isActive}
       toggle={toggle}
       {...args}
