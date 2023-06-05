@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 const BelowTheFold = ({ children, className }) => (
-  <div className={classNames('relative z-0', className)}>{children}</div>
+  <section className={classNames('relative z-0 bg-js-white', className)}>{children}</section>
 );
 
 export default BelowTheFold;

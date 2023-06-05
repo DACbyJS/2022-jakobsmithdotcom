@@ -5,11 +5,11 @@ import Main from './Main';
 
 export default function Layout({ className: fromAppClasses, children }) {
   return (
-    <div className={`${fromAppClasses} site-wrap overflow-hidden`}>
+    <div className={`${fromAppClasses} site-wrap overflow-hidden bg-js-black`}>
       <Header />
-      <LoadingWrapper>
-        <Main>{children}</Main>
-      </LoadingWrapper>
+      <Main>
+        <LoadingWrapper>{children}</LoadingWrapper>
+      </Main>
       <Footer />
     </div>
   );

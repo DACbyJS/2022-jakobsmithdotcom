@@ -1,5 +1,5 @@
 const SvgRainbow = (props) => (
-  <div className="absolute z-0 -top-[50%] left-0 h-screen">
+  <div className="absolute z-0 -top-[50%] left-0 h-screen bg-js-white">
     <svg
       width={1920}
       height={2649}

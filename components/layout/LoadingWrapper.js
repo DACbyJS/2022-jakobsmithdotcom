@@ -6,7 +6,7 @@ const LoadingWrapper = ({ children, className }) => (
     initial={{ opacity: 0, y: 0 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 0 }}
-    className={classNames('z-30', className)}
+    className={classNames('', className)}
     transition={{ duration: 2 }}
   >
     {children}

@@ -12,7 +12,7 @@ import twConfig from '../../tailwind.config';
 export default function Footer() {
   const jsBlack = twConfig.theme.colors['js-black'];
   return (
-    <footer className="footer relative flex flex-row justify-between items-center white-black-border w-full z-10 mt-28 py-10 px-10">
+    <footer className="footer bg-js-white relative flex flex-row justify-between items-center white-black-border w-full z-20 py-10 px-10">
       <div className="logo max-w-[275px]">
         <SvgJakobSmithLogo pathFill={jsBlack} />
       </div>
