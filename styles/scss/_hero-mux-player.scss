@@ -1,4 +1,5 @@
-.player {
+.hero-mux-player {
+  background-color: #000;
   --controls: none;
   --media-object-fit: cover;
   position: absolute;
@@ -7,6 +8,6 @@
   left: 0;
 }
 
-.player::part(gesture-layer) {
+.hero-mux-player::part(gesture-layer) {
   display: none;
 }

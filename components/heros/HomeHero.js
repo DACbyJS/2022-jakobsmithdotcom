@@ -1,18 +1,23 @@
-import styles from "../../styles/HomeHero.module.css";
-import MuxPlayer from "@mux/mux-player-react/lazy";
+import MuxPlayer from '@mux/mux-player-react/lazy';
+import { blackPlaceholder } from '../../public/dataURI/blackPlaceholder';
 
 export default function HomeHero() {
+  const playbackId = 'lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4';
+
   return (
-    <section className="hero h-[80vh] flex flex-col justify-center items-center relative z-10 bg-js-black">
+    <section className="hero h-[80vh] w-full flex flex-col justify-center items-center relative z-10 bg-js-black">
       <MuxPlayer
         loop
+        nohotkeys
+        poster={blackPlaceholder}
+        placeholder={blackPlaceholder}
         autoPlay="muted"
-        className={styles.player}
+        className="bg-js-black hero-mux-player"
         streamType="on-demand"
-        playbackId="lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4"
+        playbackId={playbackId}
         metadata={{
           video_id: 'home-page-hero-video',
-          video_title: 'Multiple Color HomeHero Liquid Loop',
+          video_title: 'Multiple Color Home Page Hero Liquid Loop',
         }}
       />
       <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">

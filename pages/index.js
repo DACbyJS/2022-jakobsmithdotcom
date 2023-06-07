@@ -19,6 +19,7 @@ export default function Home() {
 
       <BelowTheFold>
         <SvgRainbow />
+
         <div className="white-black-border relative z-10 mt-40 w-full max-w-[900px] mx-auto p-6">
           <div className="font-js-math text-center">
             <h2 className="text-[8ch] -mb-2">Web Development</h2>
@@ -36,6 +37,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
         <div className="white-black-border relative z-10 mt-32 w-full max-w-[900px] mx-auto p-6">
           <div className="font-js-math text-center">
             <h2 className="text-[8ch] tracking-wide -mb-6">Who Is</h2>
