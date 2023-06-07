@@ -1,11 +1,13 @@
-const SvgRainbow = (props) => (
-  <div className="absolute z-0 -top-[50%] left-0 h-screen bg-js-white">
+import classNames from 'classnames';
+
+const SvgRainbow = ({className, svgProps}) => (
+  <div className={classNames('absolute z-0 -top-[50%] left-0 h-screen bg-js-white', className)}>
     <svg
       width={1920}
       height={2649}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      {...svgProps}
     >
       <path
         fill="#5295CB"

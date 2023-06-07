@@ -14,6 +14,7 @@
   line-height: 120%;
 }
 
+/* Line link */
 a.line-link {
   position: relative;
   display: inline-block;
@@ -23,15 +24,29 @@ a.line-link {
   text-transform: uppercase;
   white-space: nowrap;
   width: auto;
-}
 
-a.line-link:before {
-  content: '';
-  position: absolute;
-  bottom: 0.4ch;
-  width: 100%;
-  max-width: 100%;
-  height: 0.2ch;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0.4ch;
+    width: 100%;
+    max-width: 100%;
+    height: 0.2ch;
+  }
+
+  &.hover-on::before {
+    @apply border-none border-0;
+    transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    z-index: -1;
+  }
+
+  &.hover-on:hover::before {
+    @apply border-js-black border-solid border-[.5rem];
+    width: 25%;
+    height: 2ch;
+    transform: translate(-0.75ch, 0) rotate(90deg);
+    transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
 }
 
 a.red.line-link:before {
@@ -46,6 +61,7 @@ a.yellow.line-link:before {
   background-color: theme('colors.js-yellow');
 }
 
+/* Button */
 a.btn {
   @apply font-overpass-mono font-light uppercase;
   font-size: 2.5ch;
@@ -83,4 +99,19 @@ a.overpass-underline:before {
   max-width: 100%;
   height: 2px;
   background-color: theme('colors.js-black');
+}
+
+/* Parallax */
+.parallax-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 1px;
+  perspective-origin: 0 0;
+}
+
+.parallax-child {
+  transform-origin: 0 0;
+  transform: translateZ(-2px) scale(3);
 }

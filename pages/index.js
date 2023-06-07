@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 // Custom
-import SvgRainbow from '../components/svg/Rainbow';
 import HomeHero from '../components/heros/HomeHero';
+import SvgRainbow from '../components/svg/Rainbow';
 import BelowTheFold from '../components/layout/BelowTheFold';
 
 export default function Home() {
@@ -16,23 +16,24 @@ export default function Home() {
       </Head>
 
       <HomeHero />
-
-      <BelowTheFold>
+      <BelowTheFold className="pb-40">
         <SvgRainbow />
-
         <div className="white-black-border relative z-10 mt-40 w-full max-w-[900px] mx-auto p-6">
           <div className="font-js-math text-center">
             <h2 className="text-[8ch] -mb-2">Web Development</h2>
             <h2 className="text-[6ch] tracking-[0.35ch]">Services For</h2>
           </div>
           <div className="flex flex-col items-center mt-10 font-overpass font-light uppercase text-[5.5ch] tracking-wider text-center">
-            <Link className="mb-8 red line-link" href="/web-designers">
+            <Link className="mb-8 red line-link hover-on" href="/web-designers">
               Designers
             </Link>
-            <Link className="mb-8 yellow line-link" href="/creatives">
+            <Link className="mb-8 yellow line-link hover-on" href="/creatives">
               Creatives
             </Link>
-            <Link className="mb-8 blue line-link" href="/beneficial-businesses">
+            <Link
+              className="mb-8 blue line-link hover-on"
+              href="/beneficial-businesses"
+            >
               Businesses
             </Link>
           </div>
