@@ -12,11 +12,11 @@ import twConfig from '../../tailwind.config';
 export default function Footer() {
   const jsBlack = twConfig.theme.colors['js-black'];
   return (
-    <footer className="footer bg-js-white relative flex flex-row justify-between items-center white-black-border w-full z-20 py-10 px-10">
-      <div className="logo max-w-[275px]">
+    <footer className="footer bg-js-white relative flex flex-row justify-center md:justify-between items-center white-black-border w-full z-20 py-10 px-10">
+      <div className="logo hidden xl:block max-w-[275px]">
         <SvgJakobSmithLogo pathFill={jsBlack} />
       </div>
-      <div className="contact-links flex flex-col items-center">
+      <div className="contact-links text-[1.35ch] md:text-[2ch] flex flex-col items-center justify-center">
         <Link className="overpass-underline mb-4" href="/contact">
           Contact Form
         </Link>
@@ -30,7 +30,7 @@ export default function Footer() {
           github.com/dacbyjs
         </Link>
       </div>
-      <div className="user relative flex-1 max-w-[375px]">
+      <div className="user relative flex-1 hidden md:block h-[150px] max-w-[375px]">
         <Image
           className="tuka absolute w-full h-auto"
           src={tuka}

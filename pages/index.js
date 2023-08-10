@@ -56,8 +56,12 @@ export default function Home() {
 
         <WhiteBlackBorderBox>
           <div className="font-js-math text-center">
-            <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 lg:-mb-4 2xl:-mb-6">Who Is</h2>
-            <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide">Jakob Smith?</h2>
+            <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 lg:-mb-4 2xl:-mb-6">
+              Who Is
+            </h2>
+            <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide">
+              Jakob Smith?
+            </h2>
           </div>
           <div className="flex flex-col items-center mt-8 space-y-8">
             <Link href="/portfolio" className="btn">
