@@ -2,6 +2,10 @@
   @apply bg-js-white border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
 }
 
+.just-black-border {
+  @apply bg-js-black border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
+}
+
 .absolute-center {
   position: absolute;
   top: 50%;

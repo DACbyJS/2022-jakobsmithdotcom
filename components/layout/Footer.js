@@ -18,7 +18,7 @@ export default function Footer() {
       </div>
       <div className="contact-links text-[1.35ch] md:text-[2ch] flex flex-col items-center justify-center">
         <Link className="overpass-underline mb-4" href="/contact">
-          Contact Form
+          Contact Me
         </Link>
         <Link
           className="overpass-underline mb-4"

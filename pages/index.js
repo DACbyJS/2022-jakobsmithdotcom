@@ -27,7 +27,7 @@ export default function Home() {
       />
       <BelowTheFold>
         <SvgRainbow />
-        <WhiteBlackBorderBox>
+        <WhiteBlackBorderBox className="mx-auto max-w-[900px]">
           <div className="font-js-math text-center">
             <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] -mb-1 lg:-mb-2">
               Web Development
@@ -37,7 +37,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-col items-center mt-6 lg:mt-10 space-y-6 lg:space-y-10 font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center">
-            <Link className="red line-link hover-on" href="/web-designers">
+            <Link className="red line-link hover-on" href="/website-designers">
               Designers
             </Link>
             <Link className="yellow line-link hover-on" href="/creatives">
@@ -54,7 +54,7 @@ export default function Home() {
 
         <Spacer />
 
-        <WhiteBlackBorderBox>
+        <WhiteBlackBorderBox className="mx-auto max-w-[900px]">
           <div className="font-js-math text-center">
             <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 lg:-mb-4 2xl:-mb-6">
               Who Is
