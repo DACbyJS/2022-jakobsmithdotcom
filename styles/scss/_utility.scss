@@ -1,5 +1,5 @@
 .white-black-border {
-  @apply bg-js-white border-js-black border-[1.15rem];
+  @apply bg-js-white border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
 }
 
 .absolute-center {
@@ -63,13 +63,10 @@ a.yellow.line-link:before {
 
 /* Button */
 a.btn {
-  @apply font-overpass-mono font-light uppercase;
-  font-size: 2.5ch;
+  @apply font-overpass-mono font-light uppercase text-[1.5ch] lg:text-[2ch] 2xl:text-[2.5ch] w-[150px] lg:w-[200px] 2xl:w-[250px];
   border: solid 0.65ch theme('colors.js-black');
   border-radius: 100px;
   padding: 1ch 2.5ch 0.8ch 2.5ch;
-  min-width: 250px;
-  max-width: 300px;
   text-align: center;
   letter-spacing: 0.1em;
   line-height: 1.3;

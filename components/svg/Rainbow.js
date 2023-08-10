@@ -1,11 +1,18 @@
 import classNames from 'classnames';
 
-const SvgRainbow = ({className, svgProps}) => (
-  <div className={classNames('absolute z-0 -top-[50%] left-0 h-screen bg-js-white', className)}>
+const SvgRainbow = ({ className, svgProps }) => (
+  <div
+    className={classNames(
+      'absolute z-0 left-0 sm:-top-[30vh] md:-top-[40vh] lg:-top-[50vh] w-[100vw] h-[300vh] bg-js-white',
+      className
+    )}
+  >
     <svg
-      width={1920}
-      height={2649}
+      width="100%"
+      height="100%"
       fill="none"
+      viewBox="0 0 1920 2649"
+      preserveAspectRatio="xMinYMin meet"
       xmlns="http://www.w3.org/2000/svg"
       {...svgProps}
     >

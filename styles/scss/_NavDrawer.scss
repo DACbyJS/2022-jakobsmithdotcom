@@ -97,6 +97,9 @@ Navigation
   nav li:first-of-type {
     @apply border-js-black border-t-[1.15rem] border-b-[0.575rem] lg:border-y-[1.15rem] border-x-[1.15rem] lg:border-l-[1.15rem] lg:border-r-[0.575rem];
     background-color: #FF4747;
+    @media (max-width:1024px){
+      @apply opacity-0;
+    }
   }
   nav li:nth-of-type(2) {
     @apply border-js-black border-y-[0.575rem] lg:border-y-[1.15rem] border-x-[1.15rem] lg:border-x-[0.575rem];
