@@ -3,7 +3,7 @@ import classNames from 'classnames';
 const SvgRainbow = ({ className, svgProps }) => (
   <div
     className={classNames(
-      'absolute z-0 left-0 sm:-top-[30vh] md:-top-[40vh] lg:-top-[50vh] w-[100vw] h-[300vh] bg-js-white',
+      'absolute z-0 left-0 -top-[30vh] sm:-top-[30vh] md:-top-[40vh] lg:-top-[50vh] w-[160vw] sm:w-[150vw] md:w-[140vw] lg:w-[130vw] xl:w-[100vw] h-[300vh] bg-js-white',
       className
     )}
   >
