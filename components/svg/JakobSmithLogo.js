@@ -1,5 +1,15 @@
-const SvgJakobSmithLogo = ({ svgFill = 'none', pathFill = '#E8E9EB' }) => (
+import classNames from 'classnames';
+
+const SvgJakobSmithLogo = ({
+  svgFill = 'none',
+  pathFill = '#E8E9EB',
+  className,
+}) => (
   <svg
+    className={classNames(
+      'cursor-pointer',
+      className
+    )}
     width="100%"
     height="100%"
     viewBox="0 0 346 210"

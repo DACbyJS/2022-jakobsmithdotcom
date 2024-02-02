@@ -1,0 +1,64 @@
+/* Rainbow Hover SVG Fill */
+.rainbow-svg-on-hover {
+  transition: all 0.6ss cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.circle-white:hover circle {
+  animation: rainbow-svg-fill-white 5s ease infinite;
+}
+
+.path-white:hover path {
+  animation: rainbow-svg-fill-white 5s ease infinite;
+}
+
+.circle-black:hover circle {
+  animation: rainbow-svg-fill-black 5s ease infinite;
+}
+
+.path-black:hover path {
+  animation: rainbow-svg-fill-black 5s ease infinite;
+}
+
+@keyframes rainbow-svg-fill-white {
+  0% {
+    fill: theme('colors.js-white');
+  }
+
+  25% {
+    fill: theme('colors.js-red');
+  }
+
+  50% {
+    fill: theme('colors.js-blue');
+  }
+
+  75% {
+    fill: theme('colors.js-yellow');
+  }
+
+  100% {
+    fill: theme('colors.js-white');
+  }
+}
+
+@keyframes rainbow-svg-fill-black {
+  0% {
+    fill: theme('colors.js-black');
+  }
+
+  25% {
+    fill: theme('colors.js-red');
+  }
+
+  50% {
+    fill: theme('colors.js-blue');
+  }
+
+  75% {
+    fill: theme('colors.js-yellow');
+  }
+
+  100% {
+    fill: theme('colors.js-black');
+  }
+}

@@ -2,7 +2,7 @@ const SvgInfoIcon = ({ handleInfoClick }) => (
   <svg
     id="menu-dots-with-close"
     onClick={handleInfoClick}
-    className="cursor-pointer"
+    className="cursor-pointer rainbow-svg-on-hover circle-white"
     width="100%"
     height="100%"
     viewBox="0 0 97 97"
