@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="logo hidden xl:block max-w-[275px]">
         <SvgJakobSmithLogo pathFill={jsBlack} className={'rainbow-svg-on-hover path-black'}/>
       </div>
-      <div className="contact-links text-[1.35ch] md:text-[2ch] flex flex-col items-center justify-center">
+      <div className="contact-links text-[1.2ch] md:text-[2ch] flex flex-col items-center justify-center">
         <Link className="overpass-underline-no-line wiggly-svg-link mb-4" href="/contact">
           Contact Me
           <WigglyLink/>
