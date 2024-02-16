@@ -2,67 +2,59 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 
-const Questions = ({ leftColumnItems, rightColumnItems }) => {
+import useWindowSize from '../../lib/hooks/useWindowSize';
+
+const Questions = ({ items }) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const size = useWindowSize();
 
   const handleQuestionHover = (id) => {
     setSelectedItem(id);
   };
 
   const handleMouseLeave = () => {
-    setSelectedItem(null);
+    //setSelectedItem(null);
+  };
+
+  const handleTap = (id) => {
+    if (size.width > 1024) {
+      return;
+    }
+    setSelectedItem(id);
   };
 
   return (
-    <div className="flex flex-row mt-10 mx-10 space-x-3 font-light">
-      <div className="flex flex-col justify-center items-center flex-1 space-y-2">
-        {leftColumnItems.map((element, index) => (
-          <Link
-            key={index}
-            href={element.href ?? '#'}
-            className={classNames(
-              'text-right w-full font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] transition-colors cursor-pointer',
-              {
-                'text-js-black':
-                  selectedItem === element.id && element.type === 'q',
-                'text-js-black':
-                  selectedItem !== element.id && element.type === 'q',
-                'text-js-red':
-                  selectedItem === element.id && element.type === 'a',
-                'text-js-white':
-                  selectedItem !== element.id && element.type === 'a',
-              }
-            )}
-            onMouseEnter={() => handleQuestionHover(element.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {element.label}
-          </Link>
-        ))}
-      </div>
-      <div className="flex flex-col justify-center items-center flex-1 space-y-2">
-        {rightColumnItems.map((element, index) => (
-          <Link
-            key={index}
-            href={element.href ?? '#'}
-            className={classNames(
-              'text-left w-full font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] transition-colors cursor-pointer',
-              {
-                'text-js-black':
-                  selectedItem === element.id && element.type === 'q',
-                'text-js-black':
-                  selectedItem !== element.id && element.type === 'q',
-                'text-js-red':
-                  selectedItem === element.id && element.type === 'a',
-                'text-js-white':
-                  selectedItem !== element.id && element.type === 'a',
-              }
-            )}
-            onMouseEnter={() => handleQuestionHover(element.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {element.label}
-          </Link>
+    <div
+      id="single-page-questions"
+      className="flex flex-row mt-10 mx-10 font-light"
+    >
+      <div className="flex flex-col flex-1 space-y-4">
+        {items.map((item, i) => (
+          <div key={i} className="flex flex-col lg:flex-row">
+            <Link
+              href="#single-page-questions"
+              className={classNames('questions-link', {
+                'question-left': i % 2 === 0,
+                'question-right': i % 2 !== 0,
+              })}
+              onMouseEnter={() => handleQuestionHover(item.id)}
+              onMouseLeave={handleMouseLeave}
+              onTouchStart={() => handleTap(item.id)}
+            >
+              {item.q}
+            </Link>
+            <Link
+              href={item.href ?? '#single-page-questions'}
+              className={classNames('questions-link', {
+                'question-right': i % 2 === 0,
+                'question-left': i % 2 !== 0,
+                'question-hover': selectedItem === item.id,
+                'before-question-hover': selectedItem !== item.id,
+              })}
+            >
+              {item.a}
+            </Link>
+          </div>
         ))}
       </div>
     </div>

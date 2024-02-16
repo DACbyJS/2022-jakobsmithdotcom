@@ -1,0 +1,19 @@
+.responsive-rainbow {
+  @apply overflow-visible;
+
+  /* Mobile */
+  @apply -top-[35%] -left-[35vw] w-[300vw] h-[150%];
+
+  /* Tablet */
+  @apply md:-top-[35%] md:-left-[10vw] md:w-[300vw] md:h-[150%];
+
+  /* Big Tablet */
+  @apply lg:-top-[35%] lg:-left-[5vw] lg:w-[300vw] lg:h-[150%];
+
+  /* Desktop */
+  @apply xl:-top-[35%] xl:left-[5vw] xl:w-[300vw] xl:h-[150%];
+
+  svg {
+    @apply overflow-visible;
+  }
+}

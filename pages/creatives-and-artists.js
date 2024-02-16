@@ -8,31 +8,32 @@ import Spacer from '../components/layout/Spacer';
 import WhiteBlackBorderBox from '../components/layout/WhiteBlackBorderBox';
 import WhiteBox from '../components/layout/WhiteBox';
 import BlackBox from '../components/layout/BlackBox';
-import BigRedTriangle from '../components/svg/BigRedTriangle';
+import BigYellowSquare from '../components/svg/BigYellowSquare';
 import Questions from '../components/belowthefold/Questions';
 
-export default function WebsiteDesigners() {
+export default function CreativesAndArtists() {
   return (
     <>
       <Head>
-        <title>Website Designers | You design, I Deliver</title>
+        <title> Creatives and Artists | You Channel, I Translate</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <MuxHero
-        playbackId="xEmHNgK00ZD5hKiQRqmqpr3K5elRCMeT02tEDENJXzgSs"
+        playbackId="HJG00Nil01mccrawn011RkLXGynEYcTj9cSEIiSF02A00Pcw"
         metadata={{
           video_id: 'multi-color-liquid-looping-bg',
           video_title: 'Multi-color Liquid Looping Video Background',
         }}
-        words={['Consiliate.', 'Iterate.', 'Translate.', 'Deliver.']}
+        startTime={40}
+        words={['Channel.', 'Express.', 'Translate.', 'Push.']}
       />
       <BelowTheFold>
-        <BigRedTriangle />
+        <BigYellowSquare />
         <WhiteBox className="mx-auto">
           <div className="font-js-math text-center">
             <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch] -mt-6 lg:-mt-10 mb-10 xl:-mt-20 lg:mb-20">
-              Why Designers?
+              Why Artists acd Creatives?
             </h2>
           </div>
         </WhiteBox>
@@ -44,46 +45,46 @@ export default function WebsiteDesigners() {
             </h2>
             <div className="p-0 flex flex-col justify-center items-center my-10 mx-10 space-y-12 font-light">
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
-                  Their Mockups translated
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
+                  Their Ideas translated
                 </strong>{' '}
-                Into a Website with Care and Attention.
+                Into a Website that doesn{"'"}t look like Anyone else{"'"}s site.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
                   Someone who can handle
                 </strong>{' '}
-                Domains, Servers, Migrations,{' '}
-                <strong className="text-js-red font-light">Data</strong>, SEO
-                and Accessibility.
+                Domains, Servers, Animation,{' '}
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">Interactivity</strong>, SEO
+                and Complexity.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
                   To Communicate
                 </strong>{' '}
-                about design, aesthetic and feeling like its important.
+                about ideas, aesthetic and feelings like they{"'"}re important.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
                   Someone Willing to
                 </strong>{' '}
                 do the quantity of{' '}
-                <strong className="text-js-red font-light">work</strong> to get
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">Work</strong> to get
                 to quality.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
-                  Someone who can help
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
+                  Someone who can 
                 </strong>{' '}
-                project manage and communicate{' '}
-                <strong className="text-js-red font-light">
-                  with the client
+                keep prices low{' '}
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
+                  and solutions high.
                 </strong>
                 .
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">To align</strong>{' '}
-                their resources with their client{"'"}s budget and Their Profit.
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">To align</strong>{' '}
+                with your vision even if it clashes with the tech or budget.
               </span>
             </div>
           </WhiteBlackBorderBox>
@@ -94,38 +95,38 @@ export default function WebsiteDesigners() {
             </h2>
             <div className="p-0 flex flex-col justify-center items-center my-10 mx-10 space-y-12 font-light">
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
-                  Websites that look like the mockups
+                <strong className="text-js-yellow font-light">
+                  Unique Websites
                 </strong>{' '}
                 Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow font-light">
                   Your design performs
                 </strong>{' '}
                 Details matter, don{"'"}t they? Details matter, don{"'"}t they?
                 Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow font-light">
                   Communication and Feelings
                 </strong>{' '}
                 Details matter, don{"'"}t they? Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow font-light">
                   early and clear revisions
                 </strong>{' '}
                 Details matter, don{"'"}t they? Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">
+                <strong className="text-js-yellow font-light">
                   Project management and client satisfaction
                 </strong>{' '}
                 Details matter, don{"'"}t they? Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-red font-light">Alignment</strong>{' '}
+                <strong className="text-js-yellow font-light">Alignment</strong>{' '}
                 Details matter, don{"'"}t they?
               </span>
             </div>

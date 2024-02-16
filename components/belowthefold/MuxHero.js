@@ -11,6 +11,7 @@ const MuxHero = ({
     video_id: 'mux-hero-video',
     video_title: 'Mux Hero Video',
   },
+  startTime = 0,
   className,
   playerClassName,
   words = ['Translate.', 'Decide.', 'Develop.', 'Deliver.'],
@@ -32,6 +33,7 @@ const MuxHero = ({
         className={classNames('bg-js-black hero-mux-player', playerClassName)}
         playbackId={playbackId}
         metadata={metadata}
+        startTime={startTime}
       />
       <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">
         {words.map((word, index) => (

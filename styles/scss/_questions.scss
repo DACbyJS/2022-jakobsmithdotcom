@@ -1,0 +1,38 @@
+.questions-link {
+  @apply w-full h-full relative z-10;
+  @apply font-overpass text-js-black uppercase leading-snug text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch];
+
+  &.question-left {
+    @apply order-1 lg:order-1 text-center lg:text-right pr-4;
+  }
+
+  &.question-right {
+    @apply order-1 lg:order-2 text-center lg:text-left;
+  }
+
+  &.before-question-hover {
+    @apply text-js-red;
+    @apply transition-all duration-300 ease-in-out cursor-pointer;
+
+    &:before {
+      content: '';
+      @apply block w-[100%] h-full z-20;
+      @apply absolute top-0 left-0;
+      @apply bg-js-white;
+      @apply transition-all duration-500 ease-in-out;
+    }
+  }
+
+  &.question-hover {
+    @apply text-js-red;
+    @apply transition-all duration-300 ease-in-out cursor-pointer;
+
+    &:before {
+        content: '';
+        @apply block w-[0%] h-full z-20;
+        @apply absolute top-0 left-0;
+        @apply bg-js-white;
+        @apply transition-all duration-500 ease-in-out;
+    }
+  }
+}
