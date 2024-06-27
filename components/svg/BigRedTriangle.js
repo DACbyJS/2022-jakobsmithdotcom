@@ -8,6 +8,7 @@ const BigRedTriangle = ({ className, svgProps }) => (
       viewBox="0 0 2749 2342"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMinYMin meet"
     >
       <path
         d="M2727.69 12.8673L1085.77 2323.05L16.6244 324.482L2727.69 12.8673Z"

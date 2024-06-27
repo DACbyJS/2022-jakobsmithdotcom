@@ -1,7 +1,10 @@
 // Next
 import Head from 'next/head';
 
-// Custom
+// Context
+import { useTheme } from '../lib/contexts/ThemeProvider';
+
+// Components
 import MuxHero from '../components/belowthefold/MuxHero';
 import BelowTheFold from '../components/layout/BelowTheFold';
 import Spacer from '../components/layout/Spacer';
@@ -12,6 +15,9 @@ import BigRedTriangle from '../components/svg/BigRedTriangle';
 import Questions from '../components/belowthefold/Questions';
 
 export default function WebsiteDesigners() {
+  const { theme, changeTheme } = useTheme();
+  changeTheme('red');
+
   return (
     <>
       <Head>
@@ -179,7 +185,7 @@ export default function WebsiteDesigners() {
               {
                 id: 7,
                 q: 'What about maintenance?',
-                a: 'I build like I\'m going to maintain.',
+                a: "I build like I'm going to maintain.",
               },
               {
                 id: 8,

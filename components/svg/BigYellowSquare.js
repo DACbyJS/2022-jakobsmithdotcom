@@ -13,6 +13,7 @@ const BigYellowSquare = ({ className, svgProps }) => (
       viewBox="0 0 1887 1886"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMinYMin meet"
     >
       <rect
         x="943.387"

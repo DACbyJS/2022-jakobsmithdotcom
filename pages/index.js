@@ -2,6 +2,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+// Constants
+import { pageData } from '../lib/constants';
+
 // Custom
 import MuxHero from '../components/belowthefold/MuxHero';
 import SvgRainbow from '../components/svg/Rainbow';
@@ -13,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jakob Smith | Creative and Concientious Web Developer</title>
+        <title>Jakob Smith | Creative and Conscientious Web Developer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
@@ -37,15 +40,15 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-col items-center mt-6 lg:mt-10 space-y-6 lg:space-y-10 font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center">
-            <Link className="red line-link hover-on" href="/website-designers">
+            <Link className="red line-link hover-on" href={pageData[1]?.data?.href}>
               Designers
             </Link>
-            <Link className="yellow line-link hover-on" href="/creatives">
+            <Link className="yellow line-link hover-on" href={pageData[2]?.data?.href}>
               Creatives
             </Link>
             <Link
               className="blue line-link hover-on"
-              href="/beneficial-businesses"
+              href={pageData[3]?.data?.href}
             >
               Businesses
             </Link>

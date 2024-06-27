@@ -26,6 +26,7 @@ const MuxHero = ({
       <MuxPlayer
         loop
         nohotkeys
+        preload
         autoPlay="muted"
         streamType="on-demand"
         poster={blackPlaceholder}

@@ -1,5 +1,6 @@
 // Custom Components
 import Layout from '../components/layout/Layout';
+import ThemeProvider from '../lib/contexts/ThemeProvider';
 
 // External Dependencies
 import { config } from '@fortawesome/fontawesome-svg-core';
@@ -15,11 +16,13 @@ import { fonts } from '../lib/constants';
 // App
 function App({ Component, pageProps }) {
   return (
-    <Layout
-      className={`${fonts?.overpass?.variable} ${fonts?.overpassMono?.variable} ${fonts?.jsMath?.variable}`}
-    >
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider>
+      <Layout
+        className={`${fonts?.overpass?.variable} ${fonts?.overpassMono?.variable} ${fonts?.jsMath?.variable}`}
+      >
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 }
 

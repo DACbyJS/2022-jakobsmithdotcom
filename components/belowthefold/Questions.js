@@ -1,10 +1,23 @@
+// React
 import React, { useState } from 'react';
-import classNames from 'classnames';
+
+// Next
 import Link from 'next/link';
 
+// Third-Party
+import classNames from 'classnames';
+
+// Contexts
+import { useTheme } from '../../lib/contexts/ThemeProvider';
+
+// Effects
 import useWindowSize from '../../lib/hooks/useWindowSize';
 
 const Questions = ({ items }) => {
+  // Set color
+  const { theme, changeTheme } = useTheme();
+  const themeClassName = `theme-${theme}`;
+
   const [selectedItem, setSelectedItem] = useState(null);
   const size = useWindowSize();
 
@@ -50,6 +63,7 @@ const Questions = ({ items }) => {
                 'question-left': i % 2 !== 0,
                 'question-hover': selectedItem === item.id,
                 'before-question-hover': selectedItem !== item.id,
+                [themeClassName]: themeClassName !== null,
               })}
             >
               {item.a}

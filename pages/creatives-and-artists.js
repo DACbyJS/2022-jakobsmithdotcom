@@ -1,7 +1,10 @@
 // Next
 import Head from 'next/head';
 
-// Custom
+// Context
+import { useTheme } from '../lib/contexts/ThemeProvider';
+
+// Components
 import MuxHero from '../components/belowthefold/MuxHero';
 import BelowTheFold from '../components/layout/BelowTheFold';
 import Spacer from '../components/layout/Spacer';
@@ -12,6 +15,9 @@ import BigYellowSquare from '../components/svg/BigYellowSquare';
 import Questions from '../components/belowthefold/Questions';
 
 export default function CreativesAndArtists() {
+  const { theme, changeTheme } = useTheme();
+  changeTheme('yellow');
+  
   return (
     <>
       <Head>
@@ -33,7 +39,7 @@ export default function CreativesAndArtists() {
         <WhiteBox className="mx-auto">
           <div className="font-js-math text-center">
             <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch] -mt-6 lg:-mt-10 mb-10 xl:-mt-20 lg:mb-20">
-              Why Artists acd Creatives?
+              Why Artists and Creatives?
             </h2>
           </div>
         </WhiteBox>
@@ -48,15 +54,18 @@ export default function CreativesAndArtists() {
                 <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
                   Their Ideas translated
                 </strong>{' '}
-                Into a Website that doesn{"'"}t look like Anyone else{"'"}s site.
+                Into a Website that doesn{"'"}t look like Anyone else{"'"}s
+                site.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
                 <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
                   Someone who can handle
                 </strong>{' '}
                 Domains, Servers, Animation,{' '}
-                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">Interactivity</strong>, SEO
-                and Complexity.
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
+                  Interactivity
+                </strong>
+                , SEO and Complexity.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
                 <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
@@ -69,12 +78,14 @@ export default function CreativesAndArtists() {
                   Someone Willing to
                 </strong>{' '}
                 do the quantity of{' '}
-                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">Work</strong> to get
-                to quality.
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
+                  Work
+                </strong>{' '}
+                to get to quality.
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
                 <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
-                  Someone who can 
+                  Someone who can
                 </strong>{' '}
                 keep prices low{' '}
                 <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
@@ -83,7 +94,9 @@ export default function CreativesAndArtists() {
                 .
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
-                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">To align</strong>{' '}
+                <strong className="text-js-yellow bg-js-black pt-2 px-2 font-light">
+                  To align
+                </strong>{' '}
                 with your vision even if it clashes with the tech or budget.
               </span>
             </div>
@@ -98,7 +111,7 @@ export default function CreativesAndArtists() {
                 <strong className="text-js-yellow font-light">
                   Unique Websites
                 </strong>{' '}
-                Details matter, don{"'"}t they?
+                Details matter, don{"'"}t they? Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
                 <strong className="text-js-yellow font-light">
@@ -112,6 +125,7 @@ export default function CreativesAndArtists() {
                   Communication and Feelings
                 </strong>{' '}
                 Details matter, don{"'"}t they? Details matter, don{"'"}t they?
+                Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
                 <strong className="text-js-yellow font-light">
@@ -123,7 +137,7 @@ export default function CreativesAndArtists() {
                 <strong className="text-js-yellow font-light">
                   Project management and client satisfaction
                 </strong>{' '}
-                Details matter, don{"'"}t they? Details matter, don{"'"}t they?
+                Details matter, don{"'"}t they?
               </span>
               <span className="font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] text-left w-auto max-w-[475px]">
                 <strong className="text-js-yellow font-light">Alignment</strong>{' '}
@@ -148,6 +162,12 @@ export default function CreativesAndArtists() {
                 id: 1,
                 q: "What's Your Rate?",
                 a: '$75/hr',
+                href: '/contact',
+              },
+              {
+                id: 14,
+                q: "$75/hr is alot?",
+                a: 'I know.',
                 href: '/contact',
               },
               {
@@ -180,7 +200,7 @@ export default function CreativesAndArtists() {
               {
                 id: 7,
                 q: 'What about maintenance?',
-                a: 'I build like I\'m going to maintain.',
+                a: "I build like I'm going to maintain.",
               },
               {
                 id: 8,
@@ -209,6 +229,12 @@ export default function CreativesAndArtists() {
                 q: 'Can you build anything?',
                 a: "No, but I'm systematically eclectic.",
               },
+              {
+                id: 13,
+                q: 'Are you an artist?',
+                a: 'Yep. Click or tap here for my art.',
+                href:'https://linktr.ee/jakobcartersmith'
+              }
             ]}
           />
         </WhiteBlackBorderBox>
