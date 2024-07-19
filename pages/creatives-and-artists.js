@@ -1,6 +1,9 @@
 // Next
 import Head from 'next/head';
 
+// Libs
+import { v4 as uuidv4 } from 'uuid';
+
 // Context
 import { useTheme } from '../lib/contexts/ThemeProvider';
 
@@ -159,78 +162,73 @@ export default function CreativesAndArtists() {
           <Questions
             items={[
               {
-                id: 1,
+                id: uuidv4(),
                 q: "What's Your Rate?",
                 a: '$75/hr',
                 href: '/contact',
               },
               {
-                id: 14,
+                id: uuidv4(),
                 q: "$75/hr is alot?",
                 a: 'I know.',
                 href: '/contact',
               },
               {
-                id: 2,
+                id: uuidv4(),
                 q: 'Can I see your work?',
                 a: 'Yes. Click or Tap Me.',
                 href: '/portfolio',
               },
               {
-                id: 3,
+                id: uuidv4(),
                 q: 'How do you handle clients?',
                 a: 'With empathy and exactness.',
               },
               {
-                id: 4,
+                id: uuidv4(),
                 q: 'Do you do Hosting?',
                 a: 'Yes.',
               },
               {
-                id: 5,
+                id: uuidv4(),
                 q: "What's your vibe?",
                 a: 'Aries/Libra. 4W8. ESFP.',
               },
               {
-                id: 6,
+                id: uuidv4(),
                 q: 'Can we Schedule a Call?',
                 a: 'Schedule that here.',
                 href: '/contact',
               },
               {
-                id: 7,
+                id: uuidv4(),
                 q: 'What about maintenance?',
                 a: "I build like I'm going to maintain.",
               },
               {
-                id: 8,
+                id: uuidv4(),
                 q: 'How Many Revisions?',
                 a: "99 issues but a revision ain't 1.",
               },
               {
-                id: 9,
+                id: uuidv4(),
                 q: 'How do we get started?',
                 a: 'Call, Email, or Text.',
                 href: '/contact',
               },
               {
-                id: 10,
+                id: uuidv4(),
                 q: 'How does payment work?',
                 a: 'Bank Accounts and Cards.',
                 href: '/contact',
               },
               {
-                id: 11,
+                id: uuidv4(),
                 q: 'How about content?',
                 a: 'I know awesome human writers.',
               },
               {
-                id: 12,
-                q: 'Can you build anything?',
-                a: "No, but I'm systematically eclectic.",
-              },
-              {
-                id: 13,
+                id: uuidv4(),
                 q: 'Are you an artist?',
                 a: 'Yep. Click or tap here for my art.',
                 href:'https://linktr.ee/jakobcartersmith'

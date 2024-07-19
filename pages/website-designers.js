@@ -1,6 +1,9 @@
 // Next
 import Head from 'next/head';
 
+// Libs
+import { v4 as uuidv4 } from 'uuid';
+
 // Context
 import { useTheme } from '../lib/contexts/ThemeProvider';
 
@@ -38,7 +41,7 @@ export default function WebsiteDesigners() {
         <WhiteBox className="mx-auto">
           <div className="font-js-math text-center">
             <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch] -mt-6 lg:-mt-10 mb-10 xl:-mt-20 lg:mb-20">
-              Why Designers?
+              Why Web Designers?
             </h2>
           </div>
         </WhiteBox>
@@ -143,76 +146,162 @@ export default function WebsiteDesigners() {
         <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20">
           <div className="font-js-math text-center">
             <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
-              Questions
+              Services
+            </h2>
+
+            <section className="grid grid-cols-2 p-10 gap-10">
+              <div className="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <svg
+                  className="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z" />
+                </svg>
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    Need a help in Claim?
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+                  Go to this step by step guideline process on how to certify
+                  for your weekly benefits:
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex font-medium items-center text-blue-600 hover:underline"
+                >
+                  See our guideline
+                </a>
+              </div>
+
+              <div className="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <svg
+                  className="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z" />
+                </svg>
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    Need a help in Claim?
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+                  Go to this step by step guideline process on how to certify
+                  for your weekly benefits:
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex font-medium items-center text-blue-600 hover:underline"
+                >
+                  See our guideline
+                  <svg
+                    className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </section>
+          </div>
+        </WhiteBlackBorderBox>
+
+        <Spacer />
+
+        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20">
+          <div className="font-js-math text-center">
+            <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
+              FAQs
             </h2>
           </div>
 
           <Questions
             items={[
               {
-                id: 1,
+                id: uuidv4(),
                 q: "What's Your Rate?",
                 a: '$75/hr',
-                href: '/contact',
               },
               {
-                id: 2,
+                id: uuidv4(),
+                q: '$75/hr is alot?',
+                a: 'I know.',
+              },
+              {
+                id: uuidv4(),
+                q: '$75/hr is cheap?',
+                a: 'I know.',
+              },
+              {
+                id: uuidv4(),
                 q: 'Can I see your work?',
-                a: 'Yes. Click or Tap Me.',
+                a: 'Yes.',
                 href: '/portfolio',
               },
               {
-                id: 3,
+                id: uuidv4(),
                 q: 'How do you handle clients?',
                 a: 'With empathy and exactness.',
               },
               {
-                id: 4,
+                id: uuidv4(),
                 q: 'Do you do Hosting?',
                 a: 'Yes.',
+                href: '/maintenance',
               },
               {
-                id: 5,
+                id: uuidv4(),
                 q: "What's your vibe?",
                 a: 'Aries/Libra. 4W8. ESFP.',
               },
               {
-                id: 6,
-                q: 'Can we Schedule a Call?',
-                a: 'Schedule that here.',
-                href: '/contact',
-              },
-              {
-                id: 7,
+                id: uuidv4(),
                 q: 'What about maintenance?',
-                a: "I build like I'm going to maintain.",
+                a: "Check out maintenance service.",
+                href: '/maintenance',
               },
               {
-                id: 8,
+                id: uuidv4(),
                 q: 'How Many Revisions?',
                 a: "99 issues but a revision ain't 1.",
               },
               {
-                id: 9,
+                id: uuidv4(),
                 q: 'How do we get started?',
                 a: 'Call, Email, or Text.',
                 href: '/contact',
               },
               {
-                id: 10,
+                id: uuidv4(),
                 q: 'How does payment work?',
-                a: 'Bank Accounts and Cards.',
-                href: '/contact',
+                a: 'ACH or Credit Card via Stripe.',
               },
               {
-                id: 11,
+                id: uuidv4(),
                 q: 'How about content?',
                 a: 'I know awesome human writers.',
               },
               {
-                id: 12,
-                q: 'Can you build anything?',
-                a: "No, but I'm systematically eclectic.",
+                id: uuidv4(),
+                q: 'Are you an artist?',
+                a: 'Yep.',
+                href: 'https://linktr.ee/jakobcartersmith',
               },
             ]}
           />
