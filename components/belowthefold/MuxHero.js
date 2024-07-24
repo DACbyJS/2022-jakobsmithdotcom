@@ -4,6 +4,7 @@ import { uid } from 'uid';
 
 // Custom
 import { blackPlaceholder } from '../../public/dataURI/blackPlaceholder';
+import NextIntersectionObserver from '../layout/NextIntersectionObserver';
 
 const MuxHero = ({
   playbackId = 'lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4',
@@ -38,12 +39,19 @@ const MuxHero = ({
       />
       <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">
         {words.map((word, index) => (
-          <h1
+          <NextIntersectionObserver
             key={uid(index)}
-            className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
+            thresholdValue={0.5}
+            classes={`fade-in-init animate-delay-${(index + 1) - 0.75}s`}
+            topIn="fade-in-animate"
           >
-            {word}
-          </h1>
+            <h1
+              key={uid(index)}
+              className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
+            >
+              {word}
+            </h1>
+          </NextIntersectionObserver>
         ))}
       </div>
     </section>

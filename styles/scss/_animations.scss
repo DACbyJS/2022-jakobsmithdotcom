@@ -1,0 +1,121 @@
+.animate-init {
+  transition-duration: .9s;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.animate-delay-0s {
+  transition-delay: 0s;
+}
+
+.animate-delay-0\.25s {
+  transition-delay: 0.25s;
+}
+
+.animate-delay-0\.5s {
+  transition-delay: 0.5s;
+}
+
+.animate-delay-0\.75s {
+  transition-delay: 0.75s;
+}
+
+.animate-delay-1s {
+  transition-delay: 1s;
+}
+
+.animate-delay-1\.25s {
+  transition-delay: 1.25s;
+}
+
+.animate-delay-1\.5s{
+  transition-delay: 1.5s;
+}
+
+.animate-delay-1\.75s {
+  transition-delay: 1.75s;
+}
+
+.animate-delay-2s {
+  transition-delay: 2s;
+}
+
+.animate-delay-2\.25s {
+  transition-delay: 2.25s;
+}
+
+.animate-delay-2\.5s {
+  transition-delay: 2.5s;
+}
+
+.animate-delay-2\.75s {
+  transition-delay: 2.75s;
+}
+
+.animate-delay-3s {
+  transition-delay: 3s;
+}
+
+.animate-delay-3\.25s {
+  transition-delay: 3.25s;
+}
+
+.animate-delay-3\.5s {
+  transition-delay: 3.5s;
+}
+
+.animate-delay-3\.75s {
+  transition-delay: 3.75s;
+}
+
+.fade-in-init {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.fade-in-animate {
+  opacity: 1;
+}
+
+.fade-up-init {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition-property: opacity, transform;
+}
+
+.fade-up-animate {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-down-init {
+  opacity: 0;
+  transform: translate3d(0, -20px, 0);
+  transition-property: opacity, transform;
+}
+
+.fade-down-animate {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-left-init {
+  opacity: 0;
+  transform: translate3d(50px, 0, 0);
+  transition-property: opacity, transform;
+}
+
+.fade-left-animate {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-right-init {
+  opacity: 0;
+  transform: translate3d(-500px, 0, 0);
+  transition-property: opacity, transform;
+}
+
+.fade-right-animate {
+  opacity: 1;
+  transform: none;
+}
