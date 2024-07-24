@@ -17,3 +17,36 @@
     @apply overflow-visible;
   }
 }
+
+/** Rainbow Flow In Animation **/
+.rainbow-animate-init {
+
+  path.responsive-rainbow-path-blue {
+    @apply transition-all duration-[2s] ease-in-out-quad;
+    @apply origin-center transform-gpu translate-x-[1600px] -translate-y-[2000px];
+  }
+
+  path.responsive-rainbow-path-yellow {
+    @apply transition-all duration-[2.5s] ease-in-out-quad;
+    @apply origin-center transform-gpu translate-x-[1600px] -translate-y-[2000px];
+  }
+
+  path.responsive-rainbow-path-red {
+    @apply transition-all duration-[3s] ease-in-out-quad;
+    @apply origin-center transform-gpu translate-x-[1600px] -translate-y-[2000px];
+  }
+
+  &.rainbow-flow-in {
+    path.responsive-rainbow-path-blue {
+      @apply translate-x-[0px] -translate-y-[0px];
+    }
+
+    path.responsive-rainbow-path-yellow {
+      @apply translate-x-[0px] -translate-y-[0px];
+    }
+
+    path.responsive-rainbow-path-red {
+      @apply translate-x-[0px] -translate-y-[0px];
+    }
+  }
+}

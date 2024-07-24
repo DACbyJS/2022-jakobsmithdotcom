@@ -16,7 +16,11 @@ module.exports = {
       overpass: ['var(--font-overpass)'],
       'overpass-mono': ['var(--font-overpass-mono)'],
     },
-    extend: {},
+    extend: {
+      transitionTimingFunction: {
+        'in-out-quad': 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+      },
+    },
   },
   plugins: [],
 };

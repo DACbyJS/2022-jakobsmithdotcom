@@ -37,23 +37,29 @@ const MuxHero = ({
         metadata={metadata}
         startTime={startTime}
       />
-      <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">
-        {words.map((word, index) => (
-          <NextIntersectionObserver
-            key={uid(index)}
-            thresholdValue={0.5}
-            classes={`fade-in-init animate-delay-${(index + 1) - 0.75}s`}
-            topIn="fade-in-animate"
-          >
-            <h1
+      <NextIntersectionObserver
+        thresholdValue={0.5}
+        classes="fade-in-init"
+        topIn="fade-in-animate"
+      >
+        <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">
+          {words.map((word, index) => (
+            <NextIntersectionObserver
               key={uid(index)}
-              className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
+              thresholdValue={0.5}
+              classes={`fade-in-init animate-delay-${index + 1 - 0.75}s`}
+              topIn="fade-in-animate"
             >
-              {word}
-            </h1>
-          </NextIntersectionObserver>
-        ))}
-      </div>
+              <h1
+                key={uid(index)}
+                className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
+              >
+                {word}
+              </h1>
+            </NextIntersectionObserver>
+          ))}
+        </div>
+      </NextIntersectionObserver>
     </section>
   );
 };

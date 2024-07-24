@@ -1,5 +1,8 @@
 <svg width="1920" height="2649" viewBox="0 0 1920 2649" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="261.406" y="2707.56" width="276.058" height="2823.33" transform="rotate(-141.859 261.406 2707.56)" fill="#5295CB" stroke="#121416" stroke-width="20"/>
-<rect x="57.2993" y="2558.56" width="270.822" height="2830.03" transform="rotate(-141.859 57.2993 2558.56)" fill="#FDCD49" stroke="#121416" stroke-width="20"/>
-<rect x="-133.03" y="2409.1" width="270.822" height="2830.03" transform="rotate(-141.859 -133.03 2409.1)" fill="#FF4747" stroke="#121416" stroke-width="20"/>
+    <rect x="261.406" y="2707.56" width="276.058" height="2823.33" transform="rotate(-141.859 261.406 2707.56)"
+        fill="#5295CB" stroke="#121416" stroke-width="20" />
+    <rect x="57.2993" y="2558.56" width="270.822" height="2830.03" transform="rotate(-141.859 57.2993 2558.56)"
+        fill="#FDCD49" stroke="#121416" stroke-width="20" />
+    <rect x="-133.03" y="2409.1" width="270.822" height="2830.03" transform="rotate(-141.859 -133.03 2409.1)"
+        fill="#FF4747" stroke="#121416" stroke-width="20" />
 </svg>
