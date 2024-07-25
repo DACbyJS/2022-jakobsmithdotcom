@@ -256,7 +256,7 @@ export default function WebsiteDesigners() {
               {
                 id: uuidv4(),
                 q: "What's Your Rate?",
-                a: '$75/hr',
+                a: 'Per project or $75/hr.',
               },
               {
                 id: uuidv4(),
@@ -288,12 +288,12 @@ export default function WebsiteDesigners() {
               {
                 id: uuidv4(),
                 q: "What's your vibe?",
-                a: 'Aries/Libra. 4W8. ESFP.',
+                a: 'Liminal, silly and thoughtful.',
               },
               {
                 id: uuidv4(),
                 q: 'What about maintenance?',
-                a: 'Check out maintenance service.',
+                a: 'See our maintenance service.',
                 href: '/maintenance',
               },
               {

@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 
 const LoadingWrapper = ({ children, className }) => (
   <motion.div
-    initial={{ opacity: 0, y: 0 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: 0 }}
+    initial={{ opacity: 0, y: 50, scale:.05 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
     className={classNames('flex flex-col bg-js-black', className)}
-    transition={{ damping: 50, duration: 3, stiffness: 50 }}
+    transition={{type: 'spring', bounce: 0.1, duration: 5}}
   >
     {children}
   </motion.div>

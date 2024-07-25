@@ -1,5 +1,10 @@
 .animate-init {
-  transition-duration: .9s;
+  transition-duration: .35s;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.animate-init-slow {
+  transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
@@ -111,7 +116,7 @@
 
 .fade-right-init {
   opacity: 0;
-  transform: translate3d(-500px, 0, 0);
+  transform: translate3d(-200px, 0, 0);
   transition-property: opacity, transform;
 }
 

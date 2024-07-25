@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { uid } from 'uid';
 
 // Custom
-import { blackPlaceholder } from '../../public/dataURI/blackPlaceholder';
 import NextIntersectionObserver from '../layout/NextIntersectionObserver';
 
 const MuxHero = ({
@@ -24,19 +23,23 @@ const MuxHero = ({
         className
       )}
     >
-      <MuxPlayer
-        loop
-        nohotkeys
-        preload
-        autoPlay="muted"
-        streamType="on-demand"
-        poster={blackPlaceholder}
-        placeholder={blackPlaceholder}
-        className={classNames('bg-js-black hero-mux-player', playerClassName)}
-        playbackId={playbackId}
-        metadata={metadata}
-        startTime={startTime}
-      />
+      <NextIntersectionObserver
+        thresholdValue={1}
+        classes="fade-in-init animate-init-slow"
+        topIn="fade-in-animate animate-delay-0.5s"
+      >
+        <MuxPlayer
+          loop
+          nohotkeys
+          preload
+          autoPlay="muted"
+          streamType="on-demand"
+          className={classNames('bg-js-black hero-mux-player', playerClassName)}
+          playbackId={playbackId}
+          metadata={metadata}
+          startTime={startTime}
+        />
+      </NextIntersectionObserver>
       <NextIntersectionObserver
         thresholdValue={0.5}
         classes="fade-in-init"

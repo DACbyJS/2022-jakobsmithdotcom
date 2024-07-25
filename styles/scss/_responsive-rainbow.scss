@@ -20,6 +20,7 @@
 
 /** Rainbow Flow In Animation **/
 .rainbow-animate-init {
+  @apply opacity-0;
 
   path.responsive-rainbow-path-blue {
     @apply transition-all duration-[2s] ease-in-out-quad;
@@ -37,6 +38,8 @@
   }
 
   &.rainbow-flow-in {
+    @apply opacity-100;
+    
     path.responsive-rainbow-path-blue {
       @apply translate-x-[0px] -translate-y-[0px];
     }
