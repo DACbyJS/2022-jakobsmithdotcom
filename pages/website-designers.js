@@ -1,7 +1,11 @@
+// React
+import { useEffect } from 'react';
+
 // Next
 import Head from 'next/head';
 
 // Libs
+import classNames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 
 // Context
@@ -16,8 +20,6 @@ import WhiteBox from '../components/layout/WhiteBox';
 import BlackBox from '../components/layout/BlackBox';
 import BigRedTriangle from '../components/svg/BigRedTriangle';
 import Questions from '../components/belowthefold/Questions';
-import classNames from 'classnames';
-import { useEffect } from 'react';
 import NextIntersectionObserver from '../components/layout/NextIntersectionObserver';
 
 export default function WebsiteDesigners() {
@@ -43,8 +45,9 @@ export default function WebsiteDesigners() {
         words={['Consiliate.', 'Iterate.', 'Translate.', 'Deliver.']}
       />
       <BelowTheFold>
+        <Spacer />
         <BigRedTriangle />
-        <WhiteBox className="mx-auto">
+        <WhiteBox className="mx-auto z-20">
           <div className="font-js-math text-center">
             <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch] -mt-6 lg:-mt-10 mb-10 xl:-mt-20 lg:mb-20">
               Why Web Designers?
@@ -326,6 +329,8 @@ export default function WebsiteDesigners() {
             ]}
           />
         </WhiteBlackBorderBox>
+
+        <Spacer />
       </BelowTheFold>
     </>
   );

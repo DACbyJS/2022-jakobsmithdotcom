@@ -30,7 +30,12 @@ export default function Home() {
         words={['Translate.', 'Decide.', 'Develop.', 'Deliver.']}
       />
       <BelowTheFold>
+        <Spacer />
+        
         <SvgRainbow />
+
+        <Spacer />
+
         <NextIntersectionObserver
           thresholdValue={0.5}
           classes="fade-in-init"
@@ -99,6 +104,7 @@ export default function Home() {
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>
+        <Spacer />
       </BelowTheFold>
     </>
   );
