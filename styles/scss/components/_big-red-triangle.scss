@@ -1,0 +1,17 @@
+/** Big Red Triangle Animations **/
+.big-red-triangle-animate-init {
+  @apply opacity-0;
+
+  path.big-red-triangle-path {
+    @apply transition-all duration-[2s] ease-in-out-quad;
+    @apply origin-center transform-gpu rotate-45 translate-x-[1600px] -translate-y-[2000px];
+  }
+
+  &.big-red-triangle-rotate-in {
+    @apply opacity-100;
+
+    path.big-red-triangle-path {
+      @apply rotate-0 translate-x-[0px] -translate-y-[0px];
+    }
+  }
+}
