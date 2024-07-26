@@ -153,21 +153,6 @@ a.overpass-underline-no-line {
   line-height: 1.3;
 }
 
-/* Parallax */
-.parallax-container {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  perspective: 1px;
-  perspective-origin: 0 0;
-}
-
-.parallax-child {
-  transform-origin: 0 0;
-  transform: translateZ(-2px) scale(3);
-}
-
 /* Wiggly SVG Link */
 .wiggly-svg-link {
   position: relative;

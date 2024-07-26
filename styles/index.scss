@@ -3,17 +3,18 @@
 
 /* Base */
 @tailwind base;
-@import 'scss/global.scss';
+@import 'scss/base/global.scss';
 
 /* Components */
 @tailwind components;
-@import 'scss/NavDrawer.scss';
-@import 'scss/hero-mux-player.scss';
-@import 'scss/responsive-rainbow.scss';
-@import 'scss/questions.scss';
+@import 'scss/components/NavDrawer.scss';
+@import 'scss/components/hero-mux-player.scss';
+@import 'scss/components/responsive-rainbow.scss';
+@import 'scss/components/big-red-triangle.scss';
+@import 'scss/components/questions.scss';
 
 /* Utilities */
 @tailwind utilities;
-@import 'scss/animations.scss';
-@import 'scss/utility.scss';
-@import 'scss/rainbow-effects.scss';
+@import 'scss/utilities/animations.scss';
+@import 'scss/utilities/utility.scss';
+@import 'scss/utilities/rainbow-effects.scss';
