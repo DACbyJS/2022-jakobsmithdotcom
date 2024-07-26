@@ -4,6 +4,7 @@ import { uid } from 'uid';
 
 // Custom
 import NextIntersectionObserver from '../layout/NextIntersectionObserver';
+import blackPlaceholder from '../../public/dataURI/blackPlaceholder';
 
 const MuxHero = ({
   playbackId = 'lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4',
@@ -34,6 +35,9 @@ const MuxHero = ({
           preload
           autoPlay="muted"
           streamType="on-demand"
+          loading="viewport"
+          placeholder={blackPlaceholder}
+          style={{ aspectRatio: 16/11 }}
           className={classNames('bg-js-black hero-mux-player', playerClassName)}
           playbackId={playbackId}
           metadata={metadata}
