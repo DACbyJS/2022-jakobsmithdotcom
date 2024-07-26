@@ -1,3 +1,6 @@
+// React
+import { useEffect } from 'react';
+
 // Next
 import Head from 'next/head';
 
@@ -18,8 +21,11 @@ import BigYellowSquare from '../components/svg/BigYellowSquare';
 import Questions from '../components/belowthefold/Questions';
 
 export default function CreativesAndArtists() {
-  const { theme, changeTheme } = useTheme();
-  changeTheme('yellow');
+  // Theme
+  const { theme, setTheme } = useTheme();
+  useEffect(() => {
+    setTheme('yellow');
+  }, [setTheme]);
   
   return (
     <>
