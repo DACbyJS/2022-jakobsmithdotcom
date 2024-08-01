@@ -10,7 +10,6 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  experimental: { appDir: true, topLevelAwait: true },
   webpack(config) {
     config.experiments = { ...config.experiments, topLevelAwait: true };
     return config;
