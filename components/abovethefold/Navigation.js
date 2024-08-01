@@ -10,7 +10,7 @@ export default function Navigation({ handleMenuDotsClick, handleInfoClick }) {
   return (
     <nav
       id="info-logo-button-menu"
-      className="nav relative space-x-6 flex flex-row flex-nowrap justify-between items-center px-10 sm:px-12 py-10 h-auto z-10"
+      className="nav relative space-x-6 flex flex-row flex-nowrap justify-between items-center px-6 sm:px-12 py-10 h-auto z-10"
     >
       <div className="flex flex-col justify-center items-center max-w-[40px] sm:max-w-[80px] lg:max-w-[100px] w-full h-auto">
         <SvgInfoIcon handleInfoClick={handleInfoClick} />

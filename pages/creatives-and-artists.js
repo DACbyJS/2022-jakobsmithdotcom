@@ -15,7 +15,7 @@ import MuxHero from '../components/belowthefold/MuxHero';
 import BelowTheFold from '../components/layout/BelowTheFold';
 import Spacer from '../components/layout/Spacer';
 import WhiteBlackBorderBox from '../components/layout/WhiteBlackBorderBox';
-import WhiteBox from '../components/layout/WhiteBox';
+import TransBox from '../components/layout/TransBox';
 import BlackBox from '../components/layout/BlackBox';
 import BigYellowSquare from '../components/svg/BigYellowSquare';
 import Questions from '../components/belowthefold/Questions';
@@ -45,13 +45,13 @@ export default function CreativesAndArtists() {
       />
       <BelowTheFold>
         <BigYellowSquare />
-        <WhiteBox className="mx-auto">
+        <TransBox className="mx-auto">
           <div className="font-js-math text-center">
             <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch] -mt-6 lg:-mt-10 mb-10 xl:-mt-20 lg:mb-20">
               Why Artists and Creatives?
             </h2>
           </div>
-        </WhiteBox>
+        </TransBox>
 
         <div className="flex flex-col md:flex-row justify-between space-x-0 space-y-12 md:space-x-10 md:space-y-0 mx-auto max-w-[1300px]">
           <WhiteBlackBorderBox className="max-w-[700px]">

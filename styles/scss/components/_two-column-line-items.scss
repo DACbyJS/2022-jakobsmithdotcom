@@ -1,0 +1,20 @@
+.two-column-line-items {
+    @apply flex flex-col md:flex-row justify-between;
+    @apply space-x-0 space-y-12 md:space-x-10 md:space-y-0 mx-auto;
+    @apply max-w-[1300px];
+
+    .two-column-line-item {
+        @apply relative;
+        @apply text-center sm:text-left;
+        @apply font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] w-auto max-w-[475px];
+
+        &::after {
+            @apply inline-block;
+            @apply absolute top-0 right-0;
+            @apply font-js-math;
+            content: counter(list-item);
+            font-size: 1ch;
+            margin-right: 1ch;
+        }
+    }
+}

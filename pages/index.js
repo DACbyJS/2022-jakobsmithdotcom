@@ -34,19 +34,17 @@ export default function Home() {
         
         <SvgRainbow />
 
-        <Spacer />
-
         <NextIntersectionObserver
           thresholdValue={0.5}
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto max-w-[900px]">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[500px] lg:max-w-[900px] py-6 md:py-10 lg:py-12 z-10">
             <div className="font-js-math text-center">
-              <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] -mb-1 lg:-mb-2">
+              <h1 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] -mb-1 lg:-mb-[1.5]">
                 Web Development
-              </h2>
-              <h2 className="text-[3ch] sm:text-[3.5ch] lg:text-[4ch] 2xl:text-[6ch] tracking-[0.35ch]">
+              </h1>
+              <h2 className="text-[3ch] sm:text-[3.5ch] lg:text-[4.25ch] 2xl:text-[6ch] tracking-[0.35ch]">
                 Services For
               </h2>
             </div>
@@ -67,7 +65,7 @@ export default function Home() {
                 className="blue line-link hover-on"
                 href={pageData[3]?.data?.href}
               >
-                Businesses
+                Public Good
               </Link>
             </div>
           </WhiteBlackBorderBox>
@@ -80,9 +78,9 @@ export default function Home() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto max-w-[900px]">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[500px] lg:max-w-[900px] py-6 md:py-10 lg:py-12 z-10">
             <div className="font-js-math text-center">
-              <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 lg:-mb-4 2xl:-mb-6">
+              <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 2xl:-mb-6">
                 Who Is
               </h2>
               <h2 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide">

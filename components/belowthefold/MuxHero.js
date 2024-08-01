@@ -20,7 +20,7 @@ const MuxHero = ({
   return (
     <section
       className={classNames(
-        'hero h-[50vh] lg:h-[60vh] 2xl:h-[80vh] w-full flex flex-col justify-center items-center relative z-10 bg-js-black',
+        'hero h-[50vh] lg:h-[80vh] w-full flex flex-col justify-center items-center relative z-10 bg-js-black',
         className
       )}
     >
@@ -36,12 +36,12 @@ const MuxHero = ({
           autoPlay="muted"
           streamType="on-demand"
           loading="viewport"
-          placeholder={blackPlaceholder}
-          style={{ aspectRatio: 16/11 }}
           className={classNames('bg-js-black hero-mux-player', playerClassName)}
           playbackId={playbackId}
           metadata={metadata}
           startTime={startTime}
+          poster={blackPlaceholder}
+          placeholder={blackPlaceholder}
         />
       </NextIntersectionObserver>
       <NextIntersectionObserver

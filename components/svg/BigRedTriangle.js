@@ -4,12 +4,12 @@ import NextIntersectionObserver from '../layout/NextIntersectionObserver';
 const BigRedTriangle = ({ className, svgProps }) => (
   <NextIntersectionObserver
     thresholdValue={1}
-    classes={`big-red-triangle-animate-init h-full relative`}
+    classes="big-red-triangle-animate-init h-full relative"
     topIn="big-red-triangle-rotate-in"
   >
     <div
       className={classNames(
-        'absolute -left-[10%] top-[500px] 2xl:w-[100vw] big-red-triangle',
+        'absolute z-0 big-red-triangle',
         className
       )}
     >
