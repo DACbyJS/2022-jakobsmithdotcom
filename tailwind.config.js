@@ -17,6 +17,9 @@ module.exports = {
       'overpass-mono': ['var(--font-overpass-mono)'],
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 60s linear infinite',
+      },
       transitionTimingFunction: {
         'in-out-quad': 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
       },
