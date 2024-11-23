@@ -88,17 +88,32 @@ export default function Home() {
                 Jakob Smith?
               </h2>
             </div>
-            <div className="flex flex-col items-center mt-8 space-y-8">
-              <Link href="/portfolio" className="btn">
-                Portfolio
-              </Link>
-              <div className="flex flex-col lg:flex-row justify-center items-center space-x-0 lg:space-x-8 space-y-8 lg:space-y-0">
-                <Link href="/about" className="btn">
-                  Story
-                </Link>
-                <Link href="/contact" className="btn">
-                  Contact
-                </Link>
+            <div className="flex flex-row items-center mt-8 space-y-8">
+              <div className="flex-col">
+                <h3 className="text-[1.2ch] sm:text-[1.5ch] lg:text-[2ch] 2xl:text-[3ch] tracking-wide">
+                  Past Clients
+                </h3>
+                <ul className="text-[0.9ch] sm:text-[1ch] lg:text-[1.25ch] 2xl:text-[1.5ch] tracking-wide">
+                  <li>UNM</li>
+                  <li>City of Albuquerque</li>
+                  <li>Albuquerque Public Schools</li>
+                  <li>United Way of Central New Mexico</li>
+                  <li>Albuquerque Community Foundation</li>
+                  <li>Albuquerque Hispano Chamber of Commerce</li>
+                </ul>
+              </div>
+              <div className="flex-col">
+                <h3 className="text-[1.2ch] sm:text-[1.5ch] lg:text-[2ch] 2xl:text-[3ch] tracking-wide">
+                  Past Clients
+                </h3>
+                <ul className="text-[0.9ch] sm:text-[1ch] lg:text-[1.25ch] 2xl:text-[1.5ch] tracking-wide">
+                  <li>UNM</li>
+                  <li>City of Albuquerque</li>
+                  <li>Albuquerque Public Schools</li>
+                  <li>United Way of Central New Mexico</li>
+                  <li>Albuquerque Community Foundation</li>
+                  <li>Albuquerque Hispano Chamber of Commerce</li>
+                </ul>
               </div>
             </div>
           </WhiteBlackBorderBox>
