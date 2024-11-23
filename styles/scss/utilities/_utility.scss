@@ -20,7 +20,7 @@
 }
 
 /* Line link */
-a.line-link {
+.line-link {
   position: relative;
   display: inline-block;
   outline: none;
@@ -33,7 +33,7 @@ a.line-link {
   &::before {
     content: '';
     position: absolute;
-    bottom: 0.4ch;
+    bottom: 0.2ch;
     width: 100%;
     max-width: 100%;
     height: 0.2ch;
@@ -54,15 +54,15 @@ a.line-link {
   }
 }
 
-a.red.line-link:before {
+.red.line-link:before {
   background-color: theme('colors.js-red');
 }
 
-a.blue.line-link:before {
+.blue.line-link:before {
   background-color: theme('colors.js-blue');
 }
 
-a.yellow.line-link:before {
+.yellow.line-link:before {
   background-color: theme('colors.js-yellow');
 }
 

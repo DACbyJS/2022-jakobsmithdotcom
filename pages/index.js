@@ -18,6 +18,7 @@ export default function Home() {
     <>
       <Head>
         <title>Jakob Smith | A Creative and Conscientious Web Developer</title>
+        <meta description="A digital marketing developer based in Albuquerque, New Mexico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
@@ -49,24 +50,24 @@ export default function Home() {
               </h2>
             </div>
             <div className="flex flex-col items-center mt-6 lg:mt-10 space-y-6 lg:space-y-10 font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center">
-              <Link
+              <h3
                 className="red line-link hover-on"
                 href={pageData[1]?.data?.href}
               >
                 Designers
-              </Link>
-              <Link
+              </h3>
+              <h3
                 className="yellow line-link hover-on"
                 href={pageData[2]?.data?.href}
               >
                 Creatives
-              </Link>
-              <Link
+              </h3>
+              <h3
                 className="blue line-link hover-on"
                 href={pageData[3]?.data?.href}
               >
                 Public Good
-              </Link>
+              </h3>
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>

@@ -13,36 +13,36 @@ import Navigation from '../abovethefold/Navigation';
 import InfoModal from '../abovethefold/InfoModal';
 
 export default function Header() {
-  const [isNavDrawerActive, setIsNavDrawerActive] = useState(false);
+  // const [isNavDrawerActive, setIsNavDrawerActive] = useState(false);
   const [isInfoModalActive, setIsInfoModalActive] = useState(false);
-  const menuDotsData = useRef(null);
+  // const menuDotsData = useRef(null);
 
-  const toggleIsNavDrawerActive = () => {
-    setIsNavDrawerActive(!isNavDrawerActive);
-  };
+  // const toggleIsNavDrawerActive = () => {
+  //   setIsNavDrawerActive(!isNavDrawerActive);
+  // };
 
   const toggleIsInfoModalActive = () => {
     setIsInfoModalActive(!isInfoModalActive);
   };
 
-  useEffect(() => {
-    // Why async/await? Because we need to wait for the Snap library to load
-    async function getData() {
-      menuDotsData.current = await getMenuDotsData();
-    }
-    getData();
+  // useEffect(() => {
+  //   // Why async/await? Because we need to wait for the Snap library to load
+  //   async function getData() {
+  //     menuDotsData.current = await getMenuDotsData();
+  //   }
+  //   getData();
 
-    // Why a ref? Because the Snap library-selected svg data needs to remain
-    // the same between renders of svg itself
-    if (menuDotsData.current === null) {
-      return;
-    }
+  //   // Why a ref? Because the Snap library-selected svg data needs to remain
+  //   // the same between renders of svg itself
+  //   if (menuDotsData.current === null) {
+  //     return;
+  //   }
 
-    const { allDots, allDotsPoints, allClosesPoints } = menuDotsData.current;
-    isNavDrawerActive
-      ? toClose(allDots, allClosesPoints)
-      : toDots(allDots, allDotsPoints);
-  }, [isNavDrawerActive]);
+  //   const { allDots, allDotsPoints, allClosesPoints } = menuDotsData.current;
+  //   isNavDrawerActive
+  //     ? toClose(allDots, allClosesPoints)
+  //     : toDots(allDots, allDotsPoints);
+  // }, [isNavDrawerActive]);
 
   return (
     <header className="header bg-js-black relative z-20">
@@ -51,13 +51,13 @@ export default function Header() {
         toggleIsInfoModalActive={toggleIsInfoModalActive}
       />
       <Navigation
-        handleMenuDotsClick={toggleIsNavDrawerActive}
+        // handleMenuDotsClick={toggleIsNavDrawerActive}
         handleInfoClick={toggleIsInfoModalActive}
       />
-      <NavDrawer
+      {/* <NavDrawer
         isActive={isNavDrawerActive}
         handleLinkItemClick={toggleIsNavDrawerActive}
-      />
+      /> */}
     </header>
   );
 }
