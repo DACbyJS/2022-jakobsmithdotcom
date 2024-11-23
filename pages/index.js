@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jakob Smith | Creative and Conscientious Web Developer</title>
+        <title>Jakob Smith | A Creative and Conscientious Web Developer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
