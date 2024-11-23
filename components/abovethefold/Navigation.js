@@ -16,7 +16,7 @@ export default function Navigation({ handleMenuDotsClick, handleInfoClick }) {
         <SvgInfoIcon handleInfoClick={handleInfoClick} />
       </div>
 
-      <div className="logo max-w-[100px] sm:max-w-[150px] 2xl:max-w-[200px] ">
+      <div className="logo max-w-[120px] sm:max-w-[175px] 2xl:max-w-[225px] ">
         <Link href="/">
           <SvgJakobSmithLogo className={'rainbow-svg-on-hover path-white'}/>
         </Link>

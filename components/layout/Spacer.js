@@ -3,7 +3,7 @@ import classNames from 'classnames';
 const Spacer = ({ children, className }) => (
   <aside
     className={classNames(
-      'spacer p-10 sm:py-14 lg:py-16 xl:py-20 2xl:py-24',
+      'zero:py-6 sm:py-12 lg:py-14 xl:py-16 2xl:py-20',
       className
     )}
   >
