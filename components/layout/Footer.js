@@ -18,7 +18,7 @@ export default function Footer() {
         <SvgJakobSmithLogo pathFill={jsBlack} className={'rainbow-svg-on-hover path-black'}/>
       </div>
       <div className="contact-links text-[1.2ch] md:text-[2ch] flex flex-col items-center justify-center">
-        <Link className="overpass-underline-no-line wiggly-svg-link mb-4" href="/contact">
+        <Link className="overpass-underline-no-line wiggly-svg-link mb-4" href="https://calendly.com/hello-jakob-smith/">
           Contact Me
           <WigglyLink/>
         </Link>

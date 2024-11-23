@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jakob Smith | A Creative and Conscientious Web Developer</title>
+        <title>Jakob Smith \ A Creative and Conscientious Web Developer</title>
         <meta description="A digital marketing developer based in Albuquerque, New Mexico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
@@ -40,7 +40,7 @@ export default function Home() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[500px] lg:max-w-[900px] py-6 md:py-10 lg:py-12 z-10">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[900px] py-6 md:py-10 lg:py-12 z-10">
             <div className="font-js-math text-center">
               <h1 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] -mb-1 lg:-mb-[1.5]">
                 Web Development
@@ -60,7 +60,7 @@ export default function Home() {
                 className="yellow line-link hover-on"
                 href={pageData[2]?.data?.href}
               >
-                Creatives
+                Marketing
               </h3>
               <h3
                 className="blue line-link hover-on"
@@ -79,7 +79,7 @@ export default function Home() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[500px] lg:max-w-[900px] py-6 md:py-10 lg:py-12 z-10">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] py-6 md:py-10 lg:py-12 z-10">
             <div className="font-js-math text-center">
               <h2 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 2xl:-mb-6">
                 Who Is
@@ -88,36 +88,82 @@ export default function Home() {
                 Jakob Smith?
               </h2>
             </div>
-            <div className="grid lg:grid-cols-3 gap-10 px-10 pt-10">
+            <div className="grid zero:grid-cols-1 sm:grid-cols-2 gap-10 zero:p-6 sm:p-10">
               <div className="flex-col">
-                <h3 className="btn">Clients</h3>
-                <ul className="p-0 flex flex-col justify-center items-start my-6 mx-2 space-y-4 md:space-y-6 font-overpass uppercase text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-auto max-w-[475px] font-light">
-                  <li className="">Carristo Creative</li>
-                  <li className="">The City of Albuquerque</li>
-                  <li className="">Albuquerque Public Schools</li>
-                  <li className="">United Way of Central New Mexico</li>
-                  <li className="">Albuquerque Community Foundation</li>
+                <h3 className="btn w-full text-center">Recent Work</h3>
+                <ul className="grid zero:grid-cols-1 xs:grid-cols-2 gap-y-4 my-6 mx-2 font-light font-overpass uppercase leading-[1.7] text-justify  text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                  <li className="">
+                    <Link target="_blank" href="https://carristo.com" className="line-link red hover-on">Carristo Creative</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://skisantafe.com" className="line-link red hover-on">Ski Santa Fe</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://thefirebird.com" className="line-link red hover-on">The Firebird</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://northstardentalabq.com/" className="line-link yellow hover-on">North Star Dental</Link>
+                  </li>
+                  <li className="">
+                    <Link  target="_blank" href="https://getagrip.com" className="line-link yellow hover-on">Get A Grip</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://sunvista.com" className="line-link yellow  hover-on">NAI Sunvista</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://1stvalley.com/" className="line-link yellow  hover-on">NAI First Valley</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://commgate.com" className="line-link yellow hover-on">Commgate</Link>
+                  </li>
+                  <li className="">
+                    <Link target="_blank" href="https://gridworks.com/" className="line-link blue hover-on">Gridworks</Link>
+                  </li>
+                  <li className="">
+                    <Link  target="_blank" href="https://skinewmexico.com" className="line-link blue hover-on">Ski New Mexico</Link>
+                  </li>
+                  <li className="">
+                    <Link  target="_blank" href="https://greaterabq.com/" className="line-link blue hover-on">GACOC</Link>
+                  </li>
                 </ul>
               </div>
               <div className="flex-col">
-                <h3 className="btn">Values</h3>
-                <ul className="p-0 flex flex-col justify-center items-start my-6 space-y-4 md:space-y-6 font-overpass uppercase text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-auto max-w-[475px] font-light">
-                  <li className="">Carristo Creative</li>
-                  <li className="">The City of Albuquerque</li>
-                  <li className="">Albuquerque Public Schools</li>
-                  <li className="">United Way of Central New Mexico</li>
-                  <li className="">Albuquerque Community Foundation</li>
+                <h3 className="btn w-full text-center">Values</h3>
+                <ul className="grid zero:grid-cols-1 xs:grid-cols-2 gap-y-4 my-6 mx-2 font-light font-overpass uppercase leading-[1.8] text-justify text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                  <li className="">Communication</li>
+                  <li className="">Prosperity</li>
+                  <li className="">Responsibility</li>
+                  <li className="">Thoughtfulness</li>
+                  <li className="">Determination</li>
+                  <li className="">Artistry</li>
+                  <li className="">Liberty</li>
+                  <li className="">Creativity</li>
+                  <li className="">Compassion</li>
                 </ul>
               </div>
-              <div className="flex-col">
-                <h3 className="btn">Skills</h3>
-                <ul className="p-0 flex flex-col justify-center items-start my-6 mx-6 space-y-4 md:space-y-6 font-overpass uppercase text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-auto max-w-[475px] font-light">
-                  <li className="">Carristo Creative</li>
-                  <li className="">The City of Albuquerque</li>
-                  <li className="">Albuquerque Public Schools</li>
-                  <li className="">United Way of Central New Mexico</li>
-                  <li className="">Albuquerque Community Foundation</li>
-                </ul>
+              <div className="flex-col col-span-1 sm:col-span-2">
+                <h3 className="btn w-full text-center">Skills</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-10 mt-6">
+                  <ul className="flex flex-col justify-start items-start mx-2 space-y-4 font-light font-overpass uppercase leading-[1.8] text-justify text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                    <li className="">Craft CMS \ WordPress \ Contentful \ Sanity \ Expression Engine \ Joomla</li>
+                    <li className="">PHP \ Ruby \ Python</li>
+                    <li className="">Laravel \ Symfony \ Yii \ Ruby on Rails</li>
+                    <li className="">HTML \ Twig \ Blade</li>
+                    <li className="">CSS \ SCSS \ SASS \ PCSS</li>
+                    <li className="">Tailwind \ Bootstrap \ Pure</li>
+                    <li className="">JS \ jQuery \ React \ AngularJS \ Next.js \ Alpine.js</li>
+                  </ul>
+                  <ul className="flex flex-col justify-start items-start mx-2 space-y-4 font-light font-overpass uppercase leading-[1.8] text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                    <li className="">Kinsta \ WpEngine \ Linode \ Servd</li>
+                    <li className="">S3 \ Cloudfront \ Object Storage \ Google Cloud</li>
+                    <li className="">DDEV \ Lando \ Docker \ Git \ Trellis</li>
+                    <li className="">MySQL \ PostgreSQL \ MariaDB \ GraphQL \ REST</li>
+                    <li className="">50+ Server-side Websites</li>
+                    <li className="">20+ Client-side Websites</li>
+                    <li className="">7 Production React/Angular Web Apps</li>
+                    <li className="">VS Code on Linux Mint Cinammon is my daily driver!</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </WhiteBlackBorderBox>
