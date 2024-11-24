@@ -39,7 +39,6 @@ const MuxHero = ({
           playbackId={playbackId}
           metadata={metadata}
           startTime={startTime}
-          style={{ aspectRatio:  1 }}
         />
       </NextIntersectionObserver>
       <NextIntersectionObserver
