@@ -4,7 +4,6 @@ import { uid } from 'uid';
 
 // Custom
 import NextIntersectionObserver from '../layout/NextIntersectionObserver';
-import blackPlaceholder from '../../public/dataURI/blackPlaceholder';
 
 const MuxHero = ({
   playbackId = 'lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4',
@@ -20,7 +19,7 @@ const MuxHero = ({
   return (
     <section
       className={classNames(
-        'hero h-[50vh] lg:h-[80vh] w-full flex flex-col justify-center items-center relative z-10 bg-js-black',
+        'hero landscape:h-[100vh] portrait:h-[40vh] lg:h-[80vh] overflow-y-hidden w-full flex flex-col justify-center items-center relative z-10 bg-js-black',
         className
       )}
     >
@@ -40,8 +39,7 @@ const MuxHero = ({
           playbackId={playbackId}
           metadata={metadata}
           startTime={startTime}
-          poster={blackPlaceholder}
-          placeholder={blackPlaceholder}
+          style={{ aspectRatio:  1 }}
         />
       </NextIntersectionObserver>
       <NextIntersectionObserver
@@ -53,7 +51,7 @@ const MuxHero = ({
           {words.map((word, index) => (
             <NextIntersectionObserver
               key={uid(index)}
-              thresholdValue={0.5}
+              thresholdValue={0.4}
               classes={`fade-in-init animate-delay-${index + 1 - 0.75}s`}
               topIn="fade-in-animate"
             >
@@ -66,6 +64,7 @@ const MuxHero = ({
             </NextIntersectionObserver>
           ))}
         </div>
+        <div className="hidden invisible animate-delay-0.25s animate-delay-1.25s animate-delay-2.25s animate-delay-3.25s"></div>
       </NextIntersectionObserver>
     </section>
   );

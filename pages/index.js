@@ -36,7 +36,7 @@ export default function Home() {
         <SvgRainbow />
 
         <NextIntersectionObserver
-          thresholdValue={0.5}
+          thresholdValue={0.4}
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
@@ -75,7 +75,7 @@ export default function Home() {
         <Spacer />
 
         <NextIntersectionObserver
-          thresholdValue={0.5}
+          thresholdValue={0.3}
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
@@ -91,7 +91,7 @@ export default function Home() {
             <div className="grid zero:grid-cols-1 sm:grid-cols-2 gap-10 zero:p-6 sm:p-10">
               <div className="flex-col">
                 <h3 className="btn w-full text-center">Recent Work</h3>
-                <ul className="grid zero:grid-cols-1 xs:grid-cols-2 gap-y-4 my-6 mx-2 font-light font-overpass uppercase leading-[1.7] text-justify  text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                <ul className="grid zero:grid-cols-1 xs:grid-cols-2 gap-y-4 my-6 mx-2 font-light font-overpass uppercase leading-[1.7] text-justify  text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
                   <li className="">
                     <Link target="_blank" href="https://carristo.com" className="line-link red hover-on">Carristo Creative</Link>
                   </li>
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
               <div className="flex-col">
                 <h3 className="btn w-full text-center">Values</h3>
-                <ul className="grid zero:grid-cols-1 xs:grid-cols-2 gap-y-4 my-6 mx-2 font-light font-overpass uppercase leading-[1.8] text-justify text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                <ul className="grid zero:grid-cols-1 xs:grid-cols-2 gap-y-4 my-6 mx-2 font-light font-overpass uppercase leading-[1.8] text-justify text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
                   <li className="">Communication</li>
                   <li className="">Prosperity</li>
                   <li className="">Responsibility</li>
@@ -143,8 +143,8 @@ export default function Home() {
               </div>
               <div className="flex-col col-span-1 sm:col-span-2">
                 <h3 className="btn w-full text-center">Skills</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-10 mt-6">
-                  <ul className="flex flex-col justify-start items-start mx-2 space-y-4 font-light font-overpass uppercase leading-[1.8] text-justify text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-x-10 mt-6">
+                  <ul className="flex flex-col justify-start items-start px-2 space-y-4 font-light font-overpass uppercase leading-[1.8] text-justify text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
                     <li className="">Craft CMS \ WordPress \ Contentful \ Sanity \ Expression Engine \ Joomla</li>
                     <li className="">PHP \ Ruby \ Python</li>
                     <li className="">Laravel \ Symfony \ Yii \ Ruby on Rails</li>
@@ -153,7 +153,7 @@ export default function Home() {
                     <li className="">Tailwind \ Bootstrap \ Pure</li>
                     <li className="">JS \ jQuery \ React \ AngularJS \ Next.js \ Alpine.js</li>
                   </ul>
-                  <ul className="flex flex-col justify-start items-start mx-2 space-y-4 font-light font-overpass uppercase leading-[1.8] text-[1ch] sm:text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
+                  <ul className="flex flex-col justify-start items-start mx-2 space-y-4 font-light font-overpass uppercase leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] w-full max-w-[475px]">
                     <li className="">Kinsta \ WpEngine \ Linode \ Servd</li>
                     <li className="">S3 \ Cloudfront \ Object Storage \ Google Cloud</li>
                     <li className="">DDEV \ Lando \ Docker \ Git \ Trellis</li>
