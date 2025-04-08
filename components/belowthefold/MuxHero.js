@@ -19,7 +19,7 @@ const MuxHero = ({
   return (
     <section
       className={classNames(
-        'hero landscape:h-[100vh] portrait:h-[40vh] lg:h-[80vh] overflow-y-hidden w-full flex flex-col justify-center items-center relative z-10 bg-js-black',
+        'hero landscape:h-[100vh] portrait:h-[40vh] overflow-y-hidden w-full flex flex-col justify-center items-center relative z-10 bg-js-black',
         className
       )}
     >

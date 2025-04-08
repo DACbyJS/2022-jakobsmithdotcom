@@ -8,14 +8,14 @@
 
   path.big-red-triangle-path {
     @apply transition-all duration-[3s] ease-in-out-quad;
-    @apply origin-center transform-gpu scale-50 rotate-180 translate-x-[1600px] -translate-y-[2000px];
+    @apply origin-center transform-gpu scale-50 -translate-x-[400px] -translate-y-[100px];
   }
 
-  &.big-red-triangle-rotate-in {
+  &.big-red-triangle-grow-in {
     @apply opacity-100;
 
     path.big-red-triangle-path {
-      @apply scale-75 rotate-0 -translate-x-[400px] -translate-y-[100px];
+      @apply scale-75 rotate-0;
     }
   }
 }

@@ -1,17 +1,18 @@
 /* Lib */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'scss/components/_NavDrawer.scss';
 
 /* Base */
 @tailwind base;
 @layer base {
     @import 'scss/base/global.scss';
+
 }
 
 
 /* Components */
 @tailwind components;
 @layer components {
-    @import 'scss/components/NavDrawer.scss';
     @import 'scss/components/hero-mux-player.scss';
     @import 'scss/components/responsive-rainbow.scss';
     @import 'scss/components/big-red-triangle.scss';

@@ -5,7 +5,7 @@ const BigRedTriangle = ({ className, svgProps }) => (
   <NextIntersectionObserver
     thresholdValue={1}
     classes="big-red-triangle-animate-init h-full relative"
-    topIn="big-red-triangle-rotate-in"
+    topIn="big-red-triangle-grow-in"
   >
     <div
       className={classNames(
