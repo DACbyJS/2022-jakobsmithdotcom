@@ -10,10 +10,10 @@
 
         &::after {
             @apply inline-block;
-            @apply absolute top-0 right-0;
+            @apply absolute -top-1 -right-8;
             @apply font-js-math;
             content: counter(list-item);
-            font-size: 1ch;
+            font-size: 1.2ch;
             margin-right: 1ch;
         }
     }
