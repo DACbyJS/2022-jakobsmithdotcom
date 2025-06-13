@@ -28,23 +28,21 @@ export default function WebsiteDesigners() {
   useEffect(() => {
     setTheme("red");
   }, [setTheme]);
-  const textColorVariants = {
-    red: "text-js-red",
-    yellow: "text-js-yellow",
-    blue: "text-js-blue",
-  };
+  const textColor = `text-js-${theme}`;
 
-  // Content
+  // Reusable StrongText with light font component
+  const StrongText = ({ children }) => (
+    <strong className={classNames("font-light", textColor)}>{children}</strong>
+  );
+
   const twoColumnLineItemsContent = {
     left: [
       {
         id: uuidv4(),
         html: (
           <>
-            <strong className={classNames("font-light", textColorVariants[theme])}>
-              Their Mockups translated
-            </strong>{" "}
-            Into a Website with Care and Attention.
+            Someone who <StrongText>answers emails</StrongText> and{" "}
+            <StrongText>hops on calls</StrongText> with them or their clients.
           </>
         ),
       },
@@ -52,8 +50,8 @@ export default function WebsiteDesigners() {
         id: uuidv4(),
         html: (
           <>
-            Someone who can handle Domains, Servers, Migrations, Data, SEO and
-            Accessibility.
+            Their Mockups <StrongText>translated</StrongText> Into a Website
+            with Care and Attention.
           </>
         ),
       },
@@ -61,49 +59,84 @@ export default function WebsiteDesigners() {
         id: uuidv4(),
         html: (
           <>
-            <strong className="text-js-red">To Communicate</strong> about
-            design, aesthetic and feeling like its important.
+            Someone who can <StrongText>handle</StrongText> hosting,
+            maintenance, automation and SEO.
           </>
         ),
       },
       {
         id: uuidv4(),
         html: (
-          <>Someone Willing to do the quantity of work to get to quality.</>
+          <>
+            To <StrongText>Communicate</StrongText> about design and feelings
+            like their important.
+          </>
         ),
-      },
-      {
-        id: uuidv4(),
-        html: <>Someone who can handle the technicalities of Web Design.</>,
       },
       {
         id: uuidv4(),
         html: (
           <>
-            To align their resources with their client&apos;s budget and Their
-            Own Profit Margin.
+            Someone who can add the <StrongText>animation</StrongText> without
+            having to spell it out for them.
+          </>
+        ),
+      },
+      {
+        id: uuidv4(),
+        html: (
+          <>
+            To <StrongText>align</StrongText> their resources with their
+            client&apos;s <StrongText>budget</StrongText> and your{" "}
+            <StrongText>Margin</StrongText>.
           </>
         ),
       },
     ],
     right: [
-      { id: uuidv4(), html: <>Websites identical to the mockups</> },
-      { id: uuidv4(), html: <>Designs that come alive and perform</> },
       {
         id: uuidv4(),
-        html: <>A Developer who can handle the technicalities of Web Design</>,
+        html: (
+          <>
+            everyone a feeling of being understood using empathy and automation.
+          </>
+        ),
       },
       {
         id: uuidv4(),
-        html: <>A Developer who can handle the technicalities of Web Design</>,
+        html: (
+          <>automatic responsive design, front-end UX, and admin usability.</>
+        ),
       },
       {
         id: uuidv4(),
-        html: <>A Developer who can handle the technicalities of Web Design</>,
+        html: (
+          <>
+            a return on investment that &quot;magically&quot; works for years.
+          </>
+        ),
       },
       {
         id: uuidv4(),
-        html: <>A Developer who can handle the technicalities of Web Design</>,
+        html: <>alot of care about looks and feels.</>,
+      },
+      {
+        id: uuidv4(),
+        html: (
+          <>
+            Websites that move when they need to and don&apos;t when they
+            don&apos;t.
+          </>
+        ),
+      },
+      {
+        id: uuidv4(),
+        html: (
+          <>
+            From page builders to white-glove websites, I can build you the
+            just-right solution.
+          </>
+        ),
       },
     ],
   };
@@ -112,17 +145,14 @@ export default function WebsiteDesigners() {
     {
       id: uuidv4(),
       q: "What's Your Rate?",
-      a: "Per project or $100/hr.",
+      a: "Monthly and/or Value Pricing.",
+      href: "/pricing",
     },
     {
       id: uuidv4(),
-      q: "$100/hr is alot?",
-      a: "I know.",
-    },
-    {
-      id: uuidv4(),
-      q: "$100/hr is cheap?",
-      a: "I know.",
+      q: "No really, what's your rate?",
+      a: "See our Pricing Page.",
+      href: "/pricing",
     },
     {
       id: uuidv4(),
@@ -133,7 +163,8 @@ export default function WebsiteDesigners() {
     {
       id: uuidv4(),
       q: "How do you handle clients?",
-      a: "With empathy and exactness.",
+      a: "See How We handle clients.",
+      href: "/how-we-handle-clients",
     },
     {
       id: uuidv4(),
@@ -144,18 +175,14 @@ export default function WebsiteDesigners() {
     {
       id: uuidv4(),
       q: "What's your vibe?",
-      a: "Liminal, silly and thoughtful.",
+      a: "Silly but thoughtful.",
+      href: "/about",
     },
     {
       id: uuidv4(),
       q: "What about maintenance?",
-      a: "See our maintenance service.",
+      a: "See our maintenance page.",
       href: "/maintenance",
-    },
-    {
-      id: uuidv4(),
-      q: "How Many Revisions?",
-      a: "99 issues but a revision ain't 1.",
     },
     {
       id: uuidv4(),
@@ -166,18 +193,13 @@ export default function WebsiteDesigners() {
     {
       id: uuidv4(),
       q: "How does payment work?",
-      a: "ACH or Credit Card via Stripe.",
+      a: "Monthly invoices via FreshBooks.",
     },
     {
       id: uuidv4(),
-      q: "How about content?",
-      a: "I know awesome human writers.",
-    },
-    {
-      id: uuidv4(),
-      q: "Are you an artist?",
-      a: "Yep.",
-      href: "https://linktr.ee/jakobcartersmith",
+      q: "Can you build an app?",
+      a: "No. I build websites.",
+      href: "/portfolio",
     },
   ];
 
@@ -208,7 +230,7 @@ export default function WebsiteDesigners() {
         <TransBox className="mx-auto z-20">
           <div className="font-js-math text-center">
             <h2 className="text-[5ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
-              Why Web Designers?
+              Web Development for Web Designers
             </h2>
           </div>
         </TransBox>
@@ -218,38 +240,61 @@ export default function WebsiteDesigners() {
         <TwoColumnLineItems items={twoColumnLineItemsContent} />
 
         <Spacer />
-
-        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20">
+        <BigRedTriangle className={"rotate-90"} />
+        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-16">
           <div className="font-js-math text-center">
-            <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
-              Services
+            <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-12">
+              Things I&apos;ve Done for Web Designers<br/> more than 10 Times
             </h2>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-10 gap-10">
-              <BlackBox className="p-20"></BlackBox>
-              <WhiteBlackBorderBox className="p-20"></WhiteBlackBorderBox>
-              <BlackBox className="p-20"></BlackBox>
-              <WhiteBlackBorderBox className="p-20"></WhiteBlackBorderBox>
-              <BlackBox className="p-20"></BlackBox>
-              <WhiteBlackBorderBox className="p-20"></WhiteBlackBorderBox>
-              <BlackBox className="p-20"></BlackBox>
-              <WhiteBlackBorderBox className="p-20"></WhiteBlackBorderBox>
+            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-10 gap-10 text-center text-[1ch] sm:text-[2ch] lg:text-[3ch] 2xl:text-[4ch]">
+              <BlackBox className="p-12 text-js-white">
+                Turn a mockup or wireframe into a custom website
+              </BlackBox>
+              <WhiteBlackBorderBox className="p-12">
+                Add a feature into a fully or half-finished website
+              </WhiteBlackBorderBox>
+              <BlackBox className="p-12 text-js-white">
+                Fix a website that&apos;s broken or catch it before it breaks
+              </BlackBox>
+              <WhiteBlackBorderBox className="p-12">
+                Make the <br /> &quot;back-end&quot;
+                <br /> of your website easier to use
+              </WhiteBlackBorderBox>
+              <BlackBox className="p-12 text-js-white">
+                On-Page and Technical SEO & Content Optimization
+              </BlackBox>
+              <WhiteBlackBorderBox className="p-12">
+                Get PageSpeed Insights to 90+ or load time under 1 second
+              </WhiteBlackBorderBox>
+              <BlackBox className="p-12 text-js-white">
+                Fully integrate Google&apos;s Labyrinth of Tools
+              </BlackBox>
+              <WhiteBlackBorderBox className="p-12">
+                Keeping the site running smoothly and securely
+              </WhiteBlackBorderBox>
+              <BlackBox className="p-12 text-js-white">
+                <StrongText>
+                  Making you look awesome in front of your client
+                </StrongText>
+              </BlackBox>
             </section>
           </div>
         </WhiteBlackBorderBox>
 
         <Spacer />
 
-        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20">
+        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] py-16 lg:-mt-20 z-10">
           <div className="font-js-math text-center">
-            <h2 className="text-[4ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
-              FAQs
+            <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-12">
+              Frequently Asked Quandries
             </h2>
           </div>
 
           <Questions items={questionsContent} />
+          
         </WhiteBlackBorderBox>
-
+        <BigRedTriangle className={"rotate-45"} />
         <Spacer />
       </BelowTheFold>
     </>
