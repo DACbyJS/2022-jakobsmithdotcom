@@ -34,6 +34,7 @@ const TwoColumnLineItems = ({ items }) => {
 
   return (
     <div className="two-column-line-items">
+
       <NextIntersectionObserver
         thresholdValue={0.25}
         topIn="fade-down-animate"
@@ -43,7 +44,7 @@ const TwoColumnLineItems = ({ items }) => {
           <h2 className="font-js-math text-center text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch]">
             They Need:
           </h2>
-          <ul className="p-0 flex flex-col justify-center items-center my-6 sm:my-10 mx-6 sm:mx-10 space-y-10 md:space-y-12 font-light">
+          <ul className="p-0 flex flex-col justify-center items-center my-6 sm:my-10 mx-10 space-y-10 md:space-y-12 font-light">
             {leftItems?.map((item) => (
               <li key={item.id} className="two-column-line-item">
                 {item.html}
