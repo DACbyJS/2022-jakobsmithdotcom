@@ -39,4 +39,14 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /text-js-(white|black|red|blue|yellow)/,
+      variants: ['hover', 'focus'],
+    },
+    {
+      pattern: /bg-js-(white|black|red|blue|yellow)/,
+      variants: ['hover', 'focus'],
+    },
+  ],
 };
