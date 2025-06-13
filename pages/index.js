@@ -6,6 +6,7 @@ import Link from "next/link";
 import { pageData } from "../lib/constants";
 
 // Custom
+import Analytics from "../components/head/analytics";
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import SvgRainbow from "../components/svg/Rainbow";
@@ -16,6 +17,7 @@ import Spacer from "../components/layout/Spacer";
 export default function Home() {
   return (
     <>
+      <Analytics />
       <Head>
         <title>Jakob Smith \ A Creative and Conscientious Web Developer</title>
         <meta description="A digital marketing developer based in Albuquerque, New Mexico" />

@@ -54,12 +54,12 @@ const MuxHero = ({
               classes={`fade-in-init animate-delay-${index + 1 - 0.75}s`}
               topIn="fade-in-animate"
             >
-              <h1
+              <h4
                 key={uid(index)}
                 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
               >
                 {word}
-              </h1>
+              </h4>
             </NextIntersectionObserver>
           ))}
         </div>
