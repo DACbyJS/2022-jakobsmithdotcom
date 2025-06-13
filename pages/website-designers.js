@@ -12,6 +12,7 @@ import classNames from "classnames";
 import { useTheme } from "../lib/contexts/ThemeProvider";
 
 // Components
+import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import BelowTheFold from "../components/layout/BelowTheFold";
 import Spacer from "../components/layout/Spacer";
@@ -227,7 +228,6 @@ export default function WebsiteDesigners() {
       />
 
       <BelowTheFold>
-        
         <BigRedTriangle />
 
         <Spacer />
@@ -248,62 +248,136 @@ export default function WebsiteDesigners() {
 
         <BigRedTriangle className={"rotate-90"} />
 
-        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-10 sm:pt-16">
-          <div className="font-js-math text-center">
-            <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-4 sm:pb-12">
-              Things I&apos;ve Done for Web Designers
-              <br /> more than 10 Times
-            </h2>
+        <NextIntersectionObserver
+          thresholdValue={0.25}
+          topIn="fade-down-animate"
+          classes="fade-down-init"
+        >
+          <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-10 sm:pt-16">
+            <div className="font-js-math text-center">
+              <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-4 sm:pb-12">
+                Things I&apos;ve Done for Web Designers
+                <br /> more than 10 Times
+              </h2>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-10 gap-6 sm:gap-10 text-center text-[1.6ch] sm:text-[2.1ch] lg:text-[3ch] 2xl:text-[4ch]">
-              <BlackBox className="p-6 md:p-12 text-js-white">
-                Turn a mockup or wireframe into a custom website
-              </BlackBox>
-              <WhiteBlackBorderBox className="p-6 md:p-12">
-                Add a feature into a fully or half-finished website
-              </WhiteBlackBorderBox>
-              <BlackBox className="p-6 md:p-12 text-js-white">
-                Fix a website that&apos;s broken or catch it before it breaks
-              </BlackBox>
-              <WhiteBlackBorderBox className="p-6 md:p-12">
-                Make the <br /> &quot;back-end&quot;
-                <br /> of your website easier to use
-              </WhiteBlackBorderBox>
-              <BlackBox className="p-6 md:p-12 text-js-white">
-                On-Page and Technical SEO & Content Optimization
-              </BlackBox>
-              <WhiteBlackBorderBox className="p-6 md:p-12">
-                Get PageSpeed Insights to 90+ or load time under 1 second
-              </WhiteBlackBorderBox>
-              <BlackBox className="p-6 md:p-12 text-js-white">
-                Fully integrate Google&apos;s Labyrinth of Tools
-              </BlackBox>
-              <WhiteBlackBorderBox className="p-6 md:p-12">
-                Keeping the site running smoothly and securely
-              </WhiteBlackBorderBox>
-              <BlackBox className="p-6 md:p-12 text-js-white">
-                <StrongText>
-                  Making you look awesome in front of your client
-                </StrongText>
-              </BlackBox>
-            </section>
-          </div>
-        </WhiteBlackBorderBox>
+              <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-10 gap-6 sm:gap-10 text-center text-[1.6ch] sm:text-[2.1ch] lg:text-[3ch] 2xl:text-[4ch]">
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-100"
+                >
+                  <BlackBox className="p-6 md:p-12 text-js-white">
+                    Turn a mockup or wireframe into a custom website
+                  </BlackBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-200"
+                >
+                  <WhiteBlackBorderBox className="p-6 md:p-12">
+                    Add a feature into a fully or half-finished website
+                  </WhiteBlackBorderBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-300"
+                >
+                  <BlackBox className="p-6 md:p-12 text-js-white">
+                    Fix a website that&apos;s broken or catch it before it
+                    breaks
+                  </BlackBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-400"
+                >
+                  <WhiteBlackBorderBox className="p-6 md:p-12">
+                    Make the <br /> &quot;back-end&quot;
+                    <br /> of your website easier to use
+                  </WhiteBlackBorderBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-300"
+                >
+                  <BlackBox className="p-6 md:p-12 text-js-white">
+                    On-Page and Technical SEO & Content Optimization
+                  </BlackBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-600"
+                >
+                  <WhiteBlackBorderBox className="p-6 md:p-12">
+                    Get PageSpeed Insights to 90+ or load time under 1 second
+                  </WhiteBlackBorderBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-700"
+                >
+                  <BlackBox className="p-6 md:p-12 text-js-white">
+                    Fully integrate Google&apos;s Labyrinth of Tools
+                  </BlackBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-600"
+                >
+                  <WhiteBlackBorderBox className="p-6 md:p-12">
+                    Keeping the site running smoothly and securely
+                  </WhiteBlackBorderBox>
+                </NextIntersectionObserver>
+
+                <NextIntersectionObserver
+                  thresholdValue={0.25}
+                  topIn="fade-down-animate"
+                  classes="fade-down-init delay-500"
+                >
+                  <BlackBox className="p-6 md:p-12 text-js-white">
+                    <StrongText>
+                      Making you look awesome in front of your client
+                    </StrongText>
+                  </BlackBox>
+                </NextIntersectionObserver>
+              </section>
+            </div>
+          </WhiteBlackBorderBox>
+        </NextIntersectionObserver>
 
         <Spacer />
 
         <BigRedTriangle className={"rotate-45"} />
 
-        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] py-10 sm:py-16 lg:-mt-20 z-10">
-          <div className="font-js-math text-center">
-            <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-4 sm:pb-12">
-              Frequently Asked Quandries
-            </h2>
-          </div>
+        <NextIntersectionObserver
+          thresholdValue={0.25}
+          topIn="fade-down-animate"
+          classes="fade-down-init"
+        >
+          <WhiteBlackBorderBox className="mx-auto max-w-[1300px] py-10 sm:py-16 lg:-mt-20 z-10">
+            <div className="font-js-math text-center">
+              <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-4 sm:pb-12">
+                Frequently Asked Quandries
+              </h2>
+            </div>
 
-          <Questions items={questionsContent} />
-
-        </WhiteBlackBorderBox>
+            <Questions items={questionsContent} />
+          </WhiteBlackBorderBox>
+        </NextIntersectionObserver>
 
         <Spacer />
 
