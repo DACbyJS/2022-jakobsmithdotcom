@@ -39,6 +39,8 @@ const MuxHero = ({
           playbackId={playbackId}
           metadata={metadata}
           startTime={startTime}
+          maxResolution="720p"
+          minResolution="480p"
         />
       </NextIntersectionObserver>
       <NextIntersectionObserver
