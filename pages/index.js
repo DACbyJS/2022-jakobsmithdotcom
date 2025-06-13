@@ -52,24 +52,24 @@ export default function Home() {
               </h2>
             </div>
             <div className="flex flex-col items-center mb-4 mt-6 lg:mt-10 space-y-6 lg:space-y-10 font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center">
-              <h3
+              <Link
                 className="red line-link hover-on"
                 href={pageData[1]?.data?.href}
               >
                 Designers
-              </h3>
-              <h3
+              </Link>
+              <Link
                 className="yellow line-link hover-on"
                 href={pageData[2]?.data?.href}
               >
                 Marketing
-              </h3>
-              <h3
+              </Link>
+              <Link
                 className="blue line-link hover-on"
                 href={pageData[3]?.data?.href}
               >
                 Public Good
-              </h3>
+              </Link>
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>
