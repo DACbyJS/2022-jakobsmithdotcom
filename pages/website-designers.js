@@ -216,7 +216,7 @@ export default function WebsiteDesigners() {
       special: true,
       text: (
         <>
-            Making you look awesome in front of your client
+            Making you look awesome <br/> in front of your clients
         </>
       ),
     }

@@ -1,0 +1,21 @@
+/** Big Yellow Square Animations **/
+.big-yellow-square-animate-init {
+  @apply opacity-0;
+
+  .big-yellow-square-svg {
+    @apply overflow-visible;
+  }
+
+  rect.big-yellow-square-rect{
+    @apply transition-all duration-[3s] ease-in-out-quad;
+    @apply origin-center transform-gpu scale-50 -translate-x-[400px] translate-y-[300px];
+  }
+
+  &.big-yellow-square-grow-in {
+    @apply opacity-100;
+
+    rect.big-yellow-square-rect{
+      @apply scale-75;
+    }
+  }
+}
