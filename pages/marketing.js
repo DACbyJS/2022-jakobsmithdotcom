@@ -24,7 +24,6 @@ import TwoColumnLineItems from "../components/belowthefold/TwoColumnLineItems";
 import GridOfBoxes from "../components/belowthefold/GridOfBoxes";
 
 export default function WebsiteDesigners() {
-  // Theme
   const { theme, setTheme } = useTheme();
   useEffect(() => {
     setTheme("yellow");
@@ -273,7 +272,7 @@ export default function WebsiteDesigners() {
     {
       id: uuidv4(),
       q: "Can you build an app?",
-      a: "No. I build websites.",
+      a: "Not anymore, I build websites.",
       href: "/portfolio",
     },
   ];

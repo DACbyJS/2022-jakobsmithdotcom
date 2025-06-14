@@ -1,0 +1,23 @@
+/** Big Blue Circle Animations **/
+.big-blue-circle-animate-init {
+  @apply overflow-visible;
+  @apply opacity-0;
+
+  .big-blue-circle-svg {
+    @apply overflow-visible;
+  }
+
+  path.big-blue-circle-path {
+    @apply transition-all duration-[3s] ease-in-out-quad;
+    @apply origin-center transform-gpu scale-50;
+  }
+
+  &.big-blue-circle-grow-in {
+    @apply opacity-100;
+
+    path.big-blue-circle-path {
+      @apply overflow-visible;
+      @apply scale-100;
+    }
+  }
+}
