@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ReactStrapModal from '../reactstrap/Modal';
 
 export default function InfoModal({ isInfoModalActive, toggleIsInfoModalActive}) {
@@ -12,9 +13,29 @@ export default function InfoModal({ isInfoModalActive, toggleIsInfoModalActive})
       toggle={toggleIsInfoModalActive}
     >
       <div className="text-center">
-        <h2 className="font-js-math text-[5ch] mb-4">Site Specs</h2>
-        <h3 className="font-overpass-mono mb-4 text-[1.5ch]">
-          Review how I made this site and we can learn something new together!
+        <h2 className="font-js-math text-[3ch] md:text-[5ch] mb-3">General Info</h2>
+        <ul>
+          <li className="font-overpass mb-2">
+            <Link
+              className="line-link red"
+              href="/about"
+            >
+              About Me
+            </Link>
+          </li>
+          <li className="font-overpass mb-2">
+            <a
+              className="line-link blue"
+              href="/contact"
+              target="_blank"
+            >
+              Contact Me
+            </a>
+          </li>
+        </ul>
+        <h2 className="font-js-math text-[3ch] md:text-[5ch] mt-8 mb-3">Site Specs</h2>
+        <h3 className="font-overpass-mono mb-4 text-[1.5ch] leading-5">
+          Review how I made this site <br/> and we can learn something new together!
         </h3>
         <ul>
           <li className="font-overpass mb-2">
