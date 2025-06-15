@@ -6,7 +6,6 @@ import Link from "next/link";
 import { pageData } from "../lib/constants";
 
 // Custom
-import Analytics from "../components/head/analytics";
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import SvgRainbow from "../components/svg/Rainbow";
@@ -15,12 +14,13 @@ import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
 import Spacer from "../components/layout/Spacer";
 
 export default function Home() {
+  const homePageData = pageData.find((page) => page.slug === "home");
+  
   return (
     <>
-      <Analytics />
       <Head>
-        <title>Jakob Smith \ A Creative and Conscientious Web Developer</title>
-        <meta description="A digital marketing developer based in Albuquerque, New Mexico" />
+        <title>{homePageData.metaTitle}</title>
+        <meta description={homePageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
