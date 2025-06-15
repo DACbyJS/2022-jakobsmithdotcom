@@ -1,17 +1,17 @@
 // React
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Next
-import Link from 'next/link';
+import Link from "next/link";
 
 // Third-Party
-import classNames from 'classnames';
+import classNames from "classnames";
 
 // Contexts
-import { useTheme } from '../../lib/contexts/ThemeProvider';
+import { useTheme } from "../../lib/contexts/ThemeProvider";
 
 // Effects
-import useWindowSize from '../../lib/hooks/useWindowSize';
+import useWindowSize from "../../lib/hooks/useWindowSize";
 
 const Questions = ({ items }) => {
   // Set color
@@ -46,9 +46,9 @@ const Questions = ({ items }) => {
           <div key={i} className="flex flex-col lg:flex-row">
             <Link
               href="#single-page-questions"
-              className={classNames('questions-link', {
-                'question-left': i % 2 === 0,
-                'question-right': i % 2 !== 0,
+              className={classNames("questions-link", {
+                "question-left": i % 2 === 0,
+                "question-right": i % 2 !== 0,
               })}
               onMouseEnter={() => handleQuestionHover(item.id)}
               onMouseLeave={handleMouseLeave}
@@ -57,12 +57,12 @@ const Questions = ({ items }) => {
               {item.q}
             </Link>
             <Link
-              href={item.href ?? '#single-page-questions'}
-              className={classNames('questions-link', {
-                'question-right': i % 2 === 0,
-                'question-left': i % 2 !== 0,
-                'question-hover': selectedItem === item.id,
-                'before-question-hover': selectedItem !== item.id,
+              href={item.href ?? "#single-page-questions"}
+              className={classNames("questions-link", {
+                "question-right": i % 2 === 0,
+                "question-left": i % 2 !== 0,
+                "question-hover": selectedItem === item.id,
+                "before-question-hover": selectedItem !== item.id,
                 [themeClassName]: themeClassName !== null,
               })}
             >
