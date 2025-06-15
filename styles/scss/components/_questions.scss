@@ -5,7 +5,7 @@
   &.question-left {
     @apply order-1 lg:order-1 text-center lg:text-right pr-4;
     span {
-      @apply justify-center md:justify-end;
+      @apply justify-center lg:justify-end;
       &:hover svg path {
         @apply stroke-js-black transition-colors duration-300 ease-in-out;
       }
@@ -15,7 +15,7 @@
   &.question-right {
     @apply order-1 lg:order-2 text-center lg:text-left;
     span {
-      @apply justify-center md:justify-start;
+      @apply justify-center lg:justify-start;
     }
   }
 
@@ -51,6 +51,7 @@
 
   &.question-hover {
     @apply transition-all duration-300 ease-in-out cursor-pointer;
+    
     &.theme-red {
       @apply text-js-red;
     }
