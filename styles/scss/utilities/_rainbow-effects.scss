@@ -21,44 +21,74 @@
 
 @keyframes rainbow-svg-fill-white {
   0% {
-    fill: theme('colors.js-white');
+    fill: theme("colors.js-white");
   }
 
   25% {
-    fill: theme('colors.js-red');
+    fill: theme("colors.js-red");
   }
 
   50% {
-    fill: theme('colors.js-blue');
+    fill: theme("colors.js-blue");
   }
 
   75% {
-    fill: theme('colors.js-yellow');
+    fill: theme("colors.js-yellow");
   }
 
   100% {
-    fill: theme('colors.js-white');
+    fill: theme("colors.js-white");
   }
 }
 
 @keyframes rainbow-svg-fill-black {
   0% {
-    fill: theme('colors.js-black');
+    fill: theme("colors.js-black");
   }
 
   25% {
-    fill: theme('colors.js-red');
+    fill: theme("colors.js-red");
   }
 
   50% {
-    fill: theme('colors.js-blue');
+    fill: theme("colors.js-blue");
   }
 
   75% {
-    fill: theme('colors.js-yellow');
+    fill: theme("colors.js-yellow");
   }
 
   100% {
-    fill: theme('colors.js-black');
+    fill: theme("colors.js-black");
+  }
+}
+
+/* rainbow Text Black on hover */
+.rainbow-text-on-hover-from-black {
+  transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+  &:hover {
+    animation: rainbow-text-black 5s ease infinite;
+  }
+}
+
+@keyframes rainbow-text-black {
+  0% {
+    color: theme("colors.js-black");
+  }
+
+  25% {
+    color: theme("colors.js-red");
+  }
+
+  50% {
+    color: theme("colors.js-blue");
+  }
+
+  75% {
+    color: theme("colors.js-yellow");
+  }
+
+  100% {
+    color: theme("colors.js-black");
   }
 }

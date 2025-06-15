@@ -175,3 +175,12 @@
 .wiggly-svg-link:hover svg {
   transform: translate3d(-66.6%, 0, 0);
 }
+
+/* White Outline Text */
+.white-outline-text {
+  text-shadow:
+    1px 1px 0 theme('colors.js-white'),
+    -1px 1px 0 theme('colors.js-white'),
+    1px -1px 0 theme('colors.js-white'),
+    -1px -1px 0 theme('colors.js-white');
+}
