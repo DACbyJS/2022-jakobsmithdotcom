@@ -23,6 +23,7 @@
     "next": "^14",
     "react": "^18",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.6",
     "reactstrap": "^9.1.10",
     "snapsvg-cjs": "^0",
     "uid": "^2.0.2",
