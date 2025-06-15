@@ -79,9 +79,9 @@ export default function Home() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[900px] py-6 md:py-10 lg:py-12 z-10 relative">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[900px] pt-6 pb-10 md:py-10 lg:py-12 z-10 relative">
             <AbstractShape
-              className="absolute z-30 -bottom-[3rem] -left-[3rem] -translate-x-1/2 translate-y-1/2 w-[100px] sm:w-[180px] lg:w-[200px] h-auto"
+              className="absolute z-30 -bottom-5 md:-bottom-[50px] -left-4 md:-left-[50px] -translate-x-1/2 translate-y-1/2 w-[100px] sm:w-[180px] lg:w-[200px] h-auto"
               linkTo="/portfolio"
               linkText="See Portfolio"
             />
