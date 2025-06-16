@@ -29,7 +29,7 @@ const GridOfBoxes = ({ items }) => {
   const randomDelay = () => Math.floor(Math.random() * 10 + 1) * 100;
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-10 gap-6 sm:gap-10 font-js-math text-center text-[1.6ch] sm:text-[2.1ch] lg:text-[3ch] 2xl:text-[3.5ch]">
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-10 gap-6 sm:gap-10 font-js-math leading-[1.4] text-center text-[1.6ch] sm:text-[2.1ch] lg:text-[3ch] 2xl:text-[3.5ch]">
       {items?.map((item, index) => (
         <div key={item.id}>
           <NextIntersectionObserver
