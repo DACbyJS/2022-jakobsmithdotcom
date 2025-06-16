@@ -56,7 +56,7 @@ const TwoColumnLineItems = ({ items }) => {
 
       <NextIntersectionObserver
         thresholdValue={0.1}
-        classes="animate-init fade-right-init animate-delay-1s relative z-10 w-full max-w-[700px]"
+        classes="animate-init fade-right-init .animate-delay-0\.25s lg:animate-delay-1s relative z-10 w-full max-w-[700px]"
         topIn="fade-right-animate"
       >
         <BlackBox className="mx-auto py-6 md:py-10 lg:py-12">
