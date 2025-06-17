@@ -36,27 +36,24 @@ export const homePageContent = {
     ),
     links: [
       {
-        href: pageData[4]?.data?.href,
-        text: "How I Treat People",
+        href: pageData[5]?.data?.href,
+        text: "Services",
         cssClasses: "blue line-link hover-on",
       },
       {
-        href: pageData[5]?.data?.href,
-        text: "How Much I Cost",
+        href: pageData[4]?.data?.href,
+        text: "Pricing",
         cssClasses: "yellow line-link hover-on",
       },
       {
-        href: pageData[6]?.data?.href,
-        text: "How I Do the Work",
+        href: pageData[7]?.data?.href,
+        text: "About Me",
         cssClasses: "red line-link hover-on",
       },
     ],
-    badge: [
-      {
-        href: pageData[7]?.data?.href,
-        text: "How I Handle Clients",
-        cssClasses: "rainbow line-link hover-on",
-      },
-    ],
+    badge: {
+      href: pageData[6]?.data?.href,
+      text: "See Portfolio",
+    },
   },
 };
