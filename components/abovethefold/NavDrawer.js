@@ -23,11 +23,13 @@ export default function NavDrawer({ isActive, handleLinkItemClick }) {
     ({ navDrawerClasses, navLinksClasses } = navDrawerTrickleClose());
   }
 
+  const pageDataWithoutHome = pageData.slice(1);
+
   return (
     <div className={navDrawerClasses}>
       <nav role="navigation">
         <ul>
-          {pageData.map((navItem, index) => {
+          {pageDataWithoutHome.map((navItem, index) => {
             return (
               <li key={uid(index)} className={navLinksClasses[index]}>
                 <Link
