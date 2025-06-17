@@ -18,9 +18,9 @@ const StrongText = ({ children }) => {
   );
 };
 
-export const wdPageContent = {
-  muxWords: ["Listen.", "Iterate.", "Translate.", "Deliver."],
-  pageTitle: "Website Management for Website Designers",
+export const pgPageContent = {
+  muxWords: ["Listen.", "Budget.", "Build.", "Change."],
+  pageTitle: "Website Management for Public Good",
   twoColumnLineItemsContent: {
     left: [
       {
@@ -28,7 +28,8 @@ export const wdPageContent = {
         html: (
           <>
             Someone who <StrongText>answers emails</StrongText> and{" "}
-            <StrongText>hops on calls</StrongText> with them or their clients.
+            <StrongText>hops on calls</StrongText> with all the{" "}
+            <StrongText>stakeholders</StrongText>.
           </>
         ),
       },
@@ -36,8 +37,9 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            Their Mockups <StrongText>translated</StrongText> Into a Website
-            with Care and Attention.
+            Their websites <StrongText>crafted</StrongText> to keep their{" "}
+            <StrongText>costs low</StrongText> and their{" "}
+            <StrongText>reach wide</StrongText>.
           </>
         ),
       },
@@ -54,8 +56,9 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            To <StrongText>Communicate</StrongText> about design and feelings
-            like their important.
+            To <StrongText>Communicate</StrongText> about{" "}
+            <StrongText>change</StrongText> and <StrongText>praxis</StrongText>{" "}
+            like it is a gift, not a business opportunity.
           </>
         ),
       },
@@ -63,8 +66,8 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            Someone who can add the <StrongText>animation</StrongText> without
-            having to spell it out for them.
+            Someone who can add the <StrongText>missing pieces</StrongText>{" "}
+            without having to spell it out for them.
           </>
         ),
       },
@@ -72,9 +75,18 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            To <StrongText>align</StrongText> their resources with their
-            client&apos;s <StrongText>budget</StrongText> and your{" "}
-            <StrongText>Margin</StrongText>.
+            To <StrongText>align</StrongText> their resources with their{" "}
+            <StrongText>budget</StrongText> and <StrongText>mission</StrongText>
+            .
+          </>
+        ),
+      },
+      {
+        id: uuidv4(),
+        html: (
+          <>
+            Someone who can <StrongText>work with a team</StrongText> in
+            multiple time-zones and with multiple talents.
           </>
         ),
       },
@@ -92,7 +104,8 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            automatic <br /> responsive design, <br /> UX, and usability.
+            clear return on investment made for your board and low-cost open
+            source code.
           </>
         ),
       },
@@ -100,8 +113,8 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            a return on investment <br /> that &quot;magically&quot; works for
-            years.
+            an inspiring <StrongText>community foundation</StrongText> that
+            &quot;magically&quot; performs for years.
           </>
         ),
       },
@@ -109,7 +122,8 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            alot of care and <br /> attention to looks <br /> and feels.
+            energy and time because I believe that radical love and acceptance
+            is our only chance.
           </>
         ),
       },
@@ -117,8 +131,8 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            Websites that move when they need to and don&apos;t when they
-            don&apos;t.
+            projects that get finished to spec and seem to get better over night
+            without extra money.
           </>
         ),
       },
@@ -131,35 +145,48 @@ export const wdPageContent = {
           </>
         ),
       },
+      {
+        id: uuidv4(),
+        html: (
+          <>
+            Confirmation, education, clarity, translation, and most of all,
+            honesty and respect.
+          </>
+        ),
+      },
     ],
   },
 
   gridOfBoxesTitle: (
     <>
-      Things I&apos;ve Done for Web Designers
-      <br />
+      Things I&apos;ve Done for Non-Profits <br />
       more than 10 Times
     </>
   ),
   gridOfBoxesContent: [
     {
       id: uuidv4(),
-      text: <>Turn a mockup or wireframe into a custom website</>,
-    },
-    {
-      id: uuidv4(),
-      text: <>Add a feature into a fully or half-finished website</>,
-    },
-    {
-      id: uuidv4(),
-      text: <>Fix a website that&apos;s broken or catch it before it breaks</>,
+      text: <>Turn a document and some images into a custom website</>,
     },
     {
       id: uuidv4(),
       text: (
         <>
-          Make the <br /> &quot;back-end&quot;
-          <br /> of your website easier to use
+          Add a complex feature <br /> into a half-finished website
+        </>
+      ),
+    },
+    {
+      id: uuidv4(),
+      text: (
+        <>Fixing a website that&apos;s broken for 6 years by 8 prior editors</>
+      ),
+    },
+    {
+      id: uuidv4(),
+      text: (
+        <>
+          Silencing <br /> 2-year WordPress bugs in 20 minutes.
         </>
       ),
     },
@@ -181,12 +208,24 @@ export const wdPageContent = {
     },
     {
       id: uuidv4(),
+      text: <>Updating a website&apos;s software monthly with testing</>,
+    },
+    {
+      id: uuidv4(),
+      text: <>Building or automating donation and calendar pages.</>,
+    },
+    {
+      id: uuidv4(),
       special: true,
       text: (
         <>
-          Making you look awesome <br /> in front of your clients
+          Making you look awesome <br /> in front of your people
         </>
       ),
+    },
+    {
+      id: uuidv4(),
+      text: <>Showing the return on investment to a critical Board</>,
     },
   ],
   questionsTitle: <>Questions I Get Asked</>,
@@ -201,6 +240,12 @@ export const wdPageContent = {
       id: uuidv4(),
       q: "What's monthly value pricing?",
       a: "See our Pricing Page.",
+      href: pageData[4].data.href,
+    },
+{
+      id: uuidv4(),
+      q: "...no money in non-profits?",
+      a: "I know, but I like existence too.",
       href: pageData[4].data.href,
     },
     {
@@ -227,7 +272,7 @@ export const wdPageContent = {
       a: "Silly but thoughtful.",
       href: pageData[7].data.href,
     },
-{
+    {
       id: uuidv4(),
       q: "What about SEO?",
       a: "Yes, see my Simple SEO service.",
