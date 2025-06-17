@@ -5,14 +5,26 @@ import Link from "next/link";
 import Draggable from "react-draggable";
 import classNames from "classnames";
 
-const AbstractShape = ({ className, svgProps, linkTo, linkText }) => {
+// contexts
+import { useTheme } from "../../lib/contexts/ThemeProvider";
+
+const PinnedBadge = ({ className, svgProps, linkTo, linkText }) => {
+  const { theme } = useTheme();
+  const textColor = `text-js-${theme}`;
+
   const nodeRef = useRef(null);
+
   return (
     <Draggable nodeRef={nodeRef} handle="#abstract-shape-drag-button">
       <div className={classNames("fixed", className)} ref={nodeRef}>
         <button
           id="abstract-shape-drag-button"
-          className="absolute white-outline-text rotate-[20deg] z-20 -top-5 sm:-top-2 md:-top-5 active:-top-6 right-[45%] peer active:right-[42%] translate-x-1/2 translate-y-1/2 text-[1.3rem] md:text-[2rem] hover:cursor-move active:outline-none focus-visible:outline-none transition-all duration-200 ease-in-out"
+          className={classNames(
+            "absolute rotate-[20deg] z-20 -top-5 sm:-top-2 md:-top-5 active:-top-6 right-[45%] active:right-[42%] translate-x-1/2 translate-y-1/2",
+            "white-outline-text text-[1.3rem] md:text-[2rem]",
+            "peer hover:cursor-move active:outline-none focus:outline-none transition-all duration-200 ease-in-out",
+            textColor,
+          )}
         >
           🖈
         </button>
@@ -48,4 +60,4 @@ const AbstractShape = ({ className, svgProps, linkTo, linkText }) => {
   );
 };
 
-export default AbstractShape;
+export default PinnedBadge;
