@@ -5,6 +5,9 @@ import classNames from "classnames";
 // components
 import { useTheme } from "../lib/contexts/ThemeProvider";
 
+// constants
+import { pageData } from "../lib/constants/pageData";
+
 // Reusable StrongText with light font component
 const StrongText = ({ children }) => {
   const { theme } = useTheme();
@@ -88,20 +91,27 @@ export const wdPageContent = {
       {
         id: uuidv4(),
         html: (
-          <>automatic <br/> responsive design, <br/> UX, and usability.</>
+          <>
+            automatic <br /> responsive design, <br /> UX, and usability.
+          </>
         ),
       },
       {
         id: uuidv4(),
         html: (
           <>
-            a return on investment <br/> that &quot;magically&quot; works for years.
+            a return on investment <br /> that &quot;magically&quot; works for
+            years.
           </>
         ),
       },
       {
         id: uuidv4(),
-        html: <>alot of care and <br/> attention to looks <br/> and feels.</>,
+        html: (
+          <>
+            alot of care and <br /> attention to looks <br /> and feels.
+          </>
+        ),
       },
       {
         id: uuidv4(),
@@ -116,7 +126,8 @@ export const wdPageContent = {
         id: uuidv4(),
         html: (
           <>
-            the just-right solution, <br /> even if it&apos;s a page-builder or custom code.
+            the just-right solution, <br /> even if it&apos;s a page-builder or
+            custom code.
           </>
         ),
       },
@@ -178,70 +189,76 @@ export const wdPageContent = {
       ),
     },
   ],
-  questionsTitle: (
-    <>
-      Questions I Get Asked
-    </>
-  ),
+  questionsTitle: <>Questions I Get Asked</>,
   questionsContent: [
     {
       id: uuidv4(),
       q: "What's Your Rate?",
-      a: "Monthly and/or Value Pricing.",
-      href: "/pricing",
+      a: "Monthly Value Pricing.",
+      href: pageData[4].data.href,
     },
     {
       id: uuidv4(),
-      q: "No really, what's your rate?",
+      q: "What's monthly value pricing?",
       a: "See our Pricing Page.",
-      href: "/pricing",
+      href: pageData[4].data.href,
     },
     {
       id: uuidv4(),
       q: "Can I see your work?",
       a: "Yes.",
-      href: "/portfolio",
+      href: pageData[6].data.href,
     },
     {
       id: uuidv4(),
       q: "How do you handle clients?",
-      a: "See How We handle clients.",
-      href: "/how-we-handle-clients",
+      a: "Learn a little about me.",
+      href: pageData[7].data.href,
     },
     {
       id: uuidv4(),
       q: "Do you do Hosting?",
-      a: "Yes.",
-      href: "/maintenance",
+      a: "Yes. See my Foundation Service.",
+      href: pageData[5].data.href,
     },
     {
       id: uuidv4(),
       q: "What's your vibe?",
       a: "Silly but thoughtful.",
-      href: "/about",
+      href: pageData[7].data.href,
+    },
+{
+      id: uuidv4(),
+      q: "What about SEO?",
+      a: "Yes, see my Simple SEO service.",
+      href: pageData[5].data.href,
     },
     {
       id: uuidv4(),
       q: "What about maintenance?",
-      a: "See our maintenance page.",
-      href: "/maintenance",
+      a: "See my Foundation Service.",
+      href: pageData[5].data.href,
     },
     {
       id: uuidv4(),
       q: "How do we get started?",
       a: "Call, Email, or Text.",
-      href: "/contact",
+      href: pageData[8].data.href,
     },
     {
       id: uuidv4(),
       q: "How does payment work?",
-      a: "Monthly invoices via FreshBooks.",
+      a: "Monthly invoices via Stripe.",
     },
     {
       id: uuidv4(),
       q: "Can you build an app?",
       a: "Not anymore, I build websites.",
-      href: "/portfolio",
+      href: pageData[6].data.href,
     },
   ],
+  questionsBadge: {
+    linkTo: pageData[6].data.href,
+    linkText: "See Portfolio",
+  },
 };

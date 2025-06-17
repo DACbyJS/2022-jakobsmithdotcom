@@ -10,7 +10,6 @@ import { pageData } from "../lib/constants/pageData";
 import { wdPageContent } from "../pages-content/website-designers";
 
 // Components
-import AbstractShape from "../components/svg/AbstractShape";
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import BelowTheFold from "../components/layout/BelowTheFold";
@@ -21,6 +20,7 @@ import BigRedTriangle from "../components/svg/BigRedTriangle";
 import Questions from "../components/belowthefold/Questions";
 import TwoColumnLineItems from "../components/belowthefold/TwoColumnLineItems";
 import GridOfBoxes from "../components/belowthefold/GridOfBoxes";
+import PinnedBadge from "../components/svg/PinnedBadge";
 
 export default function WebsiteDesigners() {
   // Theme
@@ -29,6 +29,8 @@ export default function WebsiteDesigners() {
     setTheme("red");
   }, [setTheme]);
 
+  // Content
+  const wdPageData = pageData.find((page) => page.slug === "website-designers");
   const {
     muxWords,
     pageTitle,
@@ -37,21 +39,22 @@ export default function WebsiteDesigners() {
     gridOfBoxesContent,
     questionsTitle,
     questionsContent,
+    questionsBadge,
   } = wdPageContent;
 
   return (
     <>
       <Head>
-        <title>{pageData[1].metaTitle}</title>
+        <title>{wdPageData.metaTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content="I translate the technicalities Web Designers need handled in client meetings, builds, hosting and maintenance."
+          content={wdPageData.metaDescription}
         />
       </Head>
 
       <MuxHero
-        playbackId="jnDZcW3XgvTAs1JP7XT4LvOUw02a00Il4Djkwqh00i762g"
+        playbackId="jd77Y2gq9U9102yeWVQpIOkyM2uJTzDEWdMzHITUjSOs"
         metadata={{
           video_id: "multi-color-liquid-looping-bg",
           video_title: "Multi-color Liquid Looping Video Background",
@@ -109,10 +112,10 @@ export default function WebsiteDesigners() {
         >
           <WhiteBlackBorderBox className="relative mx-auto max-w-[1300px] py-10 sm:pt-16 sm:pb-16 lg:-mt-20 z-10">
 
-            <AbstractShape
+            <PinnedBadge
               className="absolute z-30 -top-3 md:-top-[20px] -left-4 md:-left-[50px] -translate-x-1/2 translate-y-1/2 w-[100px] sm:w-[150px] lg:w-[200px] h-auto"
-              linkTo="/portfolio"
-              linkText="See Portfolio"
+              linkTo={questionsBadge.linkTo}
+              linkText={questionsBadge.linkText}
             />
 
             <div className="font-js-math text-center">
