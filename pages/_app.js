@@ -9,6 +9,7 @@ import Analytics from "../components/head/analytics";
 // External Dependencies
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import 'react-tooltip/dist/react-tooltip.css'
 config.autoAddCss = false;
 
 // Styles

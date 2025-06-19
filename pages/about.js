@@ -17,7 +17,7 @@ import BelowTheFold from "../components/layout/BelowTheFold";
 import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
 import Spacer from "../components/layout/Spacer";
 
-export default function Home() {
+export default function About() {
   const homePageData = pageData.find((page) => page.slug === "home");
   const { muxWords, firstWhiteBlackBox } = homePageContent;
   
