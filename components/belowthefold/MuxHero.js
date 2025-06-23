@@ -1,4 +1,4 @@
-import MuxPlayer from '@mux/mux-player-react/lazy';
+import MuxPlayer from '@mux/mux-player-react';
 import classNames from 'classnames';
 import { uid } from 'uid';
 
@@ -6,15 +6,12 @@ import { uid } from 'uid';
 import NextIntersectionObserver from '../layout/NextIntersectionObserver';
 
 const MuxHero = ({
-  playbackId = 'lj3tm5zsAwuRRC3xAxbMq1aCheG8qL1NRhbaj01wNIW4',
-  metadata = {
-    video_id: 'mux-hero-video',
-    video_title: 'Mux Hero Video',
-  },
-  startTime = 0,
+  playbackId,
+  metadata,
+  startTime,
   className,
   playerClassName,
-  words = ['Translate.', 'Decide.', 'Develop.', 'Deliver.'],
+  words,
 }) => {
   return (
     <section
