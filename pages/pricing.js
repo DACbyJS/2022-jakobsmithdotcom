@@ -2,6 +2,9 @@
 import Head from "next/head";
 import Link from "next/link";
 
+// Libraries
+import classNames from "classnames";
+
 // Constants
 import { pageData } from "../lib/constants";
 import { pricingPageContent } from "../pages-content/pricing";
@@ -17,10 +20,18 @@ import BigBlueCircle from "../components/svg/BigBlueCircle";
 import BigRedTriangle from "../components/svg/BigRedTriangle";
 import BigYellowSquare from "../components/svg/BigYellowSquare";
 
+
 export default function Pricing() {
   const pricingPageData = pageData.find((page) => page.slug === "pricing");
   const { muxWords, firstWhiteBlackBox } = pricingPageContent;
-  const { firstPricingColumn, secondPricingColumn, bottomLinks, disclaimer } = firstWhiteBlackBox;
+  const {
+    firstPricingColumn,
+    secondPricingColumn,
+    bottomLinks,
+    disclaimer,
+    disclaimer2,
+    disclaimer3,
+  } = firstWhiteBlackBox;
 
   return (
     <>
@@ -117,37 +128,28 @@ export default function Pricing() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center py-3 md:py-6">
-              <Link
-                href="/contact"
-                className="line-link blue hover-on font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center"
+            {bottomLinks.map((link) => (
+              <div
+                key={link.id}
+                className="flex flex-col items-center justify-center py-3 md:py-6"
               >
-                Service Details
-              </Link>
-            </div>
-
-            <div className="flex flex-col items-center justify-center py-3 md:py-6">
-              <Link
-                href="/contact"
-                className="line-link yellow hover-on font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center"
-              >
-                Portfolio
-              </Link>
-            </div>
-
-            <div className="flex flex-col items-center justify-center py-3 md:py-6">
-              <Link
-                href="/contact"
-                className="line-link red hover-on font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center"
-              >
-                Get A Quote
-              </Link>
-            </div>
+                <Link
+                  href={link.href}
+                  target={link.target}
+                  className={classNames(
+                    "line-link hover-on font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center",
+                    link.color
+                  )}
+                >
+                  {link.title}
+                </Link>
+              </div>
+            ))}
 
             <div className="font-js-math text-center mt-6 px-4">
-              <p>
-                * All Prices are Per Month and Per URL unless otherwise noted{" "}
-              </p>
+              <p>{disclaimer}</p>
+              <p>{disclaimer2}</p>
+              <p>{disclaimer3}</p>
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>

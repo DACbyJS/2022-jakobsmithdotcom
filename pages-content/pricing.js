@@ -102,20 +102,27 @@ export const pricingPageContent = {
         title: "Service Details",
         href: pageData[5].data.href,
         target: "_self",
+        color: "blue",
       },
       {
         id: uuidv4(),
         title: "Portfolio",
         href: pageData[6].data.href,
         target: "_self",
+        color: "yellow",
       },
       {
         id: uuidv4(),
         title: "Get a Quote",
         href: pageData[8].data.href,
         target: "_self",
+        color: "red",
       },
     ],
-    disclaimer: "* All Prices are Per Month and Per URL unless otherwise noted",
+    disclaimer: <>
+      All Prices are <span className="underline">Per Month</span> and <span className="underline">Per URL</span>
+    </>,
+    disclaimer2: "Prices are subject to change based on scope.",
+    disclaimer3: "Value = Quote. Contact for a quote based on your needs.",
   },
 };
