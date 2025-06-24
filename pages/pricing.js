@@ -20,7 +20,6 @@ import BigBlueCircle from "../components/svg/BigBlueCircle";
 import BigRedTriangle from "../components/svg/BigRedTriangle";
 import BigYellowSquare from "../components/svg/BigYellowSquare";
 
-
 export default function Pricing() {
   const pricingPageData = pageData.find((page) => page.slug === "pricing");
   const { muxWords, firstWhiteBlackBox } = pricingPageContent;
@@ -82,7 +81,7 @@ export default function Pricing() {
                   >
                     <li
                       id={`item-${item.id}`}
-                      className="flex-0 text-left flex-row justify-center items-center font-bold"
+                      className="flex-0 text-left flex-row justify-center items-center font-bold cursor-help"
                     >
                       {item.title}
                     </li>
@@ -111,7 +110,7 @@ export default function Pricing() {
                   >
                     <li
                       id={`item-${item.id}`}
-                      className="flex-0 text-left flex-row justify-center items-center font-bold"
+                      className="flex-0 text-left flex-row justify-center items-center font-bold cursor-help"
                     >
                       {item.title}
                     </li>
