@@ -3,6 +3,15 @@ import { v4 as uuidv4 } from "uuid";
 
 // constants
 import { pageData } from "../lib/constants/pageData";
+import { servicesData } from "../lib/constants/servicesData";
+
+// content
+const investServices = servicesData.filter((service) =>
+  service.category === "Invest"
+);
+const preserveServices = servicesData.filter((service) =>
+  service.category === "Preserve"
+);  
 
 export const pricingPageContent = {
   muxWords: ["Value.", "Preserve.", "Grow.", "Invest."],
@@ -15,85 +24,21 @@ export const pricingPageContent = {
     ),
     firstPricingColumn: {
       title: "Invest",
-      items: [
-        {
-          id: uuidv4(),
-          title: "Simple SEO",
-          tooltip: "On-Page SEO Audit, Traffic and Competitor Insights",
-          price: "$125 - $475",
-        },
-        {
-          id: uuidv4(),
-          title: "Content Gen",
-          tooltip: "Human or AI Posts, Pages, etc.",
-          price: "$15 - $75 per item",
-        },
-        {
-          id: uuidv4(),
-          title: "AI Discovery",
-          tooltip: "Audit and Tune-up for AI Discovery, not Training.",
-          price: "$135",
-        },
-        {
-          id: uuidv4(),
-          title: "Media Monitor",
-          tooltip: "Monitor Brand Performance on Socials",
-          price: "$75",
-        },
-        {
-          id: uuidv4(),
-          title: "Local Busywork",
-          tooltip: "Google Business administration",
-          price: "Value",
-        },
-        {
-          id: uuidv4(),
-          title: "Additions",
-          tooltip: "Add Features to Current Site",
-          price: "Value",
-        },
-        {
-          id: uuidv4(),
-          title: "Rebuild",
-          tooltip: "Total Website Redesign and Development",
-          price: "Value",
-        },
-      ],
+      items: investServices.map((service) => ({
+        id: uuidv4(),
+        title: service.title,
+        tooltip: service.tooltip,
+        price: service.priceString,
+      })),
     },
     secondPricingColumn: {
       title: "Preserve",
-      items: [
-        {
-          id: uuidv4(),
-          title: "Foundations",
-          tooltip: "Hosting, Updates, and Support",
-          price: "$125",
-        },
-        {
-          id: uuidv4(),
-          title: "Hosting",
-          tooltip: "Reliable Web Hosting Services",
-          price: "$50",
-        },
-        {
-          id: uuidv4(),
-          title: "Updates",
-          tooltip: "Regular Website Updates and Improvements",
-          price: "$25",
-        },
-        {
-          id: uuidv4(),
-          title: "Support",
-          tooltip: "Ongoing Technical Support",
-          price: "$100",
-        },
-        {
-          id: uuidv4(),
-          title: "Total Debug",
-          tooltip: "Website Security Monitoring and Protection",
-          price: "$50",
-        },
-      ],
+      items: preserveServices.map((service) => ({
+        id: uuidv4(),
+        title: service.title,
+        tooltip: service.tooltip,
+        price: service.priceString,
+      })),
     },
 
     bottomLinks: [
@@ -119,9 +64,12 @@ export const pricingPageContent = {
         color: "red",
       },
     ],
-    disclaimer: <>
-      All Prices are <span className="underline">Per Month</span> and <span className="underline">Per URL</span>
-    </>,
+    disclaimer: (
+      <>
+        All Prices are <span className="underline">Per Month</span> and{" "}
+        <span className="underline">Per URL</span>
+      </>
+    ),
     disclaimer2: "Prices are subject to change based on scope.",
     disclaimer3: "Value = Quote. Contact for a quote based on your needs.",
   },
