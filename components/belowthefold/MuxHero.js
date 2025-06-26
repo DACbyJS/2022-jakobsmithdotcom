@@ -54,7 +54,6 @@ const MuxHero = ({
               topIn="fade-in-animate"
             >
               <h4
-                key={uid(index)}
                 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
               >
                 {word}
