@@ -48,5 +48,17 @@ module.exports = {
       pattern: /bg-js-(white|black|red|blue|yellow)/,
       variants: ['hover', 'focus'],
     },
+    {
+      pattern: /border-js-(white|black|red|blue|yellow)/,
+      variants: ['hover', 'focus'],
+    },
+    {
+      pattern: /border-t-js-(white|black|red|blue|yellow)/,
+      variants: ['hover', 'focus'],
+    },
+    {
+      pattern: /border-l-js-(white|black|red|blue|yellow)/,
+      variants: ['hover', 'focus'],
+    },
   ],
 };
