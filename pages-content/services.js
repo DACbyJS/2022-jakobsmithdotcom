@@ -4,7 +4,11 @@ import { servicesData } from "../lib/constants/servicesData";
 export const servicesPageContent = {
   muxWords: ["Maintain.", "Service.", "Tune.", "Build."],
   firstWhiteBlackBox: {
-    title: <>Website Management <br/> Service Details</>,
+    title: (
+      <>
+        Website Management <br /> Service Details
+      </>
+    ),
     services: servicesData.map((service) => ({
       id: service.id,
       title: service.title,
@@ -15,5 +19,11 @@ export const servicesPageContent = {
       price: service.priceString,
       html: service.htmlDescription,
     })),
+    disclaimer: (
+      <>
+        I provide the below monthly/item pricing to help you anticipate costs
+        and give me time to achieve realistic goals with all my clients.
+      </>
+    ),
   },
 };

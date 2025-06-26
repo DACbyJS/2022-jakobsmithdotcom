@@ -6,12 +6,12 @@ import { pageData } from "../lib/constants/pageData";
 import { servicesData } from "../lib/constants/servicesData";
 
 // content
-const investServices = servicesData.filter((service) =>
-  service.category === "Invest"
+const investServices = servicesData.filter(
+  (service) => service.category === "Invest"
 );
-const preserveServices = servicesData.filter((service) =>
-  service.category === "Preserve"
-);  
+const preserveServices = servicesData.filter(
+  (service) => service.category === "Preserve"
+);
 
 export const pricingPageContent = {
   muxWords: ["Value.", "Preserve.", "Grow.", "Invest."],
@@ -66,11 +66,9 @@ export const pricingPageContent = {
     ],
     disclaimer: (
       <>
-        All Prices are <span className="underline">Per Month</span> and{" "}
-        <span className="underline">Per URL</span>
+        We provide the above monthly/item pricing to help you anticipate costs
+        and give me time to achieve realistic goals with all my clients.
       </>
     ),
-    disclaimer2: "Prices are subject to change based on scope.",
-    disclaimer3: "Value = Quote. Contact for a quote based on your needs.",
   },
 };
