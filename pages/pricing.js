@@ -145,10 +145,8 @@ export default function Pricing() {
               </div>
             ))}
 
-            <div className="font-js-math text-center mt-6 px-4">
-              <p>{disclaimer}</p>
-              <p>{disclaimer2}</p>
-              <p>{disclaimer3}</p>
+            <div className="border-[10px] border-js-black font-js-math mt-6 px-4 w-full max-w-[500px] mx-auto text-center p-8">
+              {disclaimer}
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>
