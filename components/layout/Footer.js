@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Image
-import tuka from "../../public/png/TUKA.png";
+import tuka from "../../public/images/TUKA.png";
 import SvgJakobSmithLogo from "../../components/svg/JakobSmithLogo";
 import WigglyLink from "../../components/svg/WigglyLink";
 
