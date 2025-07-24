@@ -1,271 +1,286 @@
 /** Borders **/
 .white-black-border {
-  @apply bg-js-white border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
+    @apply bg-js-white border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
 }
 
 .just-black-border {
-  @apply bg-js-black border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
+    @apply bg-js-black border-js-black border-[0.7rem] lg:border-[0.9rem] xl:border-[1rem] 2xl:border-[1.15rem];
 }
 
 .absolute-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .js-math-treatments {
-  font-weight: 500;
-  line-height: 120%;
+    font-weight: 500;
+    line-height: 120%;
 }
 
 /* Line link */
 .line-link {
-  position: relative;
-  display: inline-block;
-  outline: none;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  width: auto;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: auto;
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0.2ch;
-    width: 100%;
-    max-width: 100%;
-    height: 0.2ch;
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0.2ch;
+        width: 100%;
+        max-width: 100%;
+        height: 0.2ch;
+    }
 
-  &.hover-on::before {
-    @apply border-none border-0 rounded-none;
-    transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
-    z-index: -1;
-  }
+    &.hover-on::before {
+        @apply border-none border-0 rounded-none;
+        transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+        z-index: -1;
+    }
 
-  &.hover-on:hover::before {
-    @apply border-js-black border-solid border-[.2rem] lg:border-[.2rem] rounded-full;
-    width: 2ch;
-    height: 2ch;
-    transform: translate(-0.75ch, -2px) rotate(90deg);
-    transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
-  }
+    &.hover-on:hover::before {
+        @apply border-js-black border-solid border-[.2rem] lg:border-[.2rem] rounded-full;
+        width: 2ch;
+        height: 2ch;
+        transform: translate(-0.75ch, -2px) rotate(90deg);
+        transition: all 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+    }
 }
 
 .red.line-link:before {
-  background-color: theme("colors.js-red");
+    background-color: theme("colors.js-red");
 }
 
 .blue.line-link:before {
-  background-color: theme("colors.js-blue");
+    background-color: theme("colors.js-blue");
 }
 
 .yellow.line-link:before {
-  background-color: theme("colors.js-yellow");
+    background-color: theme("colors.js-yellow");
 }
 
 /* Button */
 .btn {
-  @apply cursor-text font-overpass-mono font-light uppercase text-[1.5ch] lg:text-[2ch] 2xl:text-[2.5ch];
-  border: solid 0.65ch theme("colors.js-black");
-  border-radius: 0px;
-  box-shadow: inset 0 0 0 0 theme("colors.js-black");
-  padding: 1ch 2.5ch 0.8ch 2.5ch;
-  text-align: center;
-  letter-spacing: 0.1em;
-  line-height: 1.3;
-  transition: border-radius 0.3s, box-shadow 0.3s, color 0.3s;
-  transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
+    @apply cursor-text font-overpass-mono font-light uppercase text-[1.5ch] lg:text-[2ch] 2xl:text-[2.5ch];
+    border: solid 0.65ch theme("colors.js-black");
+    border-radius: 0px;
+    box-shadow: inset 0 0 0 0 theme("colors.js-black");
+    padding: 1ch 2.5ch 0.8ch 2.5ch;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    transition:
+        border-radius 0.3s,
+        box-shadow 0.3s,
+        color 0.3s;
+    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
 }
 
 /* Button Hover */
 .btn:hover {
-  color: theme("colors.js-white");
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 10px 20px theme("colors.js-black");
-  transition-delay: 0s, 0s, 0.1s;
-  animation: btn-hover-weird 1.8s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+    border: solid 0.65ch theme("colors.js-black");
+    color: theme("colors.js-white");
+    box-shadow: inset 0px 0px 10px 20px theme("colors.js-black");
+    transition-delay: 0s, 0s, 0.1s;
+    animation: btn-hover-weird 1.8s cubic-bezier(0.7, 0, 0.2, 1) infinite;
 }
 
 @keyframes btn-hover-weird {
-  0% {
-    box-shadow: inset 0px 0px 0px 7px theme("colors.js-black");
-    color: theme("colors.js-black");
-  }
+    0% {
+        box-shadow: inset 0px 0px 0px 7px theme("colors.js-black");
+        color: theme("colors.js-black");
+    }
 
-  50% {
-    box-shadow: inset 0px 0px 15px 30px theme("colors.js-black");
-    color: theme("colors.js-white");
-  }
+    50% {
+        box-shadow: inset 0px 0px 15px 30px theme("colors.js-black");
+        color: theme("colors.js-white");
+    }
 
-  50% {
-    box-shadow: inset 0px 0px 20px 40px theme("colors.js-black");
-    color: theme("colors.js-white");
-  }
+    50% {
+        box-shadow: inset 0px 0px 20px 40px theme("colors.js-black");
+        color: theme("colors.js-white");
+    }
 
-  50% {
-    box-shadow: inset 0px 0px 15px 30px theme("colors.js-black");
-    color: theme("colors.js-white");
-  }
+    50% {
+        box-shadow: inset 0px 0px 15px 30px theme("colors.js-black");
+        color: theme("colors.js-white");
+    }
 
-  100% {
-    box-shadow: inset 0px 0px 0px 7px theme("colors.js-black");
-    color: theme("colors.js-black");
-  }
+    100% {
+        box-shadow: inset 0px 0px 0px 7px theme("colors.js-black");
+        color: theme("colors.js-black");
+    }
 }
 
 /* Guy at the bottom alignment */
 .tuka {
-  right: -2.5rem;
-  bottom: -3.5rem;
+    right: -2.5rem;
+    bottom: -3.5rem;
 }
 
 /* Overpass underline */
 .overpass-underline {
-  @apply font-overpass-mono font-light uppercase;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  font-size: 2.5ch;
-  letter-spacing: 0.1em;
-  line-height: 1.3;
+    @apply font-overpass-mono font-light uppercase;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    font-size: 2.5ch;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
 }
 
 .overpass-underline:before {
-  content: "";
-  position: absolute;
-  bottom: 0.3ch;
-  width: 100%;
-  max-width: 100%;
-  height: 2px;
-  background-color: theme("colors.js-black");
+    content: "";
+    position: absolute;
+    bottom: 0.3ch;
+    width: 100%;
+    max-width: 100%;
+    height: 2px;
+    background-color: theme("colors.js-black");
 }
 
 .overpass-underline-no-line {
-  @apply font-overpass-mono font-light uppercase;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  font-size: 2.5ch;
-  letter-spacing: 0.1em;
-  line-height: 1.3;
+    @apply font-overpass-mono font-light uppercase;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    font-size: 2.5ch;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
 }
 
 /* Wiggly SVG Link */
 .wiggly-svg-link {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .wiggly-svg-link svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  fill: none;
-  stroke: theme("colors.js-black");
-  top: -3px;
-  stroke-width: 3px;
-  transition: transform 0.7s;
-  transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    fill: none;
+    stroke: theme("colors.js-black");
+    top: -3px;
+    stroke-width: 3px;
+    transition: transform 0.7s;
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
 }
 
 .wiggly-svg-link:hover svg {
-  transform: translate3d(-66.6%, 0, 0);
+    transform: translate3d(-66.6%, 0, 0);
 }
 
 /* White Outline Text */
 .white-outline-text {
-  text-shadow: 1px 1px 0 theme("colors.js-white"),
-    -1px 1px 0 theme("colors.js-white"), 1px -1px 0 theme("colors.js-white"),
-    -1px -1px 0 theme("colors.js-white");
+    text-shadow:
+        1px 1px 0 theme("colors.js-white"),
+        -1px 1px 0 theme("colors.js-white"),
+        1px -1px 0 theme("colors.js-white"),
+        -1px -1px 0 theme("colors.js-white");
 }
 
 /* Default Blurb Style Used to style a default WYSIWYG block of HTML text */
 
 .default-blurb-style {
-  h2 {
-    @apply w-auto inline-block relative font-overpass font-light uppercase text-[1.8ch] lg:text-[2ch] 2xl:text-[2.2ch] leading-[1.6] tracking-[0.05em] mb-1;
-  }
-
-  p {
-    @apply font-overpass font-light leading-[1.6] tracking-[0.05em];
-  }
-
-  ul {
-    @apply font-overpass font-light text-[1.3ch] lg:text-[1.5ch] 2xl:text-[1.8ch] leading-[1.5] tracking-[0.05em] list-disc pl-[2ch] mb-[2.4ch];
-
-    li {
-      @apply mb-[0.5ch];
+    h2 {
+        @apply w-auto inline-block relative font-overpass font-light uppercase text-[1.8ch] lg:text-[2ch] 2xl:text-[2.2ch] leading-[1.6] tracking-[0.05em] mb-1;
     }
 
-    li:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-    @apply font-overpass font-light leading-[1.6] underline;
-    color: theme("colors.js-black");
-    transition: color 0.3s;
-  }
-
-  &.blurb-style-blue {
-    a:hover {
-      color: theme("colors.js-blue");
-      text-decoration: underline;
+    p {
+        @apply font-overpass font-light leading-[1.6] tracking-[0.05em];
     }
 
-    h2:after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      margin-bottom: 0.5ch;
-      background-color: theme("colors.js-blue");
-    }
-  }
+    ul {
+        @apply font-overpass font-light text-[1.3ch] lg:text-[1.5ch] 2xl:text-[1.8ch] leading-[1.5] tracking-[0.05em] list-disc pl-[2ch] mb-[2.4ch];
 
-  &.blurb-style-red {
-    a:hover {
-      color: theme("colors.js-red");
-      text-decoration: underline;
+        li {
+            @apply mb-[0.5ch];
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
     }
 
-    h2:after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      margin-bottom: 0.5ch;
-      background-color: theme("colors.js-red");
-    }
-  }
-
-  &.blurb-style-yellow {
-    a:hover {
-      color: theme("colors.js-yellow");
-      text-decoration: underline;
+    a {
+        @apply font-overpass font-light leading-[1.6] underline;
+        color: theme("colors.js-black");
+        transition: color 0.3s;
     }
 
-    h2:after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      margin-bottom: 0.5ch;
-      background-color: theme("colors.js-yellow");
+    &.blurb-style-blue {
+        a:hover {
+            color: theme("colors.js-blue");
+            text-decoration: underline;
+        }
+
+        h2:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            margin-bottom: 0.5ch;
+            background-color: theme("colors.js-blue");
+        }
     }
-  }
+
+    &.blurb-style-red {
+        a:hover {
+            color: theme("colors.js-red");
+            text-decoration: underline;
+        }
+
+        h2:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            margin-bottom: 0.5ch;
+            background-color: theme("colors.js-red");
+        }
+    }
+
+    &.blurb-style-yellow {
+        a:hover {
+            color: theme("colors.js-yellow");
+            text-decoration: underline;
+        }
+
+        h2:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            margin-bottom: 0.5ch;
+            background-color: theme("colors.js-yellow");
+        }
+    }
+}
+
+/* Parrelogram Divider */
+.parralelogram-divider {
+    margin: 4rem 0;
+    background-color: theme("colors.js-black");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' fill='black' stroke='none'%3E%3Cpolygon points='9.4,2 24,2 14.6,21.6 0,21.6'/%3E%3C/svg%3E");
+    mask-size: 18.3px 100%;
+    min-height: 10px;
+    width: 100%;
 }
