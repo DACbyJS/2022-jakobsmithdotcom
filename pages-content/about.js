@@ -2,7 +2,7 @@ import { pageData } from "../lib/constants";
 
 export const aboutPageContent = {
   muxWords: ["About.", "Story.", "Mission.", "Vision."],
-  firstBox: {
+  firstWhiteBlackBox: {
     headerOne: "Website Management",
     headerTwo: "Services For",
     links: [
@@ -23,37 +23,112 @@ export const aboutPageContent = {
       },
     ],
   },
-  secondBox: {
-    headerOne: "Why does anyone need Website Management?",
-    headerTwo: (
-      <>
-        From an idea in your head
-        <br /> to the foundation of an online identity, <br /> your website
-        performs the job of ambassador
-        <br /> every second in every time zone,
-        <br /> so whose job is it to make sure that always happens?
-      </>
-    ),
-    links: [
-      {
-        href: pageData[5]?.data?.href,
-        text: "Services",
-        cssClasses: "blue line-link hover-on",
-      },
-      {
-        href: pageData[4]?.data?.href,
-        text: "Pricing",
-        cssClasses: "yellow line-link hover-on",
-      },
-      {
-        href: pageData[7]?.data?.href,
-        text: "About Me",
-        cssClasses: "red line-link hover-on",
-      },
+  hero: {
+    title: {
+      line1: "Who Is",
+      line2: "Jakob Smith?",
+    },
+    introduction: [
+      "I am a qualified digital designer and web developer with many years of diverse experience creating, refactoring and maintaining marketing websites, emails, advertisements and web applications.",
+      "My strengths are flexibility and intuition. I understand that in marketing and advertising, human needs and feelings override processes and perfectionism. I believe that the Internet should continue to transcend barriers between people and information. As an active participant in it's expansion, I hope to use it to create more unprecedented transparency and equity.",
+      "These qualities and beliefs make me an adaptable generalist who can offer insight, clarity and connection to every person I meet in you and your client's organization.",
     ],
-    badge: {
-      href: pageData[6]?.data?.href,
-      text: "See Portfolio",
+  },
+  personal: {
+    heading: "Personal",
+    pic: {
+      heading: "Pic",
+      alt: "Jakob Smith",
+    },
+    links: {
+      heading: "Links",
+      items: [
+        {
+          name: "LinkedIn",
+          url: "https://www.linkedin.com/in/jakob-smith-webdev/",
+        },
+        { name: "Github", url: "https://github.com/DACbyJS" },
+        {
+          name: "Retro Store",
+          url: "https://www.ebay.com/str/contraconsume",
+        },
+        { name: "Artwork", url: "https://ardenbriarsmith.com/" },
+        { name: "Writing", url: "https://jakeisdead.com/" },
+        { name: "Music", url: "https://soundcloud.com/smiththeband/" },
+      ],
+    },
+  },
+  coreValues: {
+    heading: "Core Values",
+    values: [
+      "Communication",
+      "Responsibility",
+      "Thoughtfulness",
+      "Determination",
+      "Artistry",
+      "Creativity",
+      "Liberty",
+      "Compassion",
+      "Prosperity",
+    ],
+  },
+  technicalExpertise: {
+    heading: "Technical Expertise",
+    developmentStack: {
+      heading: "Development Stack",
+      sections: [
+        {
+          title: "Content Management",
+          content:
+            "Craft CMS • WordPress • Contentful • Sanity • Expression Engine • Joomla",
+        },
+        {
+          title: "Backend Languages",
+          content: "PHP • Ruby • Python",
+        },
+        {
+          title: "Frameworks",
+          content: "Laravel • Symfony • Yii • Ruby on Rails",
+        },
+        {
+          title: "Frontend Technologies",
+          content: [
+            "HTML • CSS • SCSS • Tailwind • Bootstrap",
+            "JavaScript • React • Next.js • Alpine.js • jQuery",
+          ],
+        },
+      ],
+    },
+    infrastructure: {
+      heading: "Infrastructure & Tools",
+      sections: [
+        {
+          title: "Hosting & Cloud",
+          content: [
+            "Kinsta • WpEngine • Linode • Servd",
+            "AWS S3 • CloudFront • Google Cloud",
+          ],
+        },
+        {
+          title: "Development Environment",
+          content: [
+            "DDEV • Lando • Docker • Git • Trellis",
+            "VS Code on Linux Mint Cinnamon",
+          ],
+        },
+        {
+          title: "Database & APIs",
+          content: ["MySQL • PostgreSQL • MariaDB", "GraphQL • REST APIs"],
+        },
+      ],
+    },
+    experienceOverview: {
+      heading: "Experience Overview",
+      stats: [
+        { number: "50+", label: "Server-side Websites" },
+        { number: "20+", label: "Client-side Websites" },
+        { number: "7", label: "Production Web Apps" },
+      ],
     },
   },
 };
