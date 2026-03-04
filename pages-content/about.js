@@ -50,10 +50,9 @@ export const aboutPageContent = {
         { name: "Github", url: "https://github.com/DACbyJS" },
         {
           name: "Retro Store",
-          url: "https://www.ebay.com/str/contraconsume",
+          url: "https://contraconsume.com/",
         },
-        { name: "Artwork", url: "https://ardenbriarsmith.com/" },
-        { name: "Writing", url: "https://jakeisdead.com/" },
+        { name: "Artwork/Writing", url: "https://ardenbriarsmith.com/" },
         { name: "Music", url: "https://soundcloud.com/smiththeband/" },
       ],
     },

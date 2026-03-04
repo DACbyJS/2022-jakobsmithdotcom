@@ -1,17 +1,18 @@
 // Next
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
-// Libs
-import { v4 as uuidv4 } from "uuid";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
 import { aboutPageContent } from "../pages-content/about.js";
 
 // Image
-import jakob from "../public/images/jakob.png";
+import jakob1 from "../public/images/jakob-1.jpg";
+import jakob2 from "../public/images/jakob-2.jpg";
+import jakob3 from "../public/images/jakob-3.jpg";
+import jakob4 from "../public/images/jakob-4.jpg";
 
 // Custom
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
@@ -22,8 +23,65 @@ import Spacer from "../components/layout/Spacer";
 import BigBlueCircle from "../components/svg/BigBlueCircle";
 import BigRedTriangle from "../components/svg/BigRedTriangle";
 import BigYellowSquare from "../components/svg/BigYellowSquare";
+import PinnedBadge from "../components/svg/PinnedBadge";
+
+const technicalExpertiseLinks = {
+  "Craft CMS": "https://craftcms.com/",
+  WordPress: "https://wordpress.org/",
+  Contentful: "https://www.contentful.com/",
+  Sanity: "https://www.sanity.io/",
+  "Expression Engine": "https://expressionengine.com/",
+  Joomla: "https://www.joomla.org/",
+  PHP: "https://www.php.net/",
+  Ruby: "https://www.ruby-lang.org/",
+  Python: "https://www.python.org/",
+  Laravel: "https://laravel.com/",
+  Symfony: "https://symfony.com/",
+  Yii: "https://www.yiiframework.com/",
+  "Ruby on Rails": "https://rubyonrails.org/",
+  HTML: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  CSS: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  SCSS: "https://sass-lang.com/",
+  Tailwind: "https://tailwindcss.com/",
+  Bootstrap: "https://getbootstrap.com/",
+  JavaScript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  React: "https://react.dev/",
+  "Next.js": "https://nextjs.org/",
+  "Alpine.js": "https://alpinejs.dev/",
+  jQuery: "https://jquery.com/",
+  Kinsta: "https://kinsta.com/",
+  WpEngine: "https://wpengine.com/",
+  Linode: "https://www.linode.com/",
+  Servd: "https://servd.host/",
+  "AWS S3": "https://aws.amazon.com/s3/",
+  CloudFront: "https://aws.amazon.com/cloudfront/",
+  "Google Cloud": "https://cloud.google.com/",
+  DDEV: "https://ddev.com/",
+  Lando: "https://lando.dev/",
+  Docker: "https://www.docker.com/",
+  Git: "https://git-scm.com/",
+  Trellis: "https://roots.io/trellis/",
+  "VS Code on Linux Mint Cinnamon": "https://code.visualstudio.com/",
+  MySQL: "https://www.mysql.com/",
+  PostgreSQL: "https://www.postgresql.org/",
+  MariaDB: "https://mariadb.org/",
+  GraphQL: "https://graphql.org/",
+  "REST APIs": "https://restfulapi.net/",
+};
 
 export default function About() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const jakobImages = [jakob1, jakob2, jakob3, jakob4];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveImageIndex((previousIndex) => (previousIndex + 1) % jakobImages.length);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [jakobImages.length]);
+
   const aboutPageData = pageData.find((page) => page.slug === "about");
   const { 
     muxWords, 
@@ -33,6 +91,45 @@ export default function About() {
     coreValues, 
     technicalExpertise 
   } = aboutPageContent;
+
+  const renderTechnicalContent = (content, lineSpacingClass = "") => {
+    const lines = Array.isArray(content) ? content : [content];
+
+    return lines.map((line, lineIndex) => {
+      const items = line.split("•").map((item) => item.trim());
+
+      return (
+        <p
+          key={`${line}-${lineIndex}`}
+          className={`font-light font-overpass leading-[1.75] text-[1.45ch] lg:text-[1.7ch] 2xl:text-[2.1ch] text-center ${
+            lineIndex > 0 ? lineSpacingClass : ""
+          }`}
+        >
+          {items.map((item, itemIndex) => {
+            const itemLink = technicalExpertiseLinks[item];
+
+            return (
+              <span key={`${item}-${itemIndex}`}>
+                {itemLink ? (
+                  <Link
+                    href={itemLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {item}
+                  </Link>
+                ) : (
+                  item
+                )}
+                {itemIndex < items.length - 1 ? " / " : ""}
+              </span>
+            );
+          })}
+        </p>
+      );
+    });
+  };
 
   return (
     <>
@@ -66,6 +163,11 @@ export default function About() {
           topIn="fade-in-animate"
         >
           <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] py-6 md:py-10 lg:py-12 z-10">
+            <PinnedBadge
+              className="absolute z-30 -top-6 md:-top-[20px] -left-4 md:-left-[50px] -translate-x-1/2 translate-y-1/2 w-[100px] sm:w-[150px] lg:w-[200px] h-auto"
+              linkTo="/portfolio"
+              linkText="See My Portfolio"
+            />
             <div className="font-js-math text-center mb-8 md:mb-12">
               <h2 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 2xl:-mb-6">
                 {hero.title.line1}
@@ -94,11 +196,26 @@ export default function About() {
                       <h4 className="font-js-math text-[1.5ch] lg:text-[2ch] 2xl:text-[2.5ch] pb-3">
                         {personal.pic.heading}
                       </h4>
-                      <Image
-                        src={jakob}
-                        alt={personal.pic.alt}
-                        className="w-full h-[325px] object-cover"
-                      />
+                      <div className="relative">
+                        <Image
+                          src={jakobImages[activeImageIndex]}
+                          alt={personal.pic.alt}
+                          className="w-full h-[325px] object-cover"
+                        />
+                        <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                          {jakobImages.map((image, index) => (
+                            <button
+                              key={image.src}
+                              type="button"
+                              className={`h-2.5 w-2.5 border border-js-black rounded-full ${
+                                index === activeImageIndex ? "bg-js-black" : "bg-js-white"
+                              }`}
+                              onClick={() => setActiveImageIndex(index)}
+                              aria-label={`Show photo ${index + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
                     <div>
@@ -142,52 +259,32 @@ export default function About() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                   <div>
-                    <h4 className="font-overpass-mono font-light uppercase text-[1.4ch] lg:text-[1.6ch] tracking-wide mb-6 text-center">
+                    <h4 className="font-overpass-mono font-light text-[1.8ch] lg:text-[2ch] tracking-wide mb-6 text-center">
                       {technicalExpertise.developmentStack.heading}
                     </h4>
                     <div className="space-y-6">
                       {technicalExpertise.developmentStack.sections.map((section, index) => (
-                        <div key={index}>
-                          <h5 className="font-overpass font-medium uppercase text-[1.1ch] lg:text-[1.3ch] tracking-wide mb-3 text-center">
+                        <div key={index} className="px-4 py-3">
+                          <h5 className="font-overpass font-semibold text-[1.4ch] lg:text-[1.6ch] tracking-wide mb-3 text-center">
                             {section.title}
                           </h5>
-                          {Array.isArray(section.content) ? (
-                            section.content.map((text, i) => (
-                              <p key={i} className={`font-light font-overpass uppercase leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] text-center ${i > 0 ? 'mt-2' : ''}`}>
-                                {text}
-                              </p>
-                            ))
-                          ) : (
-                            <p className="font-light font-overpass uppercase leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] text-center">
-                              {section.content}
-                            </p>
-                          )}
+                          {renderTechnicalContent(section.content, "mt-2")}
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-overpass-mono font-light uppercase text-[1.4ch] lg:text-[1.6ch] tracking-wide mb-6 text-center">
+                    <h4 className="font-overpass-mono font-light text-[1.8ch] lg:text-[2ch] tracking-wide mb-6 text-center">
                       {technicalExpertise.infrastructure.heading}
                     </h4>
                     <div className="space-y-6">
                       {technicalExpertise.infrastructure.sections.map((section, index) => (
-                        <div key={index}>
-                          <h5 className="font-overpass font-medium uppercase text-[1.1ch] lg:text-[1.3ch] tracking-wide mb-3 text-center">
+                        <div key={index} className="px-4 py-3">
+                          <h5 className="font-overpass font-semibold text-[1.4ch] lg:text-[1.6ch] tracking-wide mb-3 text-center">
                             {section.title}
                           </h5>
-                          {Array.isArray(section.content) ? (
-                            section.content.map((text, i) => (
-                              <p key={i} className={`font-light font-overpass uppercase leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] text-center ${i > 0 ? 'mt-2' : ''}`}>
-                                {text}
-                              </p>
-                            ))
-                          ) : (
-                            <p className="font-light font-overpass uppercase leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch] text-center">
-                              {section.content}
-                            </p>
-                          )}
+                          {renderTechnicalContent(section.content, "mt-2")}
                         </div>
                       ))}
                     </div>
@@ -197,7 +294,7 @@ export default function About() {
                 {/* Experience Summary */}
                 <div className="mt-12">
                   <div className="parralelogram-divider"></div>
-                  <h4 className="font-overpass-mono font-light uppercase text-[1.4ch] lg:text-[1.6ch] tracking-wide mb-6 text-center">
+                  <h4 className="font-overpass-mono font-light text-[1.8ch] lg:text-[2ch] tracking-wide mb-6 text-center">
                     {technicalExpertise.experienceOverview.heading}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
@@ -206,7 +303,7 @@ export default function About() {
                         <div className="font-js-math text-[2.5ch] lg:text-[3ch] 2xl:text-[4ch] mb-2">
                           {stat.number}
                         </div>
-                        <p className="font-overpass font-light uppercase text-[1.1ch] lg:text-[1.3ch]">
+                        <p className="font-overpass font-light text-[1.35ch] lg:text-[1.55ch]">
                           {stat.label}
                         </p>
                       </div>
