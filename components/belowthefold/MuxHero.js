@@ -1,9 +1,6 @@
 import MuxPlayer from '@mux/mux-player-react';
 import classNames from 'classnames';
-import { uid } from 'uid';
-
-// Custom
-import NextIntersectionObserver from '../layout/NextIntersectionObserver';
+import { useState } from 'react';
 
 const MuxHero = ({
   playbackId,
@@ -13,6 +10,8 @@ const MuxHero = ({
   playerClassName,
   words,
 }) => {
+  const [videoReady, setVideoReady] = useState(false);
+
   return (
     <section
       className={classNames(
@@ -20,49 +19,43 @@ const MuxHero = ({
         className
       )}
     >
-      <NextIntersectionObserver
-        thresholdValue={1}
-        classes="fade-in-init animate-init-slow"
-        topIn="fade-in-animate animate-delay-0.5s"
-      >
-        <MuxPlayer
-          loop
-          nohotkeys
-          preload
-          autoPlay="muted"
-          streamType="on-demand"
-          loading="viewport"
-          className={classNames('bg-js-black hero-mux-player', playerClassName)}
-          playbackId={playbackId}
-          metadata={metadata}
-          startTime={startTime}
-          maxResolution="720p"
-          minResolution="480p"
-        />
-      </NextIntersectionObserver>
-      <NextIntersectionObserver
-        thresholdValue={0.5}
-        classes="fade-in-init"
-        topIn="fade-in-animate"
-      >
+      <MuxPlayer
+        loop
+        nohotkeys
+        preload
+        autoPlay="muted"
+        streamType="on-demand"
+        loading="viewport"
+        className={classNames(
+          'bg-js-black hero-mux-player fade-in-init animate-init-slow',
+          videoReady && 'fade-in-animate',
+          playerClassName
+        )}
+        playbackId={playbackId}
+        metadata={metadata}
+        startTime={startTime}
+        maxResolution="720p"
+        minResolution="480p"
+        onCanPlay={() => setVideoReady(true)}
+      />
+      <div className={classNames('fade-in-init', videoReady && 'animate-init fade-in-animate')}>
         <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">
           {words.map((word, index) => (
-            <NextIntersectionObserver
-              key={uid(index)}
-              thresholdValue={0.4}
-              classes={`fade-in-init animate-delay-${index + 1 - 0.75}s`}
-              topIn="fade-in-animate"
+            <div
+              key={index}
+              className={classNames(
+                `fade-in-init animate-delay-${index + 1 - 0.75}s`,
+                videoReady && `animate-init fade-in-animate`
+              )}
             >
-              <h4
-                className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments"
-              >
+              <h4 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments">
                 {word}
               </h4>
-            </NextIntersectionObserver>
+            </div>
           ))}
         </div>
         <div className="hidden invisible animate-delay-0.25s animate-delay-1.25s animate-delay-2.25s animate-delay-3.25s"></div>
-      </NextIntersectionObserver>
+      </div>
     </section>
   );
 };
