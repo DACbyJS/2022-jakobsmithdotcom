@@ -11,6 +11,7 @@ export const servicesPageContent = {
     ),
     services: servicesData.map((service) => ({
       id: service.id,
+      slug: service.slug,
       title: service.title,
       tooltip: service.tooltip,
       category: service.category,

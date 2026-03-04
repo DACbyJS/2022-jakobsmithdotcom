@@ -6,18 +6,18 @@ import Link from "next/link";
 import classNames from "classnames";
 
 // Constants
-import { pageData, personSchema } from "../lib/constants";
-import { servicesPageContent } from "../pages-content/services";
+import { pageData, personSchema } from "../../lib/constants";
+import { servicesPageContent } from "../../pages-content/services";
 
 // Custom
-import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
-import MuxHero from "../components/belowthefold/MuxHero";
-import BelowTheFold from "../components/layout/BelowTheFold";
-import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
-import Spacer from "../components/layout/Spacer";
-import BigBlueCircle from "../components/svg/BigBlueCircle";
-import BigRedTriangle from "../components/svg/BigRedTriangle";
-import BigYellowSquare from "../components/svg/BigYellowSquare";
+import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
+import MuxHero from "../../components/belowthefold/MuxHero";
+import BelowTheFold from "../../components/layout/BelowTheFold";
+import WhiteBlackBorderBox from "../../components/layout/WhiteBlackBorderBox";
+import Spacer from "../../components/layout/Spacer";
+import BigBlueCircle from "../../components/svg/BigBlueCircle";
+import BigRedTriangle from "../../components/svg/BigRedTriangle";
+import BigYellowSquare from "../../components/svg/BigYellowSquare";
 
 const getRandomIndex = (max) => Math.floor(Math.random() * max);
 
@@ -103,15 +103,20 @@ export default function Services() {
                           "p-6 sm:p-8 lg:p-10"
                         )}
                       >
-                        <h2 className="text-[2ch] md:text-[3ch] font-overpass-mono uppercase font-bold">
-                          {service.title}
-                        </h2>
-                        <p className="text-sm text-gray-600 font-overpass">
-                          {service.tooltip}
-                        </p>
-                        <p className="text-[1.8ch] md:text-[2.2ch] font-semibold font-js-math mt-2 mb-3">
-                          {service.price}
-                        </p>
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="block hover:opacity-70 transition-opacity"
+                        >
+                          <h2 className="text-[2ch] md:text-[3ch] font-overpass-mono uppercase font-bold">
+                            {service.title}
+                          </h2>
+                          <p className="text-sm text-gray-600 font-overpass">
+                            {service.tooltip}
+                          </p>
+                          <p className="text-[1.8ch] md:text-[2.2ch] font-semibold font-js-math mt-2 mb-3">
+                            {service.price}
+                          </p>
+                        </Link>
                         <div
                           className={classNames(
                             blurbStyle,
