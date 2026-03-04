@@ -1,10 +1,14 @@
 // Next
 import Head from "next/head";
 import Link from "next/link";
+import { useMemo, useState } from "react";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
-import { portfolioData } from "../lib/constants/portfolioData";
+import {
+  portfolioClientCategories,
+  portfolioData,
+} from "../lib/constants/portfolioData";
 import { servicesData } from "../lib/constants/servicesData";
 import { portfolioPageContent } from "../pages-content/portfolio";
 
@@ -21,6 +25,47 @@ import BigYellowSquare from "../components/svg/BigYellowSquare";
 export default function Portfolio() {
   const portfolioPageData = pageData.find((page) => page.slug === "portfolio");
   const { muxWords, hero } = portfolioPageContent;
+  const [activeClientCategory, setActiveClientCategory] = useState("all");
+  const categoryThemeClasses = {
+    all: {
+      inactive: "bg-transparent text-js-black hover:bg-js-black hover:text-js-white",
+      active: "bg-js-black text-js-white",
+    },
+    "web-designers": {
+      inactive: "bg-transparent text-js-black hover:bg-js-red hover:text-js-black",
+      active: "bg-js-red text-js-black",
+    },
+    "digital-marketing": {
+      inactive: "bg-transparent text-js-black hover:bg-js-yellow hover:text-js-black",
+      active: "bg-js-yellow text-js-black",
+    },
+    "public-good": {
+      inactive: "bg-transparent text-js-black hover:bg-js-blue hover:text-js-white",
+      active: "bg-js-blue text-js-white",
+    },
+  };
+
+  const categoryCounts = useMemo(() => {
+    return portfolioClientCategories.reduce(
+      (accumulator, category) => {
+        accumulator[category.id] = portfolioData.filter((item) =>
+          item.clientCategories?.includes(category.id)
+        ).length;
+        return accumulator;
+      },
+      { all: portfolioData.length }
+    );
+  }, []);
+
+  const filteredPortfolioData = useMemo(() => {
+    if (activeClientCategory === "all") {
+      return portfolioData;
+    }
+
+    return portfolioData.filter((item) =>
+      item.clientCategories?.includes(activeClientCategory)
+    );
+  }, [activeClientCategory]);
 
   return (
     <>
@@ -67,8 +112,39 @@ export default function Portfolio() {
               {hero.subheading}
             </p>
 
+            <div className="flex items-center justify-center px-6 mb-10">
+              <div className="inline-flex flex-wrap items-center justify-center">
+              <button
+                type="button"
+                onClick={() => setActiveClientCategory("all")}
+                className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 transition-colors ${
+                  activeClientCategory === "all"
+                    ? categoryThemeClasses.all.active
+                    : categoryThemeClasses.all.inactive
+                }`}
+              >
+                All ({categoryCounts.all})
+              </button>
+
+              {portfolioClientCategories.map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => setActiveClientCategory(category.id)}
+                  className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 transition-colors ${
+                    activeClientCategory === category.id
+                      ? categoryThemeClasses[category.id]?.active
+                      : categoryThemeClasses[category.id]?.inactive
+                  }`}
+                >
+                  {category.label} ({categoryCounts[category.id] || 0})
+                </button>
+              ))}
+              </div>
+            </div>
+
             <div className="zero:px-6 sm:px-10">
-              {portfolioData.map((item) => (
+              {filteredPortfolioData.map((item) => (
                 <div
                   key={item.id}
                   className="flex items-baseline justify-between gap-4 py-5 border-b border-js-black last:border-b-0 group"
