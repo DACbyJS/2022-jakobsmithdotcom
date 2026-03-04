@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 // Constants
-import { pageData } from "../lib/constants";
+import { pageData, personSchema } from "../lib/constants";
 import { contactPageContent } from "../pages-content/contact.js";
 
 // Custom
@@ -24,8 +24,11 @@ export default function Contact() {
     <>
       <Head>
         <title>{contactPageData.metaTitle}</title>
-        <meta description={contactPageData.metaDescription} />
+        <meta name="description" content={contactPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="keywords" content={contactPageData.metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${contactPageData.data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero

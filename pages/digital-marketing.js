@@ -6,6 +6,7 @@ import Head from "next/head";
 
 // Constants
 import { pageData } from "../lib/constants/pageData";
+import { personSchema } from "../lib/constants/schema";
 import { dmPageContent } from "../pages-content/digital-marketing";
 
 // Context
@@ -47,6 +48,9 @@ export default function DigitalMarketing() {
         <title>{pageData[2].metaTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={pageData[2].metaDescription} />
+        <meta name="keywords" content={pageData[2].metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${pageData[2].data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero

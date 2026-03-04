@@ -9,6 +9,7 @@ import { useTheme } from "../lib/contexts/ThemeProvider";
 
 // Constent
 import { pageData } from "../lib/constants/pageData";
+import { personSchema } from "../lib/constants/schema";
 import { pgPageContent } from "../pages-content/public-good";
 
 // Components
@@ -48,6 +49,9 @@ export default function PublicGood() {
         <title>{pgPageData.metaTitle}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={pgPageData.metaDescription} />
+        <meta name="keywords" content={pgPageData.metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${pgPageData.data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero

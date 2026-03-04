@@ -6,7 +6,7 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 
 // Constants
-import { pageData } from "../lib/constants";
+import { pageData, personSchema } from "../lib/constants";
 import { homePageContent } from "../pages-content";
 
 // Custom
@@ -27,8 +27,11 @@ export default function Home() {
     <>
       <Head>
         <title>{homePageData.metaTitle}</title>
-        <meta description={homePageData.metaDescription} />
+        <meta name="description" content={homePageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="keywords" content={homePageData.metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${homePageData.data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero

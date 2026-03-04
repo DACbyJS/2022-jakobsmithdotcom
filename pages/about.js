@@ -7,7 +7,7 @@ import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
 // Constants
-import { pageData } from "../lib/constants";
+import { pageData, personSchema } from "../lib/constants";
 import { aboutPageContent } from "../pages-content/about.js";
 
 // Image
@@ -38,8 +38,11 @@ export default function About() {
     <>
       <Head>
         <title>{aboutPageData.metaTitle}</title>
-        <meta description={aboutPageData.metaDescription} />
+        <meta name="description" content={aboutPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="keywords" content={aboutPageData.metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${aboutPageData.data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero

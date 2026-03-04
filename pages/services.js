@@ -6,7 +6,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 // Constants
-import { pageData } from "../lib/constants";
+import { pageData, personSchema } from "../lib/constants";
 import { servicesPageContent } from "../pages-content/services";
 
 // Custom
@@ -51,8 +51,11 @@ export default function Services() {
     <>
       <Head>
         <title>{servicesPageData.metaTitle}</title>
-        <meta description={servicesPageData.metaDescription} />
+        <meta name="description" content={servicesPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="keywords" content={servicesPageData.metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${servicesPageData.data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero

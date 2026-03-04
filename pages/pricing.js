@@ -6,7 +6,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 // Constants
-import { pageData } from "../lib/constants";
+import { pageData, personSchema } from "../lib/constants";
 import { pricingPageContent } from "../pages-content/pricing";
 
 // Custom
@@ -36,8 +36,11 @@ export default function Pricing() {
     <>
       <Head>
         <title>{pricingPageData.metaTitle}</title>
-        <meta description={pricingPageData.metaDescription} />
+        <meta name="description" content={pricingPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="keywords" content={pricingPageData.metaKeywords} />
+        <link rel="canonical" href={`https://jakobsmith.com${pricingPageData.data.href}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
       <MuxHero
