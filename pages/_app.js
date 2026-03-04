@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 // Custom Components
 import Layout from "../components/layout/Layout";
 import ThemeProvider from "../lib/contexts/ThemeProvider";
+import PageTransitionOverlay from "../components/layout/PageTransitionOverlay";
 import Analytics from "../components/head/analytics";
 
 // External Dependencies
@@ -41,6 +42,7 @@ function App({ Component, pageProps }) {
   return (
     
     <ThemeProvider>
+      <PageTransitionOverlay />
       <Analytics />
       <Layout
         className={`${fonts?.overpass?.variable} ${fonts?.overpassMono?.variable} ${fonts?.jsMath?.variable}`}

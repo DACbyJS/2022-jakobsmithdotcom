@@ -1,0 +1,38 @@
+.page-wipe-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wipe-panel {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  border: 6px solid #121416;
+  transform: translateX(100%);
+}
+
+/* Slide IN from right, OUT to left — 9 panels, 70ms stagger */
+@for $i from 0 through 8 {
+  .page-wipe-panel-in-#{$i} {
+    animation: pageWipePanelIn 0.5s cubic-bezier(0.19, 0.3, 0.74, 1.29) #{$i * 0.07}s forwards;
+  }
+
+  .page-wipe-panel-out-#{$i} {
+    transform: translateX(0);
+    animation: pageWipePanelOut 0.5s cubic-bezier(0.19, 0.3, 0.74, 1.29) #{(8 - $i) * 0.07}s forwards;
+  }
+}
+
+@keyframes pageWipePanelIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes pageWipePanelOut {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
