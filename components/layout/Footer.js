@@ -1,11 +1,10 @@
 // Next
-import Image from "next/image";
 import Link from "next/link";
 
 // Image
-import tuka from "../../public/images/TUKA.png";
 import SvgJakobSmithLogo from "../../components/svg/JakobSmithLogo";
 import WigglyLink from "../../components/svg/WigglyLink";
+import TukaWithEye from "../../components/svg/TukaWithEye";
 
 // Constants
 import { pageData } from "../../lib/constants/pageData";
@@ -48,12 +47,8 @@ export default function Footer() {
           <WigglyLink />
         </Link>
       </div>
-      <div className="user relative flex-1 hidden md:block h-[150px] max-w-[375px]">
-        <Image
-          className="tuka absolute w-full h-auto"
-          src={tuka}
-          alt="The User Knows All Icon"
-        />
+      <div className="user flex-1 hidden md:block max-w-[375px]">
+        <TukaWithEye />
       </div>
     </footer>
   );

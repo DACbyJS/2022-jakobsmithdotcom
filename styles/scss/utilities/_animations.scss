@@ -124,3 +124,45 @@
   opacity: 1;
   transform: none;
 }
+
+// Tuka Eye
+@keyframes tuka-eye-appear {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tuka-eye-blink {
+  0%, 85%, 100% {
+    transform: translateX(0) scaleY(1);
+  }
+  92% {
+    transform: translateX(0) scaleY(0.05);
+  }
+}
+
+.tuka-container {
+  cursor: help;
+
+  &:hover .tuka-eye-pupil path {
+    animation: rainbow-svg-fill-white 5s ease infinite;
+  }
+}
+
+.tuka-eye-inner {
+  opacity: 0;
+  transform: translateX(-18px);
+  transform-box: fill-box;
+  transform-origin: center;
+
+  &.tuka-eye-visible {
+    animation:
+      tuka-eye-appear 1s ease 0.5s forwards,
+      tuka-eye-blink 3.5s 1.5s ease infinite;
+  }
+}
