@@ -37,7 +37,7 @@ export const aboutPageContent = {
   personal: {
     heading: "Personal",
     pic: {
-      heading: "Pic",
+      heading: "Pics",
       alt: "Jakob Smith",
     },
     links: {
