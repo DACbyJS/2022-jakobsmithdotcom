@@ -81,7 +81,7 @@ export default function Portfolio() {
                   >
                     {item.name}
                   </Link>
-                  <span className="font-overpass font-light text-[1.2ch] sm:text-[1.4ch] lg:text-[1.5ch] 2xl:text-[1.8ch] uppercase tracking-widest shrink-0 hidden sm:flex gap-x-3 items-baseline">
+                  <span className="font-overpass font-normal text-[1.2ch] sm:text-[1.4ch] lg:text-[1.5ch] 2xl:text-[1.8ch] uppercase tracking-widest shrink-0 hidden sm:flex gap-x-3 items-baseline ml-auto justify-end text-right">
                     {item.services.map((serviceSlug, i) => {
                       const service = servicesData.find((s) => s.slug === serviceSlug);
                       if (!service) return null;
