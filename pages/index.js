@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
+import { getCanonicalUrl } from "../lib/utilities/seo";
 import { homePageContent } from "../pages-content";
 
 // Custom
@@ -30,7 +31,7 @@ export default function Home() {
         <meta name="description" content={homePageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={homePageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${homePageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(homePageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

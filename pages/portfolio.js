@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
+import { getCanonicalUrl } from "../lib/utilities/seo";
 import {
   portfolioClientCategories,
   portfolioData,
@@ -74,7 +75,7 @@ export default function Portfolio() {
         <meta name="description" content={portfolioPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={portfolioPageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${portfolioPageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(portfolioPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

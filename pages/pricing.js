@@ -7,6 +7,7 @@ import classNames from "classnames";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
+import { getCanonicalUrl } from "../lib/utilities/seo";
 import { pricingPageContent } from "../pages-content/pricing";
 
 // Custom
@@ -39,7 +40,7 @@ export default function Pricing() {
         <meta name="description" content={pricingPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={pricingPageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${pricingPageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(pricingPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

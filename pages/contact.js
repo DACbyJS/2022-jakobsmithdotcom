@@ -4,6 +4,7 @@ import Link from "next/link";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
+import { getCanonicalUrl } from "../lib/utilities/seo";
 import { contactPageContent } from "../pages-content/contact.js";
 
 // Custom
@@ -27,7 +28,7 @@ export default function Contact() {
         <meta name="description" content={contactPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={contactPageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${contactPageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(contactPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

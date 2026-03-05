@@ -8,6 +8,7 @@ import Head from "next/head";
 import { useTheme } from "../lib/contexts/ThemeProvider";
 import { pageData } from "../lib/constants/pageData";
 import { personSchema } from "../lib/constants/schema";
+import { getCanonicalUrl } from "../lib/utilities/seo";
 import { wdPageContent } from "../pages-content/website-designers";
 
 // Components
@@ -50,7 +51,7 @@ export default function WebsiteDesigners() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={wdPageData.metaDescription} />
         <meta name="keywords" content={wdPageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${wdPageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(wdPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

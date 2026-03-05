@@ -7,6 +7,7 @@ import classNames from "classnames";
 
 // Constants
 import { pageData, personSchema } from "../../lib/constants";
+import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { servicesPageContent } from "../../pages-content/services";
 
 // Custom
@@ -54,7 +55,7 @@ export default function Services() {
         <meta name="description" content={servicesPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={servicesPageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${servicesPageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(servicesPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

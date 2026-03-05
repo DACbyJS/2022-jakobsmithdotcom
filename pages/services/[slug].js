@@ -7,6 +7,7 @@ import WigglyButton from "../../components/layout/WigglyButton";
 import { personSchema } from "../../lib/constants";
 import { servicesData } from "../../lib/constants/servicesData";
 import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { getCanonicalUrl } from "../../lib/utilities/seo";
 
 const BLURB_COLORS = ["blue", "red", "yellow"];
 
@@ -44,7 +45,7 @@ export default function ServiceDetail({ slug }) {
         <title>{`Jakob Smith | ${service.title}`}</title>
         <meta name="description" content={service.tooltip} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="canonical" href={`https://jakobsmith.com/services/${slug}`} />
+        <link rel="canonical" href={getCanonicalUrl(`/services/${slug}`)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 

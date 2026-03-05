@@ -1,48 +1,36 @@
 const fs = require('fs');
 const path = require('path');
 
-const SITE_URL = 'https://jakobsmith.com';
 const ROOT_DIR = path.resolve(__dirname, '..');
-const PAGES_DIR = path.join(ROOT_DIR, 'pages');
+const SITE_CONFIG_PATH = path.join(ROOT_DIR, 'lib/constants/siteConfig.json');
+const PAGE_DATA_PATH = path.join(ROOT_DIR, 'lib/constants/pageData.js');
 const SERVICES_DATA_PATH = path.join(ROOT_DIR, 'lib/constants/servicesData.js');
 const SITEMAP_PATH = path.join(ROOT_DIR, 'public/sitemap.xml');
 
-const EXCLUDED_PAGE_FILES = new Set(['_app.js', '_document.js', '404.js']);
+const { siteUrl } = JSON.parse(fs.readFileSync(SITE_CONFIG_PATH, 'utf8'));
+const SITE_URL = siteUrl.replace(/\/+$/, '');
 
-const collectStaticPageRoutes = () => {
-  const routes = [];
+const normalizePath = (pathname = '/') => {
+  if (!pathname) return '/';
+  const withLeadingSlash = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  if (withLeadingSlash === '/') return '/';
+  const withoutTrailingSlash = withLeadingSlash.replace(/\/+$/, '');
+  return `${withoutTrailingSlash}/`;
+};
 
-  const walk = (dir, prefix = '') => {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
+const getStaticPageRoutes = () => {
+  const fileContent = fs.readFileSync(PAGE_DATA_PATH, 'utf8');
+  const hrefRegex = /href:\s*["']([^"']+)["']/g;
+  const routes = new Set();
 
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-
-      if (entry.isDirectory()) {
-        walk(fullPath, `${prefix}/${entry.name}`);
-        continue;
-      }
-
-      if (!entry.name.endsWith('.js') || EXCLUDED_PAGE_FILES.has(entry.name)) {
-        continue;
-      }
-
-      if (entry.name.includes('[')) {
-        continue;
-      }
-
-      const fileNameWithoutExt = entry.name.replace(/\.js$/, '');
-      const route = fileNameWithoutExt === 'index'
-        ? (prefix || '/')
-        : `${prefix}/${fileNameWithoutExt}`;
-
-      routes.push(route.replace(/\/+/g, '/'));
+  let match;
+  while ((match = hrefRegex.exec(fileContent)) !== null) {
+    if (match[1]) {
+      routes.add(normalizePath(match[1]));
     }
-  };
+  }
 
-  walk(PAGES_DIR);
-
-  return Array.from(new Set(routes));
+  return Array.from(routes);
 };
 
 const getServiceDetailRoutes = () => {
@@ -57,19 +45,25 @@ const getServiceDetailRoutes = () => {
     }
   }
 
-  return Array.from(slugs).map((slug) => `/services/${slug}`);
+  return Array.from(slugs).map((slug) => normalizePath(`/services/${slug}`));
 };
 
 const getPriority = (route) => {
-  if (route === '/') return '1.0';
-  if (route === '/services') return '0.8';
-  if (route.startsWith('/services/')) return '0.7';
-  if (route === '/website-designers' || route === '/digital-marketing' || route === '/public-good') return '0.8';
+  const routeWithoutTrailingSlash = route === '/' ? '/' : route.replace(/\/+$/, '');
+  if (routeWithoutTrailingSlash === '/') return '1.0';
+  if (routeWithoutTrailingSlash === '/services') return '0.8';
+  if (routeWithoutTrailingSlash.startsWith('/services/')) return '0.7';
+  if (
+    routeWithoutTrailingSlash === '/website-designers'
+    || routeWithoutTrailingSlash === '/digital-marketing'
+    || routeWithoutTrailingSlash === '/public-good'
+  ) return '0.8';
   return '0.7';
 };
 
 const buildUrlEntry = (route, lastmod) => {
-  const loc = route === '/' ? SITE_URL : `${SITE_URL}${route}`;
+  const normalizedRoute = normalizePath(route);
+  const loc = normalizedRoute === '/' ? `${SITE_URL}/` : `${SITE_URL}${normalizedRoute}`;
   return [
     '  <url>',
     `    <loc>${loc}</loc>`,
@@ -82,7 +76,7 @@ const buildUrlEntry = (route, lastmod) => {
 
 const generateSitemap = () => {
   const lastmod = new Date().toISOString();
-  const staticRoutes = collectStaticPageRoutes();
+  const staticRoutes = getStaticPageRoutes();
   const serviceRoutes = getServiceDetailRoutes();
 
   const allRoutes = Array.from(new Set([...staticRoutes, ...serviceRoutes])).sort((a, b) => {

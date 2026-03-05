@@ -6,6 +6,7 @@ import Image from "next/image";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
+import { getCanonicalUrl } from "../lib/utilities/seo";
 import { aboutPageContent } from "../pages-content/about.js";
 
 // Image
@@ -138,7 +139,7 @@ export default function About() {
         <meta name="description" content={aboutPageData.metaDescription} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="keywords" content={aboutPageData.metaKeywords} />
-        <link rel="canonical" href={`https://jakobsmith.com${aboutPageData.data.href}`} />
+        <link rel="canonical" href={getCanonicalUrl(aboutPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       </Head>
 
