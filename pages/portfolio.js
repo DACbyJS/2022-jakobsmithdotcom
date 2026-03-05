@@ -1,7 +1,7 @@
 // Next
 import Head from "next/head";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
@@ -27,6 +27,8 @@ export default function Portfolio() {
   const portfolioPageData = pageData.find((page) => page.slug === "portfolio");
   const { muxWords, hero } = portfolioPageContent;
   const [activeClientCategory, setActiveClientCategory] = useState("all");
+  const [displayedPortfolioData, setDisplayedPortfolioData] = useState(portfolioData);
+  const [isListVisible, setIsListVisible] = useState(true);
   const categoryThemeClasses = {
     all: {
       inactive: "bg-transparent text-js-black hover:bg-js-black hover:text-js-white",
@@ -45,6 +47,24 @@ export default function Portfolio() {
       active: "bg-js-blue text-js-white",
     },
   };
+  const categoryAccentClasses = {
+    all: {
+      divider: "border-js-black",
+      arrow: "text-js-black",
+    },
+    "web-designers": {
+      divider: "border-js-red",
+      arrow: "text-js-red",
+    },
+    "digital-marketing": {
+      divider: "border-js-yellow",
+      arrow: "text-js-yellow",
+    },
+    "public-good": {
+      divider: "border-js-blue",
+      arrow: "text-js-blue",
+    },
+  };
 
   const categoryCounts = useMemo(() => {
     return portfolioClientCategories.reduce(
@@ -58,15 +78,41 @@ export default function Portfolio() {
     );
   }, []);
 
-  const filteredPortfolioData = useMemo(() => {
-    if (activeClientCategory === "all") {
+  const getPortfolioByCategory = useCallback((categoryId) => {
+    if (categoryId === "all") {
       return portfolioData;
     }
 
     return portfolioData.filter((item) =>
-      item.clientCategories?.includes(activeClientCategory)
+      item.clientCategories?.includes(categoryId)
     );
-  }, [activeClientCategory]);
+  }, []);
+
+  useEffect(() => {
+    const transitionTimeout = setTimeout(() => {
+      setDisplayedPortfolioData(getPortfolioByCategory(activeClientCategory));
+      requestAnimationFrame(() => {
+        setIsListVisible(true);
+      });
+    }, 160);
+
+    return () => clearTimeout(transitionTimeout);
+  }, [activeClientCategory, getPortfolioByCategory]);
+
+  const handleCategoryChange = (categoryId) => {
+    if (categoryId === activeClientCategory) return;
+    setIsListVisible(false);
+    setActiveClientCategory(categoryId);
+  };
+
+  const servicesBySlug = useMemo(
+    () =>
+      servicesData.reduce((accumulator, service) => {
+        accumulator[service.slug] = service;
+        return accumulator;
+      }, {}),
+    []
+  );
 
   return (
     <>
@@ -113,12 +159,12 @@ export default function Portfolio() {
               {hero.subheading}
             </p>
 
-            <div className="flex items-center justify-center px-6 mb-10">
-              <div className="inline-flex flex-wrap items-center justify-center">
+            <div className="flex items-center justify-center px-6 mb-8 sm:mb-10">
+              <div className="inline-flex flex-wrap items-center justify-center gap-y-2">
               <button
                 type="button"
-                onClick={() => setActiveClientCategory("all")}
-                className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 transition-colors ${
+                onClick={() => handleCategoryChange("all")}
+                className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 my-0.5 transition-colors ${
                   activeClientCategory === "all"
                     ? categoryThemeClasses.all.active
                     : categoryThemeClasses.all.inactive
@@ -131,8 +177,8 @@ export default function Portfolio() {
                 <button
                   key={category.id}
                   type="button"
-                  onClick={() => setActiveClientCategory(category.id)}
-                  className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 transition-colors ${
+                  onClick={() => handleCategoryChange(category.id)}
+                  className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 my-0.5 transition-colors ${
                     activeClientCategory === category.id
                       ? categoryThemeClasses[category.id]?.active
                       : categoryThemeClasses[category.id]?.inactive
@@ -144,23 +190,50 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="zero:px-6 sm:px-10">
-              {filteredPortfolioData.map((item) => (
+            <div className={`zero:px-6 sm:px-10 transition-opacity duration-200 ${isListVisible ? "opacity-100" : "opacity-0"}`}>
+              {displayedPortfolioData.map((item, index) => {
+                const itemCategory = item.clientCategories?.[0] || "all";
+                const itemAccentClasses =
+                  categoryAccentClasses[itemCategory] || categoryAccentClasses.all;
+
+                return (
                 <div
                   key={item.id}
-                  className="flex items-baseline justify-between gap-4 py-5 border-b border-js-black last:border-b-0 group"
+                  className={`flex items-start sm:items-baseline justify-between gap-4 md:gap-8 py-4 md:py-8 border-b border-js-black group transition-all duration-300 ${
+                    isListVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
+                  } ${itemAccentClasses.divider}`}
+                  style={{ transitionDelay: isListVisible ? `${index * 35}ms` : "0ms" }}
                 >
-                  <Link
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-js-math text-[1.8ch] sm:text-[2ch] lg:text-[2.4ch] 2xl:text-[3ch] tracking-wide hover:opacity-60 transition-opacity"
-                  >
-                    {item.name}
-                  </Link>
+                  <div className="min-w-0 flex-1">
+                    <Link
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block font-js-math text-[1.7ch] sm:text-[2ch] lg:text-[2.4ch] 2xl:text-[3ch] tracking-wide leading-tight hover:opacity-60 transition-opacity"
+                    >
+                      {item.name}
+                    </Link>
+                    <span className="font-overpass font-normal text-[1.05ch] uppercase tracking-widest sm:hidden flex flex-wrap gap-x-2 gap-y-1 mt-2 text-left">
+                      {item.services.map((serviceSlug, i) => {
+                        const service = servicesBySlug[serviceSlug];
+                        if (!service) return null;
+                        return (
+                          <span key={serviceSlug} className="flex items-center gap-x-2">
+                            {i > 0 && <span className="opacity-30">/</span>}
+                            <Link
+                              href={`/services/${serviceSlug}`}
+                              className="opacity-70 hover:opacity-100 transition-opacity"
+                            >
+                              {service.title}
+                            </Link>
+                          </span>
+                        );
+                      })}
+                    </span>
+                  </div>
                   <span className="font-overpass font-normal text-[1.2ch] sm:text-[1.4ch] lg:text-[1.5ch] 2xl:text-[1.8ch] uppercase tracking-widest shrink-0 hidden sm:flex gap-x-3 items-baseline ml-auto justify-end text-right">
                     {item.services.map((serviceSlug, i) => {
-                      const service = servicesData.find((s) => s.slug === serviceSlug);
+                      const service = servicesBySlug[serviceSlug];
                       if (!service) return null;
                       return (
                         <span key={serviceSlug} className="flex items-baseline gap-x-3">
@@ -179,12 +252,13 @@ export default function Portfolio() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-overpass text-[1.5ch] sm:text-[1.8ch] lg:text-[2ch] shrink-0 group-hover:translate-x-1 transition-transform hover:opacity-60"
+                    className={`font-overpass font-black text-[1.5ch] sm:text-[1.8ch] lg:text-[2ch] leading-none shrink-0 self-center sm:self-auto bg-js-black px-1.5 py-0.5 group-hover:translate-x-1 transition-transform hover:opacity-80 ${itemAccentClasses.arrow}`}
                   >
                     &rarr;
                   </Link>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>
