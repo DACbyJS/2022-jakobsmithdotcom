@@ -36,7 +36,11 @@ export default function PageTransitionOverlay() {
   const colors = ["bg-js-blue", "bg-js-yellow", "bg-js-red"];
 
   return (
-    <div aria-hidden="true" className="page-wipe-overlay">
+    <div
+      aria-hidden="true"
+      className={`page-wipe-overlay ${phase === "in" ? "page-wipe-overlay-in" : "page-wipe-overlay-out"}`}
+    >
+      <div className="page-wipe-backdrop" />
       {Array.from({ length: 9 }, (_, i) => (
         <div
           key={i}

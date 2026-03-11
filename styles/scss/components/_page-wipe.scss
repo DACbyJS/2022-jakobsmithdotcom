@@ -5,9 +5,28 @@
   pointer-events: none;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.page-wipe-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #121416;
+  opacity: 0;
+}
+
+.page-wipe-overlay-in .page-wipe-backdrop {
+  animation: pageWipeBackdropIn 0.28s ease-out forwards;
+}
+
+.page-wipe-overlay-out .page-wipe-backdrop {
+  opacity: 0.9;
+  animation: pageWipeBackdropOut 1.05s ease-out forwards;
 }
 
 .page-wipe-panel {
+  position: relative;
+  z-index: 1;
   flex: 1 1 0;
   min-height: 0;
   width: 100%;
@@ -35,4 +54,14 @@
 @keyframes pageWipePanelOut {
   from { transform: translateX(0); }
   to   { transform: translateX(-100%); }
+}
+
+@keyframes pageWipeBackdropIn {
+  from { opacity: 0; }
+  to   { opacity: 0.9; }
+}
+
+@keyframes pageWipeBackdropOut {
+  from { opacity: 0.9; }
+  to   { opacity: 0; }
 }
