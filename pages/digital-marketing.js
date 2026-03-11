@@ -43,6 +43,19 @@ export default function DigitalMarketing() {
     questionsBadge,
   } = dmPageContent;
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questionsContent.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <>
       <Head>
@@ -52,6 +65,7 @@ export default function DigitalMarketing() {
         <meta name="keywords" content={pageData[2].metaKeywords} />
         <link rel="canonical" href={getCanonicalUrl(pageData[2].data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       <MuxHero
