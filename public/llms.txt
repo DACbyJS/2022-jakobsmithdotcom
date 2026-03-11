@@ -1,0 +1,52 @@
+# Jakob Smith — Website Management
+
+**Location:** Albuquerque, New Mexico  
+**Contact:** hello@jakobsmith.com  
+**Website:** https://jakobsmith.com
+
+## About
+
+Jakob Smith provides comprehensive website management services for organizations that need professional support with hosting, maintenance, SEO, and ongoing technical support.
+
+## Target Audiences
+
+- **Web Designers** — White-label development and hosting support
+- **Digital Marketers** — Performance-focused website optimization and maintenance
+- **Public Good / Non-Profits** — Cost-effective website management and support
+
+## Services
+
+### Invest (Growth Services)
+
+1. **Simple SEO** — On-page SEO audit, traffic insights, competitor analysis, keyword research, meta tag optimization, schema markup implementation
+2. **Content Gen** — SEO-focused content creation via AI or professional writers
+3. **AI Discovery** — Audit and optimize site for AI crawler visibility and discovery
+4. **Additions** — Add features, functionality, or styling to existing sites
+5. **Rebuild** — Complete website redesign and development with design consultation
+
+### Preserve (Maintenance Services)
+
+6. **Foundations** — Hosting, updates, DNS management, 24/7 monitoring, one hour monthly tweaks
+7. **Hosting & Updates** — Reliable hosting with security-focused updates and patch management
+8. **Support** — Ongoing technical support via email, Slack, phone, or text
+9. **Total Debug** — Technical debt repair and legacy system modernization
+
+## Portfolio Highlights
+
+Recent clients include CCIM New Mexico, IREM New Mexico, North Star Dental, Ray Steel, Carristo Creative, NAI El Paso, WTBA, Kraemer Fields, and many others across real estate, retail, nonprofit, and professional services sectors.
+
+## Technical Expertise
+
+- **Content Management:** Craft CMS, WordPress, Contentful, Sanity
+- **Backend:** PHP, Ruby, Python
+- **Frontend:** React, Next.js, Vue, Tailwind CSS
+- **Hosting:** Kinsta, AWS, DigitalOcean, Linode, Google Cloud
+- **Experience:** 50+ server-side sites, 20+ client-side sites, 7 production web applications
+
+## Key Pages
+
+- [Services](https://jakobsmith.com/services) — Detailed service descriptions and pricing
+- [Portfolio](https://jakobsmith.com/portfolio) — Client case studies and work samples
+- [Pricing](https://jakobsmith.com/pricing) — Service pricing and investment ranges
+- [About](https://jakobsmith.com/about) — Full technical expertise and background
+- [Contact](https://jakobsmith.com/contact) — Get in touch for a consultation

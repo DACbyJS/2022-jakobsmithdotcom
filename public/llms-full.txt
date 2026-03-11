@@ -1,0 +1,304 @@
+# Jakob Smith — Website Management (Full Details)
+
+**Location:** Albuquerque, New Mexico  
+**Contact:** hello@jakobsmith.com  
+**Website:** https://jakobsmith.com
+
+## Executive Summary
+
+Jakob Smith is a web developer and digital designer with 10+ years of experience providing website management, development, and optimization services. Based in Albuquerque, NM, the practice specializes in helping web designers, digital marketing agencies, and nonprofit organizations maintain, optimize, and grow their web presence.
+
+## Target Audiences & Value Propositions
+
+### Web Designers
+Designers need a technical partner to translate mockups into production websites and handle backend operations. Jakob provides:
+- Expert translation of designs into responsive, usable websites
+- Handling of hosting, maintenance, automation, and SEO
+- Ongoing technical support and client communication
+- Budget-conscious approach that preserves design margins
+- Animation and interactive feature implementation
+
+### Digital Marketers
+Digital marketing agencies need data-driven website optimization and technical reliability. Jakob provides:
+- Website performance analysis and data-driven optimization
+- SEO implementation and traffic optimization
+- Hosting and infrastructure management
+- 24/7 monitoring and maintenance
+- Team collaboration across multiple time zones
+
+### Public Good / Non-Profits
+Nonprofits need cost-effective solutions that maximize reach and minimize technical overhead. Jakob provides:
+- Low-cost hosting and infrastructure models
+- Wide reach and accessibility optimization
+- Stakeholder communication and management
+- Mission-aligned approach to digital transformation
+- Budget-conscious infrastructure planning
+
+## Complete Service Offerings
+
+### INVEST Category (Growth & Development)
+
+#### 1. Simple SEO
+**Price:** $125–675/month  
+**Description:** Comprehensive on-page SEO audit and optimization strategy with ongoing monitoring.
+
+**Includes:**
+- On-page SEO audit and recommendations
+- Traffic and competitor analysis
+- Keyword research and strategy
+- Meta tags and descriptions optimization
+- Image alt tag optimization
+- Internal linking strategy development
+- Schema markup implementation
+- Monthly video check-up
+- Monthly PDF performance report
+
+**Tools:** SEMRush, Google Search Console, All in One SEO Pro, SEOMatic, next-seo
+
+**Outcomes:**
+- Improved search engine rankings
+- Increased organic traffic
+- Better visibility in search results
+
+#### 2. Content Gen
+**Price:** $50–125/item  
+**Description:** Ongoing content creation via AI or professional writers optimized for SEO.
+
+**Includes:**
+- Generation of SEO-focused blog posts, news articles, or pages
+- Professional content writer access for industry-specific needs
+- SEO optimization of all generated content
+
+**Tools:** WriterAccess, Contently, HyperTxt, Jasper AI
+
+**Outcomes:**
+- Improved search rankings
+- Increased organic traffic
+- Lead generation and trust building
+- Best results when combined with Simple SEO service
+
+#### 3. AI Discovery
+**Price:** $135/month  
+**Description:** Optimize site for AI crawler visibility and discovery (distinct from training crawlers).
+
+**Includes:**
+- robots.txt and firewall rule configuration for AI crawlers
+- Selective blocking of AI training crawlers if needed
+- Semantic markup and metadata optimization
+- Schema and structured data implementation
+- AI visibility audits and recommendations
+- llms.txt file creation and maintenance
+- Performance optimization for AI accessibility
+- Monthly monitoring and adjustments
+
+**Tools:** SEMRush, Google Search Console, Semrush, Google Search Console
+
+**Outcomes:**
+- Improved AI model discovery and inclusion
+- Better LLM summaries and citations
+- Competitive advantage in emerging AI-driven discovery
+- Leading brand positioning in AI era
+
+#### 4. Additions
+**Price:** $50–2,500/item  
+**Description:** Add new features, functionality, or styling to existing websites.
+
+**Includes:**
+- Feature development and integration
+- Custom functionality and automation
+- UI/UX enhancements
+- Performance optimization additions
+- Third-party service integration
+
+**Tools:** Extensive stack including JavaScript frameworks, APIs, databases, and integrations
+
+**Notes:** Pricing varies significantly based on scope. Refer to technical expertise section for complete software stack.
+
+#### 5. Rebuild
+**Price:** $750–37,500 (project-based)  
+**Description:** Complete website redesign and development from concept to launch.
+
+**Includes:**
+- Design consultation or designer referral
+- Complete site architecture and development
+- Feature implementation for long-term goals
+- Responsive design and accessibility
+- Launch and handoff support
+- Initial site management setup
+
+**Expertise:**
+- 10+ years building small to enterprise marketing sites
+- Experience with small to medium e-commerce platforms
+- Custom application development
+
+**Recommended Services Post-Build:** Simple SEO and Foundations usually follow rebuilds to ensure comprehensive marketing and technical foundation.
+
+### PRESERVE Category (Maintenance & Support)
+
+#### 6. Foundations
+**Price:** $125–375/month  
+**Description:** Comprehensive hosting, updates, and technical support package.
+
+**Includes:**
+- Website hosting and all database/asset management
+- DNS, indexer, caching, and CDN management
+- All-level software updates with security patch priority
+- Email and Slack support for site issues and feature requests
+- One hour monthly of site tweaks (see Additions for larger projects)
+- 24/7 error monitoring and uptime monitoring
+- Fine-tuned log monitoring
+
+**Tools:** Kinsta, DigitalOcean, Linode, Cloudflare, Servd, WPUmbrella, UptimeRobot, Bunny.net, CMS-specific plugins (ACF, Craft CMS Pro)
+
+**Outcomes:**
+- 24/7 site availability
+- Long-term site improvement and stability
+- Reduced stress on team
+- Comprehensive technical support
+
+#### 7. Hosting & Updates
+**Price:** $50–125/month  
+**Description:** Basic hosting with security-focused update management.
+
+**Includes:**
+- Website hosting and asset management
+- DNS and CDN management
+- Security patch updates only (not feature updates)
+- Email and Slack support for downtime and critical issues
+- Third-party developer request handling
+
+**Tools:** Kinsta, DigitalOcean, Linode, Cloudflare, Servd, similar platforms
+
+**Best For:** Organizations with limited budgets or minimal update needs
+
+#### 8. Support
+**Price:** $50–250/month  
+**Description:** Ongoing technical support with tiered response and scope coverage based on investment level.
+
+**Includes:**
+- Communication via Slack, email, phone, or text
+- Technical question answering
+- Issue diagnosis and resolution
+- Scoped goal achievement support
+- 1–8 hour typical response time
+- Often resolves issues within 24 hours
+
+**Best For:**
+- Web designers needing client support channel
+- E-commerce and SaaS companies relying on site for sales
+- Teams with expertise gaps but limited budgets
+- Regulated data handling requiring compliance support
+
+#### 9. Total Debug
+**Price:** $125–2,500/month  
+**Description:** Technical debt repair and legacy system modernization.
+
+**Includes:**
+- Comprehensive bug identification and repair
+- Outdated feature updates and removal
+- Performance issue resolution
+- Software migration to current/supported versions
+- Regulatory compliance updates
+- Automation improvements
+- Style and UX enhancements
+- Recorded video documentation of work
+- Optional consultation call
+
+**Best For:**
+- Large sites with accumulated technical debt
+- Legacy systems with hidden or unbearable bugs
+- Performance and functionality concerns
+- Organizations seeking improvement without full rebuild
+
+## Portfolio Clients
+
+### By Category
+
+**Digital Marketing Agencies & Businesses:**
+- CCIM New Mexico (rebuild, simple-seo)
+- IREM New Mexico (rebuild, hosting-updates)
+- Base 5 Retail (rebuild, foundations)
+- North Star Dental (simple-seo, foundations)
+- Ray Steel (rebuild, hosting-updates)
+- NAI El Paso (rebuild, hosting-updates)
+- NAI First Valley (rebuild, hosting-updates)
+- NAI Sunvista (rebuild, hosting-updates)
+- CPIX (hosting-updates, support)
+- CARW (rebuild, support)
+- Lindsey Homes (rebuild, simple-seo)
+- CAR New Mexico (rebuild, hosting-updates)
+- CARWM (rebuild, support)
+- Commgate (rebuild, simple-seo)
+- Get A Grip (hosting-updates, support)
+
+**Web Design Partners:**
+- Carristo Creative (rebuild, simple-seo)
+
+**Public Good / Non-Profits:**
+- WTBA (rebuild, support)
+- Kraemer Fields (foundations)
+- Ski New Mexico (simple-seo, hosting-updates)
+- Visit Angel Fire (rebuild, simple-seo)
+
+## Technical Stack
+
+### Content Management Systems
+Craft CMS, WordPress, Contentful, Sanity, Expression Engine, Joomla
+
+### Backend Development
+**Languages:** PHP, Ruby, Python  
+**Frameworks:** Laravel, Symfony, Yii, Ruby on Rails
+
+### Frontend Technologies
+**Markup & Styling:** HTML, CSS, SCSS, Tailwind CSS, Bootstrap  
+**JavaScript:** React, Next.js, Alpine.js, jQuery  
+**Modern Framework Expertise:** React, Next.js
+
+### Infrastructure & Hosting
+**Managed Hosting:** Kinsta, WpEngine, Linode, Servd  
+**Cloud Services:** AWS S3, CloudFront, Google Cloud  
+**Performance:** Cloudflare, Bunny.net, caching optimization
+
+### Development & DevOps
+**Containerization:** Docker, DDEV, Lando  
+**Version Control:** Git  
+**CI/CD:** Trellis, standard deployment patterns
+
+### Database & APIs
+**Databases:** MySQL, PostgreSQL, MariaDB  
+**API Integration:** REST APIs, GraphQL
+
+### Monitoring & Maintenance
+UptimeRobot, WPUmbrella, Cloudflare, custom logging solutions
+
+## Experience Overview
+
+- **50+ server-side websites** built and maintained
+- **20+ client-side / JavaScript-heavy websites** developed
+- **7 production web applications** designed and deployed
+- **10+ years** of professional web development and design
+- **Full-stack expertise** from infrastructure to frontend UX
+
+## Core Values
+
+- Communication
+- Responsibility
+- Thoughtfulness
+- Determination
+- Artistry
+- Creativity
+- Liberty
+- Compassion
+- Prosperity
+
+## Key Philosophy
+
+Jakob believes that the internet should transcend barriers between people and information. As both a technical expert and designer, he brings flexibility and intuition to projects—understanding that human needs and feelings override processes and perfectionism. This adaptable generalist approach ensures every client feels understood and supported.
+
+## Quick Start
+
+- **Get a Quote:** Contact hello@jakobsmith.com
+- **View Services:** https://jakobsmith.com/services
+- **See Portfolio:** https://jakobsmith.com/portfolio
+- **Pricing Details:** https://jakobsmith.com/pricing
+- **Learn More:** https://jakobsmith.com/about
