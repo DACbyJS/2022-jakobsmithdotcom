@@ -192,9 +192,9 @@ export default function About() {
               <div className="grid zero:grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
                 <div className="flex-col">
                   <h3 className="btn w-full text-center mb-6">{personal.heading}</h3>
-                  <div className="grid zero:grid-cols-1 xs:grid-cols-2 gap-10 font-light font-overpass leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch]">
-                    <div>
-                      <h4 className="font-js-math text-[1.5ch] lg:text-[2ch] 2xl:text-[2.5ch] pb-3">
+                  <div className="grid zero:grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-10 font-light font-overpass leading-[1.8] text-[1.25ch] lg:text-[1.5ch] 2xl:text-[2ch]">
+                    <div className="space-y-4">
+                      <h4 className="font-js-math text-[2.1ch] sm:text-[1.8ch] lg:text-[2ch] 2xl:text-[2.5ch] pb-3">
                         {personal.pic.heading}
                       </h4>
                       <div className="relative">
@@ -219,8 +219,8 @@ export default function About() {
                       </div>
                     </div>
 
-                    <div>
-                      <h4 className="font-js-math text-[1.5ch] lg:text-[2ch] 2xl:text-[2.5ch] pb-3">
+                    <div className="space-y-4">
+                      <h4 className="font-js-math text-[2.1ch] sm:text-[1.8ch] lg:text-[2ch] 2xl:text-[2.5ch] pb-3">
                         {personal.links.heading}
                       </h4>
                       <ul className="pl-3 uppercase space-y-3">
