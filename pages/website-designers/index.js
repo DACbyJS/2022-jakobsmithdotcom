@@ -5,24 +5,24 @@ import { useEffect } from "react";
 import Head from "next/head";
 
 // Context
-import { useTheme } from "../lib/contexts/ThemeProvider";
-import { pageData } from "../lib/constants/pageData";
-import { personSchema } from "../lib/constants/schema";
-import { getCanonicalUrl } from "../lib/utilities/seo";
-import { wdPageContent } from "../pages-content/website-designers";
+import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { pageData } from "../../lib/constants/pageData";
+import { personSchema } from "../../lib/constants/schema";
+import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { wdPageContent } from "../../pages-content/website-designers";
 
 // Components
-import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
-import MuxHero from "../components/belowthefold/MuxHero";
-import BelowTheFold from "../components/layout/BelowTheFold";
-import Spacer from "../components/layout/Spacer";
-import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
-import TransBox from "../components/layout/TransBox";
-import BigRedTriangle from "../components/svg/BigRedTriangle";
-import Questions from "../components/belowthefold/Questions";
-import TwoColumnLineItems from "../components/belowthefold/TwoColumnLineItems";
-import GridOfBoxes from "../components/belowthefold/GridOfBoxes";
-import PinnedBadge from "../components/svg/PinnedBadge";
+import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
+import MuxHero from "../../components/belowthefold/MuxHero";
+import BelowTheFold from "../../components/layout/BelowTheFold";
+import Spacer from "../../components/layout/Spacer";
+import WhiteBlackBorderBox from "../../components/layout/WhiteBlackBorderBox";
+import TransBox from "../../components/layout/TransBox";
+import BigRedTriangle from "../../components/svg/BigRedTriangle";
+import Questions from "../../components/belowthefold/Questions";
+import TwoColumnLineItems from "../../components/belowthefold/TwoColumnLineItems";
+import GridOfBoxes from "../../components/belowthefold/GridOfBoxes";
+import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function WebsiteDesigners() {
   // Theme
@@ -44,6 +44,19 @@ export default function WebsiteDesigners() {
     questionsBadge,
   } = wdPageContent;
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questionsContent.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <>
       <Head>
@@ -53,6 +66,7 @@ export default function WebsiteDesigners() {
         <meta name="keywords" content={wdPageData.metaKeywords} />
         <link rel="canonical" href={getCanonicalUrl(wdPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       <MuxHero
