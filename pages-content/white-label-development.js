@@ -1,4 +1,9 @@
-import { v4 as uuidv4 } from "uuid";
+const createStableIdFactory = (prefix) => {
+  let idCounter = 0;
+  return () => `${prefix}-${++idCounter}`;
+};
+
+const nextStableId = createStableIdFactory("wld");
 
 export const whiteLabelDevelopmentContent = {
   pagePath: "/website-designers/white-label-development/",
@@ -47,37 +52,37 @@ export const whiteLabelDevelopmentContent = {
   sections: {
     processTitle: "How it works",
     processSteps: [
-      { id: uuidv4(), text: "Send your mockup or wireframe or chat with me on the idea with some goals, pics and examples" },
-      { id: uuidv4(), text: "I build it to spec with experienced assumptions to get it over the finish line" },
+      { id: nextStableId(), text: "Send your mockup or wireframe or chat with me on the idea with some goals, pics and examples" },
+      { id: nextStableId(), text: "I build it to spec with experienced assumptions to get it over the finish line" },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         text: "Deliver it under your brand or support your build for you with your client over Slack, email or phone",
       },
     ],
 
     buildTitle: "What I build with",
     buildOptions: [
-      { id: uuidv4(), text: "Custom WordPress" },
-      { id: uuidv4(), text: "Custom Craft CMS" },
-      { id: uuidv4(), text: "Next.js" },
+      { id: nextStableId(), text: "Custom WordPress" },
+      { id: nextStableId(), text: "Custom Craft CMS" },
+      { id: nextStableId(), text: "Next.js" },
     ],
 
     includedTitle: "What is included",
     includedItems: [
-      { id: uuidv4(), text: "Responsive development" },
-      { id: uuidv4(), text: "On-page SEO baked in" },
-      { id: uuidv4(), text: "PageSpeed optimization" },
-      { id: uuidv4(), text: "Ongoing management assumed and available" },
+      { id: nextStableId(), text: "Responsive development" },
+      { id: nextStableId(), text: "On-page SEO baked in" },
+      { id: nextStableId(), text: "PageSpeed optimization" },
+      { id: nextStableId(), text: "Ongoing management assumed and available" },
     ],
 
     whyMeTitle: "Why me over an overseas team",
     differentiators: [
-      { id: uuidv4(), text: "US-based" },
-      { id: uuidv4(), text: "Same timezone (Mountain)" },
-      { id: uuidv4(), text: "Designer-friendly communication" },
-      { id: uuidv4(), text: "I understand design intent, not just specs" },
-      { id: uuidv4(), text: "Long-term partnership, not one-off gigs" },
-      { id: uuidv4(), text: "I communicate thoughtfully and often" },
+      { id: nextStableId(), text: "US-based" },
+      { id: nextStableId(), text: "Same timezone (Mountain)" },
+      { id: nextStableId(), text: "Designer-friendly communication" },
+      { id: nextStableId(), text: "I understand design intent, not just specs" },
+      { id: nextStableId(), text: "Long-term partnership, not one-off gigs" },
+      { id: nextStableId(), text: "I communicate thoughtfully and often" },
     ],
 
     testimonialTitle: "Testimonial",
@@ -96,10 +101,10 @@ export const whiteLabelDevelopmentContent = {
     title: "Let's talk about your next project",
     body: "If you need a development partner who can plug into your process and protect your client relationship, let's connect.",
     links: [
-      { id: uuidv4(), href: "/website-designers/", text: "Website Designers" },
-      { id: uuidv4(), href: "/services/", text: "Services" },
-      { id: uuidv4(), href: "/portfolio/", text: "Portfolio" },
-      { id: uuidv4(), href: "/contact/", text: "Contact" },
+      { id: nextStableId(), href: "/website-designers/", text: "Website Designers" },
+      { id: nextStableId(), href: "/services/", text: "Services" },
+      { id: nextStableId(), href: "/portfolio/", text: "Portfolio" },
+      { id: nextStableId(), href: "/contact/", text: "Contact" },
     ],
   },
 };

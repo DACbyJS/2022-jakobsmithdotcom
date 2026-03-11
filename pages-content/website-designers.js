@@ -1,5 +1,4 @@
 // libs
-import { v4 as uuidv4 } from "uuid";
 import classNames from "classnames";
 
 // components
@@ -7,6 +6,13 @@ import { useTheme } from "../lib/contexts/ThemeProvider";
 
 // constants
 import { pageData } from "../lib/constants/pageData";
+
+const createStableIdFactory = (prefix) => {
+  let idCounter = 0;
+  return () => `${prefix}-${++idCounter}`;
+};
+
+const nextStableId = createStableIdFactory("wd");
 
 // Reusable StrongText with light font component
 const StrongText = ({ children }) => {
@@ -24,7 +30,7 @@ export const wdPageContent = {
   twoColumnLineItemsContent: {
     left: [
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             Someone who <StrongText>answers emails</StrongText> and{" "}
@@ -33,7 +39,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             Their Mockups <StrongText>translated</StrongText> Into a Website
@@ -42,7 +48,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             Someone who can <StrongText>handle</StrongText> hosting,
@@ -51,7 +57,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             To <StrongText>Communicate</StrongText> about design and feelings
@@ -60,7 +66,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             Someone who can add the <StrongText>animation</StrongText> without
@@ -69,7 +75,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             To <StrongText>align</StrongText> their resources with their
@@ -81,7 +87,7 @@ export const wdPageContent = {
     ],
     right: [
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             everyone a feeling of being understood using empathy and automation.
@@ -89,7 +95,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             automatic <br /> responsive design, <br /> UX, and usability.
@@ -97,7 +103,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             a return on investment <br /> that &quot;magically&quot; works for
@@ -106,7 +112,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             alot of care and <br /> attention to looks <br /> and feels.
@@ -114,7 +120,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             Websites that move when they need to and don&apos;t when they
@@ -123,7 +129,7 @@ export const wdPageContent = {
         ),
       },
       {
-        id: uuidv4(),
+        id: nextStableId(),
         html: (
           <>
             A just-right solution based on your current needs, not my toolset or
@@ -143,19 +149,19 @@ export const wdPageContent = {
   ),
   gridOfBoxesContent: [
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>Turn a mockup or wireframe into a custom website</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>Add a feature into a fully or half-finished website</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>Fix a website that&apos;s broken or catch it before it breaks</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: (
         <>
           Make the <br /> &quot;back-end&quot;
@@ -164,23 +170,23 @@ export const wdPageContent = {
       ),
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>On-Page and Technical SEO & Content Optimization</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>Get PageSpeed Insights to 90+ or load time under 1 second</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>Fully integrate Google&apos;s Labyrinth of Tools</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       text: <>Keeping the site running smoothly and securely</>,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       special: true,
       text: (
         <>
@@ -192,66 +198,66 @@ export const wdPageContent = {
   questionsTitle: <>Questions I Get Asked</>,
   questionsContent: [
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "What's Your Rate?",
       a: "Monthly Value Pricing.",
       href: pageData[4].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "What's monthly value pricing?",
       a: "See our Pricing Page.",
       href: pageData[4].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "Can I see your work?",
       a: "Yes.",
       href: pageData[6].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "How do you handle clients?",
       a: "Learn a little about me.",
       href: pageData[7].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "Do you do Hosting?",
       a: "Yes. See my Foundation Service.",
       href: pageData[5].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "What's your vibe?",
       a: "Silly but thoughtful.",
       href: pageData[7].data.href,
     },
 {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "What about SEO?",
       a: "Yes, see my Simple SEO service.",
       href: pageData[5].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "What about maintenance?",
       a: "See my Foundation Service.",
       href: pageData[5].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "How do we get started?",
       a: "Call, Email, or Text.",
       href: pageData[8].data.href,
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "How does payment work?",
       a: "Monthly invoices via Stripe.",
     },
     {
-      id: uuidv4(),
+      id: nextStableId(),
       q: "Can you build an app?",
       a: "Not anymore, I build websites.",
       href: pageData[6].data.href,

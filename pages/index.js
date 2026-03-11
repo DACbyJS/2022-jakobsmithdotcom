@@ -2,9 +2,6 @@
 import Head from "next/head";
 import Link from "next/link";
 
-// Libs
-import { v4 as uuidv4 } from "uuid";
-
 // Constants
 import { pageData, personSchema } from "../lib/constants";
 import { getCanonicalUrl } from "../lib/utilities/seo";
@@ -65,7 +62,7 @@ export default function Home() {
             <div className="flex flex-col items-center mb-4 mt-6 lg:mt-10 space-y-6 lg:space-y-10 font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center">
               {firstBox.links.map((link) => (
                 <Link
-                  key={uuidv4()}
+                  key={`home-first-${link.href}`}
                   className={link.cssClasses}
                   href={link.href}
                 >
@@ -100,7 +97,7 @@ export default function Home() {
             <div className="flex flex-col items-center mb-4 mt-6 lg:mt-10 space-y-6 lg:space-y-10 font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center">
               {secondBox.links.map((link) => (
                 <Link
-                  key={uuidv4()}
+                  key={`home-second-${link.href}`}
                   className={link.cssClasses}
                   href={link.href}
                 >

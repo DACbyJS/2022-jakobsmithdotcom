@@ -1,9 +1,6 @@
 // Next
 import Link from 'next/link';
 
-// Lib
-import { uid } from 'uid';
-
 // Animations
 import {
   navDrawerTrickleOpen,
@@ -31,7 +28,7 @@ export default function NavDrawer({ isActive, handleLinkItemClick }) {
         <ul>
           {pageDataWithoutHome.map((navItem, index) => {
             return (
-              <li key={uid(index)} className={navLinksClasses[index]}>
+              <li key={navItem?.data?.href} className={navLinksClasses[index]}>
                 <Link
                   onClick={handleLinkItemClick}
                   href={navItem?.data?.href}

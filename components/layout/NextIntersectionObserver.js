@@ -1,7 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { useElementIntersectObserve } from "../../lib/hooks/useElementIntersectObserve";
-import { v4 as uuvid4 } from "uuid";
 
 /**
  * https://www.infinitespiral.co.uk/Blog/NextIntersectionObserver
@@ -19,7 +18,8 @@ export default function NextIntersectionObserver({
     thresholdValue
   );
   const [className, setClassName] = useState(classes);
-  const uniqueId = id || uuvid4();
+  const generatedId = useId().replace(/:/g, "");
+  const uniqueId = id || `intersection-${generatedId}`;
 
   useEffect(() => {
     switch (boundary) {

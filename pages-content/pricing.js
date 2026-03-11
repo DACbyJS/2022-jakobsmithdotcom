@@ -1,6 +1,3 @@
-// libs
-import { v4 as uuidv4 } from "uuid";
-
 // constants
 import { pageData } from "../lib/constants/pageData";
 import { servicesData } from "../lib/constants/servicesData";
@@ -25,7 +22,7 @@ export const pricingPageContent = {
     firstPricingColumn: {
       title: "Invest",
       items: investServices.map((service) => ({
-        id: uuidv4(),
+        id: `invest-${service.slug}`,
         title: service.title,
         tooltip: service.tooltip,
         price: service.priceString,
@@ -34,7 +31,7 @@ export const pricingPageContent = {
     secondPricingColumn: {
       title: "Preserve",
       items: preserveServices.map((service) => ({
-        id: uuidv4(),
+        id: `preserve-${service.slug}`,
         title: service.title,
         tooltip: service.tooltip,
         price: service.priceString,
@@ -43,21 +40,21 @@ export const pricingPageContent = {
 
     bottomLinks: [
       {
-        id: uuidv4(),
+        id: "pricing-link-service-details",
         title: "Service Details",
         href: pageData[5].data.href,
         target: "_self",
         color: "blue",
       },
       {
-        id: uuidv4(),
+        id: "pricing-link-portfolio",
         title: "Portfolio",
         href: pageData[6].data.href,
         target: "_self",
         color: "yellow",
       },
       {
-        id: uuidv4(),
+        id: "pricing-link-quote",
         title: "Get a Quote",
         href: pageData[8].data.href,
         target: "_self",

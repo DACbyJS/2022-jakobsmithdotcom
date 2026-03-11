@@ -26,9 +26,7 @@
     "react-draggable": "^4.4.6",
     "react-tooltip": "^5.29.1",
     "sharp": "^0.34.3",
-    "snapsvg-cjs": "^0",
-    "uid": "^2.0.2",
-    "uuid": "^10.0.0"
+    "snapsvg-cjs": "^0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

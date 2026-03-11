@@ -1,9 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 
-// Libs
-import { v4 as uuidv4 } from "uuid";
-
 // Constants
 import { pageData } from "../lib/constants";
 
@@ -19,7 +16,7 @@ import NextIntersectionObserver from "../components/layout/NextIntersectionObser
 export default function Custom404() {
   // Content for the grid of boxes
   const gridOfBoxesContent = pageData.map((item) => ({
-    id: uuidv4(),
+    id: `page-link-${item.slug}`,
     text: (
       <Link className="underline transition-opacity duration-300 hover:opacity-70" href={item.data.href}>
         {item.title}
