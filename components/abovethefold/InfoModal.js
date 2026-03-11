@@ -1,17 +1,9 @@
 import Link from 'next/link';
-import ReactStrapModal from '../reactstrap/Modal';
+import SiteModal from '../layout/SiteModal';
 
 export default function InfoModal({ isInfoModalActive, toggleIsInfoModalActive}) {
   return (
-    <ReactStrapModal
-      args={{
-        centered: true,
-        scrollable: false,
-        unmountOnClose: true,
-      }}
-      isActive={isInfoModalActive}
-      toggle={toggleIsInfoModalActive}
-    >
+    <SiteModal isActive={isInfoModalActive} toggle={toggleIsInfoModalActive}>
       <div className="text-center">
         <h2 className="font-js-math text-[3ch] md:text-[5ch] mb-3">General Info</h2>
         <ul>
@@ -70,6 +62,6 @@ export default function InfoModal({ isInfoModalActive, toggleIsInfoModalActive})
           Made with React, Next.js, Mux, SnapSVG and TailwindCSS.
         </h3>
       </div>
-    </ReactStrapModal>
+    </SiteModal>
   );
 }
