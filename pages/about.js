@@ -116,7 +116,7 @@ export default function About() {
                     href={itemLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline"
+                    className="underline transition-opacity duration-300 hover:opacity-70"
                   >
                     {item}
                   </Link>
@@ -227,7 +227,7 @@ export default function About() {
                         {personal.links.items.map((link, index) => (
                           <li key={index} className="before:content-['⇀'] before:mr-3">
                             <Link
-                              className="underline"
+                              className="underline transition-opacity duration-300 hover:opacity-70"
                               href={link.url}
                               target="_blank"
                             >

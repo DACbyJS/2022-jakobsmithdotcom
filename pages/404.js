@@ -14,13 +14,14 @@ import Spacer from "../components/layout/Spacer";
 import TransBox from "../components/layout/TransBox";
 import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
 import GridOfBoxes from "../components/belowthefold/GridOfBoxes";
+import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 
 export default function Custom404() {
   // Content for the grid of boxes
   const gridOfBoxesContent = pageData.map((item) => ({
     id: uuidv4(),
     text: (
-      <Link className="underline" href={item.data.href}>
+      <Link className="underline transition-opacity duration-300 hover:opacity-70" href={item.data.href}>
         {item.title}
       </Link>
     ),
@@ -46,19 +47,31 @@ export default function Custom404() {
       <BelowTheFold>
         <Spacer />
 
-        <TransBox className="mx-auto z-20">
-          <div className="font-js-math text-center">
-            <h2 className="text-[5ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
-              Index of Site
-            </h2>
-          </div>
-        </TransBox>
+        <NextIntersectionObserver
+          thresholdValue={0.2}
+          classes="animate-init fade-in-init"
+          topIn="fade-in-animate"
+        >
+          <TransBox className="mx-auto z-20">
+            <div className="font-js-math text-center">
+              <h2 className="text-[5ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
+                Index of Site
+              </h2>
+            </div>
+          </TransBox>
+        </NextIntersectionObserver>
 
         <Spacer />
 
-        <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-10 sm:pt-16">
-          <GridOfBoxes items={gridOfBoxesContent} />
-        </WhiteBlackBorderBox>
+        <NextIntersectionObserver
+          thresholdValue={0.2}
+          classes="animate-init fade-up-init"
+          topIn="fade-up-animate"
+        >
+          <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-10 sm:pt-16">
+            <GridOfBoxes items={gridOfBoxesContent} />
+          </WhiteBlackBorderBox>
+        </NextIntersectionObserver>
 
         <Spacer />
       </BelowTheFold>
