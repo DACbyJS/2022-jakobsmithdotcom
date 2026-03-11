@@ -44,6 +44,19 @@ export default function PublicGood() {
     questionsBadge,
   } = pgPageContent;
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questionsContent.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <>
       <Head>
@@ -53,6 +66,7 @@ export default function PublicGood() {
         <meta name="keywords" content={pgPageData.metaKeywords} />
         <link rel="canonical" href={getCanonicalUrl(pgPageData.data.href)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       <MuxHero
