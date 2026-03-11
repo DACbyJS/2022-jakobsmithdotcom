@@ -14,11 +14,11 @@ export const servicesPageContent = {
       slug: service.slug,
       title: service.title,
       tooltip: service.tooltip,
+      shortDescription: service.shortDescription,
       category: service.category,
       highPrice: service.highPrice,
       lowPrice: service.lowPrice,
       price: service.priceString,
-      html: service.htmlDescription,
     })),
     disclaimer: (
       <>

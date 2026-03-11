@@ -38,15 +38,38 @@ export default function ServiceDetail({ slug }) {
   const blurbColor = BLURB_COLORS.includes(theme)
     ? theme
     : BLURB_COLORS[Math.floor(Math.random() * BLURB_COLORS.length)];
+  const faqSchema = service.faqItems
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
       <Head>
-        <title>{`Jakob Smith | ${service.title}`}</title>
-        <meta name="description" content={service.tooltip} />
+        <title>{service.metaTitle ?? `Jakob Smith | ${service.title}`}</title>
+        <meta
+          name="description"
+          content={service.metaDescription ?? service.tooltip}
+        />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="canonical" href={getCanonicalUrl(`/services/${slug}`)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
       </Head>
 
       <MuxHero
@@ -80,11 +103,11 @@ export default function ServiceDetail({ slug }) {
               </Link>
 
               <h1 className="font-js-math text-[4ch] md:text-[5ch] 2xl:text-[7ch] tracking-wide mb-2">
-                {service.title}
+                {service.metaTitle ?? service.title}
               </h1>
 
               <p className="font-overpass text-gray-500 text-sm mb-4">
-                {service.tooltip}
+                {service.metaDescription ?? service.tooltip}
               </p>
 
               <p className="font-js-math text-[2ch] md:text-[2.5ch] font-semibold mb-10">
@@ -92,7 +115,41 @@ export default function ServiceDetail({ slug }) {
               </p>
 
               <div className={`default-blurb-style blurb-style-${blurbColor}`}>
-                {service.htmlDescription}
+                {service.heroQuestion && (
+                  <p className="font-js-math text-[2.1ch] md:text-[2.5ch] leading-[1.4] tracking-[0.03em] mb-10 text-balance">
+                    {service.heroQuestion}
+                  </p>
+                )}
+
+                {service.contentSections
+                  ? service.contentSections.map((section) => (
+                      <div key={section.heading} className="mb-10 last:mb-0">
+                        <h2>{section.heading}</h2>
+                        {section.body && <p className="mb-4">{section.body}</p>}
+                        {section.items && (
+                          <ul>
+                            {section.items.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))
+                  : service.htmlDescription}
+
+                {service.faqItems && (
+                  <div className="mt-12">
+                    <h2>FAQ</h2>
+                    {service.faqItems.map((item) => (
+                      <div key={item.q} className="mb-8 last:mb-0">
+                        <p className="font-js-math text-[1.8ch] md:text-[2ch] mb-2">
+                          {item.q}
+                        </p>
+                        <p>{item.a}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="mt-12 text-center">

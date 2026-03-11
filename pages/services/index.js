@@ -19,6 +19,7 @@ import Spacer from "../../components/layout/Spacer";
 import BigBlueCircle from "../../components/svg/BigBlueCircle";
 import BigRedTriangle from "../../components/svg/BigRedTriangle";
 import BigYellowSquare from "../../components/svg/BigYellowSquare";
+import WigglyButton from "../../components/layout/WigglyButton";
 
 const getRandomIndex = (max) => Math.floor(Math.random() * max);
 
@@ -101,7 +102,7 @@ export default function Services() {
                         key={service.id}
                         className={classNames(
                           borderStyle,
-                          "p-6 sm:p-8 lg:p-10"
+                          "p-6 sm:p-8 lg:p-10 flex flex-col"
                         )}
                       >
                         <Link
@@ -124,7 +125,13 @@ export default function Services() {
                             "mt-2 default-blurb-style"
                           )}
                         >
-                          {service.html}
+                          <p>{service.shortDescription}</p>
+                        </div>
+
+                        <div className="mt-6 pt-2">
+                          <WigglyButton href={`/services/${service.slug}`} colorName={serviceTheme}>
+                            Learn More
+                          </WigglyButton>
                         </div>
                       </li>
                     );

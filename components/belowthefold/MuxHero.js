@@ -39,7 +39,7 @@ const MuxHero = ({
         onCanPlay={() => setVideoReady(true)}
       />
       <div className={classNames('fade-in-init', videoReady && 'animate-init fade-in-animate')}>
-        <div className="white-black-border absolute-center font-js-math text-center z-10 p-6">
+        <div className="hero-mux-word-box white-black-border absolute-center font-js-math text-center z-10">
           {words.map((word, index) => (
             <div
               key={index}
