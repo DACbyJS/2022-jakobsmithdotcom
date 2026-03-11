@@ -15,6 +15,8 @@ import InfoModal from "../abovethefold/InfoModal";
 export default function Header() {
   const [isNavDrawerActive, setIsNavDrawerActive] = useState(false);
   const [isInfoModalActive, setIsInfoModalActive] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef(null);
   const menuDotsData = useRef(null);
 
   const toggleIsNavDrawerActive = () => {
@@ -44,8 +46,46 @@ export default function Header() {
       : toDots(allDots, allDotsPoints);
   }, [isNavDrawerActive]);
 
+  useEffect(() => {
+    const headerElement = headerRef.current;
+
+    if (!headerElement) {
+      return undefined;
+    }
+
+    const updateHeaderHeight = () => {
+      setHeaderHeight(Math.ceil(headerElement.getBoundingClientRect().height));
+    };
+
+    updateHeaderHeight();
+
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", updateHeaderHeight);
+
+      return () => {
+        window.removeEventListener("resize", updateHeaderHeight);
+      };
+    }
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateHeaderHeight();
+    });
+
+    resizeObserver.observe(headerElement);
+    window.addEventListener("resize", updateHeaderHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateHeaderHeight);
+    };
+  }, []);
+
   return (
-    <header className="header bg-js-black relative z-20">
+    <header
+      ref={headerRef}
+      className="header bg-js-black relative z-20"
+      style={{ "--mobile-nav-offset": `${headerHeight}px` }}
+    >
       <InfoModal
         isInfoModalActive={isInfoModalActive}
         toggleIsInfoModalActive={toggleIsInfoModalActive}
