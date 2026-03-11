@@ -6,7 +6,7 @@
     .two-column-line-item {
         @apply relative;
         @apply text-center sm:text-left;
-        @apply font-overpass uppercase text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch] w-auto max-w-[475px];
+        @apply font-overpass uppercase text-[1.8ch] sm:text-[2.2ch] lg:text-[2.7ch] 2xl:text-[3.2ch] w-auto max-w-[475px];
 
         &::after {
             @apply inline-block;

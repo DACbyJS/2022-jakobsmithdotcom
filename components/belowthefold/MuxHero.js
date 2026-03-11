@@ -48,7 +48,7 @@ const MuxHero = ({
                 videoReady && `animate-init fade-in-animate`
               )}
             >
-              <h4 className="text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[7ch] js-math-treatments">
+              <h4 className="type-hero js-math-treatments">
                 {word}
               </h4>
             </div>

@@ -40,11 +40,11 @@ const TwoColumnLineItems = ({ items }) => {
         topIn="fade-down-animate"
         classes="fade-down-init relative z-20 w-full max-w-[700px]"
       >
-        <WhiteBlackBorderBox className="mx-auto py-6 md:py-10 lg:py-12 z-10">
-          <h2 className="font-js-math text-center text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch]">
+        <WhiteBlackBorderBox className="mx-auto pad-box-section z-10">
+          <h2 className="type-section text-center">
             They Need:
           </h2>
-          <ul className="p-0 flex flex-col justify-center items-center my-6 sm:my-10 mx-10 space-y-10 md:space-y-12 font-light">
+          <ul className="p-0 flex flex-col justify-center items-center my-8 sm:my-12 mx-6 sm:mx-10 md:mx-12 space-y-10 md:space-y-14 font-light">
             {leftItems?.map((item) => (
               <li key={item.id} className="two-column-line-item">
                 {item.html}
@@ -59,11 +59,11 @@ const TwoColumnLineItems = ({ items }) => {
         classes="animate-init fade-right-init .animate-delay-0\.25s lg:animate-delay-1s relative z-10 w-full max-w-[700px]"
         topIn="fade-right-animate"
       >
-        <BlackBox className="mx-auto py-6 md:py-10 lg:py-12">
-          <h2 className="text-js-white font-js-math text-center text-[3ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch]">
+        <BlackBox className="mx-auto pad-box-section">
+          <h2 className="text-js-white type-section text-center">
             I Give:
           </h2>
-          <ul className="p-0 flex flex-col my-10 mx-10 space-y-12 font-light">
+          <ul className="p-0 flex flex-col my-10 sm:my-12 mx-6 sm:mx-10 md:mx-12 space-y-12 md:space-y-14 font-light">
             {rightItems?.map((item) => (
               <li key={item.id} className={classNames("two-column-line-item", textClassName)}>
                 {item.html}

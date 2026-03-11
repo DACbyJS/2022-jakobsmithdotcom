@@ -145,17 +145,17 @@ export default function Portfolio() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[700px] lg:max-w-[1000px] py-6 md:py-10 lg:py-12 z-10">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[700px] lg:max-w-[1000px] pad-box-section z-10">
             <div className="font-js-math text-center mb-8 md:mb-12">
-              <h1 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 2xl:-mb-6">
+              <h1 className="type-hero -mb-1 sm:-mb-2 2xl:-mb-6">
                 {hero.title.line1}
               </h1>
-              <h2 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide">
+              <h2 className="type-hero">
                 {hero.title.line2}
               </h2>
             </div>
 
-            <p className="text-center font-overpass font-light text-[1.5ch] lg:text-[1.8ch] 2xl:text-[2.2ch] leading-[1.6] max-w-2xl mx-auto mb-12 px-6">
+            <p className="text-center type-body max-w-2xl mx-auto mb-12 px-6 md:px-8">
               {hero.subheading}
             </p>
 
@@ -164,7 +164,7 @@ export default function Portfolio() {
               <button
                 type="button"
                 onClick={() => handleCategoryChange("all")}
-                className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 my-0.5 transition-colors ${
+                className={`type-meta px-3 py-1.5 my-0.5 transition-colors ${
                   activeClientCategory === "all"
                     ? categoryThemeClasses.all.active
                     : categoryThemeClasses.all.inactive
@@ -178,7 +178,7 @@ export default function Portfolio() {
                   key={category.id}
                   type="button"
                   onClick={() => handleCategoryChange(category.id)}
-                  className={`font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch] px-3 py-1.5 my-0.5 transition-colors ${
+                  className={`type-meta px-3 py-1.5 my-0.5 transition-colors ${
                     activeClientCategory === category.id
                       ? categoryThemeClasses[category.id]?.active
                       : categoryThemeClasses[category.id]?.inactive

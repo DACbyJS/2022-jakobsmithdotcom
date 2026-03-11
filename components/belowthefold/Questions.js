@@ -43,9 +43,9 @@ const Questions = ({ items }) => {
   return (
     <div
       id="single-page-questions"
-      className="flex flex-row mt-10 mx-10 font-light"
+      className="flex flex-row mt-12 sm:mt-16 mx-6 sm:mx-10 md:mx-12 font-light"
     >
-      <div className="flex flex-col flex-1 space-y-4">
+      <div className="flex flex-col flex-1 space-y-6 md:space-y-8">
         {items.map((item, i) => {
           if (!item.id) {
             item.id = `question-${i}`;

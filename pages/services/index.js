@@ -16,6 +16,7 @@ import MuxHero from "../../components/belowthefold/MuxHero";
 import BelowTheFold from "../../components/layout/BelowTheFold";
 import WhiteBlackBorderBox from "../../components/layout/WhiteBlackBorderBox";
 import Spacer from "../../components/layout/Spacer";
+import DisclaimerBox from "../../components/layout/DisclaimerBox";
 import BigBlueCircle from "../../components/svg/BigBlueCircle";
 import BigRedTriangle from "../../components/svg/BigRedTriangle";
 import BigYellowSquare from "../../components/svg/BigYellowSquare";
@@ -81,15 +82,15 @@ export default function Services() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] py-6 md:py-10 lg:py-12 z-10">
-            <div className="text-center px-6 md:px-10 lg:px-12">
-              <h1 className="font-js-math text-[4ch] md:text-[5ch] 2xl:text-[8ch] tracking-wide pb-8">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] pad-box-section z-10">
+            <div className="text-center pad-inline-section">
+              <h1 className="type-hero pb-10 md:pb-12">
                 {firstWhiteBlackBox.title}
               </h1>
 
-              <div className="border-[10px] border-js-black font-js-math w-full max-w-[500px] mx-auto text-center p-8 mb-12">
+              <DisclaimerBox className="mb-12">
                 {disclaimer}
-              </div>
+              </DisclaimerBox>
 
               <div className="text-left">
                 <ul className="list-none p-0 m-0 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12">

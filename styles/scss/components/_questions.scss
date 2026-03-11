@@ -1,6 +1,6 @@
 .questions-link {
   @apply w-full h-full relative z-10;
-  @apply font-overpass text-js-black uppercase leading-snug text-[2ch] sm:text-[2.5ch] lg:text-[3ch] 2xl:text-[3.5ch];
+  @apply font-overpass text-js-black uppercase leading-snug text-[1.8ch] sm:text-[2.2ch] lg:text-[2.7ch] 2xl:text-[3.2ch];
 
   &.question-left {
     @apply order-1 lg:order-1 text-center lg:text-right pr-4;

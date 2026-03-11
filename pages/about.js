@@ -163,23 +163,23 @@ export default function About() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] py-6 md:py-10 lg:py-12 z-10">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] pad-box-section z-10">
             <PinnedBadge
               className="absolute z-30 -top-6 md:-top-[20px] -left-4 md:-left-[50px] -translate-x-1/2 translate-y-1/2 w-[100px] sm:w-[150px] lg:w-[200px] h-auto"
               linkTo="/portfolio"
               linkText="See My Portfolio"
             />
             <div className="font-js-math text-center mb-8 md:mb-12">
-              <h2 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide -mb-1 sm:-mb-2 2xl:-mb-6">
+              <h2 className="type-hero -mb-1 sm:-mb-2 2xl:-mb-6">
                 {hero.title.line1}
               </h2>
-              <h2 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide">
+              <h2 className="type-hero">
                 {hero.title.line2}
               </h2>
             </div>
 
             {/* Introduction */}
-            <div className="text-left mb-12 px-6 md:px-10 font-overpass font-light text-[1.5ch] lg:text-[1.8ch] 2xl:text-[2.2ch] leading-[1.6] max-w-4xl mx-auto">
+            <div className="text-left type-body stack-section px-6 md:px-10 max-w-4xl mx-auto">
               {hero.introduction.map((paragraph, index) => (
                 <p key={index} className="pb-4">
                   {paragraph}
@@ -187,7 +187,7 @@ export default function About() {
               ))}
             </div>
 
-            <div className="zero:p-6 sm:p-10">
+            <div className="pad-inline-section py-2 md:py-4">
               {/* Portfolio & Values Section */}
               <div className="grid zero:grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
                 <div className="flex-col">

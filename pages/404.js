@@ -51,7 +51,7 @@ export default function Custom404() {
         >
           <TransBox className="mx-auto z-20">
             <div className="font-js-math text-center">
-              <h2 className="text-[5ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
+              <h2 className="type-display">
                 Index of Site
               </h2>
             </div>
@@ -65,7 +65,7 @@ export default function Custom404() {
           classes="animate-init fade-up-init"
           topIn="fade-up-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-10 sm:pt-16">
+          <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-12 sm:pt-20">
             <GridOfBoxes items={gridOfBoxesContent} />
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>

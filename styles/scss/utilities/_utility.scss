@@ -19,6 +19,48 @@
     line-height: 120%;
 }
 
+/* Page rhythm utilities */
+.pad-inline-section {
+    @apply px-4 sm:px-6 md:px-8 lg:px-10;
+}
+
+.pad-box-section {
+    @apply py-8 md:py-12 lg:py-16;
+}
+
+.stack-section {
+    @apply mb-10 md:mb-14;
+}
+
+.stack-group {
+    @apply mt-8 lg:mt-12 space-y-8 lg:space-y-12;
+}
+
+/* Type scale utilities */
+.type-display {
+    @apply font-js-math tracking-wide text-[5ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch];
+}
+
+.type-hero {
+    @apply font-js-math tracking-wide text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch];
+}
+
+.type-section {
+    @apply font-js-math text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch];
+}
+
+.type-body {
+    @apply font-overpass font-light text-[1.5ch] lg:text-[1.8ch] 2xl:text-[2.2ch] leading-[1.6];
+}
+
+.type-meta {
+    @apply font-overpass uppercase tracking-widest text-[1.1ch] sm:text-[1.2ch] lg:text-[1.3ch];
+}
+
+.type-cta {
+    @apply font-overpass font-light uppercase tracking-wider text-center text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch];
+}
+
 /* Line link */
 .line-link {
     position: relative;

@@ -16,6 +16,7 @@ import MuxHero from "../components/belowthefold/MuxHero";
 import BelowTheFold from "../components/layout/BelowTheFold";
 import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
 import Spacer from "../components/layout/Spacer";
+import DisclaimerBox from "../components/layout/DisclaimerBox";
 import SiteTooltip from "../components/belowthefold/SiteTooltip";
 import BigBlueCircle from "../components/svg/BigBlueCircle";
 import BigRedTriangle from "../components/svg/BigRedTriangle";
@@ -65,14 +66,14 @@ export default function Pricing() {
           classes="fade-in-init"
           topIn="fade-in-animate"
         >
-          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] py-6 md:py-10 lg:py-12 z-10">
+          <WhiteBlackBorderBox className="mx-auto md:max-w-[600px] lg:max-w-[1200px] pad-box-section z-10">
             <div className="font-js-math text-center px-4">
-              <h1 className="text-[3.5ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[8ch] tracking-wide">
+              <h1 className="type-hero">
                 {firstWhiteBlackBox.title}
               </h1>
             </div>
 
-            <div className="grid zero:grid-cols-1 sm:grid-cols-2 gap-10 zero:p-6 sm:p-10">
+            <div className="grid zero:grid-cols-1 sm:grid-cols-2 gap-12 pad-inline-section py-2 md:py-4">
               <div className="flex-col">
                 <h3 className="btn w-full text-center">
                   {firstPricingColumn.title}
@@ -140,7 +141,7 @@ export default function Pricing() {
                   href={link.href}
                   target={link.target}
                   className={classNames(
-                    "line-link hover-on font-overpass font-light uppercase text-[2.5ch] lg:text-[4ch] 2xl:text-[5.5ch] tracking-wider text-center",
+                    "line-link hover-on type-cta",
                     link.color
                   )}
                 >
@@ -149,8 +150,10 @@ export default function Pricing() {
               </div>
             ))}
 
-            <div className="border-[10px] border-js-black font-js-math mt-6 px-4 w-full max-w-[500px] mx-auto text-center p-8">
-              {disclaimer}
+            <div className="pad-inline-section mt-10">
+              <DisclaimerBox>
+                {disclaimer}
+              </DisclaimerBox>
             </div>
           </WhiteBlackBorderBox>
         </NextIntersectionObserver>
