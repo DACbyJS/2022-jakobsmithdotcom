@@ -5,26 +5,27 @@ import { useEffect } from "react";
 import Head from "next/head";
 
 // Constants
-import { pageData } from "../lib/constants/pageData";
-import { personSchema } from "../lib/constants/schema";
-import { getCanonicalUrl } from "../lib/utilities/seo";
-import { dmPageContent } from "../pages-content/digital-marketing";
+import { pageData } from "../../lib/constants/pageData";
+import { personSchema } from "../../lib/constants/schema";
+import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { dmPageContent } from "../../pages-content/digital-marketing";
 
 // Context
-import { useTheme } from "../lib/contexts/ThemeProvider";
+import { useTheme } from "../../lib/contexts/ThemeProvider";
 
 // Components
-import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
-import MuxHero from "../components/belowthefold/MuxHero";
-import BelowTheFold from "../components/layout/BelowTheFold";
-import Spacer from "../components/layout/Spacer";
-import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
-import TransBox from "../components/layout/TransBox";
-import BigYellowSquare from "../components/svg/BigYellowSquare";
-import Questions from "../components/belowthefold/Questions";
-import TwoColumnLineItems from "../components/belowthefold/TwoColumnLineItems";
-import GridOfBoxes from "../components/belowthefold/GridOfBoxes";
-import PinnedBadge from "../components/svg/PinnedBadge";
+import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
+import MuxHero from "../../components/belowthefold/MuxHero";
+import BelowTheFold from "../../components/layout/BelowTheFold";
+import Spacer from "../../components/layout/Spacer";
+import WhiteBlackBorderBox from "../../components/layout/WhiteBlackBorderBox";
+import TransBox from "../../components/layout/TransBox";
+import BigYellowSquare from "../../components/svg/BigYellowSquare";
+import Questions from "../../components/belowthefold/Questions";
+import TwoColumnLineItems from "../../components/belowthefold/TwoColumnLineItems";
+import GridOfBoxes from "../../components/belowthefold/GridOfBoxes";
+import FocusedLandingPages from "../../components/belowthefold/FocusedLandingPages";
+import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function DigitalMarketing() {
   const { theme, setTheme } = useTheme();
@@ -99,6 +100,14 @@ export default function DigitalMarketing() {
         <Spacer />
 
         <TwoColumnLineItems items={twoColumnLineItemsContent} />
+
+        <Spacer />
+
+        <FocusedLandingPages
+          audienceSlug="digital-marketing"
+          title="Focused Pages"
+          intro="Audience-specific pages for marketers that bridge strategy to implementation with related service paths."
+        />
 
         <Spacer />
 

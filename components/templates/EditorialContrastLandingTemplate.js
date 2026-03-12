@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
+import classNames from "classnames";
 
 import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { useTheme } from "../../lib/contexts/ThemeProvider";
 import NextIntersectionObserver from "../layout/NextIntersectionObserver";
 
 export default function EditorialContrastLandingTemplate({
@@ -9,11 +11,23 @@ export default function EditorialContrastLandingTemplate({
   metaDescription,
   pagePath,
   schemaObjects = [],
-  accentColorClass = "text-js-red",
   hero,
   sections,
   cta,
 }) {
+  const { theme } = useTheme();
+  const THEME_TO_CLASSES = {
+    red: { accent: "text-js-red", bg: "bg-js-red", border: "border-js-red" },
+    yellow: { accent: "text-js-yellow", bg: "bg-js-yellow", border: "border-js-yellow" },
+    blue: { accent: "text-js-blue", bg: "bg-js-blue", border: "border-js-blue" },
+  };
+  const themeClasses = THEME_TO_CLASSES[theme] ?? THEME_TO_CLASSES.red;
+  const { accent: accentColorClass, bg: bgColorClass, border: borderColorClass } = themeClasses;
+
+  const hasTestimonialTitle = typeof sections?.testimonialTitle === "string"
+    ? sections.testimonialTitle.trim().length > 0
+    : Boolean(sections?.testimonialTitle);
+
   return (
     <>
       <Head>
@@ -75,7 +89,7 @@ export default function EditorialContrastLandingTemplate({
                 {sections.buildOptions.map((item) => (
                   <li
                     key={item.id}
-                    className="border-2 border-js-black bg-js-red text-white px-4 py-3 font-overpass-mono uppercase tracking-[0.04em] text-base"
+                    className={classNames("border-2 border-js-black text-white px-4 py-3 font-overpass-mono uppercase tracking-[0.04em] text-base", bgColorClass)}
                   >
                     {item.text}
                   </li>
@@ -102,7 +116,7 @@ export default function EditorialContrastLandingTemplate({
               <h2 className="font-js-math text-[2.1rem] sm:text-[2.7rem]">{sections.whyMeTitle}</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {sections.differentiators.map((item) => (
-                  <li key={item.id} className="border-2 border-js-black px-4 py-3 font-overpass text-lg bg-js-red text-white">
+                  <li key={item.id} className={classNames("border-2 border-js-black px-4 py-3 font-overpass text-lg text-white", bgColorClass)}>
                     {item.text}
                   </li>
                 ))}
@@ -110,32 +124,34 @@ export default function EditorialContrastLandingTemplate({
             </div>
           </NextIntersectionObserver>
 
-          <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
-            <div>
-              <h2 className="font-js-math text-[2.1rem] sm:text-[2.7rem]">{sections.testimonialTitle}</h2>
-              <blockquote className="mt-6 border-2 border-dashed border-js-red p-6 bg-js-white">
-                <p className="font-overpass text-lg italic">
-                  <span className="font-js-math text-[1.6em] leading-none align-[-0.12em] mr-1">&ldquo;</span>
-                  {sections.testimonialPlaceholder}
-                  <span className="font-js-math text-[1.6em] leading-none align-[-0.12em] ml-1">&rdquo;</span>
-                </p>
-                <p className="font-overpass-mono uppercase tracking-[0.08em] text-xs sm:text-sm mt-4 text-js-black">
-                  {sections.testimonialPersonHref ? (
-                    <a
-                      href={sections.testimonialPersonHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline cursor-pointer transition-opacity duration-300 hover:opacity-70"
-                    >
-                      {sections.testimonialPerson}
-                    </a>
-                  ) : (
-                    sections.testimonialPerson
-                  )}
-                </p>
-              </blockquote>
-            </div>
-          </NextIntersectionObserver>
+          {hasTestimonialTitle && (
+            <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
+              <div>
+                <h2 className="font-js-math text-[2.1rem] sm:text-[2.7rem]">{sections.testimonialTitle}</h2>
+                <blockquote className={classNames("mt-6 border-2 border-dashed p-6 bg-js-white", borderColorClass)}>
+                  <p className="font-overpass text-lg italic">
+                    <span className="font-js-math text-[1.6em] leading-none align-[-0.12em] mr-1">&ldquo;</span>
+                    {sections.testimonialPlaceholder}
+                    <span className="font-js-math text-[1.6em] leading-none align-[-0.12em] ml-1">&rdquo;</span>
+                  </p>
+                  <p className="font-overpass-mono uppercase tracking-[0.08em] text-xs sm:text-sm mt-4 text-js-black">
+                    {sections.testimonialPersonHref ? (
+                      <a
+                        href={sections.testimonialPersonHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline cursor-pointer transition-opacity duration-300 hover:opacity-70"
+                      >
+                        {sections.testimonialPerson}
+                      </a>
+                    ) : (
+                      sections.testimonialPerson
+                    )}
+                  </p>
+                </blockquote>
+              </div>
+            </NextIntersectionObserver>
+          )}
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
             <div>
@@ -162,9 +178,9 @@ export default function EditorialContrastLandingTemplate({
                   <Link
                     key={linkItem.id}
                     href={linkItem.href}
-                    className={`underline transition-opacity duration-300 hover:opacity-75 ${
-                      index === cta.links.length - 1 ? "text-js-red" : ""
-                    }`}
+                    className={classNames("underline transition-opacity duration-300 hover:opacity-75", {
+                      [accentColorClass]: index === cta.links.length - 1,
+                    })}
                   >
                     {linkItem.text}
                   </Link>

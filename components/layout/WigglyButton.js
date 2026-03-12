@@ -1,6 +1,7 @@
 import Link from "next/link";
 import WigglyLink from "../svg/WigglyLink";
 import { useTheme } from "../../lib/contexts/ThemeProvider";
+import classNames from "classnames";
 
 const THEME_COLORS = {
   red: "#FF4747",
@@ -13,7 +14,7 @@ const BRAND_COLORS = Object.values(THEME_COLORS);
 const getRandomColor = () =>
   BRAND_COLORS[Math.floor(Math.random() * BRAND_COLORS.length)];
 
-const WigglyButton = ({ href, children, target, rel, colorName }) => {
+const WigglyButton = ({ href, children, target, rel, colorName, className }) => {
   const { theme } = useTheme();
   const color = THEME_COLORS[colorName] ?? THEME_COLORS[theme] ?? getRandomColor();
   const border = `3px solid ${color}`;
@@ -22,7 +23,7 @@ const WigglyButton = ({ href, children, target, rel, colorName }) => {
       href={href}
       target={target}
       rel={rel}
-      className="overpass-underline-no-line wiggly-svg-link px-6 py-3"
+      className={classNames("overpass-underline-no-line wiggly-svg-link px-6 py-3", className)}
       style={{
         borderTop: border,
         borderLeft: border,

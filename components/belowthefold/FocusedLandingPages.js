@@ -44,6 +44,7 @@ const FocusedLandingPages = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 pt-10 sm:pt-12">
             {landingPages.map((landingPage, index) => {
+              const isDarkCard = index % 2 !== 0;
               const CardComponent = index % 2 === 0 ? WhiteBlackBorderBox : BlackBox;
               const headingClassName = index % 2 === 0 ? "text-js-black" : "text-js-white";
               const bodyClassName = index % 2 === 0 ? "text-js-black/80" : "text-js-white/80";
@@ -107,7 +108,11 @@ const FocusedLandingPages = ({
                     )}
 
                     <div className="mt-auto pt-2">
-                      <WigglyButton href={landingPage.href} colorName={landingPage.theme}>
+                      <WigglyButton
+                        href={landingPage.href}
+                        colorName={landingPage.theme}
+                        className={isDarkCard ? "text-js-white" : undefined}
+                      >
                         Read This Page
                       </WigglyButton>
                     </div>
