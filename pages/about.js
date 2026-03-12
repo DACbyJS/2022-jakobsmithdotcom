@@ -217,6 +217,16 @@ export default function About() {
                           ))}
                         </div>
                       </div>
+                      <p className="text-center text-[1.2ch] lg:text-[1.4ch] 2xl:text-[1.9ch] mt-3 font-light">
+                        <Link
+                          href="https://fiebre.co"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline transition-opacity duration-300 hover:opacity-70"
+                        >
+                          Images courtesy of Fiebre
+                        </Link>
+                      </p>
                     </div>
 
                     <div className="space-y-4">
