@@ -16,6 +16,7 @@ import {
   getCategoryAccentClasses,
   getCategoryButtonClasses,
 } from "../lib/utilities/themeColors";
+import { getSiteFaviconUrl } from "../lib/utilities/favicon";
 
 // Custom
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
@@ -197,6 +198,7 @@ export default function Portfolio() {
               {displayedPortfolioData.map((item, index) => {
                 const itemCategory = item.clientCategories?.[0] || "all";
                 const itemAccentClasses = getCategoryAccentClasses(itemCategory);
+                const faviconUrl = getSiteFaviconUrl(item.href, 32);
 
                 return (
                 <div
@@ -211,8 +213,19 @@ export default function Portfolio() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block font-js-math text-[1.7ch] sm:text-[2ch] lg:text-[2.4ch] 2xl:text-[3ch] tracking-wide leading-tight hover:opacity-60 transition-opacity"
+                      className="inline-flex items-center gap-2.5 font-js-math text-[1.7ch] sm:text-[2ch] lg:text-[2.4ch] 2xl:text-[3ch] tracking-wide leading-tight hover:opacity-60 transition-opacity"
                     >
+                      {faviconUrl && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={faviconUrl}
+                          alt=""
+                          aria-hidden="true"
+                          loading="lazy"
+                          decoding="async"
+                          className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 rounded-[2px] opacity-75"
+                        />
+                      )}
                       {item.name}
                     </Link>
                     <span className="font-overpass font-normal text-[1.05ch] uppercase tracking-widest sm:hidden flex flex-wrap gap-x-2 gap-y-1 mt-2 text-left">
