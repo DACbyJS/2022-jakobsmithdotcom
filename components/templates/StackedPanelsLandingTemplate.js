@@ -58,13 +58,13 @@ export default function StackedPanelsLandingTemplate({
           </section>
 
           <section className="mt-10 sm:mt-14 border-2 border-js-white p-6 sm:p-10 bg-js-black">
-            <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{problemSection.title}</h2>
+            <h2 className="type-panel-heading">{problemSection.title}</h2>
             <p className="font-overpass text-lg sm:text-xl mt-4 max-w-[70ch]">{problemSection.body}</p>
           </section>
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
             <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 bg-js-white text-js-black ${borderColorClass}`}>
-              <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{offersSection.title}</h2>
+              <h2 className="type-panel-heading">{offersSection.title}</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {offersSection.items.map((item) => (
                   <li key={item} className="border-2 border-js-black px-4 py-3 font-overpass text-lg bg-js-white">
@@ -98,7 +98,7 @@ export default function StackedPanelsLandingTemplate({
               topIn="fade-up-animate"
             >
               <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 ${section.classes}`}>
-                <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{section.title}</h2>
+                <h2 className="type-panel-heading">{section.title}</h2>
                 <p className="font-overpass text-lg sm:text-xl mt-4 max-w-[70ch]">{section.body}</p>
               </section>
             </NextIntersectionObserver>
@@ -107,7 +107,7 @@ export default function StackedPanelsLandingTemplate({
           {hasProofSection && (
             <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
               <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 bg-js-white text-js-black ${borderColorClass}`}>
-                <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{proofSection.title}</h2>
+                <h2 className="type-panel-heading">{proofSection.title}</h2>
                 <p className="font-overpass text-base sm:text-lg mt-4">{proofSection.body}</p>
                 <ul className="mt-5 flex flex-wrap gap-4 text-base sm:text-lg font-overpass-mono uppercase tracking-[0.05em]">
                   {(proofSection.links ?? []).map((item) => (

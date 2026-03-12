@@ -78,7 +78,7 @@ export default function LocationLandingTemplate({
               <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start">
                 <SectionPhoto src="/images/jakob-3.jpg" />
                 <div>
-                  <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">Serving {content.locationName}</h2>
+                  <h2 className="type-panel-heading">Serving {content.locationName}</h2>
                   <div className="mt-5 space-y-4 max-w-[76ch]">
                     {content.introParagraphs.map((paragraph) => (
                       <p key={paragraph} className="font-overpass text-lg sm:text-xl">
@@ -93,7 +93,7 @@ export default function LocationLandingTemplate({
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
             <section className={classNames("border-2 p-6 sm:p-10 bg-js-white text-js-black", borderColorClass)}>
-              <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">Services Overview</h2>
+              <h2 className="type-panel-heading">Services Overview</h2>
               <p className="font-overpass text-lg sm:text-xl mt-4 max-w-[74ch]">{content.servicesOverview}</p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {content.serviceLinks.map((service) => (
@@ -116,7 +116,7 @@ export default function LocationLandingTemplate({
               <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start">
                 <SectionPhoto src="/images/jakob-4.jpg" />
                 <div>
-                  <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">Local Market Context</h2>
+                  <h2 className="type-panel-heading">Local Market Context</h2>
                   <div className="mt-5 space-y-4 max-w-[76ch]">
                     {content.marketParagraphs.map((paragraph) => (
                       <p key={paragraph} className="font-overpass text-lg sm:text-xl">
@@ -143,7 +143,7 @@ export default function LocationLandingTemplate({
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
             <section className="border-2 border-js-white p-6 sm:p-10 bg-js-black">
-              <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">Relevant Portfolio Clients</h2>
+              <h2 className="type-panel-heading">Relevant Portfolio Clients</h2>
               <p className="font-overpass text-lg sm:text-xl mt-4 max-w-[72ch]">{content.portfolioIntro}</p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {content.portfolioLinks.map((item) => {

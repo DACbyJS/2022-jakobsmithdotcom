@@ -49,6 +49,10 @@
     @apply font-js-math text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch];
 }
 
+.type-panel-heading {
+    @apply font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight;
+}
+
 .type-body {
     @apply font-overpass font-light text-[1.5ch] lg:text-[1.8ch] 2xl:text-[2.2ch] leading-[1.6];
 }

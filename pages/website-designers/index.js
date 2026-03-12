@@ -69,11 +69,9 @@ export default function WebsiteDesigners() {
         <Spacer />
 
         <TransBox className="mx-auto z-20">
-          <div className="font-js-math text-center">
-            <h2 className="text-[5ch] sm:text-[6ch] lg:text-[8ch] 2xl:text-[11ch]">
-              {pageTitle}
-            </h2>
-          </div>
+          <h2 className="type-display text-center">
+            {pageTitle}
+          </h2>
         </TransBox>
 
         <Spacer />
@@ -98,11 +96,9 @@ export default function WebsiteDesigners() {
           classes="fade-down-init"
         >
           <WhiteBlackBorderBox className="mx-auto max-w-[1300px] lg:-mt-20 z-10 pt-10 sm:pt-16">
-            <div className="font-js-math text-center">
-              <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-1 sm:pb-12">
-                {gridOfBoxesTitle}
-              </h2>
-            </div>
+            <h2 className="type-section text-center px-12 pb-1 sm:pb-12">
+              {gridOfBoxesTitle}
+            </h2>
 
             <GridOfBoxes items={gridOfBoxesContent} />
           </WhiteBlackBorderBox>
@@ -125,11 +121,9 @@ export default function WebsiteDesigners() {
               linkText={questionsBadge.linkText}
             />
 
-            <div className="font-js-math text-center">
-              <h2 className="text-[3.25ch] sm:text-[4ch] lg:text-[5ch] 2xl:text-[6.5ch] px-12 pb-1 sm:pb-12">
-                {questionsTitle}
-              </h2>
-            </div>
+            <h2 className="type-section text-center px-12 pb-1 sm:pb-12">
+              {questionsTitle}
+            </h2>
 
             <Questions items={questionsContent} />
 
