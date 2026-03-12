@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import tuka from "../../public/images/TUKA.png";
 import { useElementIntersectObserve } from "../../lib/hooks/useElementIntersectObserve";
 import { useEffect, useRef, useState } from "react";
 
@@ -20,7 +19,7 @@ const pupilPath =
   "M10.32 20c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.84 4-4 4z" +
   "M10.32 13.68c-1.28 0-2.32 1.040-2.32 2.32s1.040 2.32 2.32 2.32 2.32-1.040 2.32-2.32-1.040-2.32-2.32-2.32z";
 
-// TUKA.png is 446x439 — eye is positioned at the head center in viewBox coords
+// tuka-user-body-and-head.svg is 446x439 — eye is positioned at the head center in viewBox coords
 export default function TukaWithEye() {
   const [containerRef, boundary] = useElementIntersectObserve();
   const isVisible = boundary === "topIn";
@@ -47,9 +46,9 @@ export default function TukaWithEye() {
       const mouseViewX = ((e.clientX - rect.left) / rect.width) * 446;
       const mouseViewY = ((e.clientY - rect.top) / rect.height) * 439;
 
-      // Eye center in viewBox coords: translate(166.24, 30) scale(5.5)
+      // Eye center in viewBox coords: translate(166.24, 44.671) scale(5.5)
       const eyeViewX = 166.24 + EYE_CENTER_X * 5.5; // ≈ 223
-      const eyeViewY = 30 + EYE_CENTER_Y * 5.5;     // ≈ 118
+      const eyeViewY = 44.671 + EYE_CENTER_Y * 5.5; // ≈ 132.7
 
       const dx = mouseViewX - eyeViewX;
       const dy = mouseViewY - eyeViewY;
@@ -78,7 +77,7 @@ export default function TukaWithEye() {
     >
       <Image
         fill
-        src={tuka}
+        src="/svg/tuka-user-body-and-head.svg"
         alt="The User Knows All Icon"
         style={{ objectFit: "contain" }}
       />
@@ -89,7 +88,7 @@ export default function TukaWithEye() {
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        <g transform="translate(166.24, 30) scale(5.5)" fill="#E8E9EB">
+        <g transform="translate(166.24, 44.671) scale(5.5)" fill="#E8E9EB">
           <g
             className={`tuka-eye-inner${isVisible ? " tuka-eye-visible" : ""}`}
           >
