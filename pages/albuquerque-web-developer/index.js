@@ -1,16 +1,10 @@
-import { useEffect } from "react";
-
 import LocationLandingTemplate from "../../components/templates/LocationLandingTemplate";
-import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { albuquerqueWebDeveloperContent } from "../../pages-content/location-pages";
 
 export default function AlbuquerqueWebDeveloperPage() {
-  const { setTheme } = useTheme();
-
-  useEffect(() => {
-    setTheme("yellow");
-  }, [setTheme]);
+  useSetTheme("yellow");
 
   const {
     pagePath,

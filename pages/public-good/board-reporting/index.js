@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { boardReportingContent } from "../../../pages-content/board-reporting";
 import StackedPanelsLandingTemplate from "../../../components/templates/StackedPanelsLandingTemplate";
 
 export default function BoardReportingPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("blue");
 
   const {
     pagePath,
@@ -16,10 +14,6 @@ export default function BoardReportingPage() {
     serviceSchema,
     templateContent,
   } = boardReportingContent;
-
-  useEffect(() => {
-    setTheme("blue");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,

@@ -1,11 +1,8 @@
-// React
-import { useEffect } from "react";
-
 // Next
 import Head from "next/head";
 
 // Context
-import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../lib/hooks/useSetTheme";
 
 // Constent
 import { pageData } from "../../lib/constants/pageData";
@@ -28,10 +25,7 @@ import FocusedLandingPages from "../../components/belowthefold/FocusedLandingPag
 import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function PublicGood() {
-  const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    setTheme("blue");
-  }, [setTheme]);
+  useSetTheme("blue");
 
   const pgPageData = pageData.find((page) => page.slug === "public-good");
   const {

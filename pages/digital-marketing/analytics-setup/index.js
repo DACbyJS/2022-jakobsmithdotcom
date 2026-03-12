@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { analyticsSetupContent } from "../../../pages-content/analytics-setup";
 import EditorialContrastLandingTemplate from "../../../components/templates/EditorialContrastLandingTemplate";
 
 export default function AnalyticsSetupPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("yellow");
 
   const {
     pagePath,
@@ -17,10 +15,6 @@ export default function AnalyticsSetupPage() {
     sections,
     cta,
   } = analyticsSetupContent;
-
-  useEffect(() => {
-    setTheme("yellow");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,

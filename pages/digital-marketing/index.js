@@ -1,6 +1,3 @@
-// React
-import { useEffect } from "react";
-
 // Next
 import Head from "next/head";
 
@@ -11,7 +8,7 @@ import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { dmPageContent } from "../../pages-content/digital-marketing";
 
 // Context
-import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../lib/hooks/useSetTheme";
 
 // Components
 import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
@@ -28,10 +25,7 @@ import FocusedLandingPages from "../../components/belowthefold/FocusedLandingPag
 import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function DigitalMarketing() {
-  const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    setTheme("yellow");
-  }, [setTheme]);
+  useSetTheme("yellow");
 
   const {
     muxWords,

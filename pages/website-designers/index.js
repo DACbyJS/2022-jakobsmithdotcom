@@ -1,11 +1,8 @@
-// React
-import { useEffect } from "react";
-
 // Next
 import Head from "next/head";
 
 // Context
-import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../lib/hooks/useSetTheme";
 import { pageData } from "../../lib/constants/pageData";
 import { personSchema } from "../../lib/constants/schema";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
@@ -26,11 +23,7 @@ import FocusedLandingPages from "../../components/belowthefold/FocusedLandingPag
 import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function WebsiteDesigners() {
-  // Theme
-  const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    setTheme("red");
-  }, [setTheme]);
+  useSetTheme("red");
 
   // Content
   const wdPageData = pageData.find((page) => page.slug === "website-designers");

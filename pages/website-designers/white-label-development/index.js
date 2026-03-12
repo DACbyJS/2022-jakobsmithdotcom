@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { whiteLabelDevelopmentContent } from "../../../pages-content/white-label-development";
 import EditorialContrastLandingTemplate from "../../../components/templates/EditorialContrastLandingTemplate";
 
 export default function WhiteLabelDevelopmentPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("red");
 
   const {
     pagePath,
@@ -28,9 +26,6 @@ export default function WhiteLabelDevelopmentPage() {
     },
   };
 
-  useEffect(() => {
-    setTheme("red");
-  }, [setTheme]);
 
   return (
     <EditorialContrastLandingTemplate

@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { donationPagesContent } from "../../../pages-content/donation-pages";
 import StackedPanelsLandingTemplate from "../../../components/templates/StackedPanelsLandingTemplate";
 
 export default function DonationPagesPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("blue");
 
   const {
     pagePath,
@@ -16,10 +14,6 @@ export default function DonationPagesPage() {
     serviceSchema,
     templateContent,
   } = donationPagesContent;
-
-  useEffect(() => {
-    setTheme("blue");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,

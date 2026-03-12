@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { seoImplementationContent } from "../../../pages-content/seo-implementation";
 import EditorialContrastLandingTemplate from "../../../components/templates/EditorialContrastLandingTemplate";
 
 export default function SeoImplementationPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("yellow");
 
   const {
     pagePath,
@@ -17,10 +15,6 @@ export default function SeoImplementationPage() {
     sections,
     cta,
   } = seoImplementationContent;
-
-  useEffect(() => {
-    setTheme("yellow");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,

@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { wordpressDeveloperContent } from "../../../pages-content/wordpress-developer";
 import StackedPanelsLandingTemplate from "../../../components/templates/StackedPanelsLandingTemplate";
 
 export default function WordpressDeveloperPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("red");
 
   const {
     pagePath,
@@ -16,10 +14,6 @@ export default function WordpressDeveloperPage() {
     serviceSchema,
     templateContent,
   } = wordpressDeveloperContent;
-
-  useEffect(() => {
-    setTheme("red");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,

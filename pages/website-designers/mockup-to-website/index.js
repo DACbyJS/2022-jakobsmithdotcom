@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { mockupToWebsiteContent } from "../../../pages-content/mockup-to-website";
 import EditorialContrastLandingTemplate from "../../../components/templates/EditorialContrastLandingTemplate";
 
 export default function MockupToWebsitePage() {
-  const { setTheme } = useTheme();
+  useSetTheme("red");
 
   const {
     pagePath,
@@ -17,10 +15,6 @@ export default function MockupToWebsitePage() {
     sections,
     cta,
   } = mockupToWebsiteContent;
-
-  useEffect(() => {
-    setTheme("red");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,

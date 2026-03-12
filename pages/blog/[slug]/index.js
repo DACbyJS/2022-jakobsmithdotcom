@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
@@ -8,7 +7,7 @@ import remarkGfm from "remark-gfm";
 import InternalAudienceLinks from "../../../components/blog/InternalAudienceLinks";
 import MdxInternalLink from "../../../components/blog/MdxInternalLink";
 import { BLOG_CATEGORY_LABELS } from "../../../lib/constants/blog";
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getAllPostSlugs, getPostBySlug } from "../../../lib/blog/posts";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 
@@ -72,12 +71,8 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPostPage({ post }) {
-  const { setTheme } = useTheme();
+  useSetTheme("rainbow");
   const canonicalUrl = getCanonicalUrl(`/blog/${post.slug}/`);
-
-  useEffect(() => {
-    setTheme("rainbow");
-  }, [setTheme]);
 
   const articleSchema = {
     "@context": "https://schema.org",

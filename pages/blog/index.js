@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../lib/hooks/useSetTheme";
 import { BLOG_CATEGORIES, BLOG_CATEGORY_LABELS, POSTS_PER_PAGE } from "../../lib/constants/blog";
 import { getAllPosts } from "../../lib/blog/posts";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
@@ -25,15 +25,11 @@ export async function getStaticProps() {
 }
 
 export default function BlogIndexPage({ posts }) {
-  const { setTheme } = useTheme();
+  useSetTheme("rainbow");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const categoryDropdownRef = useRef(null);
-
-  useEffect(() => {
-    setTheme("rainbow");
-  }, [setTheme]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {

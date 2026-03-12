@@ -1,16 +1,10 @@
-import { useEffect } from "react";
-
 import LocationLandingTemplate from "../../components/templates/LocationLandingTemplate";
-import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { newMexicoWebDeveloperContent } from "../../pages-content/location-pages";
 
 export default function NewMexicoWebDeveloperPage() {
-  const { setTheme } = useTheme();
-
-  useEffect(() => {
-    setTheme("blue");
-  }, [setTheme]);
+  useSetTheme("blue");
 
   const {
     pagePath,

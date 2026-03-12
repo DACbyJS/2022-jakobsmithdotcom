@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-
-import { useTheme } from "../../../lib/contexts/ThemeProvider";
+import { useSetTheme } from "../../../lib/hooks/useSetTheme";
 import { getCanonicalUrl } from "../../../lib/utilities/seo";
 import { nonprofitSeoContent } from "../../../pages-content/nonprofit-seo";
 import StackedPanelsLandingTemplate from "../../../components/templates/StackedPanelsLandingTemplate";
 
 export default function NonprofitSeoPage() {
-  const { setTheme } = useTheme();
+  useSetTheme("blue");
 
   const {
     pagePath,
@@ -16,10 +14,6 @@ export default function NonprofitSeoPage() {
     serviceSchema,
     templateContent,
   } = nonprofitSeoContent;
-
-  useEffect(() => {
-    setTheme("blue");
-  }, [setTheme]);
 
   const serviceSchemaWithUrls = {
     ...serviceSchema,
