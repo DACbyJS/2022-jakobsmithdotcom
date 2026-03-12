@@ -1,7 +1,6 @@
 // Components
 import Header from './Header';
 import Footer from './Footer';
-import LoadingWrapper from './LoadingWrapper';
 import Main from './Main';
 
 export default function Layout({ className: fromAppClasses, children }) {
@@ -9,7 +8,7 @@ export default function Layout({ className: fromAppClasses, children }) {
     <div className={`${fromAppClasses} site-wrap overflow-hidden bg-js-black`}>
       <Header />
       <Main>
-        <LoadingWrapper>{children}</LoadingWrapper>
+        <div className="flex flex-col bg-js-black">{children}</div>
       </Main>
       <Footer />
     </div>

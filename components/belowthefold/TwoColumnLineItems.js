@@ -22,7 +22,7 @@ import NextIntersectionObserver from "../layout/NextIntersectionObserver";
  */
 const TwoColumnLineItems = ({ items }) => {
   // Set color
-  const { theme, changeTheme } = useTheme();
+  const { theme } = useTheme();
   const textClassName = `text-js-${theme}`;
 
   // if items empty don't render

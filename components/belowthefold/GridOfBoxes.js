@@ -19,14 +19,11 @@ import NextIntersectionObserver from "../layout/NextIntersectionObserver";
  */
 const GridOfBoxes = ({ items }) => {
   // Set color
-  const { theme, changeTheme } = useTheme();
+  const { theme } = useTheme();
   const textClassName = `text-js-${theme}`;
 
   // if items empty don't render
   if (items.length === 0) return null;
-
-  // Create a random number between 100 and 1000 that is always divisible by 100
-  const randomDelay = () => Math.floor(Math.random() * 10 + 1) * 100;
 
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pad-inline-section py-12 sm:py-16 gap-8 sm:gap-12 font-js-math leading-[1.4] text-center text-[1.6ch] sm:text-[2ch] lg:text-[2.7ch] 2xl:text-[3.3ch]">
@@ -37,7 +34,7 @@ const GridOfBoxes = ({ items }) => {
             topIn="fade-down-animate"
             classes={classNames(
               "fade-down-init",
-              `delay-${randomDelay()}`
+              `delay-${((index % 10) + 1) * 100}`
             )}
 
           >

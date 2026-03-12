@@ -15,7 +15,7 @@ import useWindowSize from "../../lib/hooks/useWindowSize";
 
 const Questions = ({ items }) => {
   // Set color
-  const { theme, changeTheme } = useTheme();
+  const { theme } = useTheme();
   const themeClassName = `theme-${theme}`;
 
   const [selectedItem, setSelectedItem] = useState(null);
@@ -23,10 +23,6 @@ const Questions = ({ items }) => {
 
   const handleQuestionHover = (id, e) => {
     setSelectedItem(id);
-  };
-
-  const handleMouseLeave = () => {
-    //setSelectedItem(null);
   };
 
   const handleTap = (id, e) => {
@@ -67,7 +63,6 @@ const Questions = ({ items }) => {
                   "question-right": i % 2 !== 0,
                 })}
                 onMouseEnter={() => handleQuestionHover(item.id)}
-                onMouseLeave={handleMouseLeave}
                 onClick={(e) => handleTap(item.id, e)}
               >
                 {item.q}

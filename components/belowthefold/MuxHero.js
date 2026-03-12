@@ -54,7 +54,6 @@ const MuxHero = ({
             </div>
           ))}
         </div>
-        <div className="hidden invisible animate-delay-0.25s animate-delay-1.25s animate-delay-2.25s animate-delay-3.25s"></div>
       </div>
     </section>
   );

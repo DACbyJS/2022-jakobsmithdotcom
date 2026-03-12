@@ -8,7 +8,6 @@ import classNames from "classnames";
 // Constants
 import { pageData, personSchema } from "../../lib/constants";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
-import { getRandomTheme } from "../../lib/utilities/themeColors";
 import { servicesPageContent } from "../../pages-content/services";
 
 // Custom
@@ -23,28 +22,24 @@ import BigRedTriangle from "../../components/svg/BigRedTriangle";
 import BigYellowSquare from "../../components/svg/BigYellowSquare";
 import WigglyButton from "../../components/layout/WigglyButton";
 
-const getRandomIndex = (max) => Math.floor(Math.random() * max);
+const SERVICE_THEMES = ["red", "blue", "yellow"];
+
+const getBorderStyle = (serviceTheme, index) => {
+  const borderStyleIndex = [
+    `border-t-js-black border-l-js-${serviceTheme} border-r-js-white border-b-js-white`,
+    `border-l-js-black border-t-js-${serviceTheme} border-r-js-white border-b-js-white`,
+  ];
+
+  return classNames(
+    borderStyleIndex[index % 2],
+    "border-solid border-t-[10px] border-l-[15px] border-r-[15px] border-b-[10px]"
+  );
+};
 
 export default function Services() {
   const servicesPageData = pageData.find((page) => page.slug === "services");
   const { muxWords, firstWhiteBlackBox } = servicesPageContent;
   const { disclaimer } = firstWhiteBlackBox;
-
-  const getBorderStyle = (serviceTheme) => {
-    if (serviceTheme === undefined) {
-      serviceTheme = getRandomTheme();
-    }
-
-    const borderStyleIndex = [
-      `border-t-js-black border-l-js-${serviceTheme} border-r-js-white border-b-js-white`,
-      `border-l-js-black border-t-js-${serviceTheme} border-r-js-white border-b-js-white`,
-    ];
-
-    return classNames(
-      borderStyleIndex[getRandomIndex(2)],
-      "border-solid border-t-[10px] border-l-[15px] border-r-[15px] border-b-[10px]"
-    );
-  };
 
   return (
     <>
@@ -90,9 +85,9 @@ export default function Services() {
 
               <div className="text-left">
                 <ul className="list-none p-0 m-0 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12">
-                  {firstWhiteBlackBox.services.map((service) => {
-                    const serviceTheme = getRandomTheme();
-                    const borderStyle = getBorderStyle(serviceTheme);
+                  {firstWhiteBlackBox.services.map((service, index) => {
+                    const serviceTheme = SERVICE_THEMES[index % SERVICE_THEMES.length];
+                    const borderStyle = getBorderStyle(serviceTheme, index);
                     const blurbStyle = `blurb-style-${serviceTheme}`;
                     return (
                       <li
