@@ -22,6 +22,7 @@ import BigRedTriangle from "../../components/svg/BigRedTriangle";
 import Questions from "../../components/belowthefold/Questions";
 import TwoColumnLineItems from "../../components/belowthefold/TwoColumnLineItems";
 import GridOfBoxes from "../../components/belowthefold/GridOfBoxes";
+import FocusedLandingPages from "../../components/belowthefold/FocusedLandingPages";
 import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function WebsiteDesigners() {
@@ -96,6 +97,14 @@ export default function WebsiteDesigners() {
         <Spacer />
 
         <TwoColumnLineItems items={twoColumnLineItemsContent} />
+
+        <Spacer />
+
+        <FocusedLandingPages
+          audienceSlug="website-designers"
+          title="Focused Pages"
+          intro="Audience-specific pages for designers and agencies that connect the pitch to the right service mix."
+        />
 
         <Spacer />
 

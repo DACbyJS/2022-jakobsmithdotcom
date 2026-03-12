@@ -4,7 +4,11 @@ import Link from "next/link";
 import WigglyButton from "../../components/layout/WigglyButton";
 
 // Constants
-import { personSchema } from "../../lib/constants";
+import {
+  expandLandingPageRelationships,
+  getLandingPagesByServiceSlug,
+  personSchema,
+} from "../../lib/constants";
 import { servicesData } from "../../lib/constants/servicesData";
 import { useTheme } from "../../lib/contexts/ThemeProvider";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
@@ -34,6 +38,8 @@ export async function getStaticProps({ params }) {
 
 export default function ServiceDetail({ slug }) {
   const service = servicesData.find((s) => s.slug === slug);
+  const relatedLandingPages = getLandingPagesByServiceSlug(slug)
+    .map(expandLandingPageRelationships);
   const { theme } = useTheme();
   const blurbColor = BLURB_COLORS.includes(theme)
     ? theme
@@ -148,6 +154,30 @@ export default function ServiceDetail({ slug }) {
                         <p>{item.a}</p>
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {relatedLandingPages.length > 0 && (
+                  <div className="mt-12 rounded-sm border border-js-black/15 bg-js-white/70 p-5 sm:p-6">
+                    <p className="font-overpass-mono text-[1.2ch] uppercase tracking-[0.25em] text-js-black/70 mb-3">
+                      This service works well with:
+                    </p>
+
+                    <ul className="list-none p-0 m-0 flex flex-col gap-2">
+                      {relatedLandingPages.map((landingPage) => (
+                        <li key={landingPage.id} className="font-overpass text-[1.7ch] leading-[1.6]">
+                          <Link
+                            href={landingPage.href}
+                            className="underline underline-offset-4 hover:opacity-70 transition-opacity"
+                          >
+                            {landingPage.title}
+                          </Link>
+                          {landingPage.audience?.title && (
+                            <span className="text-js-black/70"> {`(${landingPage.audience.title})`}</span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>

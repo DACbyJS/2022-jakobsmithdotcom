@@ -24,6 +24,7 @@ import BigBlueCircle from "../../components/svg/BigBlueCircle";
 import Questions from "../../components/belowthefold/Questions";
 import TwoColumnLineItems from "../../components/belowthefold/TwoColumnLineItems";
 import GridOfBoxes from "../../components/belowthefold/GridOfBoxes";
+import FocusedLandingPages from "../../components/belowthefold/FocusedLandingPages";
 import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function PublicGood() {
@@ -99,6 +100,14 @@ export default function PublicGood() {
         <Spacer />
 
         <TwoColumnLineItems items={twoColumnLineItemsContent} />
+
+        <Spacer />
+
+        <FocusedLandingPages
+          audienceSlug="public-good"
+          title="Focused Pages"
+          intro="Pages built specifically for public good organizations, with the related services kept close so the offer stays concrete."
+        />
 
         <Spacer />
 
