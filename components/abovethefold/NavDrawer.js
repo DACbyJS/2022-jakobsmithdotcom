@@ -27,8 +27,13 @@ export default function NavDrawer({ isActive, handleLinkItemClick }) {
       <nav role="navigation">
         <ul>
           {pageDataWithoutHome.map((navItem, index) => {
+            const navItemClass = `nav-item-${navItem.slug}`;
+
             return (
-              <li key={navItem?.data?.href} className={navLinksClasses[index]}>
+              <li
+                key={navItem?.data?.href}
+                className={`${navLinksClasses[index]} ${navItemClass}`}
+              >
                 <Link
                   onClick={handleLinkItemClick}
                   href={navItem?.data?.href}
