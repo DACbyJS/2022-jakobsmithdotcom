@@ -164,6 +164,36 @@ export default function Portfolio() {
             </div>
 
             <div className={`zero:px-6 sm:px-10 transition-opacity duration-200 ${isListVisible ? "opacity-100" : "opacity-0"}`}>
+              <div className="mb-3 md:mb-4 border-2 border-js-black bg-js-white px-3 py-3 md:px-4 md:py-4">
+                <div className="hidden sm:grid sm:grid-cols-[1fr_auto_auto] sm:items-end sm:gap-4 md:gap-8">
+                  <div>
+                    <p className="type-meta text-js-blue">PROJECT</p>
+                    <p className="font-overpass text-[1.05ch] md:text-[1.1ch] uppercase tracking-[0.17em] opacity-70 mt-1">
+                      Client name + site
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="type-meta text-js-red">SERVICES</p>
+                    <p className="font-overpass text-[1.05ch] md:text-[1.1ch] uppercase tracking-[0.17em] opacity-70 mt-1">
+                      Scope provided
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="type-meta text-js-yellow">LINK</p>
+                    <p className="font-overpass text-[1.05ch] md:text-[1.1ch] uppercase tracking-[0.17em] opacity-70 mt-1">
+                      Visit live build
+                    </p>
+                  </div>
+                </div>
+
+                <div className="sm:hidden border-t border-js-black pt-2">
+                  <p className="type-meta mb-1">Column Guide</p>
+                  <p className="font-overpass text-[1.05ch] uppercase tracking-[0.16em] opacity-70">
+                    Project name, then services, then arrow-out to the live site.
+                  </p>
+                </div>
+              </div>
+
               {displayedPortfolioData.map((item, index) => {
                 const itemCategory = item.clientCategories?.[0] || "all";
                 const itemAccentClasses = getCategoryAccentClasses(itemCategory);
