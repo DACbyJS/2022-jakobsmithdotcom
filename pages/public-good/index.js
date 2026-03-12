@@ -82,7 +82,7 @@ export default function PublicGood() {
       <BelowTheFold>
         <BigBlueCircle
           svgProps={{
-            className: "scale-[100%] -translate-x-[200px] translate-y-[450px]",
+            className: "scale-[100%] -translate-x-[250px] lg:-translate-x-[60px] translate-y-[300px] lg:translate-y-[560px]",
           }}
         />
 
