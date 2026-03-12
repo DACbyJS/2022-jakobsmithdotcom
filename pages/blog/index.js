@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -6,20 +6,7 @@ import { useTheme } from "../../lib/contexts/ThemeProvider";
 import { BLOG_CATEGORIES, BLOG_CATEGORY_LABELS, POSTS_PER_PAGE } from "../../lib/constants/blog";
 import { getAllPosts } from "../../lib/blog/posts";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
-
-const formatDate = (value) => {
-  const parsedDate = new Date(value);
-
-  if (Number.isNaN(parsedDate.getTime())) {
-    return value;
-  }
-
-  return new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  }).format(parsedDate);
-};
+import { formatDate } from "../../lib/utilities/dates";
 
 export async function getStaticProps() {
   const posts = getAllPosts().map((post) => ({
@@ -41,10 +28,29 @@ export default function BlogIndexPage({ posts }) {
   const { setTheme } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const categoryDropdownRef = useRef(null);
 
   useEffect(() => {
     setTheme("rainbow");
   }, [setTheme]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (categoryDropdownRef.current && !categoryDropdownRef.current.contains(e.target)) {
+        setIsCategoryOpen(false);
+      }
+    };
+    const handleEscape = (e) => {
+      if (e.key === "Escape") setIsCategoryOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "all") {
@@ -74,12 +80,12 @@ export default function BlogIndexPage({ posts }) {
   return (
     <>
       <Head>
-        <title>Jakob Smith Blog</title>
+        <title>Jakob Smith&apos;s Blog</title>
         <meta name="description" content="Website management insights for web designers, digital marketers, nonprofits, and public-good teams." />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="canonical" href={getCanonicalUrl("/blog/")} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Jakob Smith Blog" />
+        <meta property="og:title" content="Jakob Smith&apos;s Blog" />
         <meta property="og:description" content="Website management insights for web designers, digital marketers, nonprofits, and public-good teams." />
         <meta property="og:url" content={getCanonicalUrl("/blog/")} />
         <meta property="og:image" content={getCanonicalUrl("/images/jakob-1.jpg")} />
@@ -100,19 +106,65 @@ export default function BlogIndexPage({ posts }) {
               <label htmlFor="blog-category-filter" className="font-overpass-mono uppercase tracking-[0.12em] text-[1.2ch] sm:text-[1.3ch]">
                 Filter by category
               </label>
-              <select
-                id="blog-category-filter"
-                value={selectedCategory}
-                onChange={(event) => setSelectedCategory(event.target.value)}
-                className="font-overpass text-[1.8ch] border border-js-black px-3 py-2 bg-js-white"
-              >
-                <option value="all">All Categories</option>
-                {BLOG_CATEGORIES.map((category) => (
-                  <option key={category} value={category}>
-                    {BLOG_CATEGORY_LABELS[category]}
-                  </option>
-                ))}
-              </select>
+              <div ref={categoryDropdownRef} className="relative sm:min-w-[220px]">
+                <button
+                  id="blog-category-filter"
+                  type="button"
+                  onClick={() => setIsCategoryOpen((prev) => !prev)}
+                  aria-haspopup="listbox"
+                  aria-expanded={isCategoryOpen}
+                  aria-label="Filter posts by category"
+                  className="w-full flex items-center justify-between gap-3 font-overpass text-[1.8ch] border border-js-black px-3 py-2 bg-js-white text-js-black"
+                >
+                  <span>
+                    {selectedCategory === "all" ? "All Categories" : BLOG_CATEGORY_LABELS[selectedCategory]}
+                  </span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    style={{
+                      flexShrink: 0,
+                      transform: isCategoryOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    }}
+                  >
+                    {/* Bold geometric download-style arrow: rectangle with arrow notch */}
+                    <path d="M3 3 L17 3 L17 8 L12.5 8 L10 15 L7.5 8 L3 8 Z" />
+                  </svg>
+                </button>
+
+                {isCategoryOpen && (
+                  <ul
+                    role="listbox"
+                    aria-label="Blog category"
+                    className="absolute z-10 top-full left-0 mt-0.5 w-full border border-js-black bg-js-white text-js-black font-overpass text-[1.8ch]"
+                  >
+                    <li
+                      role="option"
+                      aria-selected={selectedCategory === "all"}
+                      onClick={() => { setSelectedCategory("all"); setIsCategoryOpen(false); }}
+                      className={`px-3 py-2 cursor-pointer hover:bg-js-black hover:text-js-white transition-colors${selectedCategory === "all" ? " font-bold" : ""}`}
+                    >
+                      All Categories
+                    </li>
+                    {BLOG_CATEGORIES.map((category) => (
+                      <li
+                        key={category}
+                        role="option"
+                        aria-selected={selectedCategory === category}
+                        onClick={() => { setSelectedCategory(category); setIsCategoryOpen(false); }}
+                        className={`px-3 py-2 cursor-pointer hover:bg-js-black hover:text-js-white transition-colors${selectedCategory === category ? " font-bold" : ""}`}
+                      >
+                        {BLOG_CATEGORY_LABELS[category]}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </section>
 
