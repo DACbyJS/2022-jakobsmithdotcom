@@ -1,16 +1,13 @@
-// Next
-import Head from "next/head";
-
 // Constants
 import { pageData } from "../../lib/constants/pageData";
 import { personSchema } from "../../lib/constants/schema";
-import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { dmPageContent } from "../../pages-content/digital-marketing";
 
 // Context
 import { useSetTheme } from "../../lib/hooks/useSetTheme";
 
 // Components
+import PageHead from "../../components/head/PageHead";
 import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
 import MuxHero from "../../components/belowthefold/MuxHero";
 import BelowTheFold from "../../components/layout/BelowTheFold";
@@ -53,15 +50,7 @@ export default function DigitalMarketing() {
 
   return (
     <>
-      <Head>
-        <title>{pageData[2].metaTitle}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={pageData[2].metaDescription} />
-        <meta name="keywords" content={pageData[2].metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(pageData[2].data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Head>
+      <PageHead pageData={pageData.find((p) => p.slug === "digital-marketing")} schemaObjects={[personSchema, faqSchema]} />
 
       <MuxHero
         playbackId="F6ai7ooWZewp2Prle00Mkgz1bfQEPMOB8o1y02AFiNVmQ"

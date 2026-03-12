@@ -1,14 +1,11 @@
-// Next
-import Head from "next/head";
-
 // Context
 import { useSetTheme } from "../../lib/hooks/useSetTheme";
 import { pageData } from "../../lib/constants/pageData";
 import { personSchema } from "../../lib/constants/schema";
-import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { wdPageContent } from "../../pages-content/website-designers";
 
 // Components
+import PageHead from "../../components/head/PageHead";
 import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
 import MuxHero from "../../components/belowthefold/MuxHero";
 import BelowTheFold from "../../components/layout/BelowTheFold";
@@ -53,15 +50,7 @@ export default function WebsiteDesigners() {
 
   return (
     <>
-      <Head>
-        <title>{wdPageData.metaTitle}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={wdPageData.metaDescription} />
-        <meta name="keywords" content={wdPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(wdPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Head>
+      <PageHead pageData={wdPageData} schemaObjects={[personSchema, faqSchema]} />
 
       <MuxHero
         playbackId="jd77Y2gq9U9102yeWVQpIOkyM2uJTzDEWdMzHITUjSOs"

@@ -1,13 +1,12 @@
 // Next
-import Head from "next/head";
 import Link from "next/link";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
-import { getCanonicalUrl } from "../lib/utilities/seo";
 import { contactPageContent } from "../pages-content/contact.js";
 
-// Custom
+// Components
+import PageHead from "../components/head/PageHead";
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import BelowTheFold from "../components/layout/BelowTheFold";
@@ -23,14 +22,7 @@ export default function Contact() {
 
   return (
     <>
-      <Head>
-        <title>{contactPageData.metaTitle}</title>
-        <meta name="description" content={contactPageData.metaDescription} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="keywords" content={contactPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(contactPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      </Head>
+      <PageHead pageData={contactPageData} schemaObjects={[personSchema]} />
 
       <MuxHero
         playbackId="011xEpegVtj401cHWeHsnZVBU00HsqQ02WtwliwMpekPktw"

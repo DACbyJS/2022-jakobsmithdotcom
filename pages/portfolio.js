@@ -1,11 +1,12 @@
 // Next
-import Head from "next/head";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
-import { getCanonicalUrl } from "../lib/utilities/seo";
+
+// Components
+import PageHead from "../components/head/PageHead";
 import {
   portfolioClientCategories,
   portfolioData,
@@ -86,14 +87,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <Head>
-        <title>{portfolioPageData.metaTitle}</title>
-        <meta name="description" content={portfolioPageData.metaDescription} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="keywords" content={portfolioPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(portfolioPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      </Head>
+      <PageHead pageData={portfolioPageData} schemaObjects={[personSchema]} />
 
       <MuxHero
         playbackId="011xEpegVtj401cHWeHsnZVBU00HsqQ02WtwliwMpekPktw"

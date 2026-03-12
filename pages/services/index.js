@@ -1,5 +1,4 @@
 // Next
-import Head from "next/head";
 import Link from "next/link";
 
 // Libraries
@@ -7,10 +6,10 @@ import classNames from "classnames";
 
 // Constants
 import { pageData, personSchema } from "../../lib/constants";
-import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { servicesPageContent } from "../../pages-content/services";
 
-// Custom
+// Components
+import PageHead from "../../components/head/PageHead";
 import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
 import MuxHero from "../../components/belowthefold/MuxHero";
 import BelowTheFold from "../../components/layout/BelowTheFold";
@@ -43,14 +42,7 @@ export default function Services() {
 
   return (
     <>
-      <Head>
-        <title>{servicesPageData.metaTitle}</title>
-        <meta name="description" content={servicesPageData.metaDescription} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="keywords" content={servicesPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(servicesPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      </Head>
+      <PageHead pageData={servicesPageData} schemaObjects={[personSchema]} />
 
       <MuxHero
         playbackId="lFKXc01pKRKTB901fBGpDaUx2MKzgwf3MuYLUZwTPKvTM"

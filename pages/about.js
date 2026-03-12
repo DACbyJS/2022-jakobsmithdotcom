@@ -1,12 +1,13 @@
 // Next
 import { useEffect, useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
-import { getCanonicalUrl } from "../lib/utilities/seo";
+
+// Components
+import PageHead from "../components/head/PageHead";
 import { aboutPageContent } from "../pages-content/about.js";
 
 // Image
@@ -134,14 +135,7 @@ export default function About() {
 
   return (
     <>
-      <Head>
-        <title>{aboutPageData.metaTitle}</title>
-        <meta name="description" content={aboutPageData.metaDescription} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="keywords" content={aboutPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(aboutPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      </Head>
+      <PageHead pageData={aboutPageData} schemaObjects={[personSchema]} />
 
       <MuxHero
         playbackId="011xEpegVtj401cHWeHsnZVBU00HsqQ02WtwliwMpekPktw"

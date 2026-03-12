@@ -1,13 +1,12 @@
 // Next
-import Head from "next/head";
 import Link from "next/link";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
-import { getCanonicalUrl } from "../lib/utilities/seo";
 import { homePageContent } from "../pages-content";
 
-// Custom
+// Components
+import PageHead from "../components/head/PageHead";
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import SvgRainbow from "../components/svg/Rainbow";
@@ -23,14 +22,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>{homePageData.metaTitle}</title>
-        <meta name="description" content={homePageData.metaDescription} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="keywords" content={homePageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(homePageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      </Head>
+      <PageHead pageData={homePageData} schemaObjects={[personSchema]} />
 
       <MuxHero
         playbackId="aO00BRcAmAul3tQQHdU4bTk7UovQ5AHZ017zz4ynexq6E"

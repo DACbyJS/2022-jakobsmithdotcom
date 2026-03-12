@@ -1,5 +1,4 @@
 // Next
-import Head from "next/head";
 import Link from "next/link";
 
 // Libraries
@@ -7,10 +6,10 @@ import classNames from "classnames";
 
 // Constants
 import { pageData, personSchema } from "../lib/constants";
-import { getCanonicalUrl } from "../lib/utilities/seo";
 import { pricingPageContent } from "../pages-content/pricing";
 
-// Custom
+// Components
+import PageHead from "../components/head/PageHead";
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
 import MuxHero from "../components/belowthefold/MuxHero";
 import BelowTheFold from "../components/layout/BelowTheFold";
@@ -36,14 +35,7 @@ export default function Pricing() {
 
   return (
     <>
-      <Head>
-        <title>{pricingPageData.metaTitle}</title>
-        <meta name="description" content={pricingPageData.metaDescription} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="keywords" content={pricingPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(pricingPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      </Head>
+      <PageHead pageData={pricingPageData} schemaObjects={[personSchema]} />
 
       <MuxHero
         playbackId="7LLlXC2CqEay7REvuvq6xPeXvnXbB9I3HLJiaDry02P8"

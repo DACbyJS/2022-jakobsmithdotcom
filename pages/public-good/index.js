@@ -1,16 +1,13 @@
-// Next
-import Head from "next/head";
-
 // Context
 import { useSetTheme } from "../../lib/hooks/useSetTheme";
 
-// Constent
+// Constants
 import { pageData } from "../../lib/constants/pageData";
 import { personSchema } from "../../lib/constants/schema";
-import { getCanonicalUrl } from "../../lib/utilities/seo";
 import { pgPageContent } from "../../pages-content/public-good";
 
 // Components
+import PageHead from "../../components/head/PageHead";
 import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
 import MuxHero from "../../components/belowthefold/MuxHero";
 import BelowTheFold from "../../components/layout/BelowTheFold";
@@ -54,15 +51,7 @@ export default function PublicGood() {
 
   return (
     <>
-      <Head>
-        <title>{pgPageData.metaTitle}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={pgPageData.metaDescription} />
-        <meta name="keywords" content={pgPageData.metaKeywords} />
-        <link rel="canonical" href={getCanonicalUrl(pgPageData.data.href)} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      </Head>
+      <PageHead pageData={pgPageData} schemaObjects={[personSchema, faqSchema]} />
 
       <MuxHero
         playbackId="cJw0100x5602VGYXamVp5j6FAW1g02AM2AEzDXZkBN9NSro"
