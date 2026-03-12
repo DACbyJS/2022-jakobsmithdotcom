@@ -7,10 +7,7 @@ import { useTheme } from "../lib/contexts/ThemeProvider";
 // constants
 import { pageData } from "../lib/constants/pageData";
 
-const createStableIdFactory = (prefix) => {
-  let idCounter = 0;
-  return () => `${prefix}-${++idCounter}`;
-};
+import { createStableIdFactory } from "../lib/utilities/stableIdFactory";
 
 const nextStableId = createStableIdFactory("pg");
 

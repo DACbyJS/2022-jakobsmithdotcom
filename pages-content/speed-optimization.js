@@ -1,7 +1,4 @@
-const createStableIdFactory = (prefix) => {
-  let idCounter = 0;
-  return () => `${prefix}-${++idCounter}`;
-};
+import { createStableIdFactory } from "../lib/utilities/stableIdFactory";
 
 const nextStableId = createStableIdFactory("spd");
 
