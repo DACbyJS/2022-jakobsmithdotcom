@@ -73,7 +73,7 @@ export default function Pricing() {
               </h1>
             </div>
 
-            <div className="grid zero:grid-cols-1 sm:grid-cols-2 gap-12 pad-inline-section py-2 md:py-4">
+            <div className="grid zero:grid-cols-1 sm:grid-cols-2 gap-12 pad-inline-section py-8 md:py-12">
               <div className="flex-col">
                 <h3 className="btn w-full text-center">
                   {firstPricingColumn.title}
