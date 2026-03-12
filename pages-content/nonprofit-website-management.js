@@ -6,15 +6,15 @@ export const nonprofitWebsiteManagementContent = {
   pagePath: "/public-good/nonprofit-website-management/",
   metaTitle: "Website Management for Nonprofits",
   metaDescription:
-    "Affordable website management for nonprofits — hosting, SEO, maintenance, and donation page optimization. Albuquerque-based, mission-driven.",
+    "Affordable website management for nonprofits — hosting, SEO, maintenance, and donation page optimization. Albuquerque-based, mission-driven support for your cause.",
 
   serviceItems: [
-    "Ongoing hosting and maintenance (keep the lights on)",
-    "SEO so donors and volunteers can find you",
-    "Donation page optimization (better conversion = more funds)",
-    "Accessibility and compliance (WCAG, ADA)",
-    "Monthly reporting you can show your board",
-    "Content updates without the learning curve",
+    "Ongoing hosting and maintenance so the site simply stays up and works",
+    "SEO so donors, volunteers, and community partners can actually find you",
+    "Donation page optimization (better conversion = more funds for your programs)",
+    "Accessibility and compliance (WCAG, ADA) so everyone can participate safely",
+    "Monthly reporting you can take straight into a board or leadership meeting",
+    "Content updates and small changes without a steep technical learning curve",
   ],
 
   serviceSchema: {
@@ -70,8 +70,7 @@ export const nonprofitWebsiteManagementContent = {
       "Your mission matters more than your budget. Let's make your website work harder for both.",
     problemSection: {
       title: "The problem",
-      body:
-        "Most nonprofits have outdated websites managed by volunteers or past contractors. Technical debt piles up. Donations suffer. Board members ask hard questions about ROI.",
+      body: "Most nonprofits are running on websites stitched together by past staff, volunteers, or one-off contractors. Plugins go out of date, donation forms feel clunky, and nobody is quite sure what will break if they press the wrong button. Meanwhile, donations slip, important information is hard to find, and board members start asking why the website feels stuck in a previous era.",
     },
     offersSection: {
       title: "What I do",
@@ -85,25 +84,32 @@ export const nonprofitWebsiteManagementContent = {
       {
         id: nextStableId(),
         title: "Budget-friendly approach",
-        body: "Monthly value pricing, no surprise invoices, open-source tools to keep costs low.",
+        body: "Monthly value pricing, no surprise invoices, and a bias toward open-source tools so more of your budget goes into impact—not recurring software and emergency fixes.",
         classes: "border-js-white bg-js-black text-js-white",
       },
     ],
     proofSection: {
       title: "Who I've helped",
-      body: "A few examples of organizations and associations I've supported:",
+      body: "A few examples of organizations and associations I’ve supported with ongoing website maintenance, improvements, and quieter infrastructure:",
       links: [
         { id: nextStableId(), label: "WTBA", href: "https://wtba.org/" },
-        { id: nextStableId(), label: "Kraemer Fields", href: "https://kraemerfields.com/" },
+        {
+          id: nextStableId(),
+          label: "Kraemer Fields",
+          href: "https://kraemerfields.com/",
+        },
       ],
     },
     ctaSection: {
       title: "Let's talk about your nonprofit's website",
-      body:
-        "If your team needs dependable web support without enterprise pricing, I can help you stabilize, improve, and grow your site.",
+      body: "If your team needs dependable web support without enterprise pricing, I can help you stabilize what you have, improve what isn’t working, and create a plan for the next few years—not just the next fire drill.",
       links: [
+        {
+          id: nextStableId(),
+          href: "/public-good/",
+          text: "Back to Public Good",
+        },
         { id: nextStableId(), href: "/contact/", text: "Contact" },
-        { id: nextStableId(), href: "/public-good/", text: "Back to Public Good" },
       ],
     },
   },
