@@ -6,14 +6,14 @@ export const campaignLandingPagesContent = {
   pagePath: "/digital-marketing/landing-pages/",
   metaTitle: "Landing Page Development for Marketing Campaigns",
   metaDescription:
-    "Fast, conversion-optimized landing page development for marketing agencies running paid and organic campaigns.",
+    "Fast, conversion-optimized landing page development for marketing agencies running paid and organic campaigns that need reliable execution.",
 
   serviceItems: [
-    "New landing page builds from campaign briefs",
-    "A/B testing-ready modular sections",
-    "Analytics and conversion event setup",
-    "Responsive implementation across devices",
-    "Technical SEO and speed baseline",
+    "New landing page builds directly from campaign briefs and wireframes",
+    "A/B testing-ready modular sections your team can rearrange without code",
+    "Analytics and conversion event setup wired into your existing stack",
+    "Responsive implementation across devices and real-world network conditions",
+    "Technical SEO and speed baseline to keep ads and organic in good standing",
   ],
 
   serviceSchema: {
@@ -44,7 +44,7 @@ export const campaignLandingPagesContent = {
     problemSection: {
       title: "Common campaign bottleneck",
       body:
-        "Scaffold page: replace with your final positioning around speed-to-launch, ad spend pressure, and conversion rate objectives.",
+        "Ad creative is ready, budgets are loaded, and stakeholders are refreshing dashboards, but the landing page is still in a dev queue. Every day of delay burns attention, ad spend, and momentum that you don’t get back.",
     },
     offersSection: {
       title: "Landing page development support",
@@ -58,27 +58,30 @@ export const campaignLandingPagesContent = {
       {
         id: nextStableId(),
         title: "Build velocity",
-        body: "Campaign pages built quickly with reusable structure and clean implementation for ongoing testing and iteration.",
+        body:
+          "Campaign pages built quickly from briefs, with reusable sections and clean markup so your team can keep testing, iterating, and cloning winners without starting from scratch.",
         classes: "border-js-black bg-js-white text-js-black",
       },
       {
         id: nextStableId(),
         title: "Conversion-focused implementation",
-        body: "Page layout, content hierarchy, and event instrumentation set up to support measurement and optimization.",
+        body:
+          "Layouts, content hierarchy, and event tracking are implemented to support clear measurement, CRO, and attribution, so you can explain results without digging through broken pixels.",
         classes: "border-js-white bg-js-black text-js-white",
       },
     ],
     proofSection: {
-      title: "Related work",
-      body: "Add campaign case studies or portfolio examples here.",
+      title: "",
+      body:
+        "",
       links: [
-        { id: nextStableId(), label: "Portfolio", href: "/portfolio/" },
-        { id: nextStableId(), label: "Pricing", href: "/pricing/" },
+
       ],
     },
     ctaSection: {
       title: "Ship your next campaign page",
-      body: "Continue through the linked service pages while copy and campaign-specific proof are being finalized.",
+      body:
+        "Bring your next brief, and we’ll map out a landing page build that respects your brand, your funnel, and the pressure your ad budget is already under.",
       links: [
         { id: nextStableId(), href: "/services/additions/", text: "Additions" },
         { id: nextStableId(), href: "/services/content-gen/", text: "Content Gen" },
@@ -87,3 +90,4 @@ export const campaignLandingPagesContent = {
     },
   },
 };
+
