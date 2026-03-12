@@ -5,26 +5,26 @@ import { useEffect } from "react";
 import Head from "next/head";
 
 // Context
-import { useTheme } from "../lib/contexts/ThemeProvider";
+import { useTheme } from "../../lib/contexts/ThemeProvider";
 
 // Constent
-import { pageData } from "../lib/constants/pageData";
-import { personSchema } from "../lib/constants/schema";
-import { getCanonicalUrl } from "../lib/utilities/seo";
-import { pgPageContent } from "../pages-content/public-good";
+import { pageData } from "../../lib/constants/pageData";
+import { personSchema } from "../../lib/constants/schema";
+import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { pgPageContent } from "../../pages-content/public-good";
 
 // Components
-import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
-import MuxHero from "../components/belowthefold/MuxHero";
-import BelowTheFold from "../components/layout/BelowTheFold";
-import Spacer from "../components/layout/Spacer";
-import WhiteBlackBorderBox from "../components/layout/WhiteBlackBorderBox";
-import TransBox from "../components/layout/TransBox";
-import BigBlueCircle from "../components/svg/BigBlueCircle";
-import Questions from "../components/belowthefold/Questions";
-import TwoColumnLineItems from "../components/belowthefold/TwoColumnLineItems";
-import GridOfBoxes from "../components/belowthefold/GridOfBoxes";
-import PinnedBadge from "../components/svg/PinnedBadge";
+import NextIntersectionObserver from "../../components/layout/NextIntersectionObserver";
+import MuxHero from "../../components/belowthefold/MuxHero";
+import BelowTheFold from "../../components/layout/BelowTheFold";
+import Spacer from "../../components/layout/Spacer";
+import WhiteBlackBorderBox from "../../components/layout/WhiteBlackBorderBox";
+import TransBox from "../../components/layout/TransBox";
+import BigBlueCircle from "../../components/svg/BigBlueCircle";
+import Questions from "../../components/belowthefold/Questions";
+import TwoColumnLineItems from "../../components/belowthefold/TwoColumnLineItems";
+import GridOfBoxes from "../../components/belowthefold/GridOfBoxes";
+import PinnedBadge from "../../components/svg/PinnedBadge";
 
 export default function PublicGood() {
   const { theme, setTheme } = useTheme();
