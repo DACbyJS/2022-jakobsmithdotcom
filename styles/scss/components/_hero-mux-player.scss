@@ -27,3 +27,9 @@
     width: min(40vw, 42vh, 24rem);
   }
 }
+
+@media (min-width: 1536px) and (max-height: 900px) {
+  .hero-mux-word-box .type-hero {
+    font-size: 7ch;
+  }
+}
