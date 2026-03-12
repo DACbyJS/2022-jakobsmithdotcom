@@ -30,6 +30,8 @@ export default function StackedPanelsLandingTemplate({
     ctaSection,
   } = content;
 
+  const hasProofSection = Boolean(proofSection?.title);
+
   return (
     <>
       <Head>
@@ -102,26 +104,28 @@ export default function StackedPanelsLandingTemplate({
             </NextIntersectionObserver>
           ))}
 
-          <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
-            <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 bg-js-white text-js-black ${borderColorClass}`}>
-              <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{proofSection.title}</h2>
-              <p className="font-overpass text-base sm:text-lg mt-4">{proofSection.body}</p>
-              <ul className="mt-5 flex flex-wrap gap-4 text-base sm:text-lg font-overpass-mono uppercase tracking-[0.05em]">
-                {proofSection.links.map((item) => (
-                  <li key={item.id}>
-                    <Link
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline transition-opacity duration-300 hover:opacity-70"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </NextIntersectionObserver>
+          {hasProofSection && (
+            <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
+              <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 bg-js-white text-js-black ${borderColorClass}`}>
+                <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{proofSection.title}</h2>
+                <p className="font-overpass text-base sm:text-lg mt-4">{proofSection.body}</p>
+                <ul className="mt-5 flex flex-wrap gap-4 text-base sm:text-lg font-overpass-mono uppercase tracking-[0.05em]">
+                  {(proofSection.links ?? []).map((item) => (
+                    <li key={item.id}>
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline transition-opacity duration-300 hover:opacity-70"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </NextIntersectionObserver>
+          )}
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
             <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 text-js-black ${borderColorClass} ${bgColorClass}`}>
