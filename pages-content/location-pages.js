@@ -27,7 +27,6 @@ const baseLocalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Jakob Smith Website Management",
-  serviceType: "Website Management",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Albuquerque",
