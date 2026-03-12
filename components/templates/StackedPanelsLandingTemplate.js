@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 
 import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { getThemeClasses } from "../../lib/utilities/themeColors";
+import { useTheme } from "../../lib/contexts/ThemeProvider";
 import NextIntersectionObserver from "../layout/NextIntersectionObserver";
 
 export default function StackedPanelsLandingTemplate({
@@ -11,6 +13,13 @@ export default function StackedPanelsLandingTemplate({
   schemaObjects = [],
   content,
 }) {
+  const { theme } = useTheme();
+  const {
+    accent: accentColorClass,
+    bg: bgColorClass,
+    border: borderColorClass,
+  } = getThemeClasses(theme);
+
   const {
     eyebrow,
     heroTitle,
@@ -39,8 +48,8 @@ export default function StackedPanelsLandingTemplate({
 
       <main className="bg-js-black text-js-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-[1100px]">
-          <section className="border-2 border-js-blue p-6 sm:p-10 bg-js-black">
-            <p className="font-overpass-mono uppercase tracking-[0.18em] text-xs sm:text-sm text-js-blue">{eyebrow}</p>
+          <section className={`border-2 p-6 sm:p-10 bg-js-black ${borderColorClass}`}>
+            <p className={`font-overpass-mono uppercase tracking-[0.18em] text-xs sm:text-sm ${accentColorClass}`}>{eyebrow}</p>
             <h1 className="font-js-math text-[2.3rem] sm:text-[3.4rem] lg:text-[4.1rem] leading-[1.08] mt-4 text-balance">
               {heroTitle}
             </h1>
@@ -52,7 +61,7 @@ export default function StackedPanelsLandingTemplate({
           </section>
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
-            <section className="mt-10 sm:mt-14 border-2 border-js-blue p-6 sm:p-10 bg-js-white text-js-black">
+            <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 bg-js-white text-js-black ${borderColorClass}`}>
               <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{offersSection.title}</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {offersSection.items.map((item) => (
@@ -94,7 +103,7 @@ export default function StackedPanelsLandingTemplate({
           ))}
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
-            <section className="mt-10 sm:mt-14 border-2 border-js-blue p-6 sm:p-10 bg-js-white text-js-black">
+            <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 bg-js-white text-js-black ${borderColorClass}`}>
               <h2 className="font-js-math text-[1.9rem] sm:text-[2.5rem] leading-tight">{proofSection.title}</h2>
               <p className="font-overpass text-base sm:text-lg mt-4">{proofSection.body}</p>
               <ul className="mt-5 flex flex-wrap gap-4 text-base sm:text-lg font-overpass-mono uppercase tracking-[0.05em]">
@@ -115,7 +124,7 @@ export default function StackedPanelsLandingTemplate({
           </NextIntersectionObserver>
 
           <NextIntersectionObserver thresholdValue={0.2} classes="animate-init fade-up-init" topIn="fade-up-animate">
-            <section className="mt-10 sm:mt-14 border-2 border-js-blue p-6 sm:p-10 bg-js-blue text-js-black">
+            <section className={`mt-10 sm:mt-14 border-2 p-6 sm:p-10 text-js-black ${borderColorClass} ${bgColorClass}`}>
               <h2 className="font-js-math text-[2rem] sm:text-[2.7rem] leading-tight text-balance">{ctaSection.title}</h2>
               <p className="font-overpass text-lg sm:text-xl mt-4 max-w-[68ch]">{ctaSection.body}</p>
               <div className="mt-7 flex flex-wrap gap-5 font-overpass-mono uppercase tracking-[0.06em] text-sm sm:text-base">
