@@ -8,6 +8,7 @@ import classNames from "classnames";
 // Constants
 import { pageData, personSchema } from "../../lib/constants";
 import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { getRandomTheme } from "../../lib/utilities/themeColors";
 import { servicesPageContent } from "../../pages-content/services";
 
 // Custom
@@ -29,14 +30,9 @@ export default function Services() {
   const { muxWords, firstWhiteBlackBox } = servicesPageContent;
   const { disclaimer } = firstWhiteBlackBox;
 
-  const getServiceTheme = () => {
-    const themeIndex = ["blue", "red", "yellow"];
-    return themeIndex[getRandomIndex(3)];
-  };
-
   const getBorderStyle = (serviceTheme) => {
     if (serviceTheme === undefined) {
-      serviceTheme = getServiceTheme();
+      serviceTheme = getRandomTheme();
     }
 
     const borderStyleIndex = [
@@ -95,7 +91,7 @@ export default function Services() {
               <div className="text-left">
                 <ul className="list-none p-0 m-0 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12">
                   {firstWhiteBlackBox.services.map((service) => {
-                    const serviceTheme = getServiceTheme();
+                    const serviceTheme = getRandomTheme();
                     const borderStyle = getBorderStyle(serviceTheme);
                     const blurbStyle = `blurb-style-${serviceTheme}`;
                     return (

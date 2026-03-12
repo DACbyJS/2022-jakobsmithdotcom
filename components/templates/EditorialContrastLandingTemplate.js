@@ -3,6 +3,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import { getCanonicalUrl } from "../../lib/utilities/seo";
+import { getThemeClasses } from "../../lib/utilities/themeColors";
 import { useTheme } from "../../lib/contexts/ThemeProvider";
 import NextIntersectionObserver from "../layout/NextIntersectionObserver";
 
@@ -16,13 +17,11 @@ export default function EditorialContrastLandingTemplate({
   cta,
 }) {
   const { theme } = useTheme();
-  const THEME_TO_CLASSES = {
-    red: { accent: "text-js-red", bg: "bg-js-red", border: "border-js-red" },
-    yellow: { accent: "text-js-yellow", bg: "bg-js-yellow", border: "border-js-yellow" },
-    blue: { accent: "text-js-blue", bg: "bg-js-blue", border: "border-js-blue" },
-  };
-  const themeClasses = THEME_TO_CLASSES[theme] ?? THEME_TO_CLASSES.red;
-  const { accent: accentColorClass, bg: bgColorClass, border: borderColorClass } = themeClasses;
+  const {
+    accent: accentColorClass,
+    bg: bgColorClass,
+    border: borderColorClass,
+  } = getThemeClasses(theme);
 
   const hasTestimonialTitle = typeof sections?.testimonialTitle === "string"
     ? sections.testimonialTitle.trim().length > 0

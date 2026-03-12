@@ -12,6 +12,10 @@ import {
 } from "../lib/constants/portfolioData";
 import { servicesData } from "../lib/constants/servicesData";
 import { portfolioPageContent } from "../pages-content/portfolio";
+import {
+  getCategoryAccentClasses,
+  getCategoryButtonClasses,
+} from "../lib/utilities/themeColors";
 
 // Custom
 import NextIntersectionObserver from "../components/layout/NextIntersectionObserver";
@@ -29,42 +33,7 @@ export default function Portfolio() {
   const [activeClientCategory, setActiveClientCategory] = useState("all");
   const [displayedPortfolioData, setDisplayedPortfolioData] = useState(portfolioData);
   const [isListVisible, setIsListVisible] = useState(true);
-  const categoryThemeClasses = {
-    all: {
-      inactive: "bg-transparent text-js-black hover:bg-js-black hover:text-js-white",
-      active: "bg-js-black text-js-white",
-    },
-    "web-designers": {
-      inactive: "bg-transparent text-js-black hover:bg-js-red hover:text-js-black",
-      active: "bg-js-red text-js-black",
-    },
-    "digital-marketing": {
-      inactive: "bg-transparent text-js-black hover:bg-js-yellow hover:text-js-black",
-      active: "bg-js-yellow text-js-black",
-    },
-    "public-good": {
-      inactive: "bg-transparent text-js-black hover:bg-js-blue hover:text-js-white",
-      active: "bg-js-blue text-js-white",
-    },
-  };
-  const categoryAccentClasses = {
-    all: {
-      divider: "border-js-black",
-      arrow: "text-js-black",
-    },
-    "web-designers": {
-      divider: "border-js-red",
-      arrow: "text-js-red",
-    },
-    "digital-marketing": {
-      divider: "border-js-yellow",
-      arrow: "text-js-yellow",
-    },
-    "public-good": {
-      divider: "border-js-blue",
-      arrow: "text-js-blue",
-    },
-  };
+  const allCategoryButtonClasses = getCategoryButtonClasses("all");
 
   const categoryCounts = useMemo(() => {
     return portfolioClientCategories.reduce(
@@ -166,35 +135,38 @@ export default function Portfolio() {
                 onClick={() => handleCategoryChange("all")}
                 className={`type-meta px-3 py-1.5 my-0.5 transition-colors ${
                   activeClientCategory === "all"
-                    ? categoryThemeClasses.all.active
-                    : categoryThemeClasses.all.inactive
+                    ? allCategoryButtonClasses.active
+                    : allCategoryButtonClasses.inactive
                 }`}
               >
                 All ({categoryCounts.all})
               </button>
 
-              {portfolioClientCategories.map((category) => (
-                <button
-                  key={category.id}
-                  type="button"
-                  onClick={() => handleCategoryChange(category.id)}
-                  className={`type-meta px-3 py-1.5 my-0.5 transition-colors ${
-                    activeClientCategory === category.id
-                      ? categoryThemeClasses[category.id]?.active
-                      : categoryThemeClasses[category.id]?.inactive
-                  }`}
-                >
-                  {category.label} ({categoryCounts[category.id] || 0})
-                </button>
-              ))}
+              {portfolioClientCategories.map((category) => {
+                const categoryButtonClasses = getCategoryButtonClasses(category.id);
+
+                return (
+                  <button
+                    key={category.id}
+                    type="button"
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`type-meta px-3 py-1.5 my-0.5 transition-colors ${
+                      activeClientCategory === category.id
+                        ? categoryButtonClasses?.active
+                        : categoryButtonClasses?.inactive
+                    }`}
+                  >
+                    {category.label} ({categoryCounts[category.id] || 0})
+                  </button>
+                );
+              })}
               </div>
             </div>
 
             <div className={`zero:px-6 sm:px-10 transition-opacity duration-200 ${isListVisible ? "opacity-100" : "opacity-0"}`}>
               {displayedPortfolioData.map((item, index) => {
                 const itemCategory = item.clientCategories?.[0] || "all";
-                const itemAccentClasses =
-                  categoryAccentClasses[itemCategory] || categoryAccentClasses.all;
+                const itemAccentClasses = getCategoryAccentClasses(itemCategory);
 
                 return (
                 <div

@@ -1,22 +1,12 @@
 import Link from "next/link";
 import WigglyLink from "../svg/WigglyLink";
 import { useTheme } from "../../lib/contexts/ThemeProvider";
+import { COLOR_HEX, getRandomColorHex } from "../../lib/utilities/themeColors";
 import classNames from "classnames";
-
-const THEME_COLORS = {
-  red: "#FF4747",
-  blue: "#5295CB",
-  yellow: "#FDCD49",
-};
-
-const BRAND_COLORS = Object.values(THEME_COLORS);
-
-const getRandomColor = () =>
-  BRAND_COLORS[Math.floor(Math.random() * BRAND_COLORS.length)];
 
 const WigglyButton = ({ href, children, target, rel, colorName, className }) => {
   const { theme } = useTheme();
-  const color = THEME_COLORS[colorName] ?? THEME_COLORS[theme] ?? getRandomColor();
+  const color = COLOR_HEX[colorName] ?? COLOR_HEX[theme] ?? getRandomColorHex();
   const border = `3px solid ${color}`;
   return (
     <Link
