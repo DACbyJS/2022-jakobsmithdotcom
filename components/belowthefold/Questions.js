@@ -10,27 +10,20 @@ import classNames from "classnames";
 // Contexts
 import { useTheme } from "../../lib/contexts/ThemeProvider";
 
-// Effects
-import useWindowSize from "../../lib/hooks/useWindowSize";
-
 const Questions = ({ items }) => {
   // Set color
   const { theme } = useTheme();
   const themeClassName = `theme-${theme}`;
 
   const [selectedItem, setSelectedItem] = useState(null);
-  const size = useWindowSize();
 
-  const handleQuestionHover = (id, e) => {
+  const handleQuestionHover = (id) => {
     setSelectedItem(id);
   };
 
   const handleTap = (id, e) => {
-    // Prevent default behavior for touch events
     e.preventDefault();
-
-    // If the screen width is greater than 1024px, do not change the selected item
-    if (size.width > 1024) {
+    if (window.innerWidth > 1024) {
       return;
     }
     setSelectedItem(id);
