@@ -35,10 +35,10 @@ So is WordPress convention over configuration ready and the [coming wave of toke
 - Once the average WordPress project gets underway does it become more coherent? [Absolutely not.](https://dev.co/rise-and-fall-of-wordpress)
 - When an experienced community builds an system of design and code around WordPress abstractions, does it become more conventional? [Most of the time, yes.](https://daviderik.com/blog/what-makes-a-wordpress-website-maintainable-long-term/)
 
-This is why professional WordPress developers built and adopted structured stacks such as [Roots](https://roots.io/), [Themosis](https://framework.themosis.com/), or [Lumberjack](https://lumberjack.rareloop.com/). These provide dependency management, application structure, templating, routing, ORMs and reusable conventions. Professional devs plugin stacks are paid software with years of patches and a growing internal repo of custom solutions extending idempotent filters and actions. They vetted managed hosts and monitoring tools built around that stack.
+This is why professional WordPress developers built and adopted structured stacks such as [Roots](https://roots.io/), [Themosis](https://framework.themosis.com/), or [Lumberjack](https://lumberjack.rareloop.com/). These provide dependency management, application structure, templating, routing, ORMs and reusable conventions. Professional devs plugin stacks are paid software with years of patches and a growing internal repo of custom solutions extending idempotent filters and actions. They vetted managed hosts, asset offloaders, video streaming software, and monitoring tools built around each quirk of the WordPress stack.
 
 Salient? No. 
-But man, do those systems work well and take alot of time and smart people working together to build.
+> But man, do those systems work well and take alot of time and smart people working together to build.
 
 ## The Sales Formula and Playing Devil's Avocado
 
