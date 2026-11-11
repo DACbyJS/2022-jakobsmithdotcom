@@ -319,6 +319,52 @@
             background-color: theme("colors.js-yellow");
         }
     }
+
+    /* Blog post prose — vertical rhythm overrides */
+    &.blurb-style-blog {
+        h2 {
+            display: block;
+            @apply font-js-math font-normal normal-case tracking-normal text-[1.6rem] sm:text-[2rem] leading-[1.2] mt-10 mb-3 pb-2 border-b-2 border-js-blue;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        h3 {
+            display: block;
+            @apply font-overpass font-semibold uppercase tracking-[0.1em] text-[1.4ch] sm:text-[1.6ch] leading-[1.4] mt-8 mb-2;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        p {
+            @apply mb-5;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul,
+        ol {
+            @apply mt-0 mb-5;
+
+            li::marker {
+                color: theme("colors.js-blue");
+            }
+        }
+
+        hr {
+            @apply my-10 border-0 border-t-2 border-js-blue;
+        }
+    }
 }
 
 /* Parrelogram Divider */

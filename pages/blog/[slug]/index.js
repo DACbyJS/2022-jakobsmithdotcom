@@ -124,14 +124,14 @@ export default function BlogPostPage({ post }) {
       </Head>
 
       <main className="bg-js-black text-js-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <article className="mx-auto max-w-[900px] border-2 border-js-white bg-js-white text-js-black p-6 sm:p-10 lg:p-12">
-          <Link href="/blog/" className="font-overpass-mono uppercase tracking-[0.1em] text-[1.2ch] underline underline-offset-4 hover:opacity-70 transition-opacity">
+        <article className="mx-auto max-w-[900px] border-2 border-t-[4px] border-js-white border-t-js-blue bg-js-white text-js-black p-6 sm:p-10 lg:p-12">
+          <Link href="/blog/" className="font-overpass-mono uppercase tracking-[0.1em] text-[1.2ch] text-js-blue underline underline-offset-4 hover:opacity-70 transition-opacity">
             ← Back to Blog
           </Link>
 
           <header className="mt-6 sm:mt-8">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="font-overpass-mono uppercase tracking-[0.1em] text-[1.2ch] px-2 py-1 border border-js-black/30">
+              <span className="font-overpass-mono uppercase tracking-[0.1em] text-[1.2ch] px-2 py-1 bg-js-blue text-js-white">
                 {BLOG_CATEGORY_LABELS[post.category] ?? post.category}
               </span>
               <time className="font-overpass text-[1.5ch] text-js-black/70">{formatDate(post.date)}</time>
@@ -148,7 +148,7 @@ export default function BlogPostPage({ post }) {
             </p>
           </header>
 
-          <section className="default-blurb-style blurb-style-blue mt-8 text-[1.8ch] sm:text-[2ch] leading-[1.7]">
+          <section className="default-blurb-style blurb-style-blue blurb-style-blog mt-8 text-[1.8ch] sm:text-[2ch] leading-[1.7]">
             <MDXRemote {...post.mdxSource} components={mdxComponents} />
           </section>
 
@@ -157,7 +157,7 @@ export default function BlogPostPage({ post }) {
               <p className="font-overpass-mono uppercase tracking-[0.1em] text-[1.1ch] text-js-black/65 mb-3">Tags</p>
               <ul className="list-none p-0 m-0 flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
-                  <li key={tag} className="font-overpass text-[1.5ch] px-2 py-1 border border-js-black/20">
+                  <li key={tag} className="font-overpass text-[1.5ch] px-2 py-1 border border-js-black/20 hover:border-js-blue hover:text-js-blue transition-colors cursor-default">
                     {tag}
                   </li>
                 ))}
