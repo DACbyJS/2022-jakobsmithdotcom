@@ -48,10 +48,6 @@ export const aboutPageContent = {
           url: "https://www.linkedin.com/in/jakob-smith-webdev/",
         },
         { name: "Github", url: "https://github.com/DACbyJS" },
-        {
-          name: "Retro Store",
-          url: "https://contraconsume.com/",
-        },
         { name: "Artwork/Writing", url: "https://ardenbriarsmith.com/" },
         { name: "Music", url: "https://soundcloud.com/smiththeband/" },
       ],
