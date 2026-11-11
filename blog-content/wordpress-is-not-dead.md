@@ -123,7 +123,7 @@ And this salience gap, is the second problem within the WordPress ecosystem that
 
 ## When a Community Builds a System Around WordPress, Can It Become More Conventional?
 
-So if the above problems are present, what then?
+So if the above two problems are present, what then?
 
 This is when and why professional WordPress developers built and adopted structured stacks such as [Roots](https://roots.io/), [Themosis](https://framework.themosis.com/), or [Lumberjack](https://lumberjack.rareloop.com/). Roots' Acorn brings Laravel components into WordPress, including Blade, routing, and Eloquent ORM. Themosis documents an MVC structure built with Symfony and Illuminate packages. Lumberjack provides controllers, routing, dependency injection, and Timber's Twig templates.
 
@@ -131,16 +131,16 @@ The professional development approach I'm describing goes beyond the framework: 
 
 Then come the managed hosts, cloud-driven asset offloaders, custom SMTP routing, video streaming services, and monitoring tools selected and vetted carefully until each became its own company with 20+ employees. My point isn't that every professional team makes the same choices. It's that these choices become part of an ecosystem of people and code a replacement has to account for.
 
-Sexy and salient? No. But man, those systems take a lot of time and smart people working together to build and maintain.
+> Sexy and salient? No. But man, those systems take a lot of time and smart people working together to build and maintain.
 
 **And guess what?**
-The slick paint job can still be applied to well-designed engineering. Even better that go-live shine lasts longer as the site grows and changes but it just costs more to do it that way.
+The slick paint job can still be applied to well-designed engineering. Even better, that go-live shine lasts longer as the site grows and changes. It just costs more to do it that way.
 
-There is a concrete connection to agent workflows here. [GitHub](https://docs.github.com/en/copilot/reference/custom-instructions-support) documents repository-wide and path-specific instructions for giving Copilot project context, and [OpenAI](https://developers.openai.com/blog/skills-agents-sdk) documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant.
+There is a concrete connection to agent workflows here I don't want to miss. [GitHub](https://docs.github.com/en/copilot/reference/custom-instructions-support) documents repository-wide and path-specific instructions for giving Copilot project context, and [OpenAI](https://developers.openai.com/blog/skills-agents-sdk) documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant and WordPress is following suit with its own [Abilites API](https://developer.wordpress.org/apis/abilities-api/), [MCP Adapter](https://github.com/WordPress/mcp-adapter) baked into core and [WordPress-supported agent skills](https://github.com/wordPress/agent-skills).
 
-Paired with a great visual designer or organizing strategy, the salience gap described above becomes easier to close alongside a system like the pro WP devs built, but rebuilding that ecosystem elsewhere, with an agent or not, becomes a monumental task in scope, scale and cost.
+Paired with a great visual designer or organizing strategist, the salience gap described above becomes easier to close alongside a system like the pro WP devs built, but rebuilding that ecosystem elsewhere, with an agent or not, becomes a monumental task in scope, scale and cost.
 
-This more than anything else what realistically prevents WordPress from actually dying the way so many posters describe.
+This more than anything else, is what realistically prevents WordPress from actually dying the way so many posters describe.
 
 ## The Sales Formula and Playing Devil's Avocado
 
@@ -166,11 +166,13 @@ And the most terrifying:
 
 If agents benefit from conventions, why assume conventional WordPress systems are only candidates for replacement? They may also contain environments agents can work better within.
 
-That possibility is already visible in one part of the ecosystem: ([WordPress.com documents MCP tools ](https://wordpress.com/support/mcp/)) that let external agents work with content, settings, and other site functions while respecting WordPress user-role permissions. That isn't proof that every WordPress installation is agent-ready. It is a concrete example of agents working through an existing system rather than replacing it..
+That possibility is already visible in one part of the ecosystem: ([WordPress.com documents MCP tools ](https://wordpress.com/support/mcp/)) that let external agents work with content, settings, and other site functions while respecting WordPress user-role permissions. That isn't proof that every WordPress installation is agent-ready. It is a concrete example of agents working through an existing system rather than replacing it.
 
-Another exists on the other end of the spectrum in the ecosystem, [Kevin Leary](https://www.kevinleary.net/blog/rapid-laravel-development-ai-agents/) describes how Laravel’s conventions, Laravel Boost, and reusable agent skills help coding agents work within a predictable architecture rather than inventing their own. His experience illustrates the value of the system around the agent, not just its ability to generate code using Laravel alongside WordPress. Roots is already embracing the WordPress Abilities API with [Acorn AI](https://roots.io/announcing-acorn-ai/). A CLI boilerplater for Laravel Classes that you can run to immediately and easily connect a common class to the Ability API for your client's preferred MCP.
+Another exists on the other end of the spectrum in the ecosystem, [Kevin Leary](https://www.kevinleary.net/blog/rapid-laravel-development-ai-agents/) describes how Laravel’s conventions, Laravel Boost, and reusable agent skills help coding agents work within a predictable architecture rather than inventing their own. His experience illustrates the value of the system around the agent, not just its ability to generate code using Laravel alongside WordPress. 
 
-That doesn't guarantee anyone's survival or justify every dependency. It means the comparison has to include the actual system and people in it, not just an idea of WordPress somebody replaced.
+Roots is already embracing the WordPress Abilities API with [Acorn AI](https://roots.io/announcing-acorn-ai/). A CLI boilerplater for Laravel Classes that you can run to immediately and easily connect a common class to the Ability API for your client's preferred MCP.
+
+That doesn't guarantee anyone's survival or justify every dependency. It means the comparison has to include the actual system and people in it, not just an idea of WordPress somebody replaced, especially as the ecosystem adapts quickly to close the gaps in its AI readiness.
 
 The new agentic standard cuts both ways: 
 
