@@ -16,26 +16,49 @@ So here's a more nuanced take:
 - Software is a cyclical ecosystem, not a linear timeline.
 - No software is dead, if at least one entity finds a part of it useful.
 - Some take what works to innovate a better solution, while others make what works, work better.
+- Free software will always have a high rate of adoption and a low barrier to entry, but its lasting value depends on the communities that maintain, adapt, and build around it.
 
-## DHH DID NOT SAY RAILS IS DEAD.
+## DHH DID NOT SAY RAILS IS DEAD and What Software is Ready for Tokenomics?
 
-To me, "WordPress is Dead" is comparable to saying, "Rails is dead".
+To me, "WordPress is Dead" is comparable to saying, "Rails is Dead".
 
-DDH did not say in a [recent talk](https://www.youtube.com/watch?v=vDjW_dRyKXY) that "Rails is Dead"
+DDH did not say in a [recent talk](https://www.youtube.com/watch?v=vDjW_dRyKXY) that "Rails is Dead" even though I've seen some folks claim he did and that he's joined the prompt zombies.
 
-DHH actually said "These abstractions don't make quite the same sense in the age of agents".
+DHH actually said while pointing to Rails conventions: "These abstractions don't make quite the same sense in the age of agents".
 
-Unfortunately for those of us in the WordPress camp, we [don't have an owner with this level of charisma](https://demaree.me/p/the-unworthy-ungrateful-manchildren-of-tech/). Even so, the nonstop fire hose of "Software is Dead" hot takes proves that no matter your CEO's charisma buff, someone, somewhere will craft a salient straw-man argument to leverage a sales pitch with anyway.
+Unfortunately for those of us in the WordPress camp, we [don't have an owner with this level of charisma](https://demaree.me/p/the-unworthy-ungrateful-manchildren-of-tech/) which is why I don't have a quote to point too from him in 2026. Even so, the nonstop fire hose of "Software is Dead" hot takes proves that no matter your CEO's charisma buff, someone, somewhere will craft a salient straw-man argument to leverage a sales pitch with anyway.
 
-## Is WordPress ready for Tokenomics?
+DHH's conclusion strikes at the heart of the matter though, in both Rails and WordPress ecosystems longevity in AI-times:
+We built web software for a specific set of constraints for many years, and then in [December 2025](https://phoson.lat/research/agent-harness-state-of-the-art), those constraints radically changed and we need to address the foundations of our assumptions.
 
-At the end of DHH's talk, he made a point about Rails that could translate into a sector of WordPress's ecosystem, "Convention over configuration leads directly to things like token efficiency."
+At the end of DHH's talk, he made a point about Rails that could translate into the next chapter of a sector of WordPress's ecosystem, "Convention over configuration leads directly to things like token efficiency."
 
-So is WordPress convention over configuration ready and the [coming wave of tokenomics](https://cloud.google.com/blog/topics/developers-practitioners/guide-to-ai-tokenomics-eleven-principles-for-token-efficient-software-engineering)?
+So is WordPress's convention better than its configuration and will it be ready for the [coming wave of tokenomics](https://cloud.google.com/blog/topics/developers-practitioners/guide-to-ai-tokenomics-eleven-principles-for-token-efficient-software-engineering)?
 
-- Is WordPress out-of-the-box conventional? [Sort of.](https://simplystatic.com/tutorials/is-wordpress-a-headless-cms/)
-- Once the average WordPress project gets underway does it become more coherent? [Absolutely not.](https://dev.co/rise-and-fall-of-wordpress)
-- When an experienced community builds an system of design and code around WordPress abstractions, does it become more conventional? [Most of the time, yes.](https://daviderik.com/blog/what-makes-a-wordpress-website-maintainable-long-term/)
+### Is WordPress out of the box conventional? Sort of.
+
+WordPress started as blogging software and evolved into a broader content management system. Its origins remain visible: standard posts are chronological entries, while pages and custom post types support other kinds of content. ([Learn WordPress](https://learn.wordpress.org/lesson-plan/custom-post-types/))
+
+When you're building a website around authors and dated content, WordPress supplies familiar publishing conventions: contributor roles, drafts, scheduling, revisions, categories, and tags. The software is free to use and modify, with localization support built in. ([WordPress features](https://wordpress.org/about/features/), [WordPress post types](https://developer.wordpress.org/themes/classic-themes/basics/post-types/))
+
+It also provides an accessibility foundation and security tools, with no guarantee on adoption. Those outcomes still depend on your content, themes, plugins, hosting, and maintenance. ([WordPress accessibility guidelines](https://make.wordpress.org/accessibility/handbook/accessibility-guidelines/), [WordPress security guidance](https://developer.wordpress.org/advanced-administration/security/))
+
+But the next step beyond blogging is where the controversy begins: the freedom to extend WordPress into almost anything.
+
+- An extension that adds products and commerce, using its own data-access abstractions over WordPress post types and custom tables. ([WooCommerce data stores](https://developer.woocommerce.com/docs/best-practices/data-management/data-stores/))
+- An extension that adds forms, storing form definitions and submissions in dedicated database tables rather than treating everything as a blog post. ([Gravity Forms database structure](https://docs.gravityforms.com/database-storage-structure-reference/))
+- An extension that trurn CPTs into coffins. Yes, actual coffins: [HumanKind Funeral Suite](https://github.com/HumanKind-nz/hk-funeral-suite) registers custom post types for caskets, cremation urns, headstones, and memorial keepsakes.
+
+These extensions can share WordPress's foundation without sharing the same application architecture or storage model. WooCommerce and Gravity Forms demonstrate that distinction: one exposes replaceable data stores, while the other documents dedicated tables for forms and entries. ([WooCommerce data stores](https://developer.woocommerce.com/docs/best-practices/data-management/data-stores/), [Gravity Forms database structure](https://docs.gravityforms.com/database-storage-structure-reference/))
+
+At that point, we're far beyond blogging. But not necessarily outside WordPress's intended scope: its own documentation explicitly presents it as an application framework, with APIs for custom content types, user management, routing, and more. ([WordPress developer features](https://wordpress.org/about/features/))
+
+My concern isn't extension itself. It's whether those extensions form a coherent system, or leave the next developer explaining a different set of conventions at every turn on why they didn't implement them.
+
+### Once the average WordPress project gets underway does it become more coherent? Absolutely not.
+
+
+### When an experienced community builds an system of design and code around WordPress abstractions, does it become more conventional? [Most of the time, yes.](https://daviderik.com/blog/what-makes-a-wordpress-website-maintainable-long-term/)
 
 This is why professional WordPress developers built and adopted structured stacks such as [Roots](https://roots.io/), [Themosis](https://framework.themosis.com/), or [Lumberjack](https://lumberjack.rareloop.com/). These provide dependency management, application structure, templating, routing, ORMs and reusable conventions. Professional devs plugin stacks are paid software with years of patches and a growing internal repo of custom solutions extending idempotent filters and actions. They vetted managed hosts, asset offloaders, video streaming software, and monitoring tools built around each quirk of the WordPress stack.
 
