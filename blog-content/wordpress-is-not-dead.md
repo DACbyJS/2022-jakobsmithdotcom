@@ -1,7 +1,7 @@
 ---
 title: "WordPress Is Not Dead, but You Might Go Crazy Trying to Kill It"
 date: "2026-11-02"
-description: "An article clarifying what it might mean when someone says WordPress is Dead and whether vibe-coding, code harnesses, and agents will replace or improve WordPress."
+description: "An article clarifying what it might mean when someone says \"WordPress is Dead\" and whether vibe-coding, code harnesses, and agents will replace or improve WordPress."
 category: "general"
 tags: ["wordpress", "web design", "UX", "systems"]
 author: "Jakob Smith"
@@ -28,7 +28,7 @@ What he actually said:
 >
 > [DHH, approximately 43 minutes into the keynote](https://www.youtube.com/watch?v=vDjW_dRyKXY&t=2578s)
 
-Unfortunately for those of us in the WordPress camp, we [don't have an owner with this level of charisma](https://demaree.me/p/the-unworthy-ungrateful-manchildren-of-tech/) which is why I don't have a quote to point too from Matt in 2026. Even so, the nonstop fire hose of "Software is Dead" hot takes proves that no matter your CEO's charisma buff, someone, somewhere will craft a salient straw-man argument to leverage a sales pitch with anyway.
+Unfortunately for those of us in the WordPress camp, we [don't have an owner with this level of charisma](https://demaree.me/p/the-unworthy-ungrateful-manchildren-of-tech/) which is why I don't have a quote to point too from Matt in 2026. Even so, the nonstop fire hose of "Software is Dead" hot takes proves that no matter your CEO's charisma buff, someone, somewhere will craft an easy straw-man argument to leverage a sales pitch with anyway.
 
 DHH's conclusion strikes at the heart of the matter though, in both Rails and WordPress ecosystems:
 We built web software for a specific set of constraints for many years, and then in [December 2025](https://phoson.lat/research/agent-harness-state-of-the-art), those constraints radically changed with AI adoption and we need to address the foundations of our assumptions.
@@ -53,7 +53,7 @@ But the next step beyond blogging is where the controversy begins: the freedom t
 
 - **WooCommerce** adds products and commerce, using its own data-access abstractions over WordPress's custom post system and custom tables. ([WooCommerce data stores](https://developer.woocommerce.com/docs/best-practices/data-management/data-stores/))
 - **Gravity Forms** adds forms, storing form definitions and submissions in dedicated database tables rather than treating everything as a transformation of a blog post. ([Gravity Forms database structure](https://docs.gravityforms.com/database-storage-structure-reference/))
-- **HumanKind Funeral Suite** registers custom post types for caskets, cremation urns, headstones, and memorial keepsakes. I just wanted to drive the point home. ([Plugin documentation](https://github.com/HumanKind-nz/hk-funeral-suite))
+- **HumanKind Funeral Suite** registers custom post types for caskets, cremation urns, headstones, and memorial keepsakes. I just wanted to drive the point home. 🪦 ([Plugin documentation](https://github.com/HumanKind-nz/hk-funeral-suite))
 
 These extensions can share WordPress's foundation without sharing the same application architecture or storage model. WooCommerce and Gravity Forms demonstrate that distinction: one exposes replaceable data stores, while the other documents dedicated tables for forms and entries. ([WooCommerce data stores](https://developer.woocommerce.com/docs/best-practices/data-management/data-stores/), [Gravity Forms database structure](https://docs.gravityforms.com/database-storage-structure-reference/))
 
@@ -115,17 +115,25 @@ The dev's techincal preference doesn't preempt the client's experience.
 
 This is where the industry, budget and circumstances play a larger role than I see "WordPress is Dead" posts actually revealing.
 
+And this salience gap, is the second problem within the WordPress ecosystem that complicates or even prevents a clean transition into an AI age.
+
 ## When a Community Builds a System Around WordPress, Can It Become More Conventional?
 
-This is why professional WordPress developers built and adopted structured stacks such as [Roots](https://roots.io/), [Themosis](https://framework.themosis.com/), or [Lumberjack](https://lumberjack.rareloop.com/). Roots' Acorn brings Laravel components into WordPress, including Blade, routing, and Eloquent ORM. Themosis documents an MVC structure built with Symfony and Illuminate packages. Lumberjack provides controllers, routing, dependency injection, and Timber's Twig templates.
+So if the above problems are present, what then?
 
-The professional development approach I'm describing goes beyond the framework: a deliberately selected plugin stack, an internal repo of reusable custom solutions, and documented use of idempotnent WordPress filters and actions. WordPress supplies the hook mechanism; the team still has to decide how consistently to use it. ([WordPress hooks](https://developer.wordpress.org/apis/hooks/))
+This is when and why professional WordPress developers built and adopted structured stacks such as [Roots](https://roots.io/), [Themosis](https://framework.themosis.com/), or [Lumberjack](https://lumberjack.rareloop.com/). Roots' Acorn brings Laravel components into WordPress, including Blade, routing, and Eloquent ORM. Themosis documents an MVC structure built with Symfony and Illuminate packages. Lumberjack provides controllers, routing, dependency injection, and Timber's Twig templates.
 
-Then come the managed hosts, asset offloaders, video streaming services, and monitoring tools selected around that stack. My point isn't that every professional team makes the same choices. It's that these choices become part of the system a replacement has to account for.
+The professional development approach I'm describing goes beyond the framework: a deliberately selected plugin stack, an internal repo of reusable custom solutions, and documented use of idempotent WordPress filters and actions.
+
+Then come the managed hosts, cloud-driven asset offloaders, custom SMTP routing, video streaming services, and monitoring tools selected and vetted carefully until each became its own company with 20+ employees. My point isn't that every professional team makes the same choices. It's that these choices become part of an ecosystem of people and code a replacement has to account for.
 
 Sexy and salient? No. But man, those systems take a lot of time and smart people working together to build and maintain.
 
-There is a concrete connection to agent workflows here, not just an analogy. GitHub documents repository-wide and path-specific instructions for giving Copilot project context, and OpenAI documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant. ([GitHub custom instructions](https://docs.github.com/en/copilot/reference/custom-instructions-support), [OpenAI's repository workflow example](https://developers.openai.com/blog/skills-agents-sdk))
+There is a concrete connection to agent workflows here. ([GitHub](https://docs.github.com/en/copilot/reference/custom-instructions-support) documents repository-wide and path-specific instructions for giving Copilot project context, and [OpenAI](https://developers.openai.com/blog/skills-agents-sdk)) documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant.
+
+Paired with a great visual designer or organizing strategy, the salience gap described above becomes easier to close alongisde a system like the pro WP devs built, but rebuilding that ecosystem elsewhere, with an agent or not, becomes a monumental task in scope, scale and cost.
+
+This more than anything else, realistically prevents WordPress from actually dying the way so many posters describe.
 
 ## The Sales Formula and Playing Devil's Avocado
 

@@ -324,7 +324,7 @@
     &.blurb-style-blog {
         h2 {
             display: block;
-            @apply font-js-math font-normal normal-case tracking-normal text-[1.5rem] sm:text-[1.85rem] leading-[1.2] mt-8 mb-2 pb-1.5 border-b-2 border-js-blue;
+            @apply font-js-math font-normal normal-case tracking-normal text-[1.5rem] sm:text-[1.85rem] leading-[1.2] mt-10 mb-6 pb-2 border-b-2 border-js-blue;
 
             &:first-child {
                 margin-top: 0;
@@ -337,7 +337,7 @@
 
         h3 {
             display: block;
-            @apply font-overpass font-semibold uppercase tracking-[0.1em] text-[1.4ch] sm:text-[1.6ch] leading-[1.4] mt-6 mb-2;
+            @apply font-overpass font-semibold uppercase tracking-[0.1em] text-[1.4ch] sm:text-[1.6ch] leading-[1.4] mt-8 mb-4;
 
             &:first-child {
                 margin-top: 0;
@@ -345,7 +345,7 @@
         }
 
         p {
-            @apply mb-4;
+            @apply mb-5;
 
             &:last-child {
                 margin-bottom: 0;
@@ -354,10 +354,10 @@
 
         ul,
         ol {
-            @apply mt-0 mb-4;
+            @apply mt-0 mb-5;
 
             li {
-                @apply mb-[0.4ch];
+                @apply mb-[0.6ch];
             }
 
             li:last-child {
@@ -370,10 +370,10 @@
         }
 
         blockquote {
-            @apply my-6 border-l-4 border-js-blue pl-5 pr-2 py-1;
+            @apply my-8 border-l-4 border-js-blue pl-5 pr-2 py-1;
 
             p {
-                @apply mb-2 last:mb-0;
+                @apply mb-3 last:mb-0;
             }
 
             > p:first-child {
@@ -381,7 +381,7 @@
             }
 
             > p + p {
-                @apply font-overpass-mono uppercase tracking-[0.08em] text-[0.8em] text-js-black/60 mt-2;
+                @apply font-overpass-mono tracking-[0.08em] text-[0.8em] text-js-black/60 mt-3;
             }
 
             a {
@@ -394,7 +394,7 @@
         }
 
         hr {
-            @apply my-8 border-0 border-t-2 border-js-blue;
+            @apply my-10 border-0 border-t-2 border-js-blue;
         }
     }
 }
