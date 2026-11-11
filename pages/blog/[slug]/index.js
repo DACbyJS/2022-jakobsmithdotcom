@@ -141,14 +141,14 @@ export default function BlogPostPage({ post }) {
               {post.title}
             </h1>
 
-            <p className="font-overpass text-[1.9ch] leading-[1.6] mt-5 text-js-black/85">{post.description}</p>
+            <p className="font-overpass text-[1.8ch] leading-[1.55] mt-4 text-js-black/85">{post.description}</p>
 
-            <p className="font-overpass-mono uppercase tracking-[0.08em] text-[1.2ch] mt-5 text-js-black/70">
+            <p className="font-overpass-mono uppercase tracking-[0.08em] text-[1.2ch] mt-4 text-js-black/70">
               By {post.author}
             </p>
           </header>
 
-          <section className="default-blurb-style blurb-style-blue blurb-style-blog mt-8 text-[1.8ch] sm:text-[2ch] leading-[1.7]">
+          <section className="default-blurb-style blurb-style-blue blurb-style-blog mt-6 text-[1.7ch] sm:text-[1.9ch] leading-[1.62]">
             <MDXRemote {...post.mdxSource} components={mdxComponents} />
           </section>
 

@@ -1,7 +1,7 @@
 ---
 title: "WordPress Is Not Dead, but You Might Go Crazy Trying to Kill It"
 date: "2026-11-02"
-description: "An article clarifying what it might mean when someone says "WordPress is Dead" and whether vibe-coding, code harnesses, and agents will replace or improve WordPress."
+description: "An article clarifying what it might mean when someone says WordPress is Dead and whether vibe-coding, code harnesses, and agents will replace or improve WordPress."
 category: "general"
 tags: ["wordpress", "web design", "UX", "systems"]
 author: "Jakob Smith"
@@ -67,7 +67,6 @@ Every undocumented exception is another thing a developer or agent has to discov
 
 Often, a WordPress project is not coherent.
 This is where the semantics of "WordPress" get dicey.
-
 When the average poster types up "WordPress is Dead", what do they mean when they say WordPress?
 
 Oftentimes, they mean the following:
@@ -92,14 +91,14 @@ Every seasoned WordPress developer then runs into the next problem, the painful 
 
 Even the smartest and most capable non-technical clients and designers often prefer four things from a website:
 
-1. Speed
-2. Control
-3. Feeling good when they see the live site
-4. Getting just one compliment, phone call or email after going live because of the website
+- Speed
+- Control
+- Feeling good when they see the live site
+- Getting just one compliment, phone call or email after going live because of the website
 
 Don't get me wrong here, I am not patronizing my clients, I myself have fallen into this human trap myself with my own custom products.
 
-We know security, maintainability, structure, and code quality matter. But can clients experience them as directly as page animations, a hero video, or an analytics dashboard? Even if they understand the benefits and trust us, how do they judge the quality of work whose success often means nothing goes wrong? And what are they willing to trade for it?
+We know security, maintainability, structure, and code quality matter. But can people experience them as directly as page animations, a hero video, or an analytics dashboard? Even if they understand the benefits and trust us, how do they judge the quality of work whose success often means nothing goes wrong? And what are they willing to trade for it?
 
 Let me provide an analogy us devs as craftspeople can relate to:
 

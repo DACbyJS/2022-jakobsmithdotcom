@@ -324,7 +324,7 @@
     &.blurb-style-blog {
         h2 {
             display: block;
-            @apply font-js-math font-normal normal-case tracking-normal text-[1.6rem] sm:text-[2rem] leading-[1.2] mt-10 mb-3 pb-2 border-b-2 border-js-blue;
+            @apply font-js-math font-normal normal-case tracking-normal text-[1.5rem] sm:text-[1.85rem] leading-[1.2] mt-8 mb-2 pb-1.5 border-b-2 border-js-blue;
 
             &:first-child {
                 margin-top: 0;
@@ -337,7 +337,7 @@
 
         h3 {
             display: block;
-            @apply font-overpass font-semibold uppercase tracking-[0.1em] text-[1.4ch] sm:text-[1.6ch] leading-[1.4] mt-8 mb-2;
+            @apply font-overpass font-semibold uppercase tracking-[0.1em] text-[1.4ch] sm:text-[1.6ch] leading-[1.4] mt-6 mb-2;
 
             &:first-child {
                 margin-top: 0;
@@ -345,7 +345,7 @@
         }
 
         p {
-            @apply mb-5;
+            @apply mb-4;
 
             &:last-child {
                 margin-bottom: 0;
@@ -354,15 +354,47 @@
 
         ul,
         ol {
-            @apply mt-0 mb-5;
+            @apply mt-0 mb-4;
+
+            li {
+                @apply mb-[0.4ch];
+            }
+
+            li:last-child {
+                margin-bottom: 0;
+            }
 
             li::marker {
                 color: theme("colors.js-blue");
             }
         }
 
+        blockquote {
+            @apply my-6 border-l-4 border-js-blue pl-5 pr-2 py-1;
+
+            p {
+                @apply mb-2 last:mb-0;
+            }
+
+            > p:first-child {
+                @apply font-js-math text-[1.15em] leading-[1.45];
+            }
+
+            > p + p {
+                @apply font-overpass-mono uppercase tracking-[0.08em] text-[0.8em] text-js-black/60 mt-2;
+            }
+
+            a {
+                @apply text-js-blue underline underline-offset-4 decoration-js-blue/60;
+
+                &:hover {
+                    @apply text-js-black;
+                }
+            }
+        }
+
         hr {
-            @apply my-10 border-0 border-t-2 border-js-blue;
+            @apply my-8 border-0 border-t-2 border-js-blue;
         }
     }
 }
