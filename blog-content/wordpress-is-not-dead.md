@@ -136,7 +136,7 @@ Sexy and salient? No. But man, those systems take a lot of time and smart people
 **And guess what?**
 The slick paint job can still be applied to well-designed engineering. Even better that go-live shine lasts longer as the site grows and changes but it just costs more to do it that way.
 
-There is a concrete connection to agent workflows here. ([GitHub](https://docs.github.com/en/copilot/reference/custom-instructions-support) documents repository-wide and path-specific instructions for giving Copilot project context, and [OpenAI](https://developers.openai.com/blog/skills-agents-sdk)) documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant.
+There is a concrete connection to agent workflows here. [GitHub](https://docs.github.com/en/copilot/reference/custom-instructions-support) documents repository-wide and path-specific instructions for giving Copilot project context, and [OpenAI](https://developers.openai.com/blog/skills-agents-sdk) documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant.
 
 Paired with a great visual designer or organizing strategy, the salience gap described above becomes easier to close alongside a system like the pro WP devs built, but rebuilding that ecosystem elsewhere, with an agent or not, becomes a monumental task in scope, scale and cost.
 
@@ -174,4 +174,22 @@ That doesn't guarantee anyone's survival or justify every dependency. It means t
 
 The new agentic standard cuts both ways: 
 
-**When we vibe-code our clients' sites, have we built something another developer-agent pair can understand? Or have we prompted ourselves onto an island of undocumented dependencies, with ourselves as the only bridge to a technology we don't control?**
+> When we vibe-code our clients' sites, have we built something another developer-agent pair can understand? Or have we prompted ourselves onto an island of undocumented dependencies, with ourselves as the only bridge to a technology we don't control?
+> 
+> Jakob Smith
+
+## Before You Kill It, Know What You're Replacing
+
+Go back to the player you picked at the beginning. Whether you take useful parts into a new system or improve them where they are, the question is what continues to work, for whom, and at what cost.
+
+Changing the economics of writing code gives us a reason to revisit our abstractions, not declare every system built around them dead. “WordPress” might mean a publishing tool, a pile of conflicting plugins, or a carefully maintained application supported by an ecosystem of people. Those are different starting points, not interchangeable migration projects.
+
+The incoherent systems deserve scrutiny. But the features people value and depend on inside them deserve understanding, too. A replacement that improves the architecture or makes it faster to publish high volume SEO-driven content while removing the client's sense of speed, control, and ownership hasn't automatically solved the whole problem. Neither does a beautiful launch that leaves the next person/agent unable to maintain it. 
+
+The cabinet should close nicely, but the wood should also last.
+
+That's where conventions, communities, and professional practice enter the chat. They aren't reasons to preserve every dependency. They're resources we can improve, work within, or deliberately replace. A harness might become the client's preferred interface without making the system underneath it irrelevant, right?
+
+So wisely use agents to simplify what became tangled, document what only you can understand, and replace what no longer serves the client. If something else genuinely works better, help them move. If WordPress remains the right foundation, make working within it work better.
+
+“WordPress is dead” is a sales hook. The harder, more useful question is whether the system we leave behind gives our clients and the next developer-agent pair somewhere solid to build better experiences.
