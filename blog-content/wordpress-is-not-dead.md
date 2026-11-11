@@ -121,7 +121,7 @@ This is where the industry, budget and circumstances play a larger role than I s
 
 And this salience gap, is the second problem within the WordPress ecosystem that complicates or even prevents a clean transition into an AI age.
 
-## When a Community Builds a System Around WordPress, Can It Become More Conventional?
+## When a Community Builds a System Around WordPress, Can It Become More Conventional, Sustainable and Salient?
 
 So if the above two problems are present, what then?
 
