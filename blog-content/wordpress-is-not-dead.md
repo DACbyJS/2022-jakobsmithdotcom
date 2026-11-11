@@ -27,6 +27,8 @@ DHH actually said "These abstractions don't make quite the same sense in the age
 
 Unfortunately for those of us in the WordPress camp, we [don't have an owner with this level of charisma](https://demaree.me/p/the-unworthy-ungrateful-manchildren-of-tech/). Even so, the nonstop fire hose of "Software is Dead" hot takes proves that no matter your CEO's charisma buff, someone, somewhere will craft a salient straw-man argument to leverage a sales pitch with anyway.
 
+## Is WordPress ready for Tokenomics?
+
 At the end of DHH's talk, he made a point about Rails that could translate into a sector of WordPress's ecosystem, "Convention over configuration leads directly to things like token efficiency."
 
 So is WordPress convention over configuration ready and the [coming wave of tokenomics](https://cloud.google.com/blog/topics/developers-practitioners/guide-to-ai-tokenomics-eleven-principles-for-token-efficient-software-engineering)?
