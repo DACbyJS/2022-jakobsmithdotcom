@@ -1,20 +1,22 @@
 ---
 title: "WordPress Is Not Dead, but You Might Go Crazy Trying to Kill It"
 date: "2026-11-02"
-description: "An article clarifying what it might mean when someone says \"WordPress is Dead\" and whether vibe-coding, code harnesses, and agents will replace or improve WordPress."
+description: 'An article clarifying what it might mean when someone says "WordPress is Dead" and whether vibe-coding, code harnesses, and agents will replace or improve WordPress.'
 category: "general"
 tags: ["wordpress", "web design", "UX", "systems"]
 author: "Jakob Smith"
 ---
 
-## It Begins
+## It Begins or It Works?
 
-My feeds are pummeling me with hot takes on WordPress, and I'm fed up. So here's a more nuanced take:
+My feeds are pummeling me with hot takes on WordPress, and I'm fed up. So here's a more nuanced take. Pick your player:
 
 - Software is a cyclical ecosystem, not a linear timeline.
 - No software is dead if at least one entity finds a part of it useful.
-- Some take what works to innovate a better solution, while others make what works work better.
+- Some take what works into new systems; others improve it within existing ones. Either way, it works.
 - Free software lowers some barriers to adoption, but its lasting value depends on the communities around it.
+
+Whichever you agree or disagree with, pin it and take it with you as you read below.
 
 ## DHH Did Not Say Rails Is Dead and Is Your Software Ready for Tokenomics?
 
@@ -41,7 +43,9 @@ Earlier in the talk, he made another point about Rails that could translate into
 
 So, do WordPress's conventions help more than its configuration gets in the way? And will the systems we build around it be ready for the economics of agent-assisted development?
 
-Google's [token-efficient software engineering guidance](https://cloud.google.com/blog/topics/developers-practitioners/guide-to-ai-tokenomics-eleven-principles-for-token-efficient-software-engineering) recommends reusable skills, explicit instructions, targeted context, and testing rather than repeated corrective prompts. That supports taking conventions seriously, although it isn't an empirical benchmark proving which framework is best for AI-driven coding in the future.
+Google's [token-efficient software engineering guidance](https://cloud.google.com/blog/topics/developers-practitioners/guide-to-ai-tokenomics-eleven-principles-for-token-efficient-software-engineering) recommends reusable skills, explicit instructions, targeted context, and testing rather than repeated corrective prompts. That supports taking conventions seriously, although it can't be an empirical benchmark proving which framework is best for AI-driven coding in the future.
+
+In reality, no one has that empirical proof so I will stick with conventions as the next best thing.
 
 ## Is WordPress Out of the Box Conventional? Sort Of.
 
@@ -83,26 +87,26 @@ And all this was happening before AI.
 
 Now that AI is here, and I will conceed that the above problems are very real and common, why wouldn't we use AI to move away from them?
 
-But the assumption of where we go is what actually determines the next step in the lifecycle of WordPress: What do we replace these intended features with? All those poor techncial decisions listed above actually work for designers and clients and they often feel a sense of ownership and pride over it, before a WordPress dev convinces them of the risks and shows them "a better way".
+But the assumption of where we go is what actually determines the next step in the lifecycle of WordPress: What do we replace these intended features with? All those poor technical decisions listed above actually work for designers and clients and they often feel a sense of ownership and pride over it, before a WordPress dev convinces them of the risks and shows them "a better way".
 
 Every seasoned WordPress developer then runs into the next problem, the painful tradeoffs of a well-designed system versus the quick and cheap build with a slick paint job on launch day.
 
 ## Salience versus Sustainability
 
-Even the smartest and most capable non-technical clients and designers often prefer four things from a website:
+Even the smartest and most capable devs, clients and designers often prefer four things from a website:
 
 - Speed
 - Control
 - Feeling good when they see the live site
 - Getting just one compliment, phone call or email after going live because of the website
 
-Don't get me wrong here, I am not patronizing my clients, I myself have fallen into this human trap myself with my own custom products.
+Don't get me wrong here, I am not patronizing anyone, I myself have fallen into the salience trap myself with my preferred products.
 
-We know security, maintainability, structure, and code quality matter. But can people experience them as directly as page animations, a hero video, or an analytics dashboard? Even if they understand the benefits and trust us, how do they judge the quality of work whose success often means nothing goes wrong? And what are they willing to trade for it?
+We know security, maintainability, structure, and meta quality matter. But can people experience them as directly as page animations, a hero video, or an analytics dashboard? Even if they understand the benefits and trust us, how do they judge the quality of work whose success often means nothing goes wrong? And what are they willing to trade for it?
 
 Let me provide an analogy us devs as craftspeople can relate to:
 
-At a party, I met a carpenter who built custom cabinets. She told me the secret to impressing clients: pneumatic soft-close hardware that kept doors and drawers from slamming.
+I met a carpenter who built custom cabinets. She told me the secret to impressing clients: pneumatic soft-close hardware that kept doors and drawers from slamming.
 
 Clients would admire the paint and the smell of the wood. Then they’d close a cabinet, watch it ease shut, and marvel at the craftsmanship.
 
@@ -113,7 +117,7 @@ But they noticed that soft-close mechanism. Without it, she barely got a complim
 The carpenter's frustration doesn't make the customer's preference wrong.
 The dev's techincal preference doesn't preempt the client's experience.
 
-This is where the industry, budget and circumstances play a larger role than I see "WordPress is Dead" posts actually revealing.
+This is where the industry, budget and circumstances play a larger role than I see "WordPress is Dead" posts revealing.
 
 And this salience gap, is the second problem within the WordPress ecosystem that complicates or even prevents a clean transition into an AI age.
 
@@ -129,11 +133,14 @@ Then come the managed hosts, cloud-driven asset offloaders, custom SMTP routing,
 
 Sexy and salient? No. But man, those systems take a lot of time and smart people working together to build and maintain.
 
+**And guess what?**
+The slick paint job can still be applied to well-designed engineering. Even better that go-live shine lasts longer as the site grows and changes but it just costs more to do it that way.
+
 There is a concrete connection to agent workflows here. ([GitHub](https://docs.github.com/en/copilot/reference/custom-instructions-support) documents repository-wide and path-specific instructions for giving Copilot project context, and [OpenAI](https://developers.openai.com/blog/skills-agents-sdk)) documents using repository instructions and reusable skills to preserve development and verification workflows. Neither establishes that a particular WordPress stack is superior, but both make the conventions around a codebase more relevant.
 
-Paired with a great visual designer or organizing strategy, the salience gap described above becomes easier to close alongisde a system like the pro WP devs built, but rebuilding that ecosystem elsewhere, with an agent or not, becomes a monumental task in scope, scale and cost.
+Paired with a great visual designer or organizing strategy, the salience gap described above becomes easier to close alongside a system like the pro WP devs built, but rebuilding that ecosystem elsewhere, with an agent or not, becomes a monumental task in scope, scale and cost.
 
-This more than anything else, realistically prevents WordPress from actually dying the way so many posters describe.
+This more than anything else what realistically prevents WordPress from actually dying the way so many posters describe.
 
 ## The Sales Formula and Playing Devil's Avocado
 
@@ -157,10 +164,14 @@ And the most terrifying:
 
 ## No Need to Be an Island If Your Client Doesn't Have a Lifeboat
 
-If agents benefit from conventions, why assume conventional WordPress systems are only candidates for replacement? They may also be environments agents can work within.
+If agents benefit from conventions, why assume conventional WordPress systems are only candidates for replacement? They may also contain environments agents can work better within.
 
-That possibility is already visible in one part of the ecosystem: WordPress.com documents MCP tools that let external agents work with content, settings, and other site functions while respecting WordPress user-role permissions. That isn't proof that every WordPress installation is agent-ready. It is a concrete example of agents working through an existing system rather than replacing it. ([WordPress.com MCP documentation](https://wordpress.com/support/mcp/))
+That possibility is already visible in one part of the ecosystem: ([WordPress.com documents MCP tools ](https://wordpress.com/support/mcp/)) that let external agents work with content, settings, and other site functions while respecting WordPress user-role permissions. That isn't proof that every WordPress installation is agent-ready. It is a concrete example of agents working through an existing system rather than replacing it..
 
-That doesn't guarantee anyone's survival or justify every dependency. It means the comparison has to include the actual system and people, not just an idea of WordPress somebody replaced.
+Another exists on the other end of the spectrum in the ecosystem, [Kevin Leary](https://www.kevinleary.net/blog/rapid-laravel-development-ai-agents/) describes how Laravel’s conventions, Laravel Boost, and reusable agent skills help coding agents work within a predictable architecture rather than inventing their own. His experience illustrates the value of the system around the agent, not just its ability to generate code using Laravel alongside WordPress. Roots is already embracing the WordPress Abilities API with [Acorn AI](https://roots.io/announcing-acorn-ai/). A CLI boilerplater for Laravel Classes that you can run to immediately and easily connect a common class to the Ability API for your client's preferred MCP.
 
-Lastly, the standard cuts both ways: when we vibe-code our clients' sites, have we built something another developer-agent pair can understand? Or have we prompted ourselves onto an island of undocumented dependencies, with ourselves as the only bridge to a technology we don't control?
+That doesn't guarantee anyone's survival or justify every dependency. It means the comparison has to include the actual system and people in it, not just an idea of WordPress somebody replaced.
+
+The new agentic standard cuts both ways: 
+
+**When we vibe-code our clients' sites, have we built something another developer-agent pair can understand? Or have we prompted ourselves onto an island of undocumented dependencies, with ourselves as the only bridge to a technology we don't control?**
