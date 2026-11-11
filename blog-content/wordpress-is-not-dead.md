@@ -166,7 +166,7 @@ And the most terrifying:
 
 If agents benefit from conventions, why assume conventional WordPress systems are only candidates for replacement? They may also contain environments agents can work better within.
 
-That possibility is already visible in one part of the ecosystem: ([WordPress.com documents MCP tools ](https://wordpress.com/support/mcp/)) that let external agents work with content, settings, and other site functions while respecting WordPress user-role permissions. That isn't proof that every WordPress installation is agent-ready. It is a concrete example of agents working through an existing system rather than replacing it.
+That possibility is already visible in one part of the ecosystem: [WordPress.com documents MCP tools ](https://wordpress.com/support/mcp/) that let external agents work with content, settings, and other site functions while respecting WordPress user-role permissions. That isn't proof that every WordPress installation is agent-ready. It is a concrete example of agents working through an existing system rather than replacing it.
 
 Another exists on the other end of the spectrum in the ecosystem, [Kevin Leary](https://www.kevinleary.net/blog/rapid-laravel-development-ai-agents/) describes how Laravel’s conventions, Laravel Boost, and reusable agent skills help coding agents work within a predictable architecture rather than inventing their own. His experience illustrates the value of the system around the agent, not just its ability to generate code using Laravel alongside WordPress. 
 
