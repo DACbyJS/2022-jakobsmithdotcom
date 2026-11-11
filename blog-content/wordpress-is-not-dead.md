@@ -1,7 +1,7 @@
 ---
 title: "WordPress Is Not Dead, but You Might Go Crazy Trying to Kill It"
 date: "2026-11-02"
-description: "An article clarifying the semantics of the WordPress and whether vibe-coding, code harnesses and agents will replace it."
+description: "An article clarifying the semantics of describing a WordPress site and whether vibe-coding, code harnesses and agents will replace it."
 category: "general"
 tags: ["wordpress", "web design", "UX", "systems"]
 author: "Jakob Smith"
@@ -16,7 +16,7 @@ So here's a more nuanced take:
 - No software is dead, if at least one person finds a part of it useful.  
 - Some take what works to innovate a better solution, while others make what works, work better.
 
-To me, this is comparable to saying, Rails is dead. 
+To me, this is comparable to saying, "Rails is dead". 
   
 ## DHH DID NOT SAY RAILS IS DEAD.
 
@@ -32,7 +32,7 @@ This is why professional WordPress developers built and adopted structured stack
 
 Salient? No. But man, do they work well and take alot of smart people working together to build.  
 
-## The Sales Formula
+## The Sales Formula and Playing Devil's Avocado
 
 The over-used formula I see in "WordPress is dead" posts reduces a new experience with LLMs to an unscoped business conclusion around making you and your chosen code harness the largest dependency in your stack alongside a newer, smaller group of code practices.
 
@@ -48,7 +48,11 @@ And even scarier:
 
 "Will a chat harness be that system for my client?"
 
-## In Conclusion
+And the most terrifying:
+
+"Once agentic conventions appear and are widely adopted around a website build system, can I migrate my clients over in a way that saves my livelihood?"
+
+## No Need to Be an Island, If Your Client Doesn't Have a Lifeboat
 
 If agents benefit from conventions, why assume a conventional system is the only candidate for replacement? They may also be environments agents can work within best.
 
