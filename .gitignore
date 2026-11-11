@@ -36,3 +36,4 @@ next-env.d.ts
 # ignore .md in the root directory but not in blog-content/
 *.md
 !blog-content/*.md
+/.inbound-files/
