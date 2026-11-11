@@ -1,7 +1,7 @@
 ---
 title: "WordPress Is Not Dead, but You Might Go Crazy Trying to Kill It"
 date: "2026-11-02"
-description: "An article clarifying the semantics of describing a WordPress site and whether vibe-coding, code harnesses and agents will replace it."
+description: "An article clarifying the semantics of describing a WordPress site and whether vibe-coding, code harnesses and agents will replace it or improve it."
 category: "general"
 tags: ["wordpress", "web design", "UX", "systems"]
 author: "Jakob Smith"
